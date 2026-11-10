@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --navy-deep: #0B132B;
+  --slate-steel: #1C2541;
+  --slate-crisp: #F8FAFC;
+  --emerald-tech: #10B981;
+  --teal-tech: #0D9488;
+  --amber-safety: #F59E0B;
+  --border-light: #E2E8F0;
+  --border-dark: #2A3659;
+  --background: #F8FAFC;
+  --foreground: #0B132B;
+  --font-plus-jakarta: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-inter: "Inter", "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-jetbrains-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-navy-deep: #0B132B;
+  --color-slate-steel: #1C2541;
+  --color-slate-crisp: #F8FAFC;
+  --color-emerald-tech: #10B981;
+  --color-teal-tech: #0D9488;
+  --color-amber-safety: #F59E0B;
+  --font-heading: var(--font-plus-jakarta), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--slate-crisp);
+  color: var(--navy-deep);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.025em;
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+/* Industrial Blueprint Subtle Grid Backgrounds */
+.bg-industrial-grid-dark {
+  background-color: #0B132B;
+  background-image: 
+    linear-gradient(to right, rgba(42, 54, 89, 0.28) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(42, 54, 89, 0.28) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-industrial-grid-light {
+  background-color: #F8FAFC;
+  background-image: 
+    linear-gradient(to right, rgba(226, 232, 240, 0.7) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.7) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Accessible Focus Rings (ui-ux-pro-max + modern-web-guidance) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #10B981;
+  outline-offset: 2px;
+}
+
+/* Modern Web Guidance: Validate Input After Interaction (:user-invalid & :user-valid + fallback) */
+.rfq-input:user-invalid,
+.rfq-input.user-invalid-fallback {
+  border-color: #EF4444 !important;
+  background-color: rgba(239, 68, 68, 0.08) !important;
+}
+
+.rfq-input:user-valid,
+.rfq-input.user-valid-fallback {
+  border-color: #10B981 !important;
+}
+
+.rfq-field .field-error-msg {
+  display: none;
+}
+
+.rfq-field:has(.rfq-input:user-invalid) .field-error-msg,
+.rfq-field:has(.rfq-input.user-invalid-fallback) .field-error-msg {
+  display: flex;
+}
