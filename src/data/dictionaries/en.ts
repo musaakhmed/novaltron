@@ -80,9 +80,65 @@ export const en: SiteDictionary = {
         href: "/industrial-infrastructure",
       },
     ],
+    heroShowcase: {
+      sectionTitle: "Four Integrated Engineering Domains—Visualized in Live Blueprint",
+      sectionSubtitle:
+        "Inspect each turnkey architecture from precision field hydraulics and Venlo climate loops to Eurocode grain terminals and mission-critical industrial pipelines & OT networks.",
+      liveLabel: "LIVE SCHEMATIC",
+      pausedLabel: "PAUSED",
+      pauseButtonLabel: "Pause animation",
+      playButtonLabel: "Play animation",
+      tablistLabel: "Core engineering architecture domains",
+      details: {
+        irrigation: {
+          title: "Precision Irrigation & Solar Pumping Architecture",
+          summary:
+            "Center-pivot and linear-move truss spans paired with self-cleaning canal filtration, automated EC/pH fertigation manifolds, solar drive headworks, and ultrasonic field telemetry.",
+          ctaLabel: "Inspect Irrigation Systems",
+          standards: ["EC/pH Telemetry", "Solar Pumping", "Auto-Filtration"],
+          metrics: [
+            { label: "Hydraulic Control", value: "EC/pH + VFD" },
+            { label: "Monitoring", value: "Ultrasonic Flow" },
+          ],
+        },
+        greenhouses: {
+          title: "Venlo Glasshouses & Flue-Gas Thermal Loops",
+          summary:
+            "Multi-span Eurocode-engineered glass and poly structures integrating motorized ridge ventilation, thermal shading screens, elevated hydroponic gutters, and CO₂ flue-gas heat recovery.",
+          ctaLabel: "Inspect Greenhouse Systems",
+          standards: ["Eurocode / EN", "Venlo & Poly", "CO₂ Recovery"],
+          metrics: [
+            { label: "Structural Spec", value: "EN Wind / Snow" },
+            { label: "Climate Loop", value: "Boiler + CO₂" },
+          ],
+        },
+        "grain-silos": {
+          title: "High-Capacity Grain Terminals & Optical Sorting",
+          summary:
+            "Complete intake-to-export lines uniting pre-cleaners, continuous tower dryers, bucket elevators, Z600 galvanized Eurocode silos, and optical color sorting up to 500 t/h.",
+          ctaLabel: "Inspect Grain & Seed Lines",
+          standards: ["Z600 Galvanized", "Eurocode / EN", "Optical Sorting"],
+          metrics: [
+            { label: "Conveying Rate", value: "200–500 t/h" },
+            { label: "Silo Coating", value: "Z600 Steel" },
+          ],
+        },
+        "industrial-dual": {
+          title: "HDPE/PE100 Pipelines, Steam & Critical OT/SCADA",
+          summary:
+            "Dual-track utility delivery combining CNC data-logged butt-fusion welding, PE100 distribution lines, and waste-heat boilers with 1G–200G IP/MPLS, hardware-bypass OT firewalls, and GNSS PTP timing.",
+          ctaLabel: "Inspect Industrial & OT Systems",
+          standards: ["PE100 / CNC Weld", "IP/MPLS 100G", "IEC 61850 / PTP"],
+          metrics: [
+            { label: "OT Tolerance", value: "-20°C..+60°C" },
+            { label: "Verification", value: "1G–200G RFC 2544" },
+          ],
+        },
+      },
+    },
     agroSection: {
       bandNumber: "01",
-      bandMarker: "01 / AGRO-INDUSTRIAL ENGINEERING",
+      bandMarker: "AGRO-INDUSTRIAL ENGINEERING",
       h2: "End-to-End Agricultural Infrastructure—From Field Water to Export Storage",
       intro:
         "We design, supply, and commission complete agricultural modernization projects for agro-parks, commercial farms, greenhouses, and grain operators across Azerbaijan, Georgia, Uzbekistan, and Kazakhstan.",
@@ -145,7 +201,7 @@ export const en: SiteDictionary = {
     },
     bioBanner: {
       bandNumber: "02",
-      bandMarker: "02 / EXPORT READINESS & SUSTAINABLE CROP PROTECTION",
+      bandMarker: "EXPORT READINESS & SUSTAINABLE CROP PROTECTION",
       h2: "Biological Crop Protection, Smart IPM & International Export Certification",
       body: "Meet strict EU, GCC, and modern retail Maximum Residue Limits (MRLs) while passing international audits on the first attempt. Novaltron delivers vendor-agnostic Integrated Pest Management (IPM) programs combining beneficial insects, greenhouse pollinators, solar-powered automated AI camera traps, and end-to-end readiness for GLOBALG.A.P. IFA v6, GRASP, Organic, and HACCP / ISO 22000 certification.",
       imageAlt:
@@ -159,7 +215,7 @@ export const en: SiteDictionary = {
     },
     industrialSection: {
       bandNumber: "03",
-      bandMarker: "03 / INDUSTRIAL & INFRASTRUCTURE DIVISION",
+      bandMarker: "INDUSTRIAL & INFRASTRUCTURE DIVISION",
       h2: "Supporting Utility, Energy & Mission-Critical Network Infrastructure",
       intro:
         "Beyond primary agricultural infrastructure, Novaltron delivers standards-aligned pipeline engineering, thermal energy recovery, and ruggedized OT/SCADA network verification.",
@@ -335,24 +391,19 @@ export const en: SiteDictionary = {
         standards: ["EC/pH Automation", "Solar Pumping", "Ultrasonic Flow"],
         items: [
           {
-            heading: "Large-Scale Field Irrigation",
+            heading: "Field & Block Distribution",
             detail:
-              "Center-pivot and linear-move sprinkler systems, alongside heavy-duty self-propelled hose-reel irrigators for irregular field geometries.",
+              "Large-scale center-pivot and linear-move systems, hose-reel irrigators, and pressure-compensating drip and micro-sprinkler networks.",
           },
           {
-            heading: "Drip, Micro-Sprinkler & Fertigation",
+            heading: "Fertigation & High-Turbidity Filtration",
             detail:
-              "Pressure-compensating drip lines, orchard micro-sprinklers, hydraulic proportional dosing pumps, and automated multi-channel EC/pH fertigation units.",
+              "Automated multi-channel EC/pH dosing units paired with self-cleaning media, disc, and screen filtration banks for river and canal intake.",
           },
           {
-            heading: "Filtration & Pumping Stations",
+            heading: "Solar Pumping & Water Telemetry",
             detail:
-              "Automatic self-cleaning sand, disc, and screen filtration banks engineered for high-turbidity canal and river water, paired with deep-well submersible, vertical turbine, and off-grid solar pumping stations.",
-          },
-          {
-            heading: "Water Telemetry & Flow Control",
-            detail:
-              "Smart ultrasonic water meters, automated hydraulic control valves, and real-time soil-moisture and evapotranspiration monitoring stations.",
+              "Deep-well, vertical turbine, and off-grid solar pumping stations with ultrasonic flow metering and soil-moisture telemetry.",
           },
         ],
       },
@@ -362,7 +413,7 @@ export const en: SiteDictionary = {
         badge: "Pillar 02",
         title: "Turnkey Commercial Greenhouses & Climate Control",
         subtitle:
-          "High-yield Venlo glasshouses and multi-span gothic poly-greenhouses engineered for regional wind and snow loads with closed-loop thermal efficiency.",
+          "High-yield glass and multi-span poly-greenhouse structures engineered for regional wind and snow loads with automated climate and thermal control.",
         diagramLabel: "DWG-02 · CLIMATE & THERMAL LOOP SCHEMATIC",
         imageSrc: "/images/agro-greenhouse.jpg",
         imageAlt:
@@ -370,24 +421,19 @@ export const en: SiteDictionary = {
         standards: ["Eurocode / EN", "Venlo & Poly", "CO₂ Enrichment"],
         items: [
           {
-            heading: "Greenhouse Structures & Glazing",
+            heading: "Structures & Glazing",
             detail:
-              "High-light-transmission Venlo glasshouses and multi-span gothic/tunnel poly-greenhouse steel structures with hot-dip galvanized corrosion protection engineered for regional wind and snow loads.",
+              "Hot-dip galvanized Venlo glasshouses and multi-span gothic poly-structures designed to Eurocode / EN wind, snow, and seismic loads.",
           },
           {
-            heading: "Automated Climate & Shading Systems",
+            heading: "Automated Climate & Shading",
             detail:
-              "Motorized rack-and-pinion roof and side ventilation, thermal and blackout energy-saving screens, insect-proof netting, high-pressure fogging/pad-and-fan cooling, and CO₂ enrichment.",
+              "Motorized roof/side ventilation, thermal energy-saving and blackout screens, high-pressure fogging/cooling, and CO₂ enrichment.",
           },
           {
-            heading: "Heating, Boilers & Thermal Efficiency",
+            heading: "Boilers & Hydroponic Systems",
             detail:
-              "High-efficiency hot-water and steam boiler plants, flue-gas heat recovery economizers, and insulated thermal buffer storage tanks engineered to reduce winter heating fuel demand.",
-          },
-          {
-            heading: "Hydroponic & Substrate Growing Systems",
-            detail:
-              "Elevated hanging gutter systems, root-zone heating loops, drain-water recirculation/disinfection units, and centralized climate control computers.",
+              "High-efficiency hot-water and steam boilers with flue-gas economizers, thermal buffer tanks, and elevated hydroponic gutter lines.",
           },
         ],
       },
@@ -397,7 +443,7 @@ export const en: SiteDictionary = {
         badge: "Pillar 03",
         title: "Grain Silos, Drying, Cleaning & Optical Sorting",
         subtitle:
-          "Export-grade grain storage complexes, continuous-flow drying towers, seed calibration, and optical sorting lines.",
+          "Export-grade bulk grain storage, gentle high-capacity conveying, continuous drying, and precision optical sorting for agro-parks and terminals.",
         diagramLabel: "DWG-03 · POST-HARVEST TERMINAL FLOW",
         imageSrc: "/images/agro-grain-silos.jpg",
         imageAlt:
@@ -407,17 +453,17 @@ export const en: SiteDictionary = {
           {
             heading: "Corrugated Steel Silos & Handling",
             detail:
-              "Eurocode/EN-compliant flat-bottom and hopper-bottom steel silos with heavy-duty Z600 / Magnelis galvanization, supported by 200–500 t/h bucket elevators, enclosed chain conveyors, and automated sweeping augers.",
+              "Eurocode / EN-compliant flat-bottom and hopper-bottom silos (Z600 / Magnelis galvanization) with 200–500 t/h bucket elevators and enclosed conveyors.",
           },
           {
             heading: "Continuous & Recirculating Drying",
             detail:
-              "Energy-efficient continuous-flow tower dryers and mobile/stationary recirculating batch dryers with heat-recovery insulation and low-NOx burners.",
+              "Energy-efficient continuous-flow tower and batch grain dryers with heat-recovery insulation and low-emission burners.",
           },
           {
-            heading: "Pre-Cleaning, Seed Calibration & Optical Sorting",
+            heading: "Seed Calibration & Optical Sorting",
             detail:
-              "High-throughput vibrating pre-cleaners, rotary drum scalpers, aerodynamic gravity separators for certified seed lines, multi-channel optical color sorters, and complete hulling, drying, and cracking lines for hazelnuts and walnuts.",
+              "High-throughput vibrating pre-cleaners, aerodynamic gravity separators for certified seed lines, optical color sorters, and nut processing lines.",
           },
         ],
       },
@@ -427,24 +473,24 @@ export const en: SiteDictionary = {
         badge: "Pillar 04",
         title: "Silo Structural Monitoring, ATEX Safety & Feed Lines",
         subtitle:
-          "Non-intrusive structural load monitoring, certified dust explosion mitigation, and automated compound feed production.",
+          "Non-intrusive structural load protection, certified explosion mitigation, and automated compound feed milling for livestock and poultry clusters.",
         diagramLabel: "DWG-04 · ATEX & FEED BATCHING SCHEMATIC",
         standards: ["ATEX Certified", "Strain Telemetry", "Micro-Dosing"],
         items: [
           {
-            heading: "Non-Intrusive Silo Structural Monitoring",
+            heading: "Non-Intrusive Silo Weighing & Overload",
             detail:
-              "External metal-deformation strain sensors installed on silo support legs to measure real-time inventory weight and detect uneven load distribution without cutting into silo walls.",
+              "External metal-deformation strain sensors mounted on silo support legs for real-time inventory weight and structural load protection.",
           },
           {
-            heading: "ATEX Explosion Protection & Gas Monitoring",
+            heading: "ATEX Explosion & Gas Safety",
             detail:
-              "ATEX-certified flameless and standard explosion venting panels, rapid mechanical isolation valves, central baghouse dust extraction systems, and continuous Carbon Monoxide (CO) and multi-point headspace temperature monitoring.",
+              "ATEX-certified explosion venting panels, rapid isolation valves, central baghouse dust extraction, and continuous CO and temperature monitoring.",
           },
           {
-            heading: "Compound Feed Milling & Livestock Nutrition",
+            heading: "Compound Feed & TMR Lines",
             detail:
-              "High-homogeneity single- and twin-shaft paddle batch mixers, gravimetric micro-ingredient dosing for vitamins and premixes, conditioning, pelleting, counterflow cooling lines, and self-propelled or trailed TMR diet mixers.",
+              "High-homogeneity single- and twin-shaft batch mixers, gravimetric micro-dosing for premixes, pelleting/cooling lines, and TMR diet mixers.",
           },
         ],
       },

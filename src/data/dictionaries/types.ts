@@ -11,6 +11,30 @@ export interface HeroGridCard {
   href: string;
 }
 
+export interface HeroShowcaseMetric {
+  label: string;
+  value: string;
+}
+
+export interface HeroShowcaseDetail {
+  title: string;
+  summary: string;
+  ctaLabel: string;
+  standards: string[];
+  metrics: [HeroShowcaseMetric, HeroShowcaseMetric];
+}
+
+export interface HeroShowcaseConfig {
+  sectionTitle: string;
+  sectionSubtitle: string;
+  liveLabel: string;
+  pausedLabel: string;
+  pauseButtonLabel: string;
+  playButtonLabel: string;
+  tablistLabel: string;
+  details: Record<HeroGridCard["variant"], HeroShowcaseDetail>;
+}
+
 export interface AgroCardItem {
   id: string;
   code: string;
@@ -114,6 +138,7 @@ export interface SiteDictionary {
     heroTrustBar: string[];
     heroGridHeading: string;
     heroGridCards: HeroGridCard[];
+    heroShowcase: HeroShowcaseConfig;
     agroSection: {
       bandNumber: string;
       bandMarker: string;

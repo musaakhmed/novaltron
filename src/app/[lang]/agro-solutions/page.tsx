@@ -60,17 +60,14 @@ export default async function AgroSolutionsPage({
             <section
               key={pillar.id}
               id={pillar.id}
-              className="scroll-mt-36 rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-2xs sm:p-8 lg:p-10"
+              className="scroll-mt-32 rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-2xs sm:p-8 lg:p-10"
             >
               <RevealSection>
-                <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
+                <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-10">
                   <div className="min-w-0 lg:col-span-7">
-                    <div className="flex flex-wrap items-center gap-3">
+                    <div className="flex flex-wrap items-center gap-2.5">
                       <span className="band-numeral text-3xl font-bold text-[#059669] sm:text-4xl">
                         {pillar.number}
-                      </span>
-                      <span className="rounded-full bg-[#059669] px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-white">
-                        {pillar.badge}
                       </span>
                       {pillar.standards.map((std) => (
                         <span
@@ -82,17 +79,40 @@ export default async function AgroSolutionsPage({
                       ))}
                     </div>
 
-                    <h2 className="mt-5 text-2xl font-extrabold text-[#0F172A] sm:text-3xl">
+                    <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[#0F172A] sm:text-3xl">
                       {pillar.title}
                     </h2>
                     <p className="mt-3 text-base leading-relaxed text-[#334155]">
                       {pillar.subtitle}
                     </p>
+
+                    <ul className="mt-6 flex flex-col gap-3">
+                      {pillar.items.map((item, itemIdx) => (
+                        <li
+                          key={item.heading}
+                          className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3.5 transition-colors duration-150 hover:border-[#059669]/50"
+                        >
+                          <div className="flex items-start gap-3">
+                            <span className="mt-0.5 shrink-0 rounded-md border border-[#059669]/20 bg-[#059669]/8 px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#059669]">
+                              {pillar.number}.{itemIdx + 1}
+                            </span>
+                            <div className="min-w-0">
+                              <h3 className="text-sm font-bold leading-snug text-[#0F172A] sm:text-[15px]">
+                                {item.heading}
+                              </h3>
+                              <p className="mt-1 text-sm leading-relaxed text-[#334155]">
+                                {item.detail}
+                              </p>
+                            </div>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  <div className="min-w-0 space-y-3 lg:col-span-5">
+                  <div className="flex min-w-0 flex-col gap-4 lg:col-span-5">
                     {pillar.imageSrc && (
-                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-[#E2E8F0] bg-slate-900">
+                      <div className="relative aspect-[16/9] w-full overflow-clip rounded-xl border border-[#E2E8F0] bg-slate-900">
                         <Image
                           src={pillar.imageSrc}
                           alt={pillar.imageAlt || pillar.title}
@@ -113,29 +133,9 @@ export default async function AgroSolutionsPage({
                       label={pillar.diagramLabel}
                       code={`PILLAR ${pillar.number}`}
                       compact={Boolean(pillar.imageSrc)}
+                      aspect="16/9"
                     />
                   </div>
-                </div>
-
-                <div className="mt-8 grid grid-cols-1 gap-5 border-t border-slate-100 pt-8 sm:grid-cols-2">
-                  {pillar.items.map((item, itemIdx) => (
-                    <div
-                      key={item.heading}
-                      className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-5 transition-colors duration-150 hover:border-[#059669]/50"
-                    >
-                      <div className="flex items-center gap-2.5">
-                        <span className="font-mono text-xs font-bold text-[#059669]">
-                          {pillar.number}.{itemIdx + 1}
-                        </span>
-                        <h3 className="text-base font-bold text-[#0F172A]">
-                          {item.heading}
-                        </h3>
-                      </div>
-                      <p className="mt-2.5 text-sm leading-relaxed text-[#334155]">
-                        {item.detail}
-                      </p>
-                    </div>
-                  ))}
                 </div>
               </RevealSection>
             </section>

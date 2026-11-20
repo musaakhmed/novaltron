@@ -80,9 +80,65 @@ export const az: SiteDictionary = {
         href: "/industrial-infrastructure",
       },
     ],
+    heroShowcase: {
+      sectionTitle: "Dörd İnteqrasiya Olunmuş Mühəndislik İstiqaməti—Canlı Sxematik Görünüşdə",
+      sectionSubtitle:
+        "Dəqiq sahə hidravlikası və Venlo istixana iqlim dövrələrindən tutmuş Eurocode taxıl terminallarına və kritik sənaye boru/OT şəbəkələrinə qədər hər bir arxitekturanı interaktiv şəkildə araşdırın.",
+      liveLabel: "CANLI SXEM",
+      pausedLabel: "DAYANDIRILIB",
+      pauseButtonLabel: "Animasiyanı dayandır",
+      playButtonLabel: "Animasiyanı başlat",
+      tablistLabel: "Əsas mühəndislik arxitekturası istiqamətləri",
+      details: {
+        irrigation: {
+          title: "Dəqiq Suvarma və Günəş Nasos Arxitekturası",
+          summary:
+            "Avtomatik kanal filtrasiyası, çoxkanallı EC/pH fertiqasiya blokları, günəş enerjili nasos başlığı və ultrasəs sahə telemetriyası ilə birləşdirilmiş mərkəzi pivot və xətti suvarma sistemləri.",
+          ctaLabel: "Suvarma Sistemlərinə Bax",
+          standards: ["EC/pH Telemetriya", "Günəş Nasosları", "Avto-Filtrasiya"],
+          metrics: [
+            { label: "Hidravlik İdarə", value: "EC/pH + VFD" },
+            { label: "Monitorinq", value: "Ultrasəs Axın" },
+          ],
+        },
+        greenhouses: {
+          title: "Venlo Şüşə İstixanalar və İstilik Bərpa Dövrəsi",
+          summary:
+            "Motorlu dam ventilyasiyası, termal kölgələndirmə pərdələri, asma hidroponika novları və baca qazından CO₂/istilik bərpası ilə təchiz olunmuş Eurocode standartlı sənaye istixanaları.",
+          ctaLabel: "İstixana Sistemlərinə Bax",
+          standards: ["Eurocode / EN", "Venlo & Poli", "CO₂ Bərpası"],
+          metrics: [
+            { label: "Konstruksiya", value: "EN Külək / Qar" },
+            { label: "İqlim Dövrəsi", value: "Qazan + CO₂" },
+          ],
+        },
+        "grain-silos": {
+          title: "Yüksək Güclü Taxıl Terminalları və Optik Çeşidləmə",
+          summary:
+            "İlkin təmizləyicilər, fasiləsiz qüllə quruducuları, noriyalar, Z600 sinklənmiş Eurocode silosları və 500 t/saata qədər optik rəng çeşidləyicilərini birləşdirən tam xətlər.",
+          ctaLabel: "Taxıl və Toxum Xətlərinə Bax",
+          standards: ["Z600 Sinklənmiş", "Eurocode / EN", "Optik Çeşidləmə"],
+          metrics: [
+            { label: "Nəql Gücü", value: "200–500 t/saat" },
+            { label: "Silos Örtüyü", value: "Z600 Polad" },
+          ],
+        },
+        "industrial-dual": {
+          title: "HDPE/PE100 Borular, Buxar və Kritik OT/SCADA",
+          summary:
+            "CNC qeydiyyatlı alın qaynağı, PE100 xətləri və tullantı istilik qazanlarını 1G–200G IP/MPLS, aparat baypaslı OT firewall və GNSS PTP sinxronizasiyası ilə birləşdirən ikiqat sənaye həlli.",
+          ctaLabel: "Sənaye və OT Sistemlərinə Bax",
+          standards: ["PE100 / CNC Qaynaq", "IP/MPLS 100G", "IEC 61850 / PTP"],
+          metrics: [
+            { label: "OT Davamlılığı", value: "-20°C..+60°C" },
+            { label: "Doğrulama", value: "1G–200G RFC 2544" },
+          ],
+        },
+      },
+    },
     agroSection: {
       bandNumber: "01",
-      bandMarker: "01 / AQRO-SƏNAYE MÜHƏNDİSLİYİ",
+      bandMarker: "AQRO-SƏNAYE MÜHƏNDİSLİYİ",
       h2: "Tarla Suvarılmasından İxrac Səviyyəli Saxlamaya Qədər Tam Aqrar İnfrastruktur",
       intro:
         "Azərbaycan, Gürcüstan, Özbəkistan və Qazaxıstanda aqroparklar, sənaye təsərrüfatları, istixanalar və taxıl operatorları üçün tam aqrar modernləşdirmə layihələrini layihələndirir, təchiz edir və işə salırıq.",
@@ -145,7 +201,7 @@ export const az: SiteDictionary = {
     },
     bioBanner: {
       bandNumber: "02",
-      bandMarker: "02 / İXRAC HAZIRLIĞI VƏ DAVAMLI BİTKİ MÜHAFİZƏSİ",
+      bandMarker: "İXRAC HAZIRLIĞI VƏ DAVAMLI BİTKİ MÜHAFİZƏSİ",
       h2: "Bioloji Bitki Mühafizəsi, Ağıllı IPM və Beynəlxalq İxrac Sertifikatlaşdırması",
       body: "Avropa İttifaqı, Körfəz ölkələri (GCC) və müasir pərakəndə satış şəbəkələrinin sərt Maksimum Qalıq Hədlərinə (MRL) tam uyğunlaşın və beynəlxalq auditlərdən ilk cəhddə uğurla keçin. Novaltron faydalı həşəratları, istixana tozlandırıcılarını, günəş enerjili avtomatlaşdırılmış süni intellekt (AI) kamera tələlərini və GLOBALG.A.P. IFA v6, GRASP, Orqanik və HACCP / ISO 22000 audit hazırlığını birləşdirən inteqrasiya olunmuş bitki mühafizəsi (IPM) proqramları təqdim edir.",
       imageAlt:
@@ -159,7 +215,7 @@ export const az: SiteDictionary = {
     },
     industrialSection: {
       bandNumber: "03",
-      bandMarker: "03 / SƏNAYE VƏ İNFRASTRUKTUR BÖLMƏSİ",
+      bandMarker: "SƏNAYE VƏ İNFRASTRUKTUR BÖLMƏSİ",
       h2: "Kommunal, Enerji və Kritik Şəbəkə İnfrastrukturu Həlləri",
       intro:
         "Aqro-sənaye sistemləri ilə yanaşı, Novaltron beynəlxalq standartlara uyğun boru kəməri mühəndisliyi, istilik enerjisi bərpası və kritik OT/SCADA şəbəkə doğrulama həlləri təqdim edir.",
@@ -322,7 +378,7 @@ export const az: SiteDictionary = {
         badge: "İstiqamət 01",
         title: "Dəqiq Suvarma, Filtrasiya və Su İdarəetməsi",
         subtitle:
-          "Avtomatlaşdırılmış su paylanması, yüksək bulanıqlıqlı sular üçün filtrasiya, günəş nasos stansiyaları və real vaxt rütubət telemetriyası.",
+          "Quraq və kontinental iqlim zonaları üçün layihələndirilmiş avtomatlaşdırılmış su paylanması, yüksək bulanıqlıqlı suların filtrasiyası, günəş enerjili nasoslar və real vaxt rütubət telemetriyası.",
         diagramLabel: "DWG-01 · HİDRAVLİKA VƏ TELEMETRİYA SXEMİ",
         imageSrc: "/images/agro-irrigation.jpg",
         imageAlt:
@@ -330,24 +386,19 @@ export const az: SiteDictionary = {
         standards: ["EC/pH Avtomatika", "Günəş Nasosları", "Ultrasəs Ölçmə"],
         items: [
           {
-            heading: "Genişmiqyaslı Tarla Suvarması",
+            heading: "Tarla və Bağ Suvarma Şəbəkələri",
             detail:
-              "Mərkəzi pivot, xətti hərəkətli və qeyri-müntəzəm sahə həndəsələri üçün ağır iş rejimli özüyeriyən barabanlı suvarma sistemləri.",
+              "Genişmiqyaslı mərkəzi pivot və xətti hərəkətli sistemlər, barabanlı suvarma qurğuları və təzyiq tənzimləyici damcı/mikro-çiləmə xətləri.",
           },
           {
-            heading: "Damcı, Mikro-Çiləmə və Fertiqasiya",
+            heading: "Fertiqasiya və Özünü Təmizləyən Filtrasiya",
             detail:
-              "Təzyiq tənzimləyici damcı xətləri, bağ mikro-çiləyiciləri, hidravlik proporsional dozalama nasosları və çoxkanallı EC/pH fertiqasiya qurğuları.",
+              "Avtomatlaşdırılmış çoxkanallı EC/pH gübrələmə qurğuları və kanal/çay suları üçün özünü təmizləyən qum, disk və tor filtrlər.",
           },
           {
-            heading: "Filtrasiya və Nasos Stansiyaları",
+            heading: "Günəş Nasosları və Su Telemetriyası",
             detail:
-              "Yüksək bulanıqlıqlı kanal və çay suları üçün özünü təmizləyən qum, disk və tor filtrlər; dərin quyu, şaquli turbin və günəş enerjili nasos stansiyaları.",
-          },
-          {
-            heading: "Su Telemetriyası və Axın Nəzarəti",
-            detail:
-              "Ağıllı ultrasəs su sayğacları, avtomatlaşdırılmış hidravlik nəzarət klapanları və real vaxt torpaq rütubəti stansiyaları.",
+              "Dərin quyu, şaquli turbin və günəş enerjili nasos stansiyaları, ultrasəs su sayğacları və torpaq rütubəti monitorinqi.",
           },
         ],
       },
@@ -355,9 +406,9 @@ export const az: SiteDictionary = {
         id: "greenhouses",
         number: "02",
         badge: "İstiqamət 02",
-        title: "Açar Təhvil Sənaye İstixanaları və İqlim Nəzarəti",
+        title: "Açar Təhvili Sənaye İstixanaları və İqlim Nəzarəti",
         subtitle:
-          "Regional külək və qar yüklərinə hesablanmış Venlo tipli şüşə və çoxaşırımlı polietilen istixanalar.",
+          "Regional külək və qar yüklərinə davamlı, avtomatlaşdırılmış iqlim və istilik idarəetməsinə malik yüksək məhsuldarlıqlı şüşə və çoxaşırımlı polietilen istixana kompleksləri.",
         diagramLabel: "DWG-02 · İQLİM VƏ İSTİLİK DÖVRÜ SXEMİ",
         imageSrc: "/images/agro-greenhouse.jpg",
         imageAlt:
@@ -365,24 +416,19 @@ export const az: SiteDictionary = {
         standards: ["Eurocode / EN", "Venlo və Poli", "CO₂ Zənginləşdirmə"],
         items: [
           {
-            heading: "İstixana Konstruksiyaları və Örtüklər",
+            heading: "Konstruksiya və Örtük Sistemləri",
             detail:
-              "Regional külək və qar yüklərinə hesablanmış yüksək işıqkeçiricilikli Venlo şüşə və çoxaşırımlı qotik/tunel polietilen isti sinklənmiş polad konstruksiyalar.",
+              "Eurocode / EN külək, qar və seysmik yüklərinə hesablanmış isti sinklənmiş Venlo şüşə və çoxaşırımlı polietilen polad konstruksiyalar.",
           },
           {
             heading: "Avtomatlaşdırılmış İqlim və Kölgələndirmə",
             detail:
-              "Avtomatlaşdırılmış dam və yan havalandırma, istilik və kölgələndirmə aqro-tekstili, həşərat əleyhinə torlar, yüksək təzyiqli dumanlama/soyutma və CO₂ zənginləşdirmə.",
+              "Motorlu dam/yan havalandırma, istilik qoruyucu və kölgələndirmə pərdələri, yüksək təzyiqli dumanlama/soyutma və CO₂ zənginləşdirmə.",
           },
           {
-            heading: "İsitmə, Qazanxana və İstilik Səmərəliliyi",
+            heading: "Qazanxana və Hidroponik Xətlər",
             detail:
-              "Yüksək səmərəli isti su və buxar qazanları, tüstü qazı istiliyini bərpa edən ekonomayzerlər və izolyasiyalı termik bufer çənləri.",
-          },
-          {
-            heading: "Hidroponik və Substrat Yetişdirmə",
-            detail:
-              "Asma nov sistemləri, kök zonası isitmə dövrələri, drenaj suyunun resirkulyasiyası/dezinfeksiyası və mərkəzi iqlim kompüterləri.",
+              "Tüstü qazı ekonomayzerli yüksək səmərəli isti su və buxar qazanları, istilik akkumulyator çənləri və asma hidroponik yetişdirmə novları.",
           },
         ],
       },
@@ -392,7 +438,7 @@ export const az: SiteDictionary = {
         badge: "İstiqamət 03",
         title: "Taxıl Silosları, Qurutma, Təmizləmə və Optik Çeşidləmə",
         subtitle:
-          "İxrac səviyyəli taxıl saxlama terminalları, fasiləsiz qurutma qüllələri, toxum kalibrlənməsi və optik çeşidləmə xətləri.",
+          "Aqroparklar və taxıl terminalları üçün ixrac standartlı taxıl saxlama silosları, zədəsiz yüksək məhsuldarlıqlı nəql, fasiləsiz qurutma və optik çeşidləmə xətləri.",
         diagramLabel: "DWG-03 · MƏHSUL YIĞIMINDAN SONRAKI AXIN",
         imageSrc: "/images/agro-grain-silos.jpg",
         imageAlt:
@@ -402,17 +448,17 @@ export const az: SiteDictionary = {
           {
             heading: "Büzməli Polad Siloslar və Nəql",
             detail:
-              "Ağır Z600 / Magnelis sinkləmə örtüklü Eurocode/EN standartlı yastı və konus dibli polad siloslar; 200–500 t/saat çalovlu elevatorlar və qapalı zəncirli konveyerlər.",
+              "Eurocode / EN standartlı yastı və konus dibli siloslar (Z600 / Magnelis örtük), 200–500 t/saat çalovlu elevatorlar və qapalı konveyerlər.",
           },
           {
             heading: "Fasiləsiz və Resirkulyasiyalı Qurutma",
             detail:
-              "İstilik bərpa izolyasiyalı və aşağı NOx odluqlu enerjiyə qənaət edən fasiləsiz qüllə və mobil/stasionar resirkulyasiyalı taxıl quruducuları.",
+              "İstilik bərpa izolyasiyalı və aşağı emissiyalı odluqlara malik enerjiyə qənaət edən fasiləsiz və porsiyalı taxıl quruducuları.",
           },
           {
-            heading: "İlkin Təmizləmə, Kalibrləmə və Optik Çeşidləmə",
+            heading: "Toxum Kalibrləmə və Optik Çeşidləmə",
             detail:
-              "Vibrasiyalı ilkin təmizləyicilər, barabanlı ayırıcılar, aerodinamik toxum kalibratorları, çoxkanallı optik rəng çeşidləyiciləri və fındıq/qoz emalı xətləri.",
+              "Yüksək məhsuldarlıqlı vibrasiyalı ilkin təmizləyicilər, sertifikatlı toxum üçün aerodinamik separatorlar, optik rəng çeşidləyiciləri və fındıq/qoz emalı xətləri.",
           },
         ],
       },
@@ -422,24 +468,24 @@ export const az: SiteDictionary = {
         badge: "İstiqamət 04",
         title: "Silosların Struktur Monitorinqi, ATEX Təhlükəsizliyi və Yem Zavodları",
         subtitle:
-          "Qeyri-invaziv struktur yük monitorinqi, sertifikatlı toz partlayışı mühafizəsi və avtomatlaşdırılmış yem istehsalı.",
+          "Heyvandarlıq və quşçuluq kompleksləri üçün qeyri-invaziv struktur yük nəzarəti, sertifikatlaşdırılmış partlayış mühafizəsi və avtomatlaşdırılmış qarışıq yem istehsalı xətləri.",
         diagramLabel: "DWG-04 · ATEX VƏ YEM DOZALAMA SXEMİ",
         standards: ["ATEX Sertifikatlı", "Deformasiya Sensoru", "Mikro-Dozalama"],
         items: [
           {
-            heading: "Qeyri-İnvaziv Silos Struktur Monitorinqi",
+            heading: "Qeyri-İnvaziv Silos Çəki və Yük Nəzarəti",
             detail:
-              "Silos divarlarını kəsmədən ayaqlara quraşdırılan xarici metal deformasiya sensorları ilə real vaxt ehtiyat çəkisi və qeyri-bərabər yüklənmə nəzarəti.",
+              "Silos dayaq ayaqlarına bərkidilən xarici metal deformasiya sensorları ilə real vaxt stok çəkisi və həddindən artıq yüklənmə qoruması.",
           },
           {
-            heading: "ATEX Partlayış Mühafizəsi və Qaz Monitorinqi",
+            heading: "ATEX Partlayış və Qaz Təhlükəsizliyi",
             detail:
-              "ATEX sertifikatlı alovsuz və standart partlayış ventilyasiya panelləri, sürətli izolyasiya klapanları, mərkəzi tozsorucu filtrasiya və fasiləsiz CO/temperatur monitorinqi.",
+              "ATEX sertifikatlı partlayış ventilyasiya panelləri, sürətli izolyasiya klapanları, mərkəzi tozsorucu filtrasiya və fasiləsiz CO və temperatur monitorinqi.",
           },
           {
-            heading: "Qarışıq Yem İstehsalı və Heyvandarlıq",
+            heading: "Qarışıq Yem və TMR Xətləri",
             detail:
-              "Yüksək homogenlikli qarışıq yem mikserləri, vitamin və premikslər üçün qravimetrik mikro-dozalama, qranullaşdırma, soyutma xətləri və TMR yem qarışdırıcıları.",
+              "Yüksək homogenlikli bir və ikivallı mikserlər, premikslər üçün qravimetrik mikro-dozalama, qranullaşdırma/soyutma xətləri və TMR yem qarışdırıcıları.",
           },
         ],
       },

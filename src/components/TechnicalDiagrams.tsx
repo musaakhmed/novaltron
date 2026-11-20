@@ -17,6 +17,7 @@ interface TechnicalSchematicProps {
   caption?: string;
   variant: SchematicVariant;
   compact?: boolean;
+  aspect?: "16/9" | "16/10";
   dark?: boolean;
   className?: string;
 }
@@ -27,6 +28,7 @@ export function TechnicalSchematic({
   caption,
   variant,
   compact = false,
+  aspect,
   dark = false,
   className = "",
 }: TechnicalSchematicProps) {
@@ -91,7 +93,13 @@ export function TechnicalSchematic({
       )}
 
       {/* CAD Vector Viewport */}
-      <div className={`relative z-10 w-full ${compact ? "aspect-[16/10]" : "aspect-[16/9]"}`}>
+      <div
+        className={`relative z-10 w-full ${
+          (aspect ?? (compact ? "16/10" : "16/9")) === "16/10"
+            ? "aspect-[16/10]"
+            : "aspect-[16/9]"
+        }`}
+      >
         {/* Corner CAD registration crosshairs */}
         <span
           aria-hidden="true"

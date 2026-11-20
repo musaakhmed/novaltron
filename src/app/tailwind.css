@@ -198,6 +198,305 @@ code, pre, .font-mono {
   opacity: 1;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   CORE ENGINEERING ARCHITECTURE — ANIMATED BLUEPRINT SHOWCASE
+   ═══════════════════════════════════════════════════════════════════════════ */
+.domain-tablist {
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+}
+
+.domain-tablist::-webkit-scrollbar {
+  display: none;
+}
+
+.domain-tab {
+  position: relative;
+  scroll-snap-align: start;
+}
+
+/* Selected indicator drawn with border on pseudo-element (WCAG 1.4.1 & Forced Colors) */
+.domain-tab[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  border-block-end: 3px solid var(--domain-accent, #34D399);
+  pointer-events: none;
+}
+
+/* Animated CAD primitives — opt-in only under prefers-reduced-motion: no-preference */
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes blueprint-stage-enter {
+      from {
+        opacity: 0.35;
+        transform: translateY(20px) scale(0.985);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .blueprint-scroll-stage {
+      animation: blueprint-stage-enter auto linear backwards;
+      animation-timeline: view(block);
+      animation-range: entry 0% entry 28%;
+    }
+  }
+
+  @keyframes cad-panel-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes cad-dash-flow {
+    from {
+      stroke-dashoffset: 32;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes cad-dash-flow-reverse {
+    from {
+      stroke-dashoffset: 0;
+    }
+    to {
+      stroke-dashoffset: 32;
+    }
+  }
+
+  @keyframes cad-radar-ring {
+    0% {
+      transform: scale(0.6);
+      opacity: 0.85;
+    }
+    100% {
+      transform: scale(2.4);
+      opacity: 0;
+    }
+  }
+
+  @keyframes cad-scan-sweep {
+    0% {
+      transform: translateX(-18%);
+      opacity: 0;
+    }
+    12% {
+      opacity: 0.6;
+    }
+    88% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateX(118%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes cad-optical-sweep {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(34px);
+    }
+  }
+
+  @keyframes cad-mist-fall {
+    0% {
+      transform: translateY(-4px);
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.9;
+    }
+    85% {
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(24px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes cad-wheel-rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes cad-vent-cycle {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-14deg);
+    }
+  }
+
+  @keyframes cad-heat-plume {
+    0% {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    35% {
+      opacity: 0.85;
+    }
+    100% {
+      transform: translateY(-14px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes cad-pulse-soft {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.85;
+    }
+    50% {
+      transform: scale(1.16);
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes cad-packet-glide {
+    0% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    15% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(226px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes domain-cycle-progress {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .cad-panel-enter {
+    animation: cad-panel-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .cad-flow {
+    animation: cad-dash-flow 1.8s linear infinite;
+  }
+
+  .cad-flow-fast {
+    animation: cad-dash-flow 1.15s linear infinite;
+  }
+
+  .cad-flow-reverse {
+    animation: cad-dash-flow-reverse 2s linear infinite;
+  }
+
+  .cad-radar-ping {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: cad-radar-ring 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+
+  .cad-radar-ping-delay {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: cad-radar-ring 2.8s cubic-bezier(0.22, 1, 0.36, 1) 1.4s infinite;
+  }
+
+  .cad-scan-beam {
+    animation: cad-scan-sweep 6.5s ease-in-out infinite;
+  }
+
+  .cad-optical-scan {
+    animation: cad-optical-sweep 2.2s ease-in-out infinite;
+  }
+
+  .cad-mist-drop {
+    animation: cad-mist-fall 1.6s ease-in infinite;
+  }
+
+  .cad-wheel-spin {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: cad-wheel-rotate 7s linear infinite;
+  }
+
+  .cad-vent-breathe {
+    transform-box: fill-box;
+    transform-origin: left bottom;
+    animation: cad-vent-cycle 4.4s ease-in-out infinite;
+  }
+
+  .cad-heat-rise {
+    animation: cad-heat-plume 2.4s ease-out infinite;
+  }
+
+  .cad-weld-glow {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: cad-pulse-soft 2.4s ease-in-out infinite;
+  }
+
+  .cad-packet-glide {
+    animation: cad-packet-glide 2.6s linear infinite;
+  }
+
+  .cad-beacon {
+    animation: cad-pulse-soft 2.2s ease-in-out infinite;
+  }
+
+  .domain-tab-progress {
+    transform-origin: left center;
+    animation: domain-cycle-progress 7000ms linear forwards;
+  }
+}
+
+/* Explicit user pause state (WCAG 2.2.2) — freezes all live schematic & progress animations */
+[data-motion-paused="true"] .cad-flow,
+[data-motion-paused="true"] .cad-flow-fast,
+[data-motion-paused="true"] .cad-flow-reverse,
+[data-motion-paused="true"] .cad-radar-ping,
+[data-motion-paused="true"] .cad-radar-ping-delay,
+[data-motion-paused="true"] .cad-scan-beam,
+[data-motion-paused="true"] .cad-optical-scan,
+[data-motion-paused="true"] .cad-mist-drop,
+[data-motion-paused="true"] .cad-wheel-spin,
+[data-motion-paused="true"] .cad-vent-breathe,
+[data-motion-paused="true"] .cad-heat-rise,
+[data-motion-paused="true"] .cad-weld-glow,
+[data-motion-paused="true"] .cad-packet-glide,
+[data-motion-paused="true"] .cad-beacon,
+[data-motion-paused="true"] .domain-tab-progress {
+  animation-play-state: paused !important;
+}
+
+/* Pause auto-advance progress bar while user hovers or focuses inside the console */
+[data-cycle-held="true"] .domain-tab-progress {
+  animation-play-state: paused !important;
+}
+
 /* Accessibility: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   html {

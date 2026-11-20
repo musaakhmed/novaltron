@@ -16,6 +16,7 @@ import { RevealSection } from "@/components/RevealSection";
 import { TurnkeyStepper } from "@/components/TurnkeyStepper";
 import { TechnicalSchematic } from "@/components/TechnicalDiagrams";
 import { HeroBackgroundVideo } from "@/components/HeroBackgroundVideo";
+import { CoreEngineeringShowcase } from "@/components/CoreEngineeringShowcase";
 
 export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
@@ -92,6 +93,16 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           </div>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════
+          INTERACTIVE ANIMATED CORE ENGINEERING ARCHITECTURE (DWG-01 → DWG-04)
+          ═══════════════════════════════════════════════════════════════════════ */}
+      <CoreEngineeringShowcase
+        lang={lang}
+        heading={home.heroGridHeading}
+        cards={home.heroGridCards}
+        showcase={home.heroShowcase}
+      />
 
       {/* ═══════════════════════════════════════════════════════════════════════
           BAND 01 — PRIMARY FLAGSHIP: AGRO-INDUSTRIAL & POST-HARVEST SYSTEMS

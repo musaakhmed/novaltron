@@ -80,9 +80,65 @@ export const tr: SiteDictionary = {
         href: "/industrial-infrastructure",
       },
     ],
+    heroShowcase: {
+      sectionTitle: "Dört Entegre Mühendislik Alanı—Canlı Teknik Şematikte",
+      sectionSubtitle:
+        "Hassas tarla hidroliği ve Venlo iklim döngülerinden Eurocode tahıl terminallerine ve kritik endüstriyel boru hatları ile OT/SCADA ağlarına kadar her anahtar teslim mimariyi inceleyin.",
+      liveLabel: "CANLI ŞEMATİK",
+      pausedLabel: "DURAKLATILDI",
+      pauseButtonLabel: "Animasyonu duraklat",
+      playButtonLabel: "Animasyonu oynat",
+      tablistLabel: "Temel mühendislik mimarisi alanları",
+      details: {
+        irrigation: {
+          title: "Hassas Sulama ve Güneş Enerjili Pompa Mimarisi",
+          summary:
+            "Otomatik kanal filtrasyonu, çok kanallı EC/pH fertigasyon manifoldları, güneş enerjili pompa üniteleri ve ultrasonik tarla telemetrisiyle entegre merkez pivot ve lineer sistemler.",
+          ctaLabel: "Sulama Sistemlerini İncele",
+          standards: ["EC/pH Telemetri", "Güneş Pompaları", "Oto-Filtrasyon"],
+          metrics: [
+            { label: "Hidrolik Kontrol", value: "EC/pH + VFD" },
+            { label: "İzleme", value: "Ultrasonik Akış" },
+          ],
+        },
+        greenhouses: {
+          title: "Venlo Cam Seralar ve Baca Gazı Isı Geri Kazanımı",
+          summary:
+            "Motorlu çatı havalandırması, termal gölgeleme perdeleri, askılı hidroponik oluklar ve CO₂ baca gazı geri kazanımını birleştiren Eurocode standartlı ticari sera yapıları.",
+          ctaLabel: "Sera Sistemlerini İncele",
+          standards: ["Eurocode / EN", "Venlo & Polikarbon", "CO₂ Geri Kazanım"],
+          metrics: [
+            { label: "Yapısal Yük", value: "EN Rüzgar / Kar" },
+            { label: "İklim Döngüsü", value: "Kazan + CO₂" },
+          ],
+        },
+        "grain-silos": {
+          title: "Yüksek Kapasiteli Tahıl Terminalleri ve Optik Ayıklama",
+          summary:
+            "Ön temizleme, sürekli kule kurutucular, kovalı elevatörler, Z600 galvanizli Eurocode siloları ve 500 t/saate kadar optik renk ayıklayıcıları birleştiren uçtan uca hatlar.",
+          ctaLabel: "Tahıl ve Tohum Hatlarını İncele",
+          standards: ["Z600 Galvaniz", "Eurocode / EN", "Optik Ayıklama"],
+          metrics: [
+            { label: "Taşıma Kapasitesi", value: "200–500 t/saat" },
+            { label: "Silo Kaplama", value: "Z600 Çelik" },
+          ],
+        },
+        "industrial-dual": {
+          title: "HDPE/PE100 Boru Hatları, Buhar ve Kritik OT/SCADA",
+          summary:
+            "CNC veri kayıtlı alın kaynağı, PE100 basınçlı hatlar ve atık ısı kazanlarını 1G–200G IP/MPLS, donanım bypass OT güvenlik duvarları ve GNSS PTP zaman senkronizasyonuyla buluşturan çift hatlı çözüm.",
+          ctaLabel: "Endüstriyel ve OT Sistemlerini İncele",
+          standards: ["PE100 / CNC Kaynak", "IP/MPLS 100G", "IEC 61850 / PTP"],
+          metrics: [
+            { label: "OT Dayanımı", value: "-20°C..+60°C" },
+            { label: "Doğrulama", value: "1G–200G RFC 2544" },
+          ],
+        },
+      },
+    },
     agroSection: {
       bandNumber: "01",
-      bandMarker: "01 / AGRO-ENDÜSTRİYEL MÜHENDİSLİK",
+      bandMarker: "AGRO-ENDÜSTRİYEL MÜHENDİSLİK",
       h2: "Tarla Sulamasından İhracat Kalitesinde Depolamaya Uçtan Uca Tarımsal Altyapı",
       intro:
         "Azerbaycan, Gürcistan, Özbekistan ve Kazakistan genelindeki tarım organize bölgeleri, ticari çiftlikler, seralar ve tahıl işletmecileri için anahtar teslim tarımsal modernizasyon projeleri tasarlıyor, tedarik ediyor ve devreye alıyoruz.",
@@ -145,7 +201,7 @@ export const tr: SiteDictionary = {
     },
     bioBanner: {
       bandNumber: "02",
-      bandMarker: "02 / İHRACAT HAZIRLIĞI VE SÜRDÜRÜLEBİLİR BİTKİ KORUMA",
+      bandMarker: "İHRACAT HAZIRLIĞI VE SÜRDÜRÜLEBİLİR BİTKİ KORUMA",
       h2: "Biyolojik Bitki Koruma, Akıllı IPM ve Uluslararası İhracat Sertifikasyonu",
       body: "AB, Körfez ülkeleri (GCC) ve modern perakende zincirlerinin katı Maksimum Kalıntı Limitlerine (MRL) uyum sağlayın ve denetimleri ilk seferde geçin. Faydalı böcekler, sera tozlayıcıları, güneş enerjili yapay zeka (AI) kamera tuzakları ve GLOBALG.A.P. IFA v6, GRASP, Organik ve HACCP / ISO 22000 hazırlığını birleştiren Entegre Zararlı Yönetimi (IPM) paketleri sunuyoruz.",
       imageAlt:
@@ -159,7 +215,7 @@ export const tr: SiteDictionary = {
     },
     industrialSection: {
       bandNumber: "03",
-      bandMarker: "03 / ENDÜSTRİ VE KRİTİK ALTYAPI BÖLÜMÜ",
+      bandMarker: "ENDÜSTRİ VE KRİTİK ALTYAPI BÖLÜMÜ",
       h2: "Altyapı, Enerji ve Kritik Görev Ağları İçin Mühendislik Çözümleri",
       intro:
         "Novaltron, temel tarımsal altyapının yanı sıra standartlara uyumlu boru hattı mühendisliği, atık ısı geri kazanımı ve dayanıklı OT/SCADA ağ doğrulama sistemleri sunar.",
@@ -322,7 +378,7 @@ export const tr: SiteDictionary = {
         badge: "Alan 01",
         title: "Hassas Sulama, Filtrasyon ve Su Yönetimi",
         subtitle:
-          "Otomatik su iletimi, yüksek bulanıklık filtrasyonu, güneş enerjili pompalama ve gerçek zamanlı nem telemetrisi.",
+          "Kurak ve karasal havzalar için projelendirilmiş otomatik su iletimi, yüksek bulanıklıklı su filtrasyonu, güneş enerjili pompalama ve anlık toprak nemi telemetrisi.",
         diagramLabel: "DWG-01 · HİDROLİK VE TELEMETRİ ŞEMASI",
         imageSrc: "/images/agro-irrigation.jpg",
         imageAlt:
@@ -330,24 +386,19 @@ export const tr: SiteDictionary = {
         standards: ["EC/pH Otomasyon", "Güneş Pompaları", "Ultrasonik Debi"],
         items: [
           {
-            heading: "Geniş Ölçekli Tarla Sulaması",
+            heading: "Tarla ve Parsel Dağıtım Sistemleri",
             detail:
-              "Merkez pivot, doğrusal hareketli ve düzensiz arazi geometrileri için ağır hizmet tipi kendinden yürür tamburlu sulama sistemleri.",
+              "Geniş ölçekli merkez pivot ve doğrusal hareketli sistemler, tamburlu sulama makineleri ve basınç dengelemeli damla/mikro yağmurlama hatları.",
           },
           {
-            heading: "Damla, Mikro Yağmurlama ve Fertigasyon",
+            heading: "Fertigasyon ve Yüksek Bulanıklık Filtrasyonu",
             detail:
-              "Basınç dengelemeli damla hatları, bahçe mikro yağmurlama sistemleri, hidrolik oransal dozaj pompaları ve otomatik EC/pH fertigasyon üniteleri.",
+              "Otomatik çok kanallı EC/pH gübreleme üniteleri ile nehir ve kanal suları için kendi kendini temizleyen kum, disk ve elek filtre istasyonları.",
           },
           {
-            heading: "Filtrasyon ve Pompa İstasyonları",
+            heading: "Güneş Enerjili Pompalama ve Su Telemetrisi",
             detail:
-              "Yüksek bulanıklıklı kanal ve nehir suları için kendi kendini temizleyen kum, disk ve elek filtreler; derin kuyu, dikey türbin ve güneş enerjili pompa istasyonları.",
-          },
-          {
-            heading: "Su Telemetrisi ve Akış Kontrolü",
-            detail:
-              "Akıllı ultrasonik su sayaçları, otomatik hidrolik kontrol vanaları ve gerçek zamanlı toprak nemi izleme istasyonları.",
+              "Derin kuyu, dikey türbin ve şebekeden bağımsız güneş enerjili pompa istasyonları, ultrasonik debimetreler ve toprak nemi telemetrisi.",
           },
         ],
       },
@@ -357,7 +408,7 @@ export const tr: SiteDictionary = {
         badge: "Alan 02",
         title: "Anahtar Teslim Ticari Seralar ve İklim Kontrolü",
         subtitle:
-          "Bölgesel rüzgar ve kar yüklerine göre projelendirilen Venlo cam ve çok açıklıklı polietilen seralar.",
+          "Bölgesel rüzgar ve kar yüklerine uygun olarak tasarlanan, otomatik iklim ve ısı kontrolüne sahip yüksek verimli cam ve çok açıklıklı polietilen seralar.",
         diagramLabel: "DWG-02 · İKLİM VE TERMAL DÖNGÜ ŞEMASI",
         imageSrc: "/images/agro-greenhouse.jpg",
         imageAlt:
@@ -365,24 +416,19 @@ export const tr: SiteDictionary = {
         standards: ["Eurocode / EN", "Venlo ve Poli", "CO₂ Zenginleştirme"],
         items: [
           {
-            heading: "Sera Konstrüksiyonları ve Kaplama",
+            heading: "Konstrüksiyon ve Örtü Sistemleri",
             detail:
-              "Bölgesel rüzgar ve kar yüklerine göre projelendirilen yüksek ışık geçirgenlikli Venlo cam ve çok açıklıklı gotik/tünel polietilen sıcak daldırma galvaniz çelik konstrüksiyonlar.",
+              "Eurocode / EN rüzgar, kar ve sismik yüklerine göre projelendirilmiş sıcak daldırma galvanizli Venlo cam ve çok açıklıklı polietilen çelik yapılar.",
           },
           {
-            heading: "Otomatik İklim ve Gölgeleme Sistemleri",
+            heading: "Otomatik İklim ve Gölgeleme",
             detail:
-              "Otomatik çatı ve yan havalandırma, termal ve gölgeleme örtüleri, böcek tülleri, yüksek basınçlı sisleme/ped-fan soğutma ve CO₂ zenginleştirme.",
+              "Motorlu çatı/yan havalandırma, termal ısı tasarruf ve karartma perdeleri, yüksek basınçlı sisleme/soğutma ve CO₂ zenginleştirme.",
           },
           {
-            heading: "Isıtma, Kazanlar ve Termal Verimlilik",
+            heading: "Kazan Daireleri ve Topraksız Tarım",
             detail:
-              "Yüksek verimli sıcak su ve buhar kazanları, baca gazı ısı geri kazanımlı ekonomizerler ve yalıtımlı termal tampon tankları.",
-          },
-          {
-            heading: "Topraksız Tarım ve Substrat Sistemleri",
-            detail:
-              "Askılı oluk sistemleri, kök bölgesi ısıtma hatları, drenaj suyu geri dönüşüm/dezenfeksiyon üniteleri ve merkezi iklim kontrol bilgisayarları.",
+              "Baca gazı ekonomizerli yüksek verimli sıcak su ve buhar kazanları, termal tampon tankları ve askılı topraksız tarım oluk hatları.",
           },
         ],
       },
@@ -392,7 +438,7 @@ export const tr: SiteDictionary = {
         badge: "Alan 03",
         title: "Tahıl Siloları, Kurutma, Temizleme ve Optik Ayırma",
         subtitle:
-          "İhracat kalitesinde tahıl depolama kompleksleri, sürekli kurutma kuleleri, tohum kalibrasyonu ve optik ayırma hatları.",
+          "Tarım işletmeleri ve tahıl terminalleri için ihracat standardında depolama, hassas yüksek kapasiteli taşıma, sürekli kurutma ve optik ayırma çözümleri.",
         diagramLabel: "DWG-03 · HASAT SONRASI TERMİNAL AKIŞI",
         imageSrc: "/images/agro-grain-silos.jpg",
         imageAlt:
@@ -402,17 +448,17 @@ export const tr: SiteDictionary = {
           {
             heading: "Dalgalı Sac Çelik Silolar ve Taşıma",
             detail:
-              "Ağır Z600 / Magnelis galvaniz kaplamalı Eurocode/EN standartlı düz ve konik tabanlı çelik silolar; 200–500 t/saat kovalı elevatörler ve kapalı zincirli konveyörler.",
+              "Eurocode / EN uyumlu düz ve konik tabanlı silolar (Z600 / Magnelis galvaniz) ile 200–500 t/saat kovalı elevatörler ve kapalı konveyörler.",
           },
           {
             heading: "Sürekli ve Resirkülasyonlu Kurutma",
             detail:
-              "Isı geri kazanım yalıtımlı ve düşük NOx brülörlü enerji verimli sürekli akışlı kule kurutucular ve mobil/sabit resirkülasyonlu kurutucular.",
+              "Isı geri kazanım yalıtımlı ve düşük emisyonlu brülörlere sahip enerji verimli sürekli akışlı kule ve parti tipi tahıl kurutucuları.",
           },
           {
-            heading: "Ön Temizleme, Kalibrasyon ve Optik Ayırma",
+            heading: "Tohum Kalibrasyonu ve Optik Ayırma",
             detail:
-              "Titreşimli ön temizleyiciler, döner tamburlu elekler, aerodinamik tohum kalibratörleri, çok kanallı optik renk ayırıcılar ve fındık/ceviz işleme hatları.",
+              "Yüksek kapasiteli titreşimli ön temizleyiciler, sertifikalı tohum hatları için aerodinamik gravite ayırıcılar, optik renk ayırıcılar ve kabuklu yemiş işleme hatları.",
           },
         ],
       },
@@ -422,24 +468,24 @@ export const tr: SiteDictionary = {
         badge: "Alan 04",
         title: "Silo Yapısal İzleme, ATEX Güvenliği ve Yem Tesisleri",
         subtitle:
-          "Temasız yapısal yük izleme, sertifikalı toz patlama koruması ve otomatik karma yem üretimi.",
+          "Hayvancılık ve kanatlı üretim kümeleri için temassız yapısal yük koruması, sertifikalı patlama önleme sistemleri ve otomatik karma yem üretim hatları.",
         diagramLabel: "DWG-04 · ATEX VE YEM DOZAJLAMA ŞEMASI",
         standards: ["ATEX Sertifikalı", "Gerinim Sensörü", "Mikro-Dozajlama"],
         items: [
           {
-            heading: "Temasız Silo Yapısal İzleme",
+            heading: "Temassız Silo Tartımı ve Aşırı Yük Koruması",
             detail:
-              "Silo duvarlarını kesmeden ayaklara monte edilen dış metal deformasyon sensörleriyle anlık stok ağırlığı ve dengesiz yük tespiti.",
+              "Silo taşıyıcı ayaklarına monte edilen harici metal deformasyon sensörleriyle gerçek zamanlı stok ağırlığı ve yapısal yük izleme.",
           },
           {
-            heading: "ATEX Patlama Koruması ve Gaz İzleme",
+            heading: "ATEX Patlama ve Gaz Güvenliği",
             detail:
-              "ATEX sertifikalı alevsiz ve standart patlama tahliye panelleri, hızlı izolasyon valfleri, torbalı filtre toz toplama sistemleri ve sürekli CO/sıcaklık izleme.",
+              "ATEX sertifikalı patlama tahliye panelleri, hızlı izolasyon valfleri, merkezi torbalı filtre toz toplama ve sürekli CO ile sıcaklık izleme.",
           },
           {
-            heading: "Karma Yem Üretimi ve Hayvancılık",
+            heading: "Karma Yem ve TMR Hatları",
             detail:
-              "Yüksek homojenlikli karma yem karıştırıcıları, vitamin ve premiksler için gravimetrik mikro-dozajlama, peletleme, soğutma hatları ve TMR yem karma makineleri.",
+              "Yüksek homojenlikli tek ve çift şaftlı parti mikserleri, premiksler için gravimetrik mikro-dozajlama, peletleme/soğutma hatları ve TMR yem karma makineleri.",
           },
         ],
       },
