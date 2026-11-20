@@ -1,43 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
 @import "tailwindcss";
 
 :root {
-  --navy-deep: #0B132B;
-  --slate-steel: #1C2541;
-  --slate-crisp: #F8FAFC;
-  --emerald-tech: #10B981;
-  --teal-tech: #0D9488;
-  --amber-safety: #F59E0B;
-  --border-light: #E2E8F0;
-  --border-dark: #2A3659;
-  --background: #F8FAFC;
-  --foreground: #0B132B;
-  --font-plus-jakarta: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-inter: "Inter", "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-jetbrains-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --color-brand-navy: #0F172A;
+  --color-bg-light: #F8FAFC;
+  --color-bg-mist: #F1F5F9;
+  --color-surface-card: #FFFFFF;
+  --color-border-subtle: #E2E8F0;
+  --color-accent-emerald: #059669;
+  --color-accent-teal: #0284C7;
+  --color-accent-amber: #D97706;
+  --color-text-body: #334155;
+
+  /* Bio & Smart IPM Page Sub-Palette */
+  --color-bio-tint: #ECFDF5;
+  --color-bio-leaf: #16A34A;
+  --color-bio-pine: #065F46;
+
+  --font-heading: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Enable native CSS transitions to intrinsic sizes (e.g., auto) */
+  interpolate-size: allow-keywords;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-navy-deep: #0B132B;
-  --color-slate-steel: #1C2541;
-  --color-slate-crisp: #F8FAFC;
-  --color-emerald-tech: #10B981;
-  --color-teal-tech: #0D9488;
-  --color-amber-safety: #F59E0B;
-  --font-heading: var(--font-plus-jakarta), sans-serif;
-  --font-sans: var(--font-inter), sans-serif;
-  --font-mono: var(--font-jetbrains-mono), monospace;
+  --color-brand-navy: #0F172A;
+  --color-bg-light: #F8FAFC;
+  --color-bg-mist: #F1F5F9;
+  --color-surface-card: #FFFFFF;
+  --color-border-subtle: #E2E8F0;
+  --color-accent-emerald: #059669;
+  --color-accent-teal: #0284C7;
+  --color-accent-amber: #D97706;
+  --color-text-body: #334155;
+  --color-bio-tint: #ECFDF5;
+  --color-bio-leaf: #16A34A;
+  --color-bio-pine: #065F46;
+  --font-heading: var(--font-heading);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5.5rem;
+  scroll-padding-top: 9rem;
 }
 
+body {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-body);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.028em;
+  text-wrap: balance;
+}
+
+p, li, .pretty-text {
+  text-wrap: pretty;
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Visually Hidden Utility (keeps content in accessibility tree) */
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Adaptive Single-Line Site Header */
+.site-header .header-inner > * {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.site-header .site-nav {
+  display: none;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.site-header.is-wide .site-nav {
+  display: flex;
+}
+
+.site-header.is-wide .menu-button,
+.site-header.is-wide .mobile-nav-panel {
+  display: none;
+}
+
+.site-header.is-measuring,
+.site-header.is-measuring * {
+  transition: none !important;
+}
+
+/* High-Contrast Focus Rings (WCAG 2.4.7 & ui-ux-pro-max) */
+:where(a:any-link, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-accent-emerald);
+  outline-offset: 2px;
+}
+
+/* Architectural Blueprint Grid Backgrounds */
+.bg-blueprint-dark {
+  background-color: #0F172A;
+  background-image:
+    radial-gradient(circle at 88% 12%, rgba(5, 150, 105, 0.14), transparent 42%),
+    linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 100% 100%, 44px 44px, 44px 44px;
+}
+
+.bg-blueprint-light {
+  background-color: #F8FAFC;
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* Editorial Band Numeral Style (Valmont + Swiss Architectural) */
+.band-numeral {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+}
+
+/* Sober Precision Motion */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stepper-connector {
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stepper-connector.is-visible {
+  transform: scaleX(1);
+}
+
+/* Form Validation (:user-invalid + fallback for older browsers) */
+.rfq-input:is(:user-invalid, .user-invalid-fallback) {
+  border-color: #DC2626 !important;
+  background-color: #FEF2F2 !important;
+}
+
+.rfq-error-msg {
+  display: none;
+  color: #B91C1C;
+  font-size: 0.8125rem;
+  margin-top: 0.375rem;
+}
+
+.rfq-input:is(:user-invalid, .user-invalid-fallback) ~ .rfq-error-msg {
+  display: block;
+}
+
+/* Expandable Accordion Container using interpolate-size */
+.accordion-panel {
+  block-size: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    block-size 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.accordion-panel.is-open {
+  block-size: auto;
+  opacity: 1;
+}
+
+/* Accessibility: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .reveal-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .stepper-connector {
+    transform: scaleX(1);
+    transition: none;
+  }
+  .accordion-panel {
+    transition: none;
   }
   *,
   *::before,
@@ -47,69 +223,4 @@ html {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-body {
-  background-color: var(--slate-crisp);
-  color: var(--navy-deep);
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
-  letter-spacing: -0.025em;
-}
-
-code, pre, .font-mono {
-  font-family: var(--font-jetbrains-mono), monospace;
-}
-
-/* Industrial Blueprint Subtle Grid Backgrounds */
-.bg-industrial-grid-dark {
-  background-color: #0B132B;
-  background-image: 
-    linear-gradient(to right, rgba(42, 54, 89, 0.28) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(42, 54, 89, 0.28) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-.bg-industrial-grid-light {
-  background-color: #F8FAFC;
-  background-image: 
-    linear-gradient(to right, rgba(226, 232, 240, 0.7) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(226, 232, 240, 0.7) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-/* Accessible Focus Rings (ui-ux-pro-max + modern-web-guidance) */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible,
-[tabindex]:focus-visible {
-  outline: 3px solid #10B981;
-  outline-offset: 2px;
-}
-
-/* Modern Web Guidance: Validate Input After Interaction (:user-invalid & :user-valid + fallback) */
-.rfq-input:user-invalid,
-.rfq-input.user-invalid-fallback {
-  border-color: #EF4444 !important;
-  background-color: rgba(239, 68, 68, 0.08) !important;
-}
-
-.rfq-input:user-valid,
-.rfq-input.user-valid-fallback {
-  border-color: #10B981 !important;
-}
-
-.rfq-field .field-error-msg {
-  display: none;
-}
-
-.rfq-field:has(.rfq-input:user-invalid) .field-error-msg,
-.rfq-field:has(.rfq-input.user-invalid-fallback) .field-error-msg {
-  display: flex;
 }
