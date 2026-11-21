@@ -930,7 +930,7 @@ export const az: SiteDictionary = {
       {
         heading: "1. Hüquqi şəxs və fəaliyyət sahəsi",
         body: [
-          "Bu veb-sayt (www.novaltron.com) Qafqaz və Mərkəzi Asiya üzrə mühəndislik inteqrasiyası, təchizat və regional tranzit mərkəzi kimi fəaliyyət göstərən Novaltron LLC (შპს ნოვალტრონი, Tbilisi, Gürcüstan) tərəfindən idarə olunur.",
+          "Bu veb-sayt (novaltron.com) Qafqaz və Mərkəzi Asiya üzrə mühəndislik inteqrasiyası, təchizat və regional tranzit mərkəzi kimi fəaliyyət göstərən Novaltron LLC (შპს ნოვალტრონი, Tbilisi, Gürcüstan) tərəfindən idarə olunur.",
           "Rəsmi korporativ yazışmalar və uyğunluq sorğuları üçün info@novaltron.com ünvanı ilə əlaqə saxlayın.",
         ],
       },

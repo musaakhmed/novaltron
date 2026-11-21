@@ -6,8 +6,8 @@ export const SITE_CONFIG = {
   companyName: "Novaltron LLC",
   companyGeorgianName: "შპს ნოვალტრონი",
   hubLocation: "Tbilisi, Georgia",
-  websiteUrl: "https://www.novaltron.com",
-  websiteDisplay: "www.novaltron.com",
+  websiteUrl: "https://novaltron.com",
+  websiteDisplay: "novaltron.com",
   email: "info@novaltron.com",
   // Replace with final company LinkedIn & Instagram URLs when ready
   social: {

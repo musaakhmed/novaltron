@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { Pause, Play } from "lucide-react";
 
 interface HeroBackgroundVideoProps {
@@ -56,10 +57,18 @@ export function HeroBackgroundVideo({ src, poster }: HeroBackgroundVideoProps) {
 
   return (
     <>
+      <Image
+        src={poster}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        aria-hidden="true"
+        className="pointer-events-none object-cover object-center"
+      />
       <video
         ref={videoRef}
         src={src}
-        poster={poster}
         autoPlay
         muted
         loop

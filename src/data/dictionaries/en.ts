@@ -971,7 +971,7 @@ export const en: SiteDictionary = {
       {
         heading: "1. Corporate Entity & Operational Scope",
         body: [
-          "This website (www.novaltron.com) is operated by Novaltron LLC (შპს ნოვალტრონი), Tbilisi, Georgia, acting as a cross-border engineering integration, procurement, and regional transit hub across the Caucasus and Central Asia.",
+          "This website (novaltron.com) is operated by Novaltron LLC (შპს ნოვალტრონი), Tbilisi, Georgia, acting as a cross-border engineering integration, procurement, and regional transit hub across the Caucasus and Central Asia.",
           "For official corporate correspondence, compliance inquiries, or pre-qualification dossiers, contact info@novaltron.com.",
         ],
       },

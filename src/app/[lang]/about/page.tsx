@@ -11,6 +11,11 @@ import {
 } from "lucide-react";
 import { hasLocale } from "@/lib/i18n";
 import { getDictionary } from "@/data/dictionaries";
+import {
+  buildBreadcrumbJsonLd,
+  buildPageMetadata,
+  serializeJsonLd,
+} from "@/lib/seo";
 import { StickyAnchorBar } from "@/components/StickyAnchorBar";
 import { RevealSection } from "@/components/RevealSection";
 import { TechnicalSchematic } from "@/components/TechnicalDiagrams";
@@ -21,10 +26,14 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = getDictionary(lang);
-  return {
+  return buildPageMetadata({
+    lang,
+    path: "/about",
     title: dict.aboutCompliance.metaTitle,
     description: dict.aboutCompliance.subHeadline,
-  };
+    siteName: dict.meta.siteName,
+    ogImageAlt: dict.aboutCompliance.h1,
+  });
 }
 
 export default async function AboutCompliancePage({
@@ -34,9 +43,19 @@ export default async function AboutCompliancePage({
   if (!hasLocale(lang)) notFound();
   const dict = getDictionary(lang);
   const { aboutCompliance } = dict;
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd(lang, [
+    { name: dict.meta.siteName, path: "" },
+    { name: aboutCompliance.metaTitle, path: "/about" },
+  ]);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(breadcrumbJsonLd),
+        }}
+      />
       {/* Hero */}
       <section className="bg-blueprint-dark border-b border-slate-800 pt-28 pb-16 text-white lg:pt-32 lg:pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

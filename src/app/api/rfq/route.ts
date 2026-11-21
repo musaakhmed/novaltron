@@ -107,7 +107,7 @@ export async function POST(request: Request) {
     const htmlBody = `
       <div style="font-family: Inter, -apple-system, sans-serif; color: #0F172A; max-width: 640px;">
         <h2 style="margin: 0 0 8px;">New Project RFQ — ${escapeHtml(referenceId)}</h2>
-        <p style="margin: 0 0 20px; color: #475569; font-size: 14px;">Routed via www.novaltron.com (${escapeHtml(payload.locale.toUpperCase())})</p>
+        <p style="margin: 0 0 20px; color: #475569; font-size: 14px;">Routed via novaltron.com (${escapeHtml(payload.locale.toUpperCase())})</p>
         <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
           <tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Full Name</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.fullName)}</td></tr>
           <tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Company</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.company)}</td></tr>

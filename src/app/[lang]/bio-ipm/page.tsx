@@ -5,6 +5,11 @@ import { notFound } from "next/navigation";
 import { Bug, Cpu, ShieldCheck } from "lucide-react";
 import { hasLocale } from "@/lib/i18n";
 import { getDictionary } from "@/data/dictionaries";
+import {
+  buildBreadcrumbJsonLd,
+  buildPageMetadata,
+  serializeJsonLd,
+} from "@/lib/seo";
 import { StickyAnchorBar } from "@/components/StickyAnchorBar";
 import { RevealSection } from "@/components/RevealSection";
 import { BioIpmMatrix } from "@/components/BioIpmMatrix";
@@ -15,10 +20,15 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = getDictionary(lang);
-  return {
+  return buildPageMetadata({
+    lang,
+    path: "/bio-ipm",
     title: dict.bioIpm.metaTitle,
     description: dict.bioIpm.subHeadline,
-  };
+    siteName: dict.meta.siteName,
+    ogImage: "/images/bio-ipm.jpg",
+    ogImageAlt: dict.bioIpm.h1,
+  });
 }
 
 const SCOPE_ICONS = [Bug, Cpu, ShieldCheck];
@@ -28,9 +38,19 @@ export default async function BioIpmPage({ params }: PageProps<"/[lang]/bio-ipm"
   if (!hasLocale(lang)) notFound();
   const dict = getDictionary(lang);
   const { bioIpm } = dict;
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd(lang, [
+    { name: dict.meta.siteName, path: "" },
+    { name: bioIpm.metaTitle, path: "/bio-ipm" },
+  ]);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(breadcrumbJsonLd),
+        }}
+      />
       {/* Botanical Agritech Hero (Farm Minerals–inspired scientific clarity) */}
       <section className="border-b border-[#A7F3D0] bg-[#ECFDF5] pt-28 pb-16 lg:pt-32 lg:pb-20">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">

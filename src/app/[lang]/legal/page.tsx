@@ -5,6 +5,11 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ShieldCheck } from "lucide-react";
 import { hasLocale } from "@/lib/i18n";
 import { getDictionary } from "@/data/dictionaries";
+import {
+  buildBreadcrumbJsonLd,
+  buildPageMetadata,
+  serializeJsonLd,
+} from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -12,10 +17,14 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = getDictionary(lang);
-  return {
+  return buildPageMetadata({
+    lang,
+    path: "/legal",
     title: dict.legal.metaTitle,
     description: dict.legal.subHeadline,
-  };
+    siteName: dict.meta.siteName,
+    ogImageAlt: dict.legal.h1,
+  });
 }
 
 export default async function LegalPage({ params }: PageProps<"/[lang]/legal">) {
@@ -23,9 +32,19 @@ export default async function LegalPage({ params }: PageProps<"/[lang]/legal">) 
   if (!hasLocale(lang)) notFound();
   const dict = getDictionary(lang);
   const { legal } = dict;
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd(lang, [
+    { name: dict.meta.siteName, path: "" },
+    { name: legal.metaTitle, path: "/legal" },
+  ]);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(breadcrumbJsonLd),
+        }}
+      />
       <section className="bg-blueprint-dark border-b border-slate-800 pt-28 pb-14 text-white lg:pt-32 lg:pb-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#059669]/40 bg-[#059669]/12 px-3.5 py-1">

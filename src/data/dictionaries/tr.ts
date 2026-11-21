@@ -929,7 +929,7 @@ export const tr: SiteDictionary = {
       {
         heading: "1. Kurumsal Yapı ve Faaliyet Kapsamı",
         body: [
-          "Bu web sitesi (www.novaltron.com), Kafkasya ve Orta Asya genelinde sınır ötesi mühendislik entegrasyonu, tedarik ve bölgesel transit merkezi olarak faaliyet gösteren Novaltron LLC (შპს ნოვალტრონი, Tiflis, Gürcistan) tarafından işletilmektedir.",
+          "Bu web sitesi (novaltron.com), Kafkasya ve Orta Asya genelinde sınır ötesi mühendislik entegrasyonu, tedarik ve bölgesel transit merkezi olarak faaliyet gösteren Novaltron LLC (შპს ნოვალტრონი, Tiflis, Gürcistan) tarafından işletilmektedir.",
           "Resmi kurumsal yazışmalar ve uyumluluk talepleri için info@novaltron.com adresiyle iletişime geçebilirsiniz.",
         ],
       },

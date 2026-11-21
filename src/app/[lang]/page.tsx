@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -12,11 +13,30 @@ import {
 } from "lucide-react";
 import { hasLocale } from "@/lib/i18n";
 import { getDictionary } from "@/data/dictionaries";
+import { buildPageMetadata } from "@/lib/seo";
 import { RevealSection } from "@/components/RevealSection";
 import { TurnkeyStepper } from "@/components/TurnkeyStepper";
 import { TechnicalSchematic } from "@/components/TechnicalDiagrams";
 import { HeroBackgroundVideo } from "@/components/HeroBackgroundVideo";
 import { CoreEngineeringShowcase } from "@/components/CoreEngineeringShowcase";
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/[lang]">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  const dict = getDictionary(lang);
+  return buildPageMetadata({
+    lang,
+    path: "",
+    title: dict.meta.defaultTitle,
+    description: dict.meta.defaultDescription,
+    siteName: dict.meta.siteName,
+    isHome: true,
+    ogImage: "/images/hero-agritech.jpg",
+    ogImageAlt: dict.home.heroImageAlt,
+  });
+}
 
 export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
