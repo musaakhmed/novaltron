@@ -4,6 +4,8 @@ import { SITE_CONFIG } from "@/lib/site-config";
 import type { SiteDictionary } from "@/data/dictionaries/types";
 
 export const SITE_LAST_MODIFIED = "2026-11-21";
+export const INDEXNOW_KEY = "39ff644dd0ba251796c980445855cb2b";
+export const INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow";
 
 export interface PublicRouteConfig {
   path: string;
@@ -31,6 +33,12 @@ const DEFAULT_OG_IMAGE = {
 export function buildLocaleUrl(lang: Locale, path = ""): string {
   const normalizedPath = path ? (path.startsWith("/") ? path : `/${path}`) : "";
   return `${SITE_CONFIG.websiteUrl}/${lang}${normalizedPath}`;
+}
+
+export function getAllPublicUrls(): string[] {
+  return PUBLIC_ROUTES.flatMap((route) =>
+    LOCALES.map((lang) => buildLocaleUrl(lang, route.path))
+  );
 }
 
 export function buildLanguageAlternates(path = ""): Record<string, string> {
