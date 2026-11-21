@@ -130,7 +130,7 @@ export const en: SiteDictionary = {
           ctaLabel: "Inspect Industrial & OT Systems",
           standards: ["PE100 / CNC Weld", "IP/MPLS 100G", "IEC 61850 / PTP"],
           metrics: [
-            { label: "OT Tolerance", value: "-20°C..+60°C" },
+            { label: "Operating Temp.", value: "-20°C..+60°C" },
             { label: "Verification", value: "1G–200G RFC 2544" },
           ],
         },
@@ -288,7 +288,7 @@ export const en: SiteDictionary = {
     },
     deliverySection: {
       eyebrow: "SINGLE POINT OF ACCOUNTABILITY",
-      h2: "5-Stage Turnkey Delivery Workflow",
+      h2: "5-Step Turnkey Delivery Workflow",
       subtitle:
         "Calibrated engineering discipline from initial site audit to measurement-backed commissioning and lifecycle RMA.",
       deliverableLabel: "Key Milestone Deliverable",
@@ -383,7 +383,7 @@ export const en: SiteDictionary = {
         badge: "Pillar 01",
         title: "Precision Irrigation, Filtration & Water Management",
         subtitle:
-          "Automated water delivery, high-turbidity filtration, solar pumping, and real-time moisture telemetry engineered for arid and continental basins.",
+          "Automated water delivery, high-turbidity filtration, solar pumping, and real-time moisture telemetry engineered for arid and continental regions.",
         diagramLabel: "DWG-01 · HYDRAULICS & TELEMETRY SCHEMATIC",
         imageSrc: "/images/agro-irrigation.jpg",
         imageAlt:
@@ -517,7 +517,7 @@ export const en: SiteDictionary = {
     coreScope: [
       {
         title: "Biological Inputs & Biocontrol",
-        body: "Beneficial predatory insects and mites (targeting whiteflies, thrips, spider mites, aphids, and tuta absoluta), commercial greenhouse bumblebee pollination hives, species-specific monitoring pheromones, mating-disruption dispensers, chromotropic sticky traps, and low-MRL biopesticides.",
+        body: "Beneficial predatory insects and mites (targeting whiteflies, thrips, spider mites, aphids, and tuta absoluta), commercial greenhouse bumblebee pollination hives, species-specific monitoring pheromones, mating-disruption dispensers, chromotropic sticky traps, and low-residue biopesticides.",
         badges: ["Predatory Mites", "Pollination Hives", "Mating Disruption"],
       },
       {
@@ -577,7 +577,7 @@ export const en: SiteDictionary = {
           advisoryTitle: "Inputs & Advisory",
           advisoryItems: [
             "Custom Biological Control Release Plan (beneficial insects, pollinators, mating disruption)",
-            "Bi-weekly remote image review & 2× on-site inspections",
+            "Fortnightly remote image review & 2× on-site inspections",
             "Full IFA v6 IPM dossier + 1× Multi-Residue Lab Test coordination",
             "1-season replacement plates/lures & RMA support",
           ],

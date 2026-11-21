@@ -24,7 +24,7 @@ export const tr: SiteDictionary = {
   footer: {
     summary:
       "NOVALTRON — Kafkasya ve Orta Asya genelinde sınır ötesi agro-endüstriyel mühendislik, biyolojik bitki koruma ve kritik altyapı entegrasyonu.",
-    hubLabel: "Tiflis Merkezi",
+    hubLabel: "Operasyon Merkezi",
     hubValue: "Novaltron LLC (შპს ნოვალტრონი) — Tiflis, Gürcistan",
     corridorLabel: "Bölgesel Koridor",
     corridorValue: "Azerbaycan · Gürcistan · Özbekistan · Kazakistan · Türkiye",
@@ -45,7 +45,7 @@ export const tr: SiteDictionary = {
     heroImageAlt:
       "Geometrik yeşil tarım arazileri üzerinde merkez pivot sulama sistemi ve ufukta ticari cam seraların havadan görünümü",
     heroTrustBar: [
-      "BÖLGESEL MERKEZ UYGULAMA (TİFLİS, GÜRCİSTAN)",
+      "BÖLGESEL UYGULAMA MERKEZİ (TİFLİS, GÜRCİSTAN)",
       "4 ANA MÜHENDİSLİK BÖLÜMÜ",
       "FAT/SAT SERTİFİKALI DEVREYE ALMA",
     ],
@@ -81,7 +81,7 @@ export const tr: SiteDictionary = {
       },
     ],
     heroShowcase: {
-      sectionTitle: "Dört Entegre Mühendislik Alanı—Canlı Teknik Şematikte",
+      sectionTitle: "Dört Entegre Mühendislik Alanı — Canlı Teknik Şematikte",
       sectionSubtitle:
         "Hassas tarla hidroliği ve Venlo iklim döngülerinden Eurocode tahıl terminallerine ve kritik endüstriyel boru hatları ile OT/SCADA ağlarına kadar her anahtar teslim mimariyi inceleyin.",
       liveLabel: "CANLI ŞEMATİK",
@@ -106,7 +106,7 @@ export const tr: SiteDictionary = {
           summary:
             "Motorlu çatı havalandırması, termal gölgeleme perdeleri, askılı hidroponik oluklar ve CO₂ baca gazı geri kazanımını birleştiren Eurocode standartlı ticari sera yapıları.",
           ctaLabel: "Sera Sistemlerini İncele",
-          standards: ["Eurocode / EN", "Venlo & Polikarbon", "CO₂ Geri Kazanım"],
+          standards: ["Eurocode / EN", "Venlo ve Poli", "CO₂ Geri Kazanım"],
           metrics: [
             { label: "Yapısal Yük", value: "EN Rüzgar / Kar" },
             { label: "İklim Döngüsü", value: "Kazan + CO₂" },
@@ -175,9 +175,9 @@ export const tr: SiteDictionary = {
         {
           id: "grain-silos",
           code: "01.C",
-          title: "Tahıl Siloları, Kurutma ve Optik Ayırma",
+          title: "Tahıl Siloları, Kurutma ve Optik Ayıklama",
           description:
-            "Ağır Z600 galvaniz kaplamalı Eurocode/EN standartlı dalgalı sac çelik silolar, yüksek kapasiteli taşıma hatları (200–500 t/saat), enerji verimli sürekli tahıl kurutucuları, aerodinamik tohum temizleyiciler ve optik renk ayırıcılar.",
+            "Ağır Z600 galvaniz kaplamalı Eurocode/EN standartlı dalgalı sac çelik silolar, yüksek kapasiteli taşıma hatları (200–500 t/saat), enerji verimli sürekli tahıl kurutucuları, aerodinamik tohum temizleyiciler ve optik renk ayıklama makineleri.",
           ctaLabel: "Tahıl ve Tohum Hatları →",
           anchor: "/agro-solutions#grain-silos",
           standards: ["Eurocode / EN", "Z600 Galvaniz", "200–500 t/saat"],
@@ -191,7 +191,7 @@ export const tr: SiteDictionary = {
           code: "01.D",
           title: "Silo Yapısal İzleme, ATEX Güvenliği ve Yem Tesisleri",
           description:
-            "Silo ayaklarında metal deformasyonu üzerinden temasız ağırlık ve aşırı yük izleme, ATEX sertifikalı patlama tahliye panelleri ve CO gaz izleme ile otomatik karma yem dozajlama ve peletleme hatları.",
+            "Silo ayaklarında metal deformasyonu ölçümüyle yapıya müdahale gerektirmeyen tartım ve aşırı yük izleme, ATEX sertifikalı patlama tahliye panelleri ve CO gaz izleme ile otomatik karma yem dozajlama ve peletleme hatları.",
           ctaLabel: "Güvenlik ve Yem Sistemleri →",
           anchor: "/agro-solutions#safety-feed",
           standards: ["ATEX", "CO ve Yük İzleme", "Yem Peletleme"],
@@ -259,7 +259,7 @@ export const tr: SiteDictionary = {
       scopes: [
         {
           code: "SCOPE-01",
-          corridor: "Kafkasya Tarım Organize Koridoru",
+          corridor: "Kafkasya Tarım Koridoru",
           metric: "450 ha",
           title: "Hassas Sulama ve Güneş Pompa İstasyonu Modernizasyonu",
           summary:
@@ -272,7 +272,7 @@ export const tr: SiteDictionary = {
           metric: "20.000 t",
           title: "Dalgalı Sac Tahıl Terminali ve ATEX Güvenliği",
           summary:
-            "300 t/saat taşıma hatları, ısı geri kazanımlı sürekli kurutma kulesi, temasız ayak gerinim tartımı ve ATEX patlama tahliyesiyle Z600 Eurocode/EN silolar.",
+            "300 t/saat taşıma hatları, ısı geri kazanımlı sürekli kurutma kulesi, müdahalesiz ayak gerinim tartımı ve ATEX patlama tahliyesiyle Z600 Eurocode/EN silolar.",
           standards: ["Eurocode / EN", "Z600", "ATEX"],
         },
         {
@@ -290,7 +290,7 @@ export const tr: SiteDictionary = {
       eyebrow: "TEK NOKTADAN SORUMLULUK",
       h2: "5 Adımlı Anahtar Teslim Uygulama Süreci",
       subtitle:
-        "İlk saha analizinden ölçüme dayalı devreye almaya ve yaşam döngüsü RMA desteğine kadar kalibreli mühendislik disiplini.",
+        "İlk saha analizinden ölçüme dayalı devreye almaya ve yaşam döngüsü RMA desteğine kadar titiz mühendislik disiplini.",
       deliverableLabel: "Aşama Teslimatı",
       steps: [
         {
@@ -314,14 +314,14 @@ export const tr: SiteDictionary = {
         {
           step: "04",
           title: "Saha Entegrasyonu ve FAT/SAT",
-          description: "Mekanik/elektrik kurulum, kalibrasyon ve ölçüme dayalı Fabrika & Saha Kabul Testleri.",
+          description: "Mekanik/elektrik kurulum, kalibrasyon ve ölçüme dayalı Fabrika ve Saha Kabul Testleri.",
           deliverable: "İmzalı FAT/SAT Kabul Protokolleri",
         },
         {
           step: "05",
           title: "Satış Sonrası Destek ve RMA",
           description: "Tek elden garanti yönetimi, yedek parça lojistiği ve bölgesel saha mühendisliği desteği.",
-          deliverable: "Garanti SLA ve Yedek Parça Masası",
+          deliverable: "Garanti SLA ve Yedek Parça Hizmeti",
         },
       ],
     },
@@ -423,7 +423,7 @@ export const tr: SiteDictionary = {
           {
             heading: "Otomatik İklim ve Gölgeleme",
             detail:
-              "Motorlu çatı/yan havalandırma, termal ısı tasarruf ve karartma perdeleri, yüksek basınçlı sisleme/soğutma ve CO₂ zenginleştirme.",
+              "Motorlu çatı/yan havalandırma, ısı tasarruf ve karartma perdeleri, yüksek basınçlı sisleme/soğutma ve CO₂ zenginleştirme.",
           },
           {
             heading: "Kazan Daireleri ve Topraksız Tarım",
@@ -436,9 +436,9 @@ export const tr: SiteDictionary = {
         id: "grain-silos",
         number: "03",
         badge: "Alan 03",
-        title: "Tahıl Siloları, Kurutma, Temizleme ve Optik Ayırma",
+        title: "Tahıl Siloları, Kurutma, Temizleme ve Optik Ayıklama",
         subtitle:
-          "Tarım işletmeleri ve tahıl terminalleri için ihracat standardında depolama, hassas yüksek kapasiteli taşıma, sürekli kurutma ve optik ayırma çözümleri.",
+          "Tarım işletmeleri ve tahıl terminalleri için ihracat standardında depolama, hassas yüksek kapasiteli taşıma, sürekli kurutma ve optik ayıklama çözümleri.",
         diagramLabel: "DWG-03 · HASAT SONRASI TERMİNAL AKIŞI",
         imageSrc: "/images/agro-grain-silos.jpg",
         imageAlt:
@@ -456,9 +456,9 @@ export const tr: SiteDictionary = {
               "Isı geri kazanım yalıtımlı ve düşük emisyonlu brülörlere sahip enerji verimli sürekli akışlı kule ve parti tipi tahıl kurutucuları.",
           },
           {
-            heading: "Tohum Kalibrasyonu ve Optik Ayırma",
+            heading: "Tohum Kalibrasyonu ve Optik Ayıklama",
             detail:
-              "Yüksek kapasiteli titreşimli ön temizleyiciler, sertifikalı tohum hatları için aerodinamik gravite ayırıcılar, optik renk ayırıcılar ve kabuklu yemiş işleme hatları.",
+              "Yüksek kapasiteli titreşimli ön temizleyiciler, sertifikalı tohum hatları için aerodinamik gravite ayırıcılar, optik renk ayıklama makineleri ve kabuklu yemiş işleme hatları.",
           },
         ],
       },
@@ -468,12 +468,12 @@ export const tr: SiteDictionary = {
         badge: "Alan 04",
         title: "Silo Yapısal İzleme, ATEX Güvenliği ve Yem Tesisleri",
         subtitle:
-          "Hayvancılık ve kanatlı üretim kümeleri için temassız yapısal yük koruması, sertifikalı patlama önleme sistemleri ve otomatik karma yem üretim hatları.",
+          "Hayvancılık ve kanatlı üretim kümeleri için müdahalesiz yapısal yük koruması, sertifikalı patlama önleme sistemleri ve otomatik karma yem üretim hatları.",
         diagramLabel: "DWG-04 · ATEX VE YEM DOZAJLAMA ŞEMASI",
         standards: ["ATEX Sertifikalı", "Gerinim Sensörü", "Mikro-Dozajlama"],
         items: [
           {
-            heading: "Temassız Silo Tartımı ve Aşırı Yük Koruması",
+            heading: "Müdahalesiz Silo Tartımı ve Aşırı Yük Koruması",
             detail:
               "Silo taşıyıcı ayaklarına monte edilen harici metal deformasyon sensörleriyle gerçek zamanlı stok ağırlığı ve yapısal yük izleme.",
           },
@@ -492,7 +492,7 @@ export const tr: SiteDictionary = {
     ],
     bottomCtaTitle: "Tarım Organize Bölgesi, Sera Kompleksi veya Tahıl Terminali mi Planlıyorsunuz?",
     bottomCtaBody:
-      "Anahtar teslim teklif için saha parametrelerinizi, kapasite hedeflerinizi veya BOQ dosyanızı mühendislik masamıza iletin.",
+      "Anahtar teslim teklif için saha parametrelerinizi, kapasite hedeflerinizi veya BOQ dosyanızı mühendislik ekibimize iletin.",
     bottomCtaButton: "Agro-Proje Teklifi Gönder →",
   },
   bioIpm: {
@@ -522,7 +522,7 @@ export const tr: SiteDictionary = {
       },
       {
         title: "Uluslararası Sertifikasyon Hazırlığı",
-        body: "GLOBALG.A.P. IFA v6 (Option 1 bireysel çiftlikler ve Option 2 üretici grupları), GRASP, Organik ve HACCP / ISO 22000 teknik hazırlığı — boşluk analizleri, prosedürler (SOP), deneme denetimleri, MRL laboratuvar koordinasyonu ve akredite Avrupa Kuruluşu (CB) iletişimi.",
+        body: "GLOBALG.A.P. IFA v6 (Option 1 bireysel çiftlikler ve Option 2 üretici grupları), GRASP, Organik ve HACCP / ISO 22000 teknik hazırlığı — boşluk analizleri, prosedürler (SOP), deneme denetimleri, MRL laboratuvar koordinasyonu ve akredite Avrupa Belgelendirme Kuruluşu (CB) ile iletişim.",
         badges: ["GLOBALG.A.P. IFA v6", "GRASP", "ISO 22000 / HACCP"],
       },
     ],
@@ -546,7 +546,7 @@ export const tr: SiteDictionary = {
           ],
           advisoryTitle: "Girdiler ve Danışmanlık",
           advisoryItems: [
-            "Ürüne özel IPM Eylem Eşik Matrisi",
+            "Ürüne özel IPM Ekonomik Zarar Eşiği Matrisi",
             "AB MRL uyumlu girdi listesi ve hasat aralığı takvimi",
             "Temel IPM Boşluk Analizi ve IFA v6 IPM prosedürleri",
             "1× deneme denetimi ve 1 sezonluk tuzak sarf malzemeleri",
@@ -578,14 +578,14 @@ export const tr: SiteDictionary = {
         {
           id: "3",
           name: "Paket 3: Precision IPM Enterprise",
-          scaleTag: "100+ ha tarım işletmeleri, Tarım Bölgeleri ve Option 2 Grupları",
+          scaleTag: "100+ ha tarım işletmeleri, Tarım Organize Bölgeleri ve Option 2 Grupları",
           scaleKey: "enterprise",
           scaleLabel: "Tarım Holdingi / Grup",
           hardwareTitle: "Donanım ve Bağlantı",
           hardwareItems: [
             "5–10+ Güneş Enerjili Otomatik AI Kamera Tuzağı",
             "1× Otomatik Mikro-İklim Meteoroloji İstasyonu",
-            "Çok sahalı Merkezi Genel Müdürlük Telemetri Paneli + API/ERP + SMS/WhatsApp uyarıları",
+            "Çok sahalı Merkez Ofis Telemetri Paneli + API/ERP + SMS/WhatsApp uyarıları",
           ],
           advisoryTitle: "Girdiler ve Danışmanlık",
           advisoryItems: [
@@ -682,7 +682,7 @@ export const tr: SiteDictionary = {
         diagramLabel: "DWG-07 · TRAFO MERKEZİ OT/SCADA VE PTP TOPOLOJİSİ",
         items: [
           {
-            heading: "Endüstriyel Omurga ve Taşıyıcı Yönlendirme",
+            heading: "Endüstriyel Omurga ve Operatör Sınıfı Yönlendirme",
             detail:
               "-20°C ile +60°C çalışma aralığına sahip modüler 1U ve 2U IP/MPLS yönlendiriciler (1G–100G); yönetilebilir Layer 2/3 endüstriyel Ethernet anahtarlar, seri-IP sunucular ve endüstriyel ses/PA platformları.",
           },
@@ -745,10 +745,10 @@ export const tr: SiteDictionary = {
         step: "05",
         title: "Yaşam Döngüsü Desteği ve RMA",
         description: "Tek elden garanti yönetimi, yedek parça lojistiği ve bölgesel saha mühendisliği.",
-        deliverable: "Bölgesel Yedek Parça ve Garanti Masası",
+        deliverable: "Bölgesel Yedek Parça ve Garanti Hizmeti",
       },
     ],
-    pillarsTitle: "Uygulama Sütunları ve Kalite Kontrol Kapıları",
+    pillarsTitle: "Uygulama İlkeleri ve Kalite Kontrol Kapıları",
     pillarsSubtitle:
       "Çok disiplinli projelerin takvime uygun ve denetime hazır şekilde teslim edilmesi için tedarik, saha devreye alma ve teslimat sonrası işletmede yapılandırılmış kontroller.",
     executionPillars: [
@@ -772,18 +772,18 @@ export const tr: SiteDictionary = {
           "Mekanik, elektrik ve kontrol sistemi entegrasyonu ile cihaz kalibrasyonu.",
           "Sıkı saha İSG (HSE) kontrolleri altında imzalı Saha Kabul Testi (SAT) protokolleri.",
         ],
-        tags: ["FAT / SAT Protokolleri", "Kalibrasyon", "Saha HSE"],
+        tags: ["FAT / SAT Protokolleri", "Kalibrasyon", "Saha İSG"],
       },
       {
         badge: "Kapı 03 • Süreklilik",
-        title: "Yaşam Döngüsü Desteği, Yedek Parça ve Tek Masa RMA",
-        body: "Müşterilerin ayrı yabancı garanti süreçleriyle uğraşmaması için devreye alma sonrası sürekliliğin tek bir bölgesel masadan yönetilmesi.",
+        title: "Yaşam Döngüsü Desteği, Yedek Parça ve Tek Noktadan RMA",
+        body: "Müşterilerin ayrı yabancı garanti süreçleriyle uğraşmaması için devreye alma sonrası sürekliliğin tek bir bölgesel merkezden yönetilmesi.",
         bullets: [
           "Merkezi garanti yönetimi ve üretici RMA koordinasyonu.",
           "Kritik yedek parça planlaması ve hızlı ikmal lojistiği.",
           "Operatör eğitimi ve proje ömrü boyunca bölgesel saha mühendisliği desteği.",
         ],
-        tags: ["Tek Masa RMA", "Kritik Yedek Parça", "Saha SLA"],
+        tags: ["Tek Noktadan RMA", "Kritik Yedek Parça", "Saha SLA"],
       },
     ],
     scopesTitle: "Örnek Anahtar Teslim Proje Kapsamları",
@@ -791,7 +791,7 @@ export const tr: SiteDictionary = {
       "Bölgesel koridorumuzdaki agro-endüstriyel işletmeler, tahıl terminalleri ve altyapı ihaleleri için yapılandırılmış örnek çok disiplinli mühendislik paketleri.",
     bottomCtaTitle: "Çok Disiplinli Bir Anahtar Teslim Proje veya İhale mi Planlıyorsunuz?",
     bottomCtaBody:
-      "Birleşik bir teslimat planı ve ticari teklif için saha parametrelerinizi, teknik şartnamenizi veya BOQ dosyanızı Tiflis mühendislik masamızla paylaşın.",
+      "Birleşik bir teslimat planı ve ticari teklif için saha parametrelerinizi, teknik şartnamenizi veya BOQ dosyanızı Tiflis’teki mühendislik ekibimizle paylaşın.",
     bottomCtaButton: "Anahtar Teslim Teklif İste →",
     aboutCrossLinkLabel: "Hakkımızda ve Kurumsal Uyumluluk",
   },
@@ -847,19 +847,19 @@ export const tr: SiteDictionary = {
       "Uluslararası ticaret bankalarının, EPC satın alma denetçilerinin ve tarımsal ihracat sertifikasyon kurumlarının inceleme beklentilerini karşılayacak şekilde yapılandırılmıştır.",
     bottomCtaTitle: "Kurumsal Ön Yeterlilik veya Ticari Uyumluluk Evraklarına mı İhtiyacınız Var?",
     bottomCtaBody:
-      "AVL tedarikçi kayıt paketleri, NDA kapsamlı referans proje özetleri veya resmi ihale talepleri için Tiflis kurumsal ve mühendislik masamızla iletişime geçin.",
-    bottomCtaButton: "Kurumsal Masamızla İletişime Geçin →",
+      "AVL tedarikçi kayıt paketleri, NDA kapsamlı referans proje özetleri veya resmi ihale talepleri için Tiflis’teki kurumsal ve mühendislik ekibimizle iletişime geçin.",
+    bottomCtaButton: "Kurumsal Ekibimizle İletişime Geçin →",
     turnkeyCrossLinkLabel: "Anahtar Teslim Uygulama Sürecini İncele",
   },
   contact: {
     metaTitle: "Teknik Danışmanlık ve Teklif Portalı",
-    eyebrow: "TEKNİK DANIŞMANLIK VE RFQ MASASI",
+    eyebrow: "TEKNİK DANIŞMANLIK VE TEKLİF (RFQ) BİRİMİ",
     h1: "Proje Teklifi (RFQ) veya Teknik Danışmanlık Talebi Gönderin",
     subHeadline:
       "Proje parametrelerinizi, arazi büyüklüğünüzü, teknik şartnamenizi veya metraj cetvelinizi (BOQ) paylaşın. Bölgesel mühendislik ve agronomi uzmanlarımız 24–48 iş saati içinde yanıt verecektir.",
-    directDeskTitle: "Doğrudan Mühendislik Masası",
+    directDeskTitle: "Mühendislik Ekibiyle Doğrudan İletişim",
     directDeskBody:
-      "Tüm RFQ talepleri teknik inceleme ve ticari tekliflendirme için doğrudan Tiflis operasyon masamıza yönlendirilir.",
+      "Tüm RFQ talepleri teknik inceleme ve ticari tekliflendirme için doğrudan Tiflis operasyon merkezimize yönlendirilir.",
     responseSla: "Yanıt süresi: 24–48 iş saati",
     socialLabel: "Resmi Kanallar",
     privacyNotice: "BOQ dosyaları ve proje bilgileri B2B gizliliği kapsamında işlenir:",
@@ -888,7 +888,7 @@ export const tr: SiteDictionary = {
       divisions: [
         { value: "agro-irrigation", label: "Agro-Endüstriyel: Hassas Sulama ve Su Yönetimi" },
         { value: "agro-greenhouses", label: "Agro-Endüstriyel: Anahtar Teslim Ticari Seralar" },
-        { value: "agro-grain", label: "Agro-Endüstriyel: Tahıl Siloları, Kurutma ve Optik Ayırma" },
+        { value: "agro-grain", label: "Agro-Endüstriyel: Tahıl Siloları, Kurutma ve Optik Ayıklama" },
         { value: "agro-safety-feed", label: "Agro-Endüstriyel: Silo Güvenliği ve Yem Tesisleri" },
         { value: "bio-ipm", label: "Biyo-Çözümler: Akıllı IPM ve İhracat Sertifikasyonu" },
         { value: "industrial-pipelines", label: "Endüstri Mühendisliği: Boru Hatları ve Termal Sistemler" },
@@ -905,7 +905,7 @@ export const tr: SiteDictionary = {
       requiredTag: "Zorunlu",
       optionalTag: "İsteğe bağlı",
       submitButton: "Proje Teklifini Gönder →",
-      submittingButton: "Teklif yönlendiriliyor...",
+      submittingButton: "Talebiniz gönderiliyor...",
       validationErrors: {
         required: "Lütfen bu zorunlu alanı doldurun.",
         email: "Lütfen geçerli bir kurumsal e-posta adresi girin.",
@@ -913,9 +913,9 @@ export const tr: SiteDictionary = {
       confirmationTitle: "Proje Teklif Talebi Alındı",
       referenceIdLabel: "Talep Referansı",
       confirmationBody:
-        "Teşekkür ederiz. Talebiniz Novaltron’un bölgesel mühendislik masasına (info@novaltron.com) yönlendirildi. Uzmanımız şartnamenizi inceleyerek 1–2 iş günü içinde sizinle iletişime geçecektir.",
+        "Teşekkür ederiz. Talebiniz Novaltron’un bölgesel mühendislik ekibine (info@novaltron.com) yönlendirildi. Uzmanımız şartnamenizi inceleyerek 1–2 iş günü içinde sizinle iletişime geçecektir.",
       confirmationReset: "Yeni Talep Gönder",
-      tierPreselectedNote: "Akıllı IPM matrisinden seçilen paket: Paket",
+      tierPreselectedNote: "Akıllı IPM matrisinden önceden seçildi: Paket",
     },
   },
   legal: {
