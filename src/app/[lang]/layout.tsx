@@ -45,7 +45,7 @@ export default async function LocaleLayout({
   const dict = getDictionary(lang);
 
   return (
-    <html lang={lang} className="h-full antialiased">
+    <html lang={lang} data-scroll-behavior="smooth" className="h-full antialiased">
       <body className="flex min-h-full flex-col bg-[#F8FAFC] text-[#334155] selection:bg-[#059669] selection:text-white">
         <a
           href="#main-content"
