@@ -51,8 +51,9 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           ═══════════════════════════════════════════════════════════════════════ */}
       <section className="relative flex h-screen min-h-[640px] w-full flex-col justify-between overflow-hidden bg-[#0F172A] text-white">
         <HeroBackgroundVideo
-          src="/videos/7031236_4K_Combine_1280x720.mp4"
-          poster="/images/hero-agritech.jpg"
+          webmSrc="/videos/novaltron-hero.webm"
+          mp4Src="/videos/novaltron-hero.mp4"
+          poster="/videos/hero-poster.webp"
         />
 
         {/* Centered Editorial Hero Copy */}
