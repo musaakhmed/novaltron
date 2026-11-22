@@ -21,6 +21,7 @@ import {
 import type {
   HeroGridCard,
   HeroShowcaseConfig,
+  HeroShowcaseDetail,
 } from "@/data/dictionaries/types";
 
 interface CoreEngineeringShowcaseProps {
@@ -1119,6 +1120,133 @@ function AnimatedDomainSchematic({
   );
 }
 
+function SchematicSizeStub({ code, label }: { code: string; label: string }) {
+  return (
+    <div className="flex h-full flex-col rounded-xl border border-transparent">
+      <div className="flex items-center justify-between gap-3 border-b border-transparent px-4 py-2.5">
+        <div className="flex min-w-0 items-center gap-2.5">
+          <span className="h-2 w-2 shrink-0 rounded-full" />
+          <span className="truncate font-mono text-[11px] font-semibold uppercase tracking-[0.14em]">
+            {code} · {label}
+          </span>
+        </div>
+        <span className="shrink-0 font-mono text-[10px] font-medium tracking-wider">
+          SCALE 1:100 · ISO/EN
+        </span>
+      </div>
+      <div className="flex flex-1 items-center justify-center p-4 sm:p-5">
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 560 300"
+          className="h-auto w-full max-w-[560px]"
+        />
+      </div>
+    </div>
+  );
+}
+
+function DomainSpecReadout({
+  lang,
+  card,
+  detail,
+  decorative = false,
+}: {
+  lang: string;
+  card: HeroGridCard;
+  detail: HeroShowcaseDetail;
+  decorative?: boolean;
+}) {
+  const isSky = card.variant === "industrial-dual";
+  const TitleTag = decorative ? "div" : "h3";
+
+  return (
+    <div className="flex flex-col justify-between rounded-xl border border-slate-800/90 bg-[#0B1222]/90 p-5 sm:p-6 lg:col-span-5">
+      <div>
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3.5">
+          <span
+            className={`inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.14em] ${
+              isSky ? "text-[#38BDF8]" : "text-[#34D399]"
+            }`}
+          >
+            <DomainIcon variant={card.variant} className="h-4 w-4" />
+            <span>
+              {card.code} · {card.label}
+            </span>
+          </span>
+          <span className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-400">
+            {card.sublabel}
+          </span>
+        </div>
+
+        <TitleTag className="mt-4 text-xl font-bold leading-snug text-white sm:text-[1.35rem]">
+          {detail.title}
+        </TitleTag>
+
+        <p className="mt-3 text-sm leading-relaxed text-slate-300">
+          {detail.summary}
+        </p>
+
+        {/* 2 Monospace Telemetry / Spec KPI Tiles */}
+        <div className="mt-5 grid grid-cols-2 gap-3">
+          {detail.metrics.map((metric) => (
+            <div
+              key={metric.label}
+              className="rounded-lg border border-slate-800 bg-[#070D19]/90 px-3.5 py-3"
+            >
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-400">
+                {metric.label}
+              </p>
+              <p
+                className={`band-numeral mt-1.5 text-sm font-bold sm:text-base ${
+                  isSky ? "text-[#7DD3FC]" : "text-[#6EE7B7]"
+                }`}
+              >
+                {metric.value}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Standards Badges */}
+        <div className="mt-5 flex flex-wrap gap-1.5">
+          {detail.standards.map((std) => (
+            <span
+              key={std}
+              className="rounded-md border border-slate-700/80 bg-slate-900/90 px-2.5 py-1 font-mono text-[11px] font-semibold text-slate-200"
+            >
+              {std}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-6 border-t border-slate-800 pt-5">
+        {decorative ? (
+          <span className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold">
+            <span>{detail.ctaLabel}</span>
+            <ArrowRight aria-hidden="true" className="h-4 w-4" />
+          </span>
+        ) : (
+          <Link
+            href={`/${lang}${card.href}`}
+            className={`group inline-flex min-h-[46px] w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white transition-all duration-150 ${
+              isSky
+                ? "bg-[#0284C7] hover:bg-[#0369A1]"
+                : "bg-[#059669] hover:bg-[#047857]"
+            }`}
+          >
+            <span>{detail.ctaLabel}</span>
+            <ArrowRight
+              aria-hidden="true"
+              className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+            />
+          </Link>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function CoreEngineeringShowcase({
   lang,
   heading,
@@ -1147,7 +1275,11 @@ export function CoreEngineeringShowcase({
     setCycleKey((k) => k + 1);
     const tabEl = tabRefs.current[index];
     if (tabEl) {
-      tabEl.scrollIntoView({ block: "nearest", inline: "nearest" });
+      tabEl.scrollIntoView({
+        block: "nearest",
+        inline: "nearest",
+        container: "nearest",
+      } as ScrollIntoViewOptions);
       if (shouldFocus) {
         tabEl.focus();
       }
@@ -1375,10 +1507,37 @@ export function CoreEngineeringShowcase({
 
         {/* Stacked Tab Panels sharing one grid cell (no gap, no box styles on tabpanel itself for hidden="until-found") */}
         <div className="mt-5 grid">
+          {/* Invisible layout sizers lock the shared grid row to the tallest panel across all viewports & locales */}
+          {cards.map((card) => {
+            const detail = showcase.details[card.variant];
+            return (
+              <div
+                key={`sizer-${card.code}`}
+                aria-hidden="true"
+                inert
+                data-nosnippet=""
+                className="invisible pointer-events-none select-none col-start-1 row-start-1"
+              >
+                <div className="rounded-2xl border border-transparent p-4 sm:p-6">
+                  <div className="grid grid-rows-[auto_1fr] items-stretch gap-6 lg:grid-cols-12 lg:grid-rows-1">
+                    <div className="lg:col-span-7">
+                      <SchematicSizeStub code={card.code} label={card.label} />
+                    </div>
+                    <DomainSpecReadout
+                      lang={lang}
+                      card={card}
+                      detail={detail}
+                      decorative
+                    />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+
           {cards.map((card, index) => {
             const isSelected = index === activeIndex;
             const detail = showcase.details[card.variant];
-            const isSky = card.variant === "industrial-dual";
 
             return (
               <div
@@ -1388,17 +1547,21 @@ export function CoreEngineeringShowcase({
                 }}
                 role="tabpanel"
                 aria-labelledby={`${baseId}-tab-${index}`}
-                className="col-start-1 row-start-1"
+                className={
+                  isSelected
+                    ? "relative z-10 col-start-1 row-start-1"
+                    : "pointer-events-none self-start col-start-1 row-start-1"
+                }
                 {...(isSelected
                   ? {}
                   : ({ hidden: "until-found" } as Record<string, string>))}
               >
                 <div
-                  className={`rounded-2xl border border-white/12 bg-slate-900/75 p-4 shadow-2xl backdrop-blur-sm sm:p-6 ${
+                  className={`h-full rounded-2xl border border-white/12 bg-slate-900/75 p-4 shadow-2xl backdrop-blur-sm sm:p-6 ${
                     isSelected ? "cad-panel-enter" : ""
                   }`}
                 >
-                  <div className="grid items-stretch gap-6 lg:grid-cols-12">
+                  <div className="grid h-full grid-rows-[auto_1fr] items-stretch gap-6 lg:grid-cols-12 lg:grid-rows-1">
                     {/* Left 7 cols: Live Animated CAD Blueprint Viewport */}
                     <div className="lg:col-span-7">
                       <AnimatedDomainSchematic
@@ -1409,86 +1572,11 @@ export function CoreEngineeringShowcase({
                     </div>
 
                     {/* Right 5 cols: Engineering Specification Readout & Direct Link */}
-                    <div className="flex flex-col justify-between rounded-xl border border-slate-800/90 bg-[#0B1222]/90 p-5 sm:p-6 lg:col-span-5">
-                      <div>
-                        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3.5">
-                          <span
-                            className={`inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.14em] ${
-                              isSky ? "text-[#38BDF8]" : "text-[#34D399]"
-                            }`}
-                          >
-                            <DomainIcon
-                              variant={card.variant}
-                              className="h-4 w-4"
-                            />
-                            <span>
-                              {card.code} · {card.label}
-                            </span>
-                          </span>
-                          <span className="font-mono text-[10px] font-semibold uppercase tracking-widest text-slate-400">
-                            {card.sublabel}
-                          </span>
-                        </div>
-
-                        <h3 className="mt-4 text-xl font-bold leading-snug text-white sm:text-[1.35rem]">
-                          {detail.title}
-                        </h3>
-
-                        <p className="mt-3 text-sm leading-relaxed text-slate-300">
-                          {detail.summary}
-                        </p>
-
-                        {/* 2 Monospace Telemetry / Spec KPI Tiles */}
-                        <div className="mt-5 grid grid-cols-2 gap-3">
-                          {detail.metrics.map((metric) => (
-                            <div
-                              key={metric.label}
-                              className="rounded-lg border border-slate-800 bg-[#070D19]/90 px-3.5 py-3"
-                            >
-                              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-400">
-                                {metric.label}
-                              </p>
-                              <p
-                                className={`band-numeral mt-1.5 text-sm font-bold sm:text-base ${
-                                  isSky ? "text-[#7DD3FC]" : "text-[#6EE7B7]"
-                                }`}
-                              >
-                                {metric.value}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-
-                        {/* Standards Badges */}
-                        <div className="mt-5 flex flex-wrap gap-1.5">
-                          {detail.standards.map((std) => (
-                            <span
-                              key={std}
-                              className="rounded-md border border-slate-700/80 bg-slate-900/90 px-2.5 py-1 font-mono text-[11px] font-semibold text-slate-200"
-                            >
-                              {std}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="mt-6 border-t border-slate-800 pt-5">
-                        <Link
-                          href={`/${lang}${card.href}`}
-                          className={`group inline-flex min-h-[46px] w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white transition-all duration-150 ${
-                            isSky
-                              ? "bg-[#0284C7] hover:bg-[#0369A1]"
-                              : "bg-[#059669] hover:bg-[#047857]"
-                          }`}
-                        >
-                          <span>{detail.ctaLabel}</span>
-                          <ArrowRight
-                            aria-hidden="true"
-                            className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-                          />
-                        </Link>
-                      </div>
-                    </div>
+                    <DomainSpecReadout
+                      lang={lang}
+                      card={card}
+                      detail={detail}
+                    />
                   </div>
                 </div>
               </div>
