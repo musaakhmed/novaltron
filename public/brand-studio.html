@@ -1,0 +1,2753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Novaltron Brand Identity Studio — Stage 1 Concept Exploration</title>
+  <link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M4,4 H50 L60,14 V60 H4 Z' fill='%23121417'/%3E%3Cpath d='M15,49 V15 H24 L33,27.5 L27,32 L23,26.5 V49 Z' fill='%23F5F4F0'/%3E%3Cpath d='M49,15 V49 H40 L31,36.5 L37,32 L41,37.5 V15 Z' fill='%23E8773A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&family=Noto+Sans+Georgian:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-bg: #121417;
+      --dark-surface: #1E2228;
+      --dark-border: #303640;
+      --light-bg: #F5F4F0;
+      --light-surface: #FFFFFF;
+      --light-border: #DCD9D0;
+      --accent-light: #B84B14;
+      --on-accent-light: #FFFFFF;
+      --accent-dark: #E8773A;
+      --on-accent-dark: #121417;
+      --sec-light: #245C40;
+      --sec-dark: #5CC48C;
+      --muted-light: #4B525C;
+      --muted-dark: #A3ACB9;
+      --danger: #C81E1E;
+
+      --font-heading: "IBM Plex Sans", "Noto Sans Georgian", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-body: "IBM Plex Sans", "Noto Sans Georgian", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+      --studio-ink: #121417;
+      --studio-bg: #F5F4F0;
+      --studio-card: #FFFFFF;
+      --studio-border: #DCD9D0;
+      --studio-muted: #4B525C;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 6rem;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--studio-bg);
+      color: var(--studio-ink);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+      font-family: var(--font-heading);
+      letter-spacing: -0.02em;
+      line-height: 1.18;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    :where(a:any-link, button, [tabindex]):focus-visible {
+      outline: 3px solid var(--accent-light);
+      outline-offset: 2px;
+    }
+
+    .surface-dark :where(a:any-link, button, [tabindex]):focus-visible {
+      outline: 3px solid var(--accent-dark);
+      outline-offset: 2px;
+    }
+
+    .visually-hidden:where(:not(:focus-within, :active)) {
+      position: absolute !important;
+      clip-path: inset(50%) !important;
+      overflow: hidden !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: -1px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      white-space: nowrap !important;
+    }
+
+    .skip-link:focus {
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 200;
+      padding: 0.625rem 1rem;
+      border-radius: 0.375rem;
+      background-color: var(--accent-light);
+      color: var(--on-accent-light);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Self-contained dark/light surfaces: always define both background and text color explicitly */
+    .surface-dark {
+      color-scheme: only dark;
+      background-color: var(--dark-bg);
+      color: var(--light-bg);
+      accent-color: var(--accent-dark);
+    }
+
+    .surface-light {
+      color-scheme: only light;
+      background-color: var(--light-surface);
+      color: var(--dark-bg);
+      accent-color: var(--accent-light);
+    }
+
+    .blueprint-grid-dark {
+      background-color: var(--dark-bg);
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .blueprint-grid-light {
+      background-color: var(--light-bg);
+      background-image:
+        linear-gradient(to right, rgba(18, 20, 23, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(18, 20, 23, 0.045) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    /* Sticky Studio Control Header */
+    .studio-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      color-scheme: only dark;
+      background-color: var(--dark-bg);
+      color: #FFFFFF;
+      border-bottom: 1px solid var(--dark-border);
+      accent-color: var(--accent-dark);
+    }
+
+    .studio-header-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .header-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .studio-brand-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .studio-brand-title {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+
+    .studio-brand-sub {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--muted-dark);
+    }
+
+    .selection-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.625rem;
+    }
+
+    .selection-readout {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 0.375rem;
+      border: 1px solid var(--dark-border);
+      background-color: var(--dark-surface);
+      color: #FFFFFF;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      min-height: 36px;
+      padding: 0.375rem 0.85rem;
+      border-radius: 0.375rem;
+      border: 1px solid var(--accent-dark);
+      background-color: var(--accent-dark);
+      color: var(--on-accent-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      transition: transform 120ms ease, opacity 120ms ease;
+    }
+
+    .copy-btn:hover {
+      opacity: 0.92;
+    }
+
+    .copy-status {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--sec-dark);
+      min-width: 5.5rem;
+    }
+
+    .controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.85rem 1.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--dark-border);
+    }
+
+    .control-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .control-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted-dark);
+      margin-right: 0.25rem;
+    }
+
+    .pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      min-height: 34px;
+      padding: 0.3rem 0.68rem;
+      border-radius: 0.375rem;
+      border: 1px solid var(--dark-border);
+      background-color: var(--dark-surface);
+      color: #E5E7EB;
+      font-size: 0.78rem;
+      font-weight: 500;
+      transition: border-color 140ms ease, background-color 140ms ease;
+    }
+
+    .pill-btn:hover {
+      border-color: var(--muted-dark);
+    }
+
+    .pill-btn[aria-pressed="true"] {
+      border: 2px solid var(--accent-dark);
+      background-color: var(--dark-bg);
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .pill-check {
+      display: none;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent-dark);
+    }
+
+    .pill-btn[aria-pressed="true"] .pill-check {
+      display: inline;
+    }
+
+    .swatch-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      forced-color-adjust: none;
+      flex-shrink: 0;
+    }
+
+    /* Main Container & Sections */
+    .container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: 0.875rem;
+      border-bottom: 1px solid var(--studio-border);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+      font-weight: 700;
+      color: var(--studio-ink);
+    }
+
+    .section-desc {
+      max-width: 44rem;
+      font-size: 0.92rem;
+      color: var(--studio-muted);
+    }
+
+    /* Hero Intro Banner */
+    .intro-banner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      padding: 1.75rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--studio-border);
+      background-color: var(--studio-card);
+    }
+
+    @media (min-width: 900px) {
+      .intro-banner {
+        grid-template-columns: 1.4fr 1fr;
+        align-items: center;
+      }
+    }
+
+    .intro-banner h1 {
+      font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+      font-weight: 700;
+      color: var(--studio-ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .intro-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .meta-stat {
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--studio-border);
+      background-color: var(--light-bg);
+    }
+
+    .meta-stat-k {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--studio-muted);
+    }
+
+    .meta-stat-v {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--studio-ink);
+      margin-top: 0.2rem;
+    }
+
+    /* Section 1: Hero Stage */
+    .hero-stage-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 960px) {
+      .hero-stage-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .stage-panel {
+      border-radius: 0.75rem;
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stage-panel.surface-dark {
+      border: 1px solid var(--dark-border);
+    }
+
+    .stage-panel.surface-light {
+      border: 1px solid var(--light-border);
+    }
+
+    .stage-tag-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .stage-tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .wordmark-hero-box {
+      padding: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .wordmark-sub-corridor {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .lockup-row {
+      margin-top: 1.5rem;
+      padding-top: 1.15rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .surface-dark .lockup-row {
+      border-top: 1px solid var(--dark-border);
+    }
+
+    .surface-light .lockup-row {
+      border-top: 1px solid var(--light-border);
+    }
+
+    /* Wordmark Typography + Vector Inline Treatments */
+    .wm-display {
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+      text-transform: uppercase;
+      font-family: var(--font-heading);
+      user-select: none;
+    }
+
+    .wm-size-xl {
+      font-size: clamp(1.9rem, 3.6vw, 3rem);
+    }
+
+    .wm-size-md {
+      font-size: 1.25rem;
+    }
+
+    .wm-size-sm {
+      font-size: 0.95rem;
+    }
+
+    .wm-size-card {
+      font-size: 1.05rem;
+    }
+
+    .wm-corridor {
+      font-weight: 800;
+      letter-spacing: 0.13em;
+    }
+
+    .wm-corridor .wm-glyph-n {
+      display: inline-block;
+      height: 0.74em;
+      height: 1cap;
+      width: auto;
+      margin-right: 0.1em;
+      flex-shrink: 0;
+    }
+
+    .wm-truss {
+      font-weight: 700;
+      letter-spacing: 0.11em;
+    }
+
+    .wm-truss .wm-glyph-a {
+      display: inline-block;
+      height: 0.73em;
+      height: 1cap;
+      width: auto;
+      margin-left: -0.02em;
+      margin-right: 0.08em;
+      flex-shrink: 0;
+    }
+
+    .wm-truss-marker {
+      display: inline-block;
+      width: 0.26em;
+      height: 0.26em;
+      transform: rotate(45deg);
+      margin-left: 0.08em;
+      align-self: flex-end;
+      margin-bottom: 0.16em;
+      flex-shrink: 0;
+    }
+
+    .wm-axis-wrap {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.16em;
+    }
+
+    .wm-axis {
+      font-weight: 800;
+      letter-spacing: 0.15em;
+    }
+
+    .wm-axis-bar {
+      display: block;
+      width: 100%;
+      height: 2.5px;
+      border-radius: 1px;
+    }
+
+    /* Favicon Strip & Corporate Stamp Row */
+    .favicon-stamp-grid {
+      margin-top: 1.25rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 960px) {
+      .favicon-stamp-grid {
+        grid-template-columns: 1.35fr 1fr;
+      }
+    }
+
+    .panel-card {
+      border-radius: 0.75rem;
+      border: 1px solid var(--studio-border);
+      background-color: var(--studio-card);
+      padding: 1.35rem 1.5rem;
+    }
+
+    .panel-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--studio-ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .panel-card-sub {
+      font-size: 0.82rem;
+      color: var(--studio-muted);
+      margin-bottom: 1.1rem;
+    }
+
+    .favicon-scales {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      gap: 1.5rem;
+    }
+
+    .favicon-sample {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .favicon-sample span {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--studio-muted);
+    }
+
+    .browser-tab-mock {
+      margin-top: 1.25rem;
+      border: 1px solid var(--light-border);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      background-color: #E8EAED;
+    }
+
+    .browser-tab-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.75rem 0;
+      background-color: #DEE1E6;
+    }
+
+    .browser-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: #9CA3AF;
+    }
+
+    .browser-active-tab {
+      margin-left: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.85rem;
+      background-color: #FFFFFF;
+      color: #111827;
+      border-radius: 0.4rem 0.4rem 0 0;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid #D1D5DB;
+      border-bottom: none;
+    }
+
+    .browser-url-bar {
+      background-color: #FFFFFF;
+      padding: 0.4rem 0.75rem;
+      border-top: 1px solid #E5E7EB;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: #4B5563;
+    }
+
+    .stamp-stage {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      gap: 1.25rem;
+      padding: 0.75rem;
+      border: 1px dashed var(--light-border);
+      border-radius: 0.5rem;
+      background-color: #FCFCFA;
+    }
+
+    /* Section 2: Palettes */
+    .palette-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .palette-card {
+      text-align: left;
+      padding: 1.1rem;
+      border-radius: 0.625rem;
+      border: 1px solid var(--studio-border);
+      background-color: var(--studio-card);
+      color: var(--studio-ink);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: border-color 140ms ease;
+    }
+
+    .palette-card:hover {
+      border-color: var(--studio-ink);
+    }
+
+    .palette-card[aria-pressed="true"] {
+      border: 2px solid var(--accent-light);
+    }
+
+    .palette-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .palette-badge {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.25rem;
+      border: 1px solid var(--studio-border);
+      background-color: var(--light-bg);
+      color: var(--studio-ink);
+    }
+
+    .palette-card[aria-pressed="true"] .palette-badge {
+      background-color: var(--accent-light);
+      color: var(--on-accent-light);
+      border-color: var(--accent-light);
+    }
+
+    .palette-mini-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      height: 28px;
+      border-radius: 0.35rem;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      forced-color-adjust: none;
+    }
+
+    .swatch-matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .swatch-card {
+      border-radius: 0.625rem;
+      border: 1px solid var(--studio-border);
+      background-color: var(--studio-card);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .color-swatch-chip {
+      height: 82px;
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      forced-color-adjust: none;
+      border-bottom: 1px solid var(--studio-border);
+    }
+
+    .swatch-hex-label {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .wcag-pill {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.25rem;
+      border: 1px solid currentColor;
+    }
+
+    .swatch-specs {
+      padding: 0.85rem 0.95rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+    }
+
+    .swatch-role {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--studio-ink);
+    }
+
+    .swatch-usage {
+      font-size: 0.78rem;
+      color: var(--studio-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .spec-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.71rem;
+      padding-top: 0.25rem;
+      border-top: 1px solid var(--light-bg);
+    }
+
+    .spec-k {
+      color: var(--studio-muted);
+      font-weight: 600;
+    }
+
+    .spec-v {
+      color: var(--studio-ink);
+      text-align: right;
+    }
+
+    /* Section 3: Logo Concept Comparison */
+    .concept-compare-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .concept-card {
+      border-radius: 0.75rem;
+      border: 1px solid var(--studio-border);
+      background-color: var(--studio-card);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .concept-card.is-selected {
+      border: 2px solid var(--accent-light);
+    }
+
+    .concept-card-head {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--studio-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .concept-select-btn {
+      min-height: 36px;
+      padding: 0.35rem 0.8rem;
+      border-radius: 0.375rem;
+      border: 1px solid var(--studio-border);
+      background-color: var(--light-bg);
+      color: var(--studio-ink);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .concept-select-btn[aria-pressed="true"] {
+      background-color: var(--accent-light);
+      color: var(--on-accent-light);
+      border-color: var(--accent-light);
+    }
+
+    .concept-preview-light {
+      padding: 1.6rem 1.25rem;
+      border-bottom: 1px solid var(--light-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .concept-preview-dark {
+      padding: 1.6rem 1.25rem;
+      border-bottom: 1px solid var(--dark-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .concept-micro-row {
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+      background-color: var(--light-bg);
+    }
+
+    .concept-notes {
+      padding: 0.9rem 1.25rem 1.15rem;
+      font-size: 0.82rem;
+      color: var(--studio-muted);
+      border-top: 1px solid var(--studio-border);
+    }
+
+    /* Section 4: Multi-Script Typography */
+    .typo-compare-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .typo-option-card {
+      text-align: left;
+      padding: 1rem 1.2rem;
+      border-radius: 0.625rem;
+      border: 1px solid var(--studio-border);
+      background-color: var(--studio-card);
+      color: var(--studio-ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .typo-option-card[aria-pressed="true"] {
+      border: 2px solid var(--accent-light);
+    }
+
+    .scripts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .script-card {
+      border-radius: 0.625rem;
+      border: 1px solid var(--studio-border);
+      background-color: var(--studio-card);
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .script-lang-tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-light);
+    }
+
+    .script-headline {
+      font-family: var(--font-heading);
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--studio-ink);
+    }
+
+    .script-body {
+      font-family: var(--font-body);
+      font-size: 0.86rem;
+      color: var(--studio-muted);
+    }
+
+    .script-glyphs {
+      margin-top: auto;
+      padding-top: 0.55rem;
+      border-top: 1px solid var(--light-border);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--studio-ink);
+    }
+
+    /* Section 5: Real-World Collateral */
+    .collateral-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .collateral-block {
+      border-radius: 0.75rem;
+      border: 1px solid var(--studio-border);
+      background-color: var(--studio-card);
+      padding: 1.5rem;
+    }
+
+    .collateral-block-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .collateral-block-head h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--studio-ink);
+    }
+
+    .collateral-spec-pill {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--studio-muted);
+    }
+
+    /* 5A Website Hero Mock */
+    .web-mock {
+      border-radius: 0.625rem;
+      overflow: hidden;
+      border: 1px solid var(--dark-border);
+    }
+
+    .web-mock-nav {
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .web-mock-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted-dark);
+    }
+
+    .web-mock-cta {
+      padding: 0.42rem 0.85rem;
+      border-radius: 0.375rem;
+      font-size: 0.76rem;
+      font-weight: 700;
+      background-color: var(--accent-dark);
+      color: var(--on-accent-dark);
+    }
+
+    .web-mock-hero {
+      position: relative;
+      padding: 2rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .web-mock-hero {
+        grid-template-columns: 1.15fr 1fr;
+      }
+    }
+
+    .photo-triptych {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      grid-template-rows: 110px 110px;
+      gap: 0.6rem;
+    }
+
+    .photo-frame {
+      position: relative;
+      border-radius: 0.45rem;
+      overflow: hidden;
+      border: 1px solid var(--dark-border);
+      background: linear-gradient(135deg, var(--dark-surface), var(--dark-bg));
+    }
+
+    .photo-frame-tall {
+      grid-row: span 2;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-caption {
+      position: absolute;
+      left: 0.5rem;
+      bottom: 0.5rem;
+      padding: 0.2rem 0.45rem;
+      border-radius: 0.25rem;
+      background-color: rgba(10, 14, 18, 0.86);
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* 5B Business Card 85x55mm */
+    .cards-pair {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 820px;
+    }
+
+    .biz-card {
+      aspect-ratio: 85 / 55;
+      border-radius: 0.55rem;
+      padding: 1.35rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 12px 26px -14px rgba(0, 0, 0, 0.28);
+    }
+
+    .biz-card.surface-dark {
+      border: 1px solid var(--dark-border);
+    }
+
+    .biz-card.surface-light {
+      border: 1px solid var(--light-border);
+    }
+
+    .biz-card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+    }
+
+    .biz-name {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .biz-role {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.15rem;
+    }
+
+    .biz-contact {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      line-height: 1.55;
+      text-align: right;
+    }
+
+    /* 5C Company Profile 16:9 Slide */
+    .deck-slide {
+      aspect-ratio: 16 / 9;
+      min-height: 320px;
+      border-radius: 0.625rem;
+      padding: clamp(1.25rem, 3vw, 2.5rem);
+      border: 1px solid var(--dark-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .deck-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .deck-body {
+      max-width: 46rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .deck-title {
+      font-size: clamp(1.3rem, 2.6vw, 2.15rem);
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.15;
+    }
+
+    .deck-sub {
+      font-size: clamp(0.82rem, 1.2vw, 0.98rem);
+      color: var(--muted-dark);
+      max-width: 40rem;
+    }
+
+    .deck-footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--dark-border);
+    }
+
+    .standards-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .std-pill {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      padding: 0.18rem 0.5rem;
+      border-radius: 0.25rem;
+      border: 1px solid var(--dark-border);
+      background-color: var(--dark-surface);
+      color: #E5E7EB;
+    }
+
+    /* 5D Social Kit & ERM */
+    .social-erm-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 980px) {
+      .social-erm-grid {
+        grid-template-columns: 1.25fr 0.75fr;
+      }
+    }
+
+    .linkedin-mock {
+      border: 1px solid var(--light-border);
+      border-radius: 0.625rem;
+      overflow: hidden;
+      background-color: #FFFFFF;
+      color: #111827;
+    }
+
+    .linkedin-banner {
+      aspect-ratio: 4 / 1;
+      min-height: 120px;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .linkedin-profile-row {
+      padding: 0 1.25rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      gap: 1rem;
+      margin-top: -1.75rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .linkedin-avatar {
+      width: 68px;
+      height: 68px;
+      border-radius: 0.5rem;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .social-post-erm-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .social-post-card {
+      border-radius: 0.625rem;
+      border: 1px solid var(--dark-border);
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 230px;
+    }
+
+    .erm-sidebar-mock {
+      border-radius: 0.625rem;
+      border: 1px solid var(--dark-border);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .erm-brand-row {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .erm-nav-pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link visually-hidden">Skip to main brand studio content</a>
+
+  <header class="studio-header">
+    <div class="studio-header-inner">
+      <div class="header-top-row">
+        <div class="studio-brand-bar">
+          <div id="header-mini-icon" aria-hidden="true"></div>
+          <div>
+            <p class="studio-brand-title">NOVALTRON · BRAND IDENTITY STUDIO (STAGE 1)</p>
+            <p class="studio-brand-sub">4 Palettes × 3 Wordmark/Favicon Concepts × 2 Multi-Script Font Systems</p>
+          </div>
+        </div>
+        <div class="selection-actions">
+          <span class="selection-readout" id="selection-readout">A. Obsidian &amp; Copper · 1. Precision Corridor · T1. IBM Plex</span>
+          <button type="button" class="copy-btn" id="copy-selection-btn">
+            <span aria-hidden="true">⧉</span>
+            <span>Copy Share Link</span>
+          </button>
+          <span class="copy-status" id="copy-status" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="controls-row">
+        <div class="control-group" role="group" aria-label="Color palette selector">
+          <span class="control-label">Palette</span>
+          <button type="button" class="pill-btn" data-control="palette" data-value="obsidian-copper" aria-pressed="true">
+            <span class="swatch-dot" style="background-color:#B84B14"></span>
+            <span>A · Obsidian &amp; Copper</span>
+            <span class="pill-check" aria-hidden="true">✓</span>
+          </button>
+          <button type="button" class="pill-btn" data-control="palette" data-value="nordic-pine" aria-pressed="false">
+            <span class="swatch-dot" style="background-color:#8F5E0E"></span>
+            <span>B · Nordic Pine &amp; Brass</span>
+            <span class="pill-check" aria-hidden="true">✓</span>
+          </button>
+          <button type="button" class="pill-btn" data-control="palette" data-value="caspian-volt" aria-pressed="false">
+            <span class="swatch-dot" style="background-color:#A3E635"></span>
+            <span>C · Caspian Petrol &amp; Volt</span>
+            <span class="pill-check" aria-hidden="true">✓</span>
+          </button>
+          <button type="button" class="pill-btn" data-control="palette" data-value="slate-cobalt" aria-pressed="false">
+            <span class="swatch-dot" style="background-color:#1B4FD8"></span>
+            <span>D · Slate &amp; Cobalt</span>
+            <span class="pill-check" aria-hidden="true">✓</span>
+          </button>
+        </div>
+
+        <div class="control-group" role="group" aria-label="Wordmark and favicon concept selector">
+          <span class="control-label">Logo</span>
+          <button type="button" class="pill-btn" data-control="concept" data-value="corridor" aria-pressed="true">
+            <span>1 · Precision Corridor</span>
+            <span class="pill-check" aria-hidden="true">✓</span>
+          </button>
+          <button type="button" class="pill-btn" data-control="concept" data-value="truss" aria-pressed="false">
+            <span>2 · Structural Truss</span>
+            <span class="pill-check" aria-hidden="true">✓</span>
+          </button>
+          <button type="button" class="pill-btn" data-control="concept" data-value="axis" aria-pressed="false">
+            <span>3 · Dual-Track Axis</span>
+            <span class="pill-check" aria-hidden="true">✓</span>
+          </button>
+        </div>
+
+        <div class="control-group" role="group" aria-label="Typography system selector">
+          <span class="control-label">Type</span>
+          <button type="button" class="pill-btn" data-control="typo" data-value="ibm-plex" aria-pressed="true">
+            <span>T1 · IBM Plex</span>
+            <span class="pill-check" aria-hidden="true">✓</span>
+          </button>
+          <button type="button" class="pill-btn" data-control="typo" data-value="swiss-geometric" aria-pressed="false">
+            <span>T2 · Manrope + Inter</span>
+            <span class="pill-check" aria-hidden="true">✓</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1" class="container">
+    <section class="intro-banner" aria-labelledby="studio-h1">
+      <div>
+        <p class="section-eyebrow">EXPLORATION WORKBENCH · ZERO REPO MUTATIONS</p>
+        <h1 id="studio-h1">Novaltron Visual Identity Concept Studio</h1>
+        <p class="section-desc">
+          Toggle palettes, wordmark concepts, and multi-script typefaces in the sticky studio bar above. Notice the live browser tab icon updates immediately whenever you switch Palette or Logo. Once you pick a winning combination, Stage 2 compiles the Master Brandbook PDF, clean SVG asset pack, Company Profile, Business Card, and Social Kit.
+        </p>
+      </div>
+      <div class="intro-meta-grid">
+        <div class="meta-stat">
+          <p class="meta-stat-k">Legal Entities</p>
+          <p class="meta-stat-v">Novaltron LLC / შპს ნოვალტრონი</p>
+        </div>
+        <div class="meta-stat">
+          <p class="meta-stat-k">Required Scripts</p>
+          <p class="meta-stat-v">EN · AZ · TR · RU · KA</p>
+        </div>
+        <div class="meta-stat">
+          <p class="meta-stat-k">Logo Architecture</p>
+          <p class="meta-stat-v">Wordmark-First + Favicon Mark</p>
+        </div>
+        <div class="meta-stat">
+          <p class="meta-stat-k">Priority Collateral</p>
+          <p class="meta-stat-v">Profile · Card · Social Kit</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: HERO WORDMARK, FAVICON & STAMP STAGE -->
+    <section aria-labelledby="sec-1-title">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">01 · PRIMARY IDENTITY STAGE</p>
+          <h2 id="sec-1-title" class="section-title">Wordmark, Companion Favicon &amp; Corporate Stamp</h2>
+        </div>
+        <p class="section-desc">Side-by-side light/dark polarity check, real-pixel favicon stress test (64px down to 16px), and monochrome legal ink stamp preview.</p>
+      </div>
+
+      <div class="hero-stage-grid">
+        <div class="stage-panel surface-dark blueprint-grid-dark">
+          <div class="stage-tag-row">
+            <span class="stage-tag" style="color:var(--muted-dark)">PRIMARY DARK SURFACE · REVERSED</span>
+            <span class="stage-tag" id="dark-hex-tag" style="color:var(--accent-dark)">#121417</span>
+          </div>
+          <div class="wordmark-hero-box">
+            <div id="hero-wordmark-dark"></div>
+            <p class="wordmark-sub-corridor" style="color:var(--muted-dark)">AGRO-INDUSTRIAL &amp; CRITICAL INFRASTRUCTURE · CAUCASUS &amp; CENTRAL ASIA</p>
+          </div>
+          <div class="lockup-row">
+            <div>
+              <span class="stage-tag" style="color:var(--muted-dark); display:block; margin-bottom:0.45rem;">COMPACT HORIZONTAL LOCKUP</span>
+              <div id="hero-lockup-dark"></div>
+            </div>
+            <div>
+              <span class="stage-tag" style="color:var(--muted-dark); display:block; margin-bottom:0.45rem;">INTERNAL SOFTWARE</span>
+              <div id="hero-erm-dark"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-panel surface-light blueprint-grid-light">
+          <div class="stage-tag-row">
+            <span class="stage-tag" style="color:var(--muted-light)">CRISP LIGHT SURFACE · INSTITUTIONAL</span>
+            <span class="stage-tag" id="light-hex-tag" style="color:var(--accent-light)">#F5F4F0</span>
+          </div>
+          <div class="wordmark-hero-box">
+            <div id="hero-wordmark-light"></div>
+            <p class="wordmark-sub-corridor" style="color:var(--muted-light)">NOVALTRON LLC (შპს ნოვალტრონი) · TBILISI, GEORGIA</p>
+          </div>
+          <div class="lockup-row">
+            <div>
+              <span class="stage-tag" style="color:var(--muted-light); display:block; margin-bottom:0.45rem;">COMPACT HORIZONTAL LOCKUP</span>
+              <div id="hero-lockup-light"></div>
+            </div>
+            <div>
+              <span class="stage-tag" style="color:var(--muted-light); display:block; margin-bottom:0.45rem;">MONOCHROME INK</span>
+              <div id="hero-mono-light"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="favicon-stamp-grid">
+        <div class="panel-card">
+          <h3 class="panel-card-title">Favicon &amp; Micro-Scale Legibility Test</h3>
+          <p class="panel-card-sub">Tested at exact pixel dimensions plus live browser tab context (compare against your live browser tab right now).</p>
+          <div class="favicon-scales" id="favicon-scale-strip"></div>
+          <div class="browser-tab-mock">
+            <div class="browser-tab-bar">
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <div class="browser-active-tab">
+                <span id="tab-mock-icon"></span>
+                <span>Novaltron | Agro-Industrial Systems</span>
+              </div>
+            </div>
+            <div class="browser-url-bar">https://novaltron.com/en</div>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <h3 class="panel-card-title">Corporate Legal Ink Stamp (Georgia / Azerbaijan)</h3>
+          <p class="panel-card-sub">1-color rubber stamp stress test required for bank KYC, contracts, and customs dossiers.</p>
+          <div class="stamp-stage" id="corporate-stamp-stage"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: COLOR PALETTES & PRINT MATRIX -->
+    <section aria-labelledby="sec-2-title">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">02 · COLOR SYSTEM &amp; PRINT SPECIFICATIONS</p>
+          <h2 id="sec-2-title" class="section-title">New Color Explorations (Digital + CMYK / Pantone / RAL)</h2>
+        </div>
+        <p class="section-desc">Click any palette card to inspect all tokens, print formulas, RAL equipment matches, and verified WCAG 2.1 contrast scores.</p>
+      </div>
+
+      <div class="palette-cards-grid" id="palette-cards-grid"></div>
+      <div class="swatch-matrix-grid" id="swatch-matrix-grid"></div>
+    </section>
+
+    <!-- SECTION 3: ALL 3 LOGO CONCEPTS SIDE-BY-SIDE -->
+    <section aria-labelledby="sec-3-title">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">03 · WORDMARK &amp; ICON MATRIX</p>
+          <h2 id="sec-3-title" class="section-title">Side-by-Side Comparison of All 3 Logo Directions</h2>
+        </div>
+        <p class="section-desc">Compare all three geometric constructions simultaneously under the active color palette and font system.</p>
+      </div>
+
+      <div class="concept-compare-grid" id="concept-compare-grid"></div>
+    </section>
+
+    <!-- SECTION 4: MULTI-SCRIPT TYPOGRAPHY -->
+    <section aria-labelledby="sec-4-title">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">04 · MULTI-SCRIPT TYPOGRAPHY STRESS TEST</p>
+          <h2 id="sec-4-title" class="section-title">Glyph &amp; Weight Parity Across EN · AZ · TR · RU · KA</h2>
+        </div>
+        <p class="section-desc">Eliminates silent font fallback on Azerbaijani (Ə/ə), Turkish (İ/ı/Ğ/ğ/Ş/ş), Russian Cyrillic, and Georgian legal text (შპს ნოვალტრონი).</p>
+      </div>
+
+      <div class="typo-compare-strip" id="typo-compare-strip"></div>
+
+      <div class="scripts-grid">
+        <article class="script-card" lang="en">
+          <p class="script-lang-tag">EN · ENGLISH (INTERNATIONAL)</p>
+          <h3 class="script-headline">Turnkey Agro-Industrial &amp; Critical OT Systems</h3>
+          <p class="script-body">Consolidated EU &amp; Turkish engineering procurement, FAT/SAT commissioning, and export readiness via Tbilisi.</p>
+          <p class="script-glyphs">DWG-01 · Z600 EUROCODE · IEC 61850 · 200–500 t/h</p>
+        </article>
+
+        <article class="script-card" lang="az">
+          <p class="script-lang-tag">AZ · AZƏRBAYCAN DİLİ (Ə / Ğ / Ş / Ç)</p>
+          <h3 class="script-headline">Müasir Aqrar-Sənaye və Kritik İnfrastruktur</h3>
+          <p class="script-body">Əkinçilikdə dəqiq suvarma, müasir istixana kompleksləri və ixrac sertifikatlaşdırılması üçün açar təslim həllər.</p>
+          <p class="script-glyphs">Ə ə · Ğ ğ · Ş ş · Ç ç · Ö ö · Ü ü · İ ı</p>
+        </article>
+
+        <article class="script-card" lang="tr">
+          <p class="script-lang-tag">TR · TÜRKÇE (OEM PARTNER CORRIDOR)</p>
+          <h3 class="script-headline">Anahtar Teslim Endüstriyel Mühendislik</h3>
+          <p class="script-body">Avrupa ve Türkiye menşeli yüksek verimli tahıl kurutma, sulama ve boru hattı sistemleri entegrasyonu.</p>
+          <p class="script-glyphs">İ i · I ı · Ğ ğ · Ş ş · Ç ç · Ö ö · Ü ü</p>
+        </article>
+
+        <article class="script-card" lang="ru">
+          <p class="script-lang-tag">RU · РУССКИЙ (CYRILLIC CORRIDOR)</p>
+          <h3 class="script-headline">Промышленный инжиниринг и автоматизация</h3>
+          <p class="script-body">Проектирование, поставка оборудования из Европы и Турции, пусконаладка FAT/SAT по всему Кавказу и ЦА.</p>
+          <p class="script-glyphs">А Б В Г Д Ж З Й К Л П Ф Ц Ч Ш Щ Ъ Ы Э Ю Я</p>
+        </article>
+
+        <article class="script-card" lang="ka">
+          <p class="script-lang-tag">KA · ქართული (TBILISI HUB LEGAL)</p>
+          <h3 class="script-headline">შპს ნოვალტრონი — თბილისის ჰაბი</h3>
+          <p class="script-body">საერთაშორისო სავაჭრო დაფინანსება, ევროპული სტანდარტების სისტემების ინტეგრაცია და ტექნიკური ზედამხედველობა.</p>
+          <p class="script-glyphs">ა ბ გ დ ე ვ ზ თ ი კ ლ მ ნ ო პ ჟ რ ს ტ უ ფ ქ ღ ყ შ ჩ ც ძ წ ჭ ხ ჯ ჰ</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 5: REAL-WORLD COLLATERAL PREVIEWS -->
+    <section aria-labelledby="sec-5-title">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">05 · PRIORITY COLLATERAL &amp; PHOTO HARMONY</p>
+          <h2 id="sec-5-title" class="section-title">Live Mockups: Web Photos, Business Card, Profile Deck &amp; Social Kit</h2>
+        </div>
+        <p class="section-desc">Placeholder data used for contact names and phone numbers; paired with Novaltron's actual project photography.</p>
+      </div>
+
+      <div class="collateral-stack">
+        <!-- 5A: Website & Photography Harmony -->
+        <div class="collateral-block">
+          <div class="collateral-block-head">
+            <h3>5A · Website Hero Chrome &amp; Real Project Photography Harmony</h3>
+            <span class="collateral-spec-pill">novaltron.com · Real photos from /public/images/</span>
+          </div>
+          <div class="web-mock surface-dark blueprint-grid-dark">
+            <div class="web-mock-nav" style="background-color:var(--dark-bg);">
+              <div id="web-mock-lockup"></div>
+              <div class="web-mock-links">
+                <span>Agro-Industrial</span>
+                <span>Bio &amp; Smart IPM</span>
+                <span>Industrial &amp; OT</span>
+                <span>Turnkey Delivery</span>
+              </div>
+              <span class="web-mock-cta">Request a Quote →</span>
+            </div>
+            <div class="web-mock-hero">
+              <div style="display:flex; flex-direction:column; gap:0.85rem;">
+                <span class="mono" style="font-size:0.7rem; letter-spacing:0.1em; color:var(--accent-dark);">AGRO-INDUSTRIAL &amp; INFRASTRUCTURE · TBILISI HUB</span>
+                <h4 style="font-size:clamp(1.25rem, 2.2vw, 1.75rem); font-weight:700; color:#FFFFFF;">Turnkey Engineering Across the Caucasus &amp; Central Asia</h4>
+                <p style="font-size:0.86rem; color:var(--muted-dark);">Connecting European &amp; Turkish OEM precision with regional field execution—precision irrigation, greenhouses, Z600 grain silos, HDPE pipelines, and substation OT/SCADA.</p>
+                <div style="display:flex; flex-wrap:wrap; gap:0.65rem; margin-top:0.25rem;">
+                  <span style="padding:0.5rem 0.95rem; border-radius:0.375rem; background-color:var(--accent-dark); color:var(--on-accent-dark); font-size:0.8rem; font-weight:700;">Submit Project RFQ →</span>
+                  <span style="padding:0.5rem 0.95rem; border-radius:0.375rem; border:1px solid var(--dark-border); background-color:var(--dark-surface); color:#FFFFFF; font-size:0.8rem; font-weight:600;">Bio-IPM: Tiered Packages</span>
+                </div>
+              </div>
+              <div class="photo-triptych">
+                <div class="photo-frame photo-frame-tall">
+                  <img src="/images/hero-agritech.jpg" alt="Center-pivot irrigation field and commercial greenhouses">
+                  <span class="photo-caption">01 · PRECISION IRRIGATION</span>
+                </div>
+                <div class="photo-frame">
+                  <img src="/images/industrial-infra.jpg" alt="High-pressure HDPE pipelines with stainless valves">
+                  <span class="photo-caption">02 · HDPE &amp; THERMAL</span>
+                </div>
+                <div class="photo-frame">
+                  <img src="/images/bio-ipm.jpg" alt="Solar-powered automated AI camera trap in greenhouse">
+                  <span class="photo-caption">03 · BIO &amp; SMART IPM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5B: Business Card -->
+        <div class="collateral-block">
+          <div class="collateral-block-head">
+            <h3>5B · Executive Business Card (Front &amp; Back · Placeholder Details)</h3>
+            <span class="collateral-spec-pill">85 × 55 mm · Standard EU/Caucasus Trim</span>
+          </div>
+          <div class="cards-pair">
+            <div class="biz-card surface-dark blueprint-grid-dark">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                <div id="card-front-wordmark"></div>
+                <span class="mono" style="font-size:0.64rem; color:var(--accent-dark); letter-spacing:0.08em;">TBILISI · BAKU</span>
+              </div>
+              <div class="biz-card-bottom">
+                <div>
+                  <p class="biz-name" style="color:#FFFFFF;">A. Mammadov</p>
+                  <p class="biz-role" style="color:var(--accent-dark);">Managing Partner</p>
+                </div>
+                <div class="biz-contact" style="color:var(--muted-dark);">
+                  <p>+995 32 000 00 00</p>
+                  <p style="color:#FFFFFF;">info@novaltron.com</p>
+                  <p>Tbilisi, Georgia</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="biz-card surface-light blueprint-grid-light">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                <div id="card-back-icon"></div>
+                <div id="card-qr-placeholder" aria-hidden="true"></div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:0.75rem;">
+                <div>
+                  <p class="mono" style="font-size:0.72rem; font-weight:700; color:var(--dark-bg);">novaltron.com</p>
+                  <p style="font-size:0.7rem; color:var(--muted-light);">Novaltron LLC · შპს ნოვალტრონი</p>
+                </div>
+                <p class="mono" style="font-size:0.62rem; color:var(--accent-light); text-align:right; letter-spacing:0.05em;">
+                  AGRO · BIO-IPM · OT/EPC
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5C: Company Profile Cover Slide -->
+        <div class="collateral-block">
+          <div class="collateral-block-head">
+            <h3>5C · Company Profile / Bank KYC &amp; EPC AVL Deck Cover</h3>
+            <span class="collateral-spec-pill">16:9 Widescreen · Institutional &amp; Tender Presentation</span>
+          </div>
+          <div class="deck-slide surface-dark blueprint-grid-dark">
+            <div class="deck-top">
+              <div id="deck-wordmark"></div>
+              <span class="mono" style="font-size:0.72rem; color:var(--accent-dark); letter-spacing:0.1em; padding:0.25rem 0.6rem; border:1px solid var(--dark-border); border-radius:0.25rem; background-color:var(--dark-surface);">
+                DWG-00 · CORPORATE PROFILE 2026
+              </span>
+            </div>
+            <div class="deck-body">
+              <p class="mono" style="font-size:0.74rem; color:var(--sec-dark); letter-spacing:0.11em; text-transform:uppercase;">
+                CAUCASUS · CENTRAL ASIA · EUROPEAN &amp; TURKISH OEM BRIDGE
+              </p>
+              <h4 class="deck-title">Turnkey Agro-Industrial Engineering, Bio-IPM &amp; Critical Infrastructure</h4>
+              <p class="deck-sub">
+                Cross-border engineering integration, trade finance readiness, consolidated freight forwarding, and measurement-backed FAT/SAT commissioning operated through Novaltron LLC (Tbilisi, Georgia).
+              </p>
+            </div>
+            <div class="deck-footer">
+              <div class="standards-pills">
+                <span class="std-pill">ISO 9001</span>
+                <span class="std-pill">ISO 14001</span>
+                <span class="std-pill">ISO 22000</span>
+                <span class="std-pill">CE / ATEX</span>
+                <span class="std-pill">Eurocode / EN</span>
+                <span class="std-pill">GLOBALG.A.P. IFA v6</span>
+              </div>
+              <span class="mono" style="font-size:0.72rem; color:var(--muted-dark);">Novaltron LLC (შპს ნოვალტრონი) · info@novaltron.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5D: Social Media Kit & ERM -->
+        <div class="collateral-block">
+          <div class="collateral-block-head">
+            <h3>5D · Social Media Launch Kit &amp; Novaltron ERM App Lockup</h3>
+            <span class="collateral-spec-pill">LinkedIn Banner (4:1) · Post Card (4:5) · ERM Sidebar</span>
+          </div>
+          <div class="social-erm-grid">
+            <div class="linkedin-mock">
+              <div class="linkedin-banner surface-dark blueprint-grid-dark">
+                <div style="display:flex; flex-direction:column; gap:0.45rem;">
+                  <div id="linkedin-banner-wordmark"></div>
+                  <p class="mono" style="font-size:0.68rem; color:var(--muted-dark); letter-spacing:0.1em;">
+                    AZERBAIJAN · GEORGIA · UZBEKISTAN · KAZAKHSTAN · TÜRKIYE
+                  </p>
+                </div>
+                <div style="text-align:right; display:flex; flex-direction:column; gap:0.25rem;">
+                  <span class="mono" style="font-size:0.68rem; color:var(--accent-dark); font-weight:700;">4 ENGINEERING DIVISIONS</span>
+                  <span class="mono" style="font-size:0.64rem; color:#E5E7EB;">AGRO · BIO-IPM · PIPELINES · OT/SCADA</span>
+                </div>
+              </div>
+              <div class="linkedin-profile-row">
+                <div class="linkedin-avatar" id="linkedin-avatar-slot"></div>
+                <div style="padding-top:1.95rem;">
+                  <p style="font-family:var(--font-heading); font-weight:700; font-size:1rem; color:#111827;">Novaltron LLC</p>
+                  <p style="font-size:0.78rem; color:#4B5563;">Agro-Industrial Systems &amp; Critical Infrastructure Integration · Tbilisi, Georgia</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-post-erm-col">
+              <div class="social-post-card surface-dark blueprint-grid-dark">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span class="mono" style="font-size:0.68rem; color:var(--accent-dark); letter-spacing:0.08em;">LINKEDIN SPEC BRIEF · 03</span>
+                  <span id="post-mini-icon"></span>
+                </div>
+                <div>
+                  <h4 style="font-size:1.05rem; font-weight:700; color:#FFFFFF; margin-bottom:0.35rem;">Z600 Eurocode Grain Terminals (200–500 t/h)</h4>
+                  <p style="font-size:0.78rem; color:var(--muted-dark);">Pre-cleaners, continuous tower dryers, ATEX explosion venting &amp; optical sorting—delivered turnkey.</p>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding-top:0.65rem; border-top:1px solid var(--dark-border);">
+                  <span class="mono" style="font-size:0.68rem; color:var(--sec-dark);">novaltron.com/agro-solutions</span>
+                  <span class="mono" style="font-size:0.66rem; color:#FFFFFF;">FAT / SAT CERTIFIED</span>
+                </div>
+              </div>
+
+              <div class="erm-sidebar-mock surface-dark">
+                <div class="erm-brand-row">
+                  <div id="erm-sidebar-icon"></div>
+                  <div>
+                    <p style="font-size:0.88rem; font-weight:700; color:#FFFFFF;">Novaltron ERM</p>
+                    <p class="mono" style="font-size:0.62rem; letter-spacing:0.08em; color:var(--sec-dark);">STAGE 1 • SYSTEM OF RECORD</p>
+                  </div>
+                </div>
+                <div class="erm-nav-pill" style="background-color:var(--accent-dark); color:var(--on-accent-dark);">
+                  <span>Daily Queue</span>
+                  <span class="mono" style="font-size:0.7rem;">04 DUE</span>
+                </div>
+                <div class="erm-nav-pill" style="background-color:var(--dark-surface); color:#E5E7EB; border:1px solid var(--dark-border);">
+                  <span>Commercial Pipeline</span>
+                  <span class="mono" style="font-size:0.7rem; color:var(--muted-dark);">KANBAN</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const PALETTES = {
+        "obsidian-copper": {
+          id: "obsidian-copper",
+          code: "A",
+          name: "Obsidian & Forged Copper",
+          shortName: "A. Obsidian & Copper",
+          mood: "Heavy European OEM precision (Leica / Swiss precision); lets green agro photos pop naturally.",
+          darkBg: "#121417",
+          darkSurface: "#1E2228",
+          darkBorder: "#303640",
+          lightBg: "#F5F4F0",
+          lightSurface: "#FFFFFF",
+          lightBorder: "#DCD9D0",
+          accentLight: "#B84B14",
+          onAccentLight: "#FFFFFF",
+          accentDark: "#E8773A",
+          onAccentDark: "#121417",
+          secLight: "#245C40",
+          secDark: "#5CC48C",
+          mutedLight: "#4B525C",
+          mutedDark: "#A3ACB9",
+          danger: "#C81E1E",
+          swatches: [
+            {
+              role: "Primary Dark — Carbon Obsidian",
+              usage: "Headers, blueprint dark sections, ERM shell, business card front",
+              hex: "#121417",
+              textColor: "#F5F4F0",
+              wcag: "16.8:1 AAA on Light",
+              rgb: "18, 20, 23",
+              oklch: "0.19 0.01 255",
+              cmyk: "76 / 68 / 62 / 82",
+              pms: "Black 6 C",
+              ral: "RAL 9005 Jet Black"
+            },
+            {
+              role: "Primary Light — Warm Limestone",
+              usage: "Editorial backgrounds, stationery paper stock, technical briefs",
+              hex: "#F5F4F0",
+              textColor: "#121417",
+              wcag: "16.8:1 AAA w/ Obsidian",
+              rgb: "245, 244, 240",
+              oklch: "0.96 0.01 95",
+              cmyk: "3 / 3 / 5 / 0",
+              pms: "Warm Gray 1 C",
+              ral: "RAL 9010 Pure White"
+            },
+            {
+              role: "Signature Accent (Light / CTA) — Forged Copper",
+              usage: "Primary CTAs on white/light surfaces, eyebrow markers, active UI states",
+              hex: "#B84B14",
+              textColor: "#FFFFFF",
+              wcag: "5.2:1 AA w/ White",
+              rgb: "184, 75, 20",
+              oklch: "0.53 0.16 40",
+              cmyk: "15 / 74 / 98 / 12",
+              pms: "PMS 7579 C",
+              ral: "RAL 2001 Red Orange"
+            },
+            {
+              role: "Signature Accent (Dark Surface) — Luminous Copper",
+              usage: "High-contrast highlights, CAD telemetry lines & buttons on #121417",
+              hex: "#E8773A",
+              textColor: "#121417",
+              wcag: "6.3:1 AA on Dark",
+              rgb: "232, 119, 58",
+              oklch: "0.69 0.16 44",
+              cmyk: "5 / 62 / 84 / 0",
+              pms: "PMS 158 C",
+              ral: "RAL 2008 Bright Red Orange"
+            },
+            {
+              role: "Secondary Bio-IPM — Agronomic Moss",
+              usage: "Bio-IPM division badges, GLOBALG.A.P. status, ecological metrics",
+              hex: "#245C40",
+              textColor: "#FFFFFF",
+              wcag: "7.1:1 AAA on Light",
+              rgb: "36, 92, 64",
+              oklch: "0.43 0.08 156",
+              cmyk: "84 / 36 / 75 / 26",
+              pms: "PMS 3425 C",
+              ral: "RAL 6005 Moss Green"
+            },
+            {
+              role: "Dark Card Surface — Brushed Graphite",
+              usage: "Elevated dark containers, schematic consoles, slide badges",
+              hex: "#1E2228",
+              textColor: "#F5F4F0",
+              wcag: "13.8:1 AAA w/ Light",
+              rgb: "30, 34, 40",
+              oklch: "0.25 0.01 255",
+              cmyk: "74 / 64 / 56 / 68",
+              pms: "PMS 432 C",
+              ral: "RAL 7021 Black Grey"
+            }
+          ]
+        },
+        "nordic-pine": {
+          id: "nordic-pine",
+          code: "B",
+          name: "Nordic Pine & Harvest Brass",
+          shortName: "B. Nordic Pine & Brass",
+          mood: "Scandinavian agricultural mastery & institutional banking gravitas (Cimbria / export-grade authority).",
+          darkBg: "#0D221D",
+          darkSurface: "#16332C",
+          darkBorder: "#294E45",
+          lightBg: "#F6F8F7",
+          lightSurface: "#FFFFFF",
+          lightBorder: "#D5DFDB",
+          accentLight: "#8F5E0E",
+          onAccentLight: "#FFFFFF",
+          accentDark: "#DDA53E",
+          onAccentDark: "#0D221D",
+          secLight: "#165B73",
+          secDark: "#4DB2D1",
+          mutedLight: "#435651",
+          mutedDark: "#9EB5AE",
+          danger: "#C81E1E",
+          swatches: [
+            {
+              role: "Primary Dark — Deep Nordic Pine",
+              usage: "Hero backgrounds, executive deck covers, primary wordmark ink",
+              hex: "#0D221D",
+              textColor: "#F6F8F7",
+              wcag: "15.6:1 AAA on Light",
+              rgb: "13, 34, 29",
+              oklch: "0.23 0.03 170",
+              cmyk: "88 / 52 / 68 / 74",
+              pms: "PMS 5467 C",
+              ral: "RAL 6012 Black Green"
+            },
+            {
+              role: "Primary Light — Galvanized Frost",
+              usage: "Clean light sections, technical dossiers, business card reverse",
+              hex: "#F6F8F7",
+              textColor: "#0D221D",
+              wcag: "15.6:1 AAA w/ Pine",
+              rgb: "246, 248, 247",
+              oklch: "0.97 0.005 165",
+              cmyk: "3 / 1 / 2 / 0",
+              pms: "Cool Gray 1 C",
+              ral: "RAL 9003 Signal White"
+            },
+            {
+              role: "Signature Accent (Light / CTA) — Anodized Brass",
+              usage: "Buttons, headings tags, active highlights on light surfaces",
+              hex: "#8F5E0E",
+              textColor: "#FFFFFF",
+              wcag: "5.6:1 AA w/ White",
+              rgb: "143, 94, 14",
+              oklch: "0.51 0.11 75",
+              cmyk: "24 / 52 / 100 / 24",
+              pms: "PMS 7557 C",
+              ral: "RAL 1024 Ochre Yellow"
+            },
+            {
+              role: "Signature Accent (Dark Surface) — Warm Brass",
+              usage: "High-visibility markers, FAT/SAT seals, grain & harvest accents on dark",
+              hex: "#DDA53E",
+              textColor: "#0D221D",
+              wcag: "7.5:1 AAA on Dark",
+              rgb: "221, 165, 62",
+              oklch: "0.76 0.13 80",
+              cmyk: "12 / 35 / 86 / 0",
+              pms: "PMS 7555 C",
+              ral: "RAL 1005 Honey Yellow"
+            },
+            {
+              role: "Secondary Industrial — Hydraulic Petrol",
+              usage: "Water telemetry, HDPE pipelines, critical OT/SCADA track",
+              hex: "#165B73",
+              textColor: "#FFFFFF",
+              wcag: "7.1:1 AAA on Light",
+              rgb: "22, 91, 115",
+              oklch: "0.44 0.08 220",
+              cmyk: "90 / 48 / 32 / 18",
+              pms: "PMS 7699 C",
+              ral: "RAL 5020 Ocean Blue"
+            },
+            {
+              role: "Dark Card Surface — Pine Steel",
+              usage: "Elevated dark cards, blueprint schematic boxes, ERM sub-panels",
+              hex: "#16332C",
+              textColor: "#F6F8F7",
+              wcag: "12.4:1 AAA w/ Light",
+              rgb: "22, 51, 44",
+              oklch: "0.30 0.04 170",
+              cmyk: "84 / 45 / 66 / 52",
+              pms: "PMS 5477 C",
+              ral: "RAL 6009 Fir Green"
+            }
+          ]
+        },
+        "caspian-volt": {
+          id: "caspian-volt",
+          code: "C",
+          name: "Caspian Petrol & Signal Volt",
+          shortName: "C. Caspian Petrol & Volt",
+          mood: "High-tech telemetry & OT/SCADA precision (Siemens Energy / Claas precision engineering).",
+          darkBg: "#0A1F2E",
+          darkSurface: "#133045",
+          darkBorder: "#234863",
+          lightBg: "#F4F7F9",
+          lightSurface: "#FFFFFF",
+          lightBorder: "#D4DFE7",
+          accentLight: "#4A7706",
+          onAccentLight: "#FFFFFF",
+          accentDark: "#A3E635",
+          onAccentDark: "#0A1F2E",
+          secLight: "#006B68",
+          secDark: "#2DD4BF",
+          mutedLight: "#455A69",
+          mutedDark: "#9CB3C4",
+          danger: "#C81E1E",
+          swatches: [
+            {
+              role: "Primary Dark — Deep Caspian Petrol",
+              usage: "OT/SCADA consoles, hero stages, navigation headers",
+              hex: "#0A1F2E",
+              textColor: "#F4F7F9",
+              wcag: "15.6:1 AAA on Light",
+              rgb: "10, 31, 46",
+              oklch: "0.22 0.05 240",
+              cmyk: "96 / 68 / 44 / 64",
+              pms: "PMS 3035 C",
+              ral: "RAL 5011 Steel Blue"
+            },
+            {
+              role: "Primary Light — Lab Technical White",
+              usage: "Clean specification sheets, light UI backgrounds",
+              hex: "#F4F7F9",
+              textColor: "#0A1F2E",
+              wcag: "15.6:1 AAA w/ Petrol",
+              rgb: "244, 247, 249",
+              oklch: "0.97 0.01 235",
+              cmyk: "4 / 1 / 0 / 0",
+              pms: "PMS 656 C",
+              ral: "RAL 9016 Traffic White"
+            },
+            {
+              role: "Signature Accent (Light / CTA) — Deep Agro-Volt",
+              usage: "Accessible light-mode action buttons, badges, eyebrow rules",
+              hex: "#4A7706",
+              textColor: "#FFFFFF",
+              wcag: "5.3:1 AA w/ White",
+              rgb: "74, 119, 6",
+              oklch: "0.52 0.14 130",
+              cmyk: "66 / 18 / 100 / 18",
+              pms: "PMS 370 C",
+              ral: "RAL 6010 Grass Green"
+            },
+            {
+              role: "Signature Accent (Dark Surface) — Signal Volt",
+              usage: "Live telemetry paths, field PPE visibility, dark-mode CTAs",
+              hex: "#A3E635",
+              textColor: "#0A1F2E",
+              wcag: "11.2:1 AAA on Dark",
+              rgb: "163, 230, 53",
+              oklch: "0.86 0.20 128",
+              cmyk: "38 / 0 / 92 / 0",
+              pms: "PMS 376 C",
+              ral: "RAL 6018 Yellow Green"
+            },
+            {
+              role: "Secondary Telemetry — Precision Cyan-Teal",
+              usage: "Water flow, HVAC/climate loops, PTP time sync graphs",
+              hex: "#006B68",
+              textColor: "#FFFFFF",
+              wcag: "5.9:1 AA on Light",
+              rgb: "0, 107, 104",
+              oklch: "0.48 0.08 190",
+              cmyk: "92 / 24 / 52 / 20",
+              pms: "PMS 3282 C",
+              ral: "RAL 5021 Water Blue"
+            },
+            {
+              role: "Dark Card Surface — Telemetry Slate",
+              usage: "Schematic cards, hardware data tables, ERM sidebar containers",
+              hex: "#133045",
+              textColor: "#F4F7F9",
+              wcag: "12.0:1 AAA w/ Light",
+              rgb: "19, 48, 69",
+              oklch: "0.29 0.06 240",
+              cmyk: "92 / 60 / 38 / 46",
+              pms: "PMS 540 C",
+              ral: "RAL 5003 Sapphire Blue"
+            }
+          ]
+        },
+        "slate-cobalt": {
+          id: "slate-cobalt",
+          code: "D",
+          name: "Architectural Slate & Blueprint Cobalt",
+          shortName: "D. Slate & Cobalt",
+          mood: "Maximum EPC / tender / bank institutional neutrality; reserves green strictly for Bio-IPM.",
+          darkBg: "#111820",
+          darkSurface: "#1C2733",
+          darkBorder: "#2E3D4F",
+          lightBg: "#F8F9FB",
+          lightSurface: "#FFFFFF",
+          lightBorder: "#DCE2EA",
+          accentLight: "#1B4FD8",
+          onAccentLight: "#FFFFFF",
+          accentDark: "#6B98FF",
+          onAccentDark: "#111820",
+          secLight: "#146C46",
+          secDark: "#4ADE80",
+          mutedLight: "#485463",
+          mutedDark: "#9FB0C4",
+          danger: "#C81E1E",
+          swatches: [
+            {
+              role: "Primary Dark — Architectural Charcoal",
+              usage: "Primary corporate typography, dark headers, legal seals",
+              hex: "#111820",
+              textColor: "#F8F9FB",
+              wcag: "17.0:1 AAA on Light",
+              rgb: "17, 24, 32",
+              oklch: "0.20 0.02 250",
+              cmyk: "82 / 70 / 58 / 76",
+              pms: "PMS 433 C",
+              ral: "RAL 7021 Black Grey"
+            },
+            {
+              role: "Primary Light — Drafting Vellum",
+              usage: "Technical drawings, proposal pages, clean UI shell",
+              hex: "#F8F9FB",
+              textColor: "#111820",
+              wcag: "17.0:1 AAA w/ Charcoal",
+              rgb: "248, 249, 251",
+              oklch: "0.98 0.004 250",
+              cmyk: "2 / 1 / 0 / 0",
+              pms: "PMS 663 C",
+              ral: "RAL 9016 Traffic White"
+            },
+            {
+              role: "Signature Accent (Light / CTA) — Blueprint Cobalt",
+              usage: "Primary actions, structural diagrams, institutional links",
+              hex: "#1B4FD8",
+              textColor: "#FFFFFF",
+              wcag: "6.6:1 AA w/ White",
+              rgb: "27, 79, 216",
+              oklch: "0.49 0.21 264",
+              cmyk: "92 / 72 / 0 / 0",
+              pms: "PMS 2728 C",
+              ral: "RAL 5005 Signal Blue"
+            },
+            {
+              role: "Signature Accent (Dark Surface) — Luminous Cobalt",
+              usage: "CAD schematics, active tabs, dark-surface callouts",
+              hex: "#6B98FF",
+              textColor: "#111820",
+              wcag: "6.4:1 AA on Dark",
+              rgb: "107, 152, 255",
+              oklch: "0.69 0.16 262",
+              cmyk: "58 / 34 / 0 / 0",
+              pms: "PMS 279 C",
+              ral: "RAL 5012 Light Blue"
+            },
+            {
+              role: "Secondary Bio-IPM — Botanical Bio Green",
+              usage: "Dedicated strictly to Bio-Solutions & Smart IPM certification pages",
+              hex: "#146C46",
+              textColor: "#FFFFFF",
+              wcag: "6.1:1 AA on Light",
+              rgb: "20, 108, 70",
+              oklch: "0.47 0.10 158",
+              cmyk: "88 / 26 / 78 / 14",
+              pms: "PMS 340 C",
+              ral: "RAL 6029 Mint Green"
+            },
+            {
+              role: "Dark Card Surface — Drafting Slate",
+              usage: "Elevated dark surfaces, ERM cards, specification tables",
+              hex: "#1C2733",
+              textColor: "#F8F9FB",
+              wcag: "13.4:1 AAA w/ Light",
+              rgb: "28, 39, 51",
+              oklch: "0.26 0.03 248",
+              cmyk: "82 / 64 / 48 / 58",
+              pms: "PMS 7545 C",
+              ral: "RAL 7016 Anthracite Grey"
+            }
+          ]
+        }
+      };
+
+      const CONCEPTS = {
+        corridor: {
+          id: "corridor",
+          code: "1",
+          name: "Precision Corridor",
+          shortName: "1. Precision Corridor",
+          rationale: "Wordmark replaces initial 'N' with a precision split corridor—evoking the EU/Turkey ↔ Caucasus/Central Asia engineering bridge. Companion favicon frames the two-tone N inside a 45°-chamfered blueprint plate."
+        },
+        truss: {
+          id: "truss",
+          code: "2",
+          name: "Structural Truss",
+          shortName: "2. Structural Truss",
+          rationale: "European OEM wordmark (Siemens/Cimbria gravity) featuring an architectural crossbar-free 'A' and precision diamond marker. Companion favicon embeds a crisp geometric 'N' inside an asymmetric hexagonal truss."
+        },
+        axis: {
+          id: "axis",
+          code: "3",
+          name: "Dual-Track Axis",
+          shortName: "3. Dual-Track Axis",
+          rationale: "Heavy wide-tracked industrial wordmark anchored by a precision conduit bar. Companion favicon reduces Novaltron's Agro + Industrial dual-track model to two vertical structural rails joined by an angled conduit."
+        }
+      };
+
+      const TYPOS = {
+        "ibm-plex": {
+          id: "ibm-plex",
+          name: "T1 · IBM Plex Superfamily",
+          shortName: "T1. IBM Plex",
+          heading: "'IBM Plex Sans', 'Noto Sans Georgian', -apple-system, sans-serif",
+          body: "'IBM Plex Sans', 'Noto Sans Georgian', -apple-system, sans-serif",
+          mono: "'IBM Plex Mono', ui-monospace, monospace",
+          notes: "Single coherent engineering superfamily covering Latin-Ext (AZ/TR) + Cyrillic natively, paired with Noto Sans Georgian for legal parity."
+        },
+        "swiss-geometric": {
+          id: "swiss-geometric",
+          name: "T2 · Manrope + Inter + JetBrains Mono",
+          shortName: "T2. Manrope + Inter",
+          heading: "'Manrope', 'Noto Sans Georgian', -apple-system, sans-serif",
+          body: "'Inter', 'Noto Sans Georgian', -apple-system, sans-serif",
+          mono: "'JetBrains Mono', ui-monospace, monospace",
+          notes: "Geometric industrial display warmth (Manrope) paired with high-legibility technical body copy (Inter) and JetBrains Mono CAD codes."
+        }
+      };
+
+      let state = {
+        palette: "obsidian-copper",
+        concept: "corridor",
+        typo: "ibm-plex"
+      };
+
+      function getIconInnerSvg(conceptId, ink, accent) {
+        if (conceptId === "corridor") {
+          return (
+            '<path d="M 15,49 V 15 H 24 L 33,27.5 L 27,32 L 23,26.5 V 49 Z" fill="' + ink + '"/>' +
+            '<path d="M 49,15 V 49 H 40 L 31,36.5 L 37,32 L 41,37.5 V 15 Z" fill="' + accent + '"/>'
+          );
+        }
+        if (conceptId === "truss") {
+          return (
+            '<polygon points="32,4 56.25,18 56.25,31 50.5,27.5 50.5,21.2 32,10.5" fill="' + accent + '"/>' +
+            '<path d="M 20,46 V 20 H 26.5 L 38,37.5 V 20 H 44 V 46 H 37.5 L 26,28.5 V 46 Z" fill="' + ink + '"/>'
+          );
+        }
+        return (
+          '<rect x="13" y="13" width="8.5" height="38" rx="1" fill="' + ink + '"/>' +
+          '<rect x="42.5" y="13" width="8.5" height="38" rx="1" fill="' + ink + '"/>' +
+          '<polygon points="24.5,13 33,13 39.5,51 31,51" fill="' + accent + '"/>'
+        );
+      }
+
+      function renderFaviconSvg(conceptId, size, bg, ink, accent, options) {
+        const opts = options || {};
+        const badgeOnly = opts.unframed
+          ? ""
+          : conceptId === "corridor"
+            ? '<path d="M 4,4 H 50 L 60,14 V 60 H 4 Z" fill="' + bg + '"/>'
+            : conceptId === "truss"
+              ? '<polygon points="32,4 56.25,18 56.25,46 32,60 7.75,46 7.75,18" fill="' + bg + '"/>'
+              : '<rect x="4" y="4" width="56" height="56" rx="8" fill="' + bg + '"/>';
+
+        const a11yAttr = opts.title
+          ? 'role="img" aria-label="' + opts.title + '"'
+          : 'aria-hidden="true"';
+
+        const titleTag = opts.title ? "<title>" + opts.title + "</title>" : "";
+
+        return (
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="' + size + '" height="' + size + '" ' + a11yAttr + ">" +
+          titleTag +
+          badgeOnly +
+          getIconInnerSvg(conceptId, ink, accent) +
+          "</svg>"
+        );
+      }
+
+      function renderWordmarkHtml(conceptId, sizeClass, ink, accent, decorative) {
+        const srLabel = decorative ? "" : '<span class="visually-hidden">NOVALTRON</span>';
+        const outerAria = decorative ? 'aria-hidden="true"' : "";
+        const innerAria = decorative ? "" : 'aria-hidden="true"';
+        if (conceptId === "corridor") {
+          const glyphN =
+            '<svg class="wm-glyph-n" viewBox="15 15 34 34" aria-hidden="true">' +
+            '<path d="M 15,49 V 15 H 24 L 33,27.5 L 27,32 L 23,26.5 V 49 Z" fill="' + ink + '"/>' +
+            '<path d="M 49,15 V 49 H 40 L 31,36.5 L 37,32 L 41,37.5 V 15 Z" fill="' + accent + '"/>' +
+            "</svg>";
+          return (
+            '<span class="wm-display wm-corridor ' + sizeClass + '" style="color:' + ink + ';" ' + outerAria + ">" +
+            srLabel +
+            '<span ' + innerAria + ' style="display:inline-flex; align-items:center;">' +
+            glyphN +
+            "<span>OVALTRON</span>" +
+            "</span>" +
+            "</span>"
+          );
+        }
+
+        if (conceptId === "truss") {
+          const glyphA =
+            '<svg class="wm-glyph-a" viewBox="0 0 46 44" aria-hidden="true">' +
+            '<polygon points="23,2 44,42 35.5,42 23,16.5 10.5,42 2,42" fill="' + ink + '"/>' +
+            "</svg>";
+          return (
+            '<span class="wm-display wm-truss ' + sizeClass + '" style="color:' + ink + ';" ' + outerAria + ">" +
+            srLabel +
+            '<span ' + innerAria + ' style="display:inline-flex; align-items:center;">' +
+            "<span>NOV</span>" +
+            glyphA +
+            "<span>LTR</span><span>O</span><span>N</span>" +
+            '<span class="wm-truss-marker" style="background-color:' + accent + ';"></span>' +
+            "</span>" +
+            "</span>"
+          );
+        }
+
+        return (
+          '<span class="wm-axis-wrap" ' + outerAria + ">" +
+          srLabel +
+          '<span class="wm-display wm-axis ' + sizeClass + '" style="color:' + ink + ';" ' + innerAria + ">NOVALTRON</span>" +
+          '<span class="wm-axis-bar" aria-hidden="true" style="background: linear-gradient(90deg, ' + accent + " 0%, " + accent + " 34%, " + ink + ' 34%, ' + ink + ' 100%);"></span>' +
+          "</span>"
+        );
+      }
+
+      function renderLockupHtml(conceptId, mode, palette, sizeClass, opts) {
+        const o = opts || {};
+        const isDark = mode === "dark";
+        const badgeBg = isDark ? palette.darkSurface : palette.darkBg;
+        const badgeInk = "#FFFFFF";
+        const badgeAccent = palette.accentDark;
+        const textInk = isDark ? "#FFFFFF" : palette.darkBg;
+        const textAccent = isDark ? palette.accentDark : palette.accentLight;
+        const iconPx = o.iconSize || 34;
+
+        return (
+          '<div style="display:inline-flex; align-items:center; gap:0.7rem;">' +
+          renderFaviconSvg(conceptId, iconPx, badgeBg, badgeInk, badgeAccent) +
+          '<div style="display:flex; flex-direction:column; gap:0.15rem;">' +
+          renderWordmarkHtml(conceptId, sizeClass || "wm-size-md", textInk, textAccent, Boolean(o.decorative)) +
+          (o.subtitle
+            ? '<span class="mono" style="font-size:0.6rem; letter-spacing:0.11em; color:' + (isDark ? palette.mutedDark : palette.mutedLight) + ';">' + o.subtitle + "</span>"
+            : "") +
+          "</div>" +
+          "</div>"
+        );
+      }
+
+      function renderCorporateStampSvg(conceptId, ink) {
+        const innerMark = getIconInnerSvg(conceptId, ink, ink);
+        return (
+          '<svg viewBox="0 0 180 180" width="164" height="164" role="img" aria-label="Novaltron LLC Tbilisi Monochrome Official Stamp">' +
+          "<title>Novaltron LLC Official Company Stamp</title>" +
+          '<defs><path id="stamp-top-arc" d="M 24,90 A 66,66 0 1,1 156,90"/><path id="stamp-bot-arc" d="M 21,96 A 69,69 0 0,0 159,96"/></defs>' +
+          '<circle cx="90" cy="90" r="84" fill="none" stroke="' + ink + '" stroke-width="2.5"/>' +
+          '<circle cx="90" cy="90" r="78" fill="none" stroke="' + ink + '" stroke-width="1"/>' +
+          '<circle cx="90" cy="90" r="48" fill="none" stroke="' + ink + '" stroke-width="1.25"/>' +
+          '<text fill="' + ink + '" font-family="var(--font-mono)" font-size="10.2" font-weight="700" letter-spacing="2.1">' +
+          '<textPath href="#stamp-top-arc" startOffset="50%" text-anchor="middle">NOVALTRON LLC · TBILISI</textPath>' +
+          "</text>" +
+          '<text fill="' + ink + '" font-family="var(--font-body)" font-size="9.5" font-weight="700" letter-spacing="1">' +
+          '<textPath href="#stamp-bot-arc" startOffset="50%" text-anchor="middle">შპს ნოვალტრონი · GEORGIA</textPath>' +
+          "</text>" +
+          '<g transform="translate(58, 58)">' + innerMark + "</g>" +
+          "</svg>"
+        );
+      }
+
+      function renderQrPlaceholderSvg(ink, accent) {
+        const blocks = [
+          [0,0,7,7],[1,1,5,5],[2,2,3,3],
+          [14,0,7,7],[15,1,5,5],[16,2,3,3],
+          [0,14,7,7],[1,15,5,5],[2,16,3,3]
+        ];
+        const dots = [
+          [9,1],[11,1],[9,3],[10,4],[12,3],[9,6],[11,6],
+          [1,9],[3,9],[5,10],[7,9],[9,9],[11,9],[13,9],[16,9],[18,10],[20,9],
+          [0,11],[4,12],[6,11],[10,12],[14,11],[17,12],[19,11],
+          [9,14],[11,15],[13,14],[15,15],[17,14],[19,15],
+          [9,17],[12,18],[14,17],[16,18],[18,17],[20,18],
+          [9,20],[11,19],[13,20],[15,20],[18,20],[20,20]
+        ];
+        let rects =
+          '<rect x="0" y="0" width="7" height="7" fill="' + ink + '"/>' +
+          '<rect x="1" y="1" width="5" height="5" fill="#FFFFFF"/>' +
+          '<rect x="2" y="2" width="3" height="3" fill="' + accent + '"/>' +
+          '<rect x="14" y="0" width="7" height="7" fill="' + ink + '"/>' +
+          '<rect x="15" y="1" width="5" height="5" fill="#FFFFFF"/>' +
+          '<rect x="16" y="2" width="3" height="3" fill="' + ink + '"/>' +
+          '<rect x="0" y="14" width="7" height="7" fill="' + ink + '"/>' +
+          '<rect x="1" y="15" width="5" height="5" fill="#FFFFFF"/>' +
+          '<rect x="2" y="16" width="3" height="3" fill="' + ink + '"/>';
+        for (let i = 0; i < dots.length; i++) {
+          rects += '<rect x="' + dots[i][0] + '" y="' + dots[i][1] + '" width="1.2" height="1.2" fill="' + ink + '"/>';
+        }
+        void blocks;
+        return '<svg viewBox="0 0 21 21" width="44" height="44" aria-hidden="true">' + rects + "</svg>";
+      }
+
+      function updateLiveBrowserFavicon(palette, conceptId) {
+        const svg =
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">' +
+          (conceptId === "corridor"
+            ? '<path d="M 4,4 H 50 L 60,14 V 60 H 4 Z" fill="' + palette.darkBg + '"/>'
+            : conceptId === "truss"
+              ? '<polygon points="32,4 56.25,18 56.25,46 32,60 7.75,46 7.75,18" fill="' + palette.darkBg + '"/>'
+              : '<rect x="4" y="4" width="56" height="56" rx="8" fill="' + palette.darkBg + '"/>') +
+          getIconInnerSvg(conceptId, "#FFFFFF", palette.accentDark) +
+          "</svg>";
+        const el = document.getElementById("dynamic-favicon");
+        if (el) {
+          el.setAttribute("href", "data:image/svg+xml," + encodeURIComponent(svg));
+        }
+      }
+
+      function applyCssTokens(palette, typo) {
+        const r = document.documentElement.style;
+        r.setProperty("--dark-bg", palette.darkBg);
+        r.setProperty("--dark-surface", palette.darkSurface);
+        r.setProperty("--dark-border", palette.darkBorder);
+        r.setProperty("--light-bg", palette.lightBg);
+        r.setProperty("--light-surface", palette.lightSurface);
+        r.setProperty("--light-border", palette.lightBorder);
+        r.setProperty("--accent-light", palette.accentLight);
+        r.setProperty("--on-accent-light", palette.onAccentLight);
+        r.setProperty("--accent-dark", palette.accentDark);
+        r.setProperty("--on-accent-dark", palette.onAccentDark);
+        r.setProperty("--sec-light", palette.secLight);
+        r.setProperty("--sec-dark", palette.secDark);
+        r.setProperty("--muted-light", palette.mutedLight);
+        r.setProperty("--muted-dark", palette.mutedDark);
+        r.setProperty("--danger", palette.danger);
+
+        r.setProperty("--studio-ink", palette.darkBg);
+        r.setProperty("--studio-bg", palette.lightBg);
+        r.setProperty("--studio-card", palette.lightSurface);
+        r.setProperty("--studio-border", palette.lightBorder);
+        r.setProperty("--studio-muted", palette.mutedLight);
+
+        r.setProperty("--font-heading", typo.heading);
+        r.setProperty("--font-body", typo.body);
+        r.setProperty("--font-mono", typo.mono);
+      }
+
+      function renderAll() {
+        const p = PALETTES[state.palette];
+        const c = CONCEPTS[state.concept];
+        const t = TYPOS[state.typo];
+
+        applyCssTokens(p, t);
+        updateLiveBrowserFavicon(p, c.id);
+
+        // Update control buttons aria-pressed
+        const buttons = document.querySelectorAll("[data-control]");
+        for (let i = 0; i < buttons.length; i++) {
+          const btn = buttons[i];
+          const kind = btn.getAttribute("data-control");
+          const val = btn.getAttribute("data-value");
+          btn.setAttribute("aria-pressed", state[kind] === val ? "true" : "false");
+        }
+
+        document.getElementById("selection-readout").textContent =
+          p.shortName + " · " + c.shortName + " · " + t.shortName;
+
+        document.getElementById("header-mini-icon").innerHTML =
+          renderFaviconSvg(c.id, 30, p.darkSurface, "#FFFFFF", p.accentDark);
+
+        document.getElementById("dark-hex-tag").textContent = p.darkBg + " + " + p.accentDark;
+        document.getElementById("light-hex-tag").textContent = p.lightBg + " + " + p.accentLight;
+
+        // Section 1: Hero Stage
+        document.getElementById("hero-wordmark-dark").innerHTML =
+          renderWordmarkHtml(c.id, "wm-size-xl", "#FFFFFF", p.accentDark, false);
+        document.getElementById("hero-wordmark-light").innerHTML =
+          renderWordmarkHtml(c.id, "wm-size-xl", p.darkBg, p.accentLight, false);
+
+        document.getElementById("hero-lockup-dark").innerHTML =
+          renderLockupHtml(c.id, "dark", p, "wm-size-md", { iconSize: 34, subtitle: "CAUCASUS · CENTRAL ASIA", decorative: true });
+        document.getElementById("hero-lockup-light").innerHTML =
+          renderLockupHtml(c.id, "light", p, "wm-size-md", { iconSize: 34, subtitle: "CAUCASUS · CENTRAL ASIA", decorative: true });
+
+        document.getElementById("hero-erm-dark").innerHTML =
+          '<div style="display:inline-flex; align-items:center; gap:0.55rem;">' +
+          renderFaviconSvg(c.id, 30, p.darkSurface, "#FFFFFF", p.accentDark) +
+          '<span style="font-weight:700; font-size:0.95rem; letter-spacing:0.06em; color:#FFFFFF;">NOVALTRON <span style="color:' + p.accentDark + ';">ERM</span></span>' +
+          "</div>";
+
+        document.getElementById("hero-mono-light").innerHTML =
+          renderWordmarkHtml(c.id, "wm-size-md", "#111827", "#111827", true);
+
+        // Favicon strip
+        const sizes = [64, 40, 32, 24, 16];
+        let favHtml = "";
+        for (let i = 0; i < sizes.length; i++) {
+          const sz = sizes[i];
+          favHtml +=
+            '<div class="favicon-sample">' +
+            renderFaviconSvg(c.id, sz, p.darkBg, "#FFFFFF", p.accentDark, { title: "Novaltron icon at " + sz + "px" }) +
+            "<span>" + sz + "×" + sz + "px</span>" +
+            "</div>";
+        }
+        document.getElementById("favicon-scale-strip").innerHTML = favHtml;
+        document.getElementById("tab-mock-icon").innerHTML =
+          renderFaviconSvg(c.id, 16, p.darkBg, "#FFFFFF", p.accentDark);
+
+        // Corporate stamps
+        document.getElementById("corporate-stamp-stage").innerHTML =
+          renderCorporateStampSvg(c.id, p.darkBg) +
+          '<div style="display:flex; flex-direction:column; gap:0.65rem; align-items:center;">' +
+          renderFaviconSvg(c.id, 44, "none", "#111827", "#111827", { unframed: true, title: "1-Color Stamp Emblem" }) +
+          '<span class="mono" style="font-size:0.68rem; color:' + p.mutedLight + '; text-align:center;">1-COLOR STAMP MARK<br>NO HALFTONES OR GRADIENTS</span>' +
+          "</div>";
+
+        // Section 2: 4-Palette Overview Cards + Swatch Matrix
+        let pCardsHtml = "";
+        const pKeys = Object.keys(PALETTES);
+        for (let i = 0; i < pKeys.length; i++) {
+          const pal = PALETTES[pKeys[i]];
+          const active = pal.id === state.palette;
+          pCardsHtml +=
+            '<button type="button" class="palette-card" data-card-palette="' + pal.id + '" aria-pressed="' + (active ? "true" : "false") + '">' +
+            '<span class="palette-card-top" style="width:100%;">' +
+            '<span style="display:block;"><span class="mono" style="display:block; font-size:0.7rem; color:' + pal.mutedLight + ';">DIRECTION ' + pal.code + '</span><span style="display:block; font-weight:700; font-size:0.98rem;">' + pal.name + "</span></span>" +
+            '<span class="palette-badge">' + (active ? "✓ ACTIVE" : "SELECT") + "</span>" +
+            "</span>" +
+            '<span class="palette-mini-strip" style="width:100%;" aria-hidden="true">' +
+            '<span style="background-color:' + pal.darkBg + '"></span>' +
+            '<span style="background-color:' + pal.darkSurface + '"></span>' +
+            '<span style="background-color:' + pal.lightBg + '"></span>' +
+            '<span style="background-color:' + pal.accentLight + '"></span>' +
+            '<span style="background-color:' + pal.accentDark + '"></span>' +
+            "</span>" +
+            '<span style="display:block; font-size:0.79rem; color:' + pal.mutedLight + ';">' + pal.mood + "</span>" +
+            "</button>";
+        }
+        document.getElementById("palette-cards-grid").innerHTML = pCardsHtml;
+
+        let swatchesHtml = "";
+        for (let i = 0; i < p.swatches.length; i++) {
+          const s = p.swatches[i];
+          swatchesHtml +=
+            '<article class="swatch-card">' +
+            '<div class="color-swatch-chip" style="background-color:' + s.hex + "; color:" + s.textColor + ';">' +
+            '<span class="swatch-hex-label">' + s.hex + "</span>" +
+            '<span class="wcag-pill">✓ ' + s.wcag + "</span>" +
+            "</div>" +
+            '<div class="swatch-specs">' +
+            '<h3 class="swatch-role">' + s.role + "</h3>" +
+            '<p class="swatch-usage">' + s.usage + "</p>" +
+            '<div class="spec-line"><span class="spec-k">RGB</span><span class="spec-v">' + s.rgb + "</span></div>" +
+            '<div class="spec-line"><span class="spec-k">OKLCH</span><span class="spec-v">' + s.oklch + "</span></div>" +
+            '<div class="spec-line"><span class="spec-k">CMYK (Print)</span><span class="spec-v">' + s.cmyk + "</span></div>" +
+            '<div class="spec-line"><span class="spec-k">Pantone</span><span class="spec-v">' + s.pms + "</span></div>" +
+            '<div class="spec-line"><span class="spec-k">RAL (Equip.)</span><span class="spec-v">' + s.ral + "</span></div>" +
+            "</div>" +
+            "</article>";
+        }
+        document.getElementById("swatch-matrix-grid").innerHTML = swatchesHtml;
+
+        // Section 3: All 3 Concepts Side by Side
+        let conceptsHtml = "";
+        const cKeys = Object.keys(CONCEPTS);
+        for (let i = 0; i < cKeys.length; i++) {
+          const con = CONCEPTS[cKeys[i]];
+          const active = con.id === state.concept;
+          conceptsHtml +=
+            '<article class="concept-card' + (active ? " is-selected" : "") + '">' +
+            '<div class="concept-card-head">' +
+            '<div><p class="mono" style="font-size:0.68rem; color:' + p.mutedLight + ';">CONCEPT 0' + con.code + '</p><h3 style="font-size:1.05rem; font-weight:700;">' + con.name + "</h3></div>" +
+            '<button type="button" class="concept-select-btn" data-card-concept="' + con.id + '" aria-pressed="' + (active ? "true" : "false") + '">' +
+            (active ? "✓ Active Concept" : "Activate Concept") +
+            "</button>" +
+            "</div>" +
+            '<div class="concept-preview-light surface-light blueprint-grid-light">' +
+            renderWordmarkHtml(con.id, "wm-size-md", p.darkBg, p.accentLight, false) +
+            "</div>" +
+            '<div class="concept-preview-dark surface-dark blueprint-grid-dark">' +
+            renderWordmarkHtml(con.id, "wm-size-md", "#FFFFFF", p.accentDark, false) +
+            "</div>" +
+            '<div class="concept-micro-row">' +
+            '<div style="display:flex; align-items:center; gap:0.6rem;">' +
+            renderFaviconSvg(con.id, 36, p.darkBg, "#FFFFFF", p.accentDark, { title: con.name + " 36px icon" }) +
+            renderFaviconSvg(con.id, 18, p.darkBg, "#FFFFFF", p.accentDark) +
+            '<span class="mono" style="font-size:0.7rem; color:' + p.mutedLight + ';">36px / 18px</span>' +
+            "</div>" +
+            '<div style="padding:0.35rem 0.6rem; border-radius:0.35rem; background-color:' + p.darkBg + '; color:#FFFFFF; display:inline-flex; align-items:center; gap:0.45rem;">' +
+            renderFaviconSvg(con.id, 20, p.darkSurface, "#FFFFFF", p.accentDark) +
+            '<span class="mono" style="font-size:0.7rem; font-weight:600;">NOVALTRON ERM</span>' +
+            "</div>" +
+            "</div>" +
+            '<p class="concept-notes">' + con.rationale + "</p>" +
+            "</article>";
+        }
+        document.getElementById("concept-compare-grid").innerHTML = conceptsHtml;
+
+        // Section 4: Typo Toggle Cards
+        let typoCardsHtml = "";
+        const tKeys = Object.keys(TYPOS);
+        for (let i = 0; i < tKeys.length; i++) {
+          const ty = TYPOS[tKeys[i]];
+          const active = ty.id === state.typo;
+          typoCardsHtml +=
+            '<button type="button" class="typo-option-card" data-card-typo="' + ty.id + '" aria-pressed="' + (active ? "true" : "false") + '">' +
+            '<span style="display:block;"><span style="display:block; font-size:0.98rem; font-weight:700; font-family:' + ty.heading + ';">' + ty.name + '</span><span style="display:block; font-size:0.79rem; color:' + p.mutedLight + '; margin-top:0.25rem;">' + ty.notes + "</span></span>" +
+            '<span class="palette-badge" style="flex-shrink:0;">' + (active ? "✓ ACTIVE" : "SELECT") + "</span>" +
+            "</button>";
+        }
+        document.getElementById("typo-compare-strip").innerHTML = typoCardsHtml;
+
+        // Section 5: Real-world Collateral
+        document.getElementById("web-mock-lockup").innerHTML =
+          renderLockupHtml(c.id, "dark", p, "wm-size-sm", { iconSize: 28, decorative: true });
+
+        document.getElementById("card-front-wordmark").innerHTML =
+          renderWordmarkHtml(c.id, "wm-size-card", "#FFFFFF", p.accentDark, false);
+        document.getElementById("card-back-icon").innerHTML =
+          renderFaviconSvg(c.id, 38, p.darkBg, "#FFFFFF", p.accentDark, { title: "Novaltron Card Emblem" });
+        document.getElementById("card-qr-placeholder").innerHTML =
+          renderQrPlaceholderSvg(p.darkBg, p.accentLight);
+
+        document.getElementById("deck-wordmark").innerHTML =
+          renderLockupHtml(c.id, "dark", p, "wm-size-md", { iconSize: 38, decorative: false });
+
+        document.getElementById("linkedin-banner-wordmark").innerHTML =
+          renderWordmarkHtml(c.id, "wm-size-md", "#FFFFFF", p.accentDark, false);
+        const avatarSlot = document.getElementById("linkedin-avatar-slot");
+        avatarSlot.style.backgroundColor = p.darkBg;
+        avatarSlot.innerHTML =
+          renderFaviconSvg(c.id, 62, p.darkBg, "#FFFFFF", p.accentDark, { title: "LinkedIn Profile Avatar" });
+        document.getElementById("post-mini-icon").innerHTML =
+          renderFaviconSvg(c.id, 24, p.darkSurface, "#FFFFFF", p.accentDark);
+        document.getElementById("erm-sidebar-icon").innerHTML =
+          renderFaviconSvg(c.id, 32, p.darkSurface, "#FFFFFF", p.accentDark);
+      }
+
+      function applyHashState() {
+        const rawHash = window.location.hash ? window.location.hash.replace(/^#/, "") : "";
+        if (!rawHash) return false;
+        const params = new URLSearchParams(rawHash);
+        let applied = false;
+        const pVal = params.get("palette");
+        if (pVal && Object.prototype.hasOwnProperty.call(PALETTES, pVal)) {
+          state.palette = pVal;
+          applied = true;
+        }
+        const cVal = params.get("concept");
+        if (cVal && Object.prototype.hasOwnProperty.call(CONCEPTS, cVal)) {
+          state.concept = cVal;
+          applied = true;
+        }
+        const tVal = params.get("typo");
+        if (tVal && Object.prototype.hasOwnProperty.call(TYPOS, tVal)) {
+          state.typo = tVal;
+          applied = true;
+        }
+        return applied;
+      }
+
+      function syncHashState() {
+        const params = new URLSearchParams();
+        params.set("palette", state.palette);
+        params.set("concept", state.concept);
+        params.set("typo", state.typo);
+        try {
+          history.replaceState(null, "", "#" + params.toString());
+        } catch (_err) {
+          window.location.hash = params.toString();
+        }
+      }
+
+      document.addEventListener("click", function (event) {
+        const ctrlBtn = event.target.closest("[data-control]");
+        if (ctrlBtn) {
+          const k = ctrlBtn.getAttribute("data-control");
+          const v = ctrlBtn.getAttribute("data-value");
+          if (k && v) {
+            state[k] = v;
+            syncHashState();
+            renderAll();
+          }
+          return;
+        }
+
+        const pCard = event.target.closest("[data-card-palette]");
+        if (pCard) {
+          state.palette = pCard.getAttribute("data-card-palette");
+          syncHashState();
+          renderAll();
+          return;
+        }
+
+        const cBtn = event.target.closest("[data-card-concept]");
+        if (cBtn) {
+          state.concept = cBtn.getAttribute("data-card-concept");
+          syncHashState();
+          renderAll();
+          return;
+        }
+
+        const tCard = event.target.closest("[data-card-typo]");
+        if (tCard) {
+          state.typo = tCard.getAttribute("data-card-typo");
+          syncHashState();
+          renderAll();
+          return;
+        }
+      });
+
+      document.getElementById("copy-selection-btn").addEventListener("click", function () {
+        syncHashState();
+        const p = PALETTES[state.palette];
+        const c = CONCEPTS[state.concept];
+        const t = TYPOS[state.typo];
+        const summary =
+          "Novaltron Brand Selection: Palette " + p.code + " (" + p.name + ") | Logo " + c.code + " (" + c.name + ") | Typography " + t.name + "\n" + window.location.href;
+        const statusEl = document.getElementById("copy-status");
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(summary).then(function () {
+            statusEl.textContent = "Share link copied!";
+            setTimeout(function () { statusEl.textContent = ""; }, 2500);
+          }).catch(function () {
+            statusEl.textContent = "Ready to copy";
+          });
+        } else {
+          statusEl.textContent = summary;
+        }
+      });
+
+      if (!applyHashState()) {
+        syncHashState();
+      }
+      window.addEventListener("hashchange", function () {
+        if (applyHashState()) {
+          renderAll();
+        }
+      });
+      renderAll();
+    })();
+  </script>
+</body>
+</html>
