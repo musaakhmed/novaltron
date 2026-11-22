@@ -89,15 +89,15 @@ export function HeroBackgroundVideo({
         <source src={webmSrc} type="video/webm" />
         <source src={mp4Src} type="video/mp4" />
       </video>
-      {/* Directional Deep Slate Navy (#0F172A) scrim: ~82% left behind copy fading to ~48% right */}
+      {/* Directional Caspian Petrol (#0A1F2E) scrim: ~82% left behind copy fading to ~48% right */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0F172A]/82 via-[#0F172A]/68 to-[#0F172A]/48"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0A1F2E]/82 via-[#0A1F2E]/68 to-[#0A1F2E]/48"
       />
       {/* Subtle top-edge guard for transparent fixed Header navigation over bright sky footage */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0F172A]/40 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0A1F2E]/40 to-transparent"
       />
 
       {/* WCAG 2.2.2 Pause / Play control for decorative background video */}
@@ -105,7 +105,7 @@ export function HeroBackgroundVideo({
         type="button"
         onClick={togglePlayback}
         aria-label={paused ? "Play background video" : "Pause background video"}
-        className="absolute right-5 bottom-5 z-20 inline-flex min-h-[40px] min-w-[40px] cursor-pointer items-center justify-center rounded-lg border border-white/25 bg-[#0F172A]/65 text-white backdrop-blur-md transition-colors hover:border-[#34D399] hover:bg-[#0F172A]/85 sm:right-8 sm:bottom-6 motion-reduce:hidden"
+        className="absolute right-5 bottom-5 z-20 inline-flex min-h-[40px] min-w-[40px] cursor-pointer items-center justify-center rounded-lg border border-white/25 bg-[#0A1F2E]/65 text-white backdrop-blur-md transition-colors hover:border-[#5BB87A] hover:bg-[#0A1F2E]/85 sm:right-8 sm:bottom-6 motion-reduce:hidden"
       >
         {paused ? (
           <Play aria-hidden="true" className="h-4 w-4" />

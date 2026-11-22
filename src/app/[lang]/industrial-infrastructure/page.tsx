@@ -53,11 +53,11 @@ export default async function IndustrialInfrastructurePage({
         }}
       />
       {/* Hero */}
-      <section className="bg-blueprint-dark border-b border-slate-800 pt-28 pb-16 text-white lg:pt-32 lg:pb-20">
+      <section className="bg-blueprint-dark border-b border-[#234863] pt-28 pb-16 text-white lg:pt-32 lg:pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#0284C7]/40 bg-[#0284C7]/15 px-3.5 py-1">
-            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[#38BDF8]" />
-            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#38BDF8]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#5CB3AE]/40 bg-[#006B68]/20 px-3.5 py-1">
+            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[#5CB3AE]" />
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#5CB3AE]">
               {industrialInfrastructure.eyebrow}
             </p>
           </div>
@@ -74,44 +74,44 @@ export default async function IndustrialInfrastructurePage({
       <StickyAnchorBar anchors={industrialInfrastructure.anchors} accent="teal" />
 
       {/* Track A & Track B */}
-      <div className="bg-[#F1F5F9] py-16 lg:py-20">
+      <div className="bg-[#EBF1F5] py-16 lg:py-20">
         <div className="mx-auto max-w-7xl space-y-12 px-4 sm:px-6 lg:px-8">
           {industrialInfrastructure.tracks.map((track, idx) => (
             <section
               key={track.id}
               id={track.id}
-              className="scroll-mt-36 rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-2xs sm:p-8 lg:p-10"
+              className="scroll-mt-36 rounded-2xl border border-[#D4DFE7] bg-white p-6 shadow-2xs sm:p-8 lg:p-10"
             >
               <RevealSection>
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
                   <div className="min-w-0 lg:col-span-7">
                     <div className="flex flex-wrap items-center gap-2.5">
-                      <span className="band-numeral text-3xl font-bold text-[#0284C7] sm:text-4xl">
+                      <span className="band-numeral text-3xl font-bold text-[#006B68] sm:text-4xl">
                         0{idx + 1}
                       </span>
-                      <span className="rounded-full bg-[#0284C7] px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-white">
+                      <span className="rounded-full bg-[#006B68] px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-white">
                         {track.badge}
                       </span>
                       {track.standards.map((std) => (
                         <span
                           key={std}
-                          className="rounded-md border border-sky-200 bg-sky-50 px-2.5 py-0.5 font-mono text-xs font-semibold text-[#0369A1]"
+                          className="rounded-md border border-[#B2DAD8] bg-[#EAF5F4] px-2.5 py-0.5 font-mono text-xs font-semibold text-[#005552]"
                         >
                           {std}
                         </span>
                       ))}
                     </div>
-                    <h2 className="mt-5 text-2xl font-extrabold text-[#0F172A] sm:text-3xl">
+                    <h2 className="mt-5 text-2xl font-extrabold text-[#0A1F2E] sm:text-3xl">
                       {track.title}
                     </h2>
-                    <p className="mt-3 text-base leading-relaxed text-[#334155]">
+                    <p className="mt-3 text-base leading-relaxed text-[#455A69]">
                       {track.subtitle}
                     </p>
                   </div>
 
                   <div className="min-w-0 space-y-3 lg:col-span-5">
                     {track.imageSrc && (
-                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-[#E2E8F0] bg-slate-900">
+                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-[#D4DFE7] bg-slate-900">
                         <Image
                           src={track.imageSrc}
                           alt={track.imageAlt || track.title}
@@ -134,15 +134,15 @@ export default async function IndustrialInfrastructurePage({
                   {track.items.map((item, itemIdx) => (
                     <div
                       key={item.heading}
-                      className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-5 transition-colors duration-150 hover:border-[#0284C7]/50"
+                      className="rounded-xl border border-[#D4DFE7] bg-[#F4F7F9] p-5 transition-colors duration-150 hover:border-[#006B68]/50"
                     >
-                      <span className="font-mono text-xs font-bold text-[#0284C7]">
+                      <span className="font-mono text-xs font-bold text-[#006B68]">
                         0{idx + 1}.{itemIdx + 1}
                       </span>
-                      <h3 className="mt-1.5 text-base font-bold text-[#0F172A]">
+                      <h3 className="mt-1.5 text-base font-bold text-[#0A1F2E]">
                         {item.heading}
                       </h3>
-                      <p className="mt-2.5 text-sm leading-relaxed text-[#334155]">
+                      <p className="mt-2.5 text-sm leading-relaxed text-[#455A69]">
                         {item.detail}
                       </p>
                     </div>
@@ -153,14 +153,14 @@ export default async function IndustrialInfrastructurePage({
           ))}
 
           {/* Bottom CTA */}
-          <RevealSection className="bg-blueprint-dark rounded-2xl border border-slate-800 p-8 text-white shadow-lg sm:p-10">
+          <RevealSection className="bg-blueprint-dark rounded-2xl border border-[#234863] p-8 text-white shadow-lg sm:p-10">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <h2 className="max-w-2xl text-2xl font-extrabold text-white sm:text-3xl">
                 {industrialInfrastructure.bottomCtaTitle}
               </h2>
               <Link
                 href={`/${lang}/contact?division=critical-it-ot`}
-                className="group inline-flex min-h-[48px] shrink-0 cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#0284C7] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#0369A1]"
+                className="group inline-flex min-h-[48px] shrink-0 cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#006B68] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#005552]"
               >
                 <span>{industrialInfrastructure.bottomCtaButton.replace(" →", "")}</span>
                 <ArrowRight

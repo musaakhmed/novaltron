@@ -1,43 +1,48 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
-  --color-brand-navy: #0F172A;
-  --color-bg-light: #F8FAFC;
-  --color-bg-mist: #F1F5F9;
+  --color-brand-navy: #0A1F2E;
+  --color-brand-surface-dark: #133045;
+  --color-brand-border-dark: #234863;
+  --color-bg-light: #F4F7F9;
+  --color-bg-mist: #EBF1F5;
   --color-surface-card: #FFFFFF;
-  --color-border-subtle: #E2E8F0;
-  --color-accent-emerald: #059669;
-  --color-accent-teal: #0284C7;
-  --color-accent-amber: #D97706;
-  --color-text-body: #334155;
+  --color-border-subtle: #D4DFE7;
+  --color-accent-emerald: #267042;
+  --color-accent-canopy: #5BB87A;
+  --color-accent-teal: #006B68;
+  --color-accent-mineral: #5CB3AE;
+  --color-accent-amber: #B45309;
+  --color-text-body: #455A69;
 
   /* Bio & Smart IPM Page Sub-Palette */
-  --color-bio-tint: #ECFDF5;
-  --color-bio-leaf: #16A34A;
-  --color-bio-pine: #065F46;
+  --color-bio-tint: #EEF6F1;
+  --color-bio-leaf: #267042;
+  --color-bio-pine: #1B5431;
 
-  --font-heading: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-sans: "Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-heading: "IBM Plex Sans", "Noto Sans Georgian", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "IBM Plex Sans", "Noto Sans Georgian", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Enable native CSS transitions to intrinsic sizes (e.g., auto) */
   interpolate-size: allow-keywords;
 }
 
 @theme inline {
-  --color-brand-navy: #0F172A;
-  --color-bg-light: #F8FAFC;
-  --color-bg-mist: #F1F5F9;
+  --color-brand-navy: #0A1F2E;
+  --color-bg-light: #F4F7F9;
+  --color-bg-mist: #EBF1F5;
   --color-surface-card: #FFFFFF;
-  --color-border-subtle: #E2E8F0;
-  --color-accent-emerald: #059669;
-  --color-accent-teal: #0284C7;
-  --color-accent-amber: #D97706;
-  --color-text-body: #334155;
-  --color-bio-tint: #ECFDF5;
-  --color-bio-leaf: #16A34A;
-  --color-bio-pine: #065F46;
+  --color-border-subtle: #D4DFE7;
+  --color-accent-emerald: #267042;
+  --color-accent-canopy: #5BB87A;
+  --color-accent-teal: #006B68;
+  --color-accent-amber: #B45309;
+  --color-text-body: #455A69;
+  --color-bio-tint: #EEF6F1;
+  --color-bio-leaf: #267042;
+  --color-bio-pine: #1B5431;
   --font-heading: var(--font-heading);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
@@ -118,19 +123,19 @@ code, pre, .font-mono {
 
 /* Architectural Blueprint Grid Backgrounds */
 .bg-blueprint-dark {
-  background-color: #0F172A;
+  background-color: #0A1F2E;
   background-image:
-    radial-gradient(circle at 88% 12%, rgba(5, 150, 105, 0.14), transparent 42%),
-    linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    radial-gradient(circle at 88% 12%, rgba(91, 184, 122, 0.14), transparent 42%),
+    linear-gradient(to right, rgba(156, 179, 196, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(156, 179, 196, 0.07) 1px, transparent 1px);
   background-size: 100% 100%, 44px 44px, 44px 44px;
 }
 
 .bg-blueprint-light {
-  background-color: #F8FAFC;
+  background-color: #F4F7F9;
   background-image:
-    linear-gradient(to right, rgba(15, 23, 42, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+    linear-gradient(to right, rgba(10, 31, 46, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 31, 46, 0.045) 1px, transparent 1px);
   background-size: 36px 36px;
 }
 
@@ -220,7 +225,7 @@ code, pre, .font-mono {
   content: "";
   position: absolute;
   inset: auto 0 0 0;
-  border-block-end: 3px solid var(--domain-accent, #34D399);
+  border-block-end: 3px solid var(--domain-accent, #5BB87A);
   pointer-events: none;
 }
 

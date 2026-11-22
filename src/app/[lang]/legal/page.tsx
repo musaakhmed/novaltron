@@ -45,11 +45,11 @@ export default async function LegalPage({ params }: PageProps<"/[lang]/legal">) 
           __html: serializeJsonLd(breadcrumbJsonLd),
         }}
       />
-      <section className="bg-blueprint-dark border-b border-slate-800 pt-28 pb-14 text-white lg:pt-32 lg:pb-16">
+      <section className="bg-blueprint-dark border-b border-[#234863] pt-28 pb-14 text-white lg:pt-32 lg:pb-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#059669]/40 bg-[#059669]/12 px-3.5 py-1">
-            <ShieldCheck aria-hidden="true" className="h-3.5 w-3.5 text-[#34D399]" />
-            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#34D399]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#5BB87A]/40 bg-[#267042]/20 px-3.5 py-1">
+            <ShieldCheck aria-hidden="true" className="h-3.5 w-3.5 text-[#5BB87A]" />
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#5BB87A]">
               {legal.eyebrow}
             </p>
           </div>
@@ -63,15 +63,15 @@ export default async function LegalPage({ params }: PageProps<"/[lang]/legal">) 
         </div>
       </section>
 
-      <section className="bg-[#F8FAFC] py-14 lg:py-16">
+      <section className="bg-[#F4F7F9] py-14 lg:py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-8 rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-2xs sm:p-10">
+          <div className="space-y-8 rounded-2xl border border-[#D4DFE7] bg-white p-6 shadow-2xs sm:p-10">
             {legal.sections.map((sec) => (
               <div key={sec.heading} className="border-b border-slate-100 pb-6 last:border-b-0 last:pb-0">
-                <h2 className="text-lg font-bold text-[#0F172A] sm:text-xl">
+                <h2 className="text-lg font-bold text-[#0A1F2E] sm:text-xl">
                   {sec.heading}
                 </h2>
-                <div className="mt-3 space-y-3 text-sm leading-relaxed text-[#334155] sm:text-[15px]">
+                <div className="mt-3 space-y-3 text-sm leading-relaxed text-[#455A69] sm:text-[15px]">
                   {sec.body.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -83,7 +83,7 @@ export default async function LegalPage({ params }: PageProps<"/[lang]/legal">) 
           <div className="mt-8">
             <Link
               href={`/${lang}`}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#059669] hover:text-[#065F46]"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#267042] hover:text-[#1B5431]"
             >
               <ArrowLeft aria-hidden="true" className="h-4 w-4" />
               <span>{dict.meta.siteName}</span>

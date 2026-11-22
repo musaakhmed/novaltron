@@ -76,17 +76,17 @@ function AnimatedDomainSchematic({
   label: string;
 }) {
   const isIndustrial = variant === "industrial-dual";
-  const accentHex = isIndustrial ? "#38BDF8" : "#34D399";
+  const accentHex = isIndustrial ? "#5CB3AE" : "#5BB87A";
 
   return (
-    <div className="relative flex h-full flex-col overflow-hidden rounded-xl border border-slate-700/80 bg-[#070D19]">
+    <div className="relative flex h-full flex-col overflow-hidden rounded-xl border border-[#234863] bg-[#071622]">
       {/* Fine CAD coordinate grid */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(to right, rgba(148,163,184,0.065) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.065) 1px, transparent 1px)",
+            "linear-gradient(to right, rgba(156,179,196,0.065) 1px, transparent 1px), linear-gradient(to bottom, rgba(156,179,196,0.065) 1px, transparent 1px)",
           backgroundSize: "24px 24px",
         }}
       />
@@ -108,13 +108,13 @@ function AnimatedDomainSchematic({
         className="cad-scan-beam pointer-events-none absolute inset-y-0 left-0 w-24"
         style={{
           background: isIndustrial
-            ? "linear-gradient(90deg, transparent, rgba(56,189,248,0.11), transparent)"
-            : "linear-gradient(90deg, transparent, rgba(52,211,153,0.11), transparent)",
+            ? "linear-gradient(90deg, transparent, rgba(92,179,174,0.12), transparent)"
+            : "linear-gradient(90deg, transparent, rgba(91,184,122,0.12), transparent)",
         }}
       />
 
       {/* CAD Title Bar */}
-      <div className="relative z-10 flex items-center justify-between gap-3 border-b border-slate-800/90 bg-[#0B1222]/85 px-4 py-2.5">
+      <div className="relative z-10 flex items-center justify-between gap-3 border-b border-[#234863] bg-[#0D2537]/85 px-4 py-2.5">
         <div className="flex min-w-0 items-center gap-2.5">
           <span
             aria-hidden="true"
@@ -184,16 +184,16 @@ function AnimatedDomainSchematic({
               width="148"
               height="62"
               rx="6"
-              fill="#0F172A"
-              stroke="#34D399"
+              fill="#0A1F2E"
+              stroke="#5BB87A"
               strokeWidth="1.4"
             />
-            <rect x="38" y="49" width="28" height="10" rx="2" fill="#059669" />
+            <rect x="38" y="49" width="28" height="10" rx="2" fill="#267042" />
             <text
               x="100"
               y="67"
               textAnchor="middle"
-              fill="#F8FAFC"
+              fill="#F4F7F9"
               fontSize="9.5"
               fontFamily="monospace"
               fontWeight="700"
@@ -204,7 +204,7 @@ function AnimatedDomainSchematic({
               x="100"
               y="84"
               textAnchor="middle"
-              fill="#34D399"
+              fill="#5BB87A"
               fontSize="8.5"
               fontFamily="monospace"
             >
@@ -221,7 +221,7 @@ function AnimatedDomainSchematic({
             />
             <path
               d="M100 100 V192 H126 V142"
-              stroke="#38BDF8"
+              stroke="#5CB3AE"
               strokeWidth="2"
               strokeDasharray="6 6"
               className="cad-flow-fast"
@@ -233,12 +233,12 @@ function AnimatedDomainSchematic({
               stroke="#CBD5E1"
               strokeWidth="1.8"
             />
-            <circle cx="126" cy="142" r="7" fill="#059669" stroke="#A7F3D0" strokeWidth="1.5" />
+            <circle cx="126" cy="142" r="7" fill="#267042" stroke="#B6DBC2" strokeWidth="1.5" />
 
             {/* Overhead Truss Arch & Main Pressurized Boom */}
             <path
               d="M126 142 Q216 98 306 142 Q396 98 486 142"
-              stroke="#34D399"
+              stroke="#5BB87A"
               strokeWidth="1.6"
             />
             <path
@@ -252,7 +252,7 @@ function AnimatedDomainSchematic({
               y1="142"
               x2="486"
               y2="142"
-              stroke="#38BDF8"
+              stroke="#5CB3AE"
               strokeWidth="1.8"
               strokeDasharray="8 8"
               className="cad-flow"
@@ -272,13 +272,13 @@ function AnimatedDomainSchematic({
                       cx={wx}
                       cy="240"
                       r="9"
-                      fill="#0F172A"
+                      fill="#0A1F2E"
                       stroke="#CBD5E1"
                       strokeWidth="1.6"
                     />
                     <g className="cad-wheel-spin">
-                      <line x1={wx - 6} y1="240" x2={wx + 6} y2="240" stroke="#34D399" strokeWidth="1.2" />
-                      <line x1={wx} y1="234" x2={wx} y2="246" stroke="#34D399" strokeWidth="1.2" />
+                      <line x1={wx - 6} y1="240" x2={wx + 6} y2="240" stroke="#5BB87A" strokeWidth="1.2" />
+                      <line x1={wx} y1="234" x2={wx} y2="246" stroke="#5BB87A" strokeWidth="1.2" />
                     </g>
                   </g>
                 ))}
@@ -288,10 +288,10 @@ function AnimatedDomainSchematic({
             {/* Drop Sprinklers & Animated Mist Plumes */}
             {[171, 216, 261, 351, 396, 441].map((x, idx) => (
               <g key={x}>
-                <line x1={x} y1="142" x2={x} y2="176" stroke="#38BDF8" strokeWidth="1.4" />
+                <line x1={x} y1="142" x2={x} y2="176" stroke="#5CB3AE" strokeWidth="1.4" />
                 <path
                   d={`M${x} 176 L${x - 13} 218 M${x} 176 L${x} 222 M${x} 176 L${x + 13} 218`}
-                  stroke="#38BDF8"
+                  stroke="#5CB3AE"
                   strokeOpacity="0.4"
                   strokeWidth="1"
                   strokeDasharray="3 3"
@@ -300,7 +300,7 @@ function AnimatedDomainSchematic({
                   cx={x}
                   cy="182"
                   r="2.2"
-                  fill="#7DD3FC"
+                  fill="#8ED0CC"
                   className="cad-mist-drop"
                   style={{ animationDelay: `${idx * 220}ms` }}
                 />
@@ -308,7 +308,7 @@ function AnimatedDomainSchematic({
                   cx={x - 6}
                   cy="190"
                   r="1.6"
-                  fill="#38BDF8"
+                  fill="#5CB3AE"
                   className="cad-mist-drop"
                   style={{ animationDelay: `${idx * 220 + 450}ms` }}
                 />
@@ -316,7 +316,7 @@ function AnimatedDomainSchematic({
                   cx={x + 6}
                   cy="188"
                   r="1.6"
-                  fill="#34D399"
+                  fill="#5BB87A"
                   className="cad-mist-drop"
                   style={{ animationDelay: `${idx * 220 + 800}ms` }}
                 />
@@ -330,7 +330,7 @@ function AnimatedDomainSchematic({
               width="176"
               height="52"
               rx="6"
-              fill="#0F172A"
+              fill="#0A1F2E"
               stroke="#334155"
               strokeWidth="1.3"
             />
@@ -338,7 +338,7 @@ function AnimatedDomainSchematic({
               x="444"
               y="47"
               textAnchor="middle"
-              fill="#34D399"
+              fill="#5BB87A"
               fontSize="9"
               fontFamily="monospace"
               fontWeight="700"
@@ -360,16 +360,16 @@ function AnimatedDomainSchematic({
               y1="78"
               x2="444"
               y2="112"
-              stroke="#34D399"
+              stroke="#5BB87A"
               strokeWidth="1.2"
               strokeDasharray="3 3"
             />
-            <circle cx="444" cy="112" r="4" fill="#34D399" />
+            <circle cx="444" cy="112" r="4" fill="#5BB87A" />
             <circle
               cx="444"
               cy="112"
               r="8"
-              stroke="#34D399"
+              stroke="#5BB87A"
               strokeWidth="1.4"
               className="cad-radar-ping"
             />
@@ -377,7 +377,7 @@ function AnimatedDomainSchematic({
               cx="444"
               cy="112"
               r="8"
-              stroke="#34D399"
+              stroke="#5BB87A"
               strokeWidth="1.1"
               className="cad-radar-ping-delay"
             />
@@ -396,7 +396,7 @@ function AnimatedDomainSchematic({
               d="M32 238 V124 L98 72 L164 124 V238 M164 124 L230 72 L296 124 V238 M296 124 L362 72 L428 124 V238"
               stroke="#E2E8F0"
               strokeWidth="1.8"
-              fill="#059669"
+              fill="#267042"
               fillOpacity="0.08"
             />
 
@@ -408,11 +408,11 @@ function AnimatedDomainSchematic({
                   y1="72"
                   x2={vx + 28}
                   y2="56"
-                  stroke="#34D399"
+                  stroke="#5BB87A"
                   strokeWidth="2.2"
                   strokeLinecap="round"
                 />
-                <circle cx={vx} cy="72" r="2.8" fill="#34D399" />
+                <circle cx={vx} cy="72" r="2.8" fill="#5BB87A" />
               </g>
             ))}
 
@@ -443,7 +443,7 @@ function AnimatedDomainSchematic({
               <path
                 key={ax}
                 d={`M${ax - 12} 174 Q${ax} 162 ${ax + 12} 174`}
-                stroke="#34D399"
+                stroke="#5BB87A"
                 strokeWidth="1.3"
                 strokeLinecap="round"
                 className="cad-heat-rise"
@@ -457,7 +457,7 @@ function AnimatedDomainSchematic({
               y1="195"
               x2="416"
               y2="195"
-              stroke="#0EA5E9"
+              stroke="#5CB3AE"
               strokeOpacity="0.35"
               strokeWidth="2"
             />
@@ -466,7 +466,7 @@ function AnimatedDomainSchematic({
               y1="195"
               x2="416"
               y2="195"
-              stroke="#38BDF8"
+              stroke="#5CB3AE"
               strokeWidth="1.6"
               strokeDasharray="6 10"
               className="cad-flow"
@@ -480,13 +480,13 @@ function AnimatedDomainSchematic({
                   width="28"
                   height="10"
                   rx="2"
-                  fill="#0F172A"
-                  stroke="#34D399"
+                  fill="#0A1F2E"
+                  stroke="#5BB87A"
                   strokeWidth="1.3"
                 />
                 <path
                   d={`M${x} 190 V172 M${x} 182 L${x - 7} 175 M${x} 179 L${x + 7} 172`}
-                  stroke="#34D399"
+                  stroke="#5BB87A"
                   strokeWidth="1.4"
                   strokeLinecap="round"
                 />
@@ -500,7 +500,7 @@ function AnimatedDomainSchematic({
               width="86"
               height="116"
               rx="6"
-              fill="#0F172A"
+              fill="#0A1F2E"
               stroke="#F59E0B"
               strokeWidth="1.5"
             />
@@ -508,7 +508,7 @@ function AnimatedDomainSchematic({
               x="491"
               y="150"
               textAnchor="middle"
-              fill="#F8FAFC"
+              fill="#F4F7F9"
               fontSize="9.5"
               fontFamily="monospace"
               fontWeight="700"
@@ -519,7 +519,7 @@ function AnimatedDomainSchematic({
               x="491"
               y="170"
               textAnchor="middle"
-              fill="#34D399"
+              fill="#5BB87A"
               fontSize="8.2"
               fontFamily="monospace"
             >
@@ -529,7 +529,7 @@ function AnimatedDomainSchematic({
               x="491"
               y="184"
               textAnchor="middle"
-              fill="#34D399"
+              fill="#5BB87A"
               fontSize="8.2"
               fontFamily="monospace"
             >
@@ -573,7 +573,7 @@ function AnimatedDomainSchematic({
             />
             <path
               d="M36 226 H448"
-              stroke="#34D399"
+              stroke="#5BB87A"
               strokeWidth="1.6"
               strokeDasharray="8 6"
               className="cad-flow"
@@ -608,15 +608,15 @@ function AnimatedDomainSchematic({
               width="86"
               height="64"
               rx="5"
-              fill="#0F172A"
-              stroke="#34D399"
+              fill="#0A1F2E"
+              stroke="#5BB87A"
               strokeWidth="1.5"
             />
             <text
               x="67"
               y="202"
               textAnchor="middle"
-              fill="#F8FAFC"
+              fill="#F4F7F9"
               fontSize="9"
               fontFamily="monospace"
               fontWeight="700"
@@ -627,7 +627,7 @@ function AnimatedDomainSchematic({
               x="67"
               y="218"
               textAnchor="middle"
-              fill="#34D399"
+              fill="#5BB87A"
               fontSize="8"
               fontFamily="monospace"
             >
@@ -641,7 +641,7 @@ function AnimatedDomainSchematic({
               width="58"
               height="150"
               rx="4"
-              fill="#0F172A"
+              fill="#0A1F2E"
               stroke="#F59E0B"
               strokeWidth="1.6"
             />
@@ -686,7 +686,7 @@ function AnimatedDomainSchematic({
               y1="232"
               x2="228"
               y2="44"
-              stroke="#34D399"
+              stroke="#5BB87A"
               strokeWidth="2.4"
               strokeDasharray="6 8"
               className="cad-flow-fast"
@@ -708,7 +708,7 @@ function AnimatedDomainSchematic({
               y1="54"
               x2="396"
               y2="54"
-              stroke="#34D399"
+              stroke="#5BB87A"
               strokeWidth="2.2"
               strokeDasharray="6 6"
               className="cad-flow-fast"
@@ -717,7 +717,7 @@ function AnimatedDomainSchematic({
             {/* Corrugated Steel Silo Z600 */}
             <path
               d="M270 238 V100 L336 62 L402 100 V238 H270 Z"
-              fill="#0F172A"
+              fill="#0A1F2E"
               stroke="#E2E8F0"
               strokeWidth="1.8"
             />
@@ -738,7 +738,7 @@ function AnimatedDomainSchematic({
               y1="62"
               x2="336"
               y2="132"
-              stroke="#34D399"
+              stroke="#5BB87A"
               strokeWidth="1.6"
               strokeDasharray="4 4"
               className="cad-flow"
@@ -750,15 +750,15 @@ function AnimatedDomainSchematic({
               width="84"
               height="44"
               rx="4"
-              fill="#070D19"
-              stroke="#34D399"
+              fill="#071622"
+              stroke="#5BB87A"
               strokeWidth="1.2"
             />
             <text
               x="336"
               y="155"
               textAnchor="middle"
-              fill="#F8FAFC"
+              fill="#F4F7F9"
               fontSize="11"
               fontFamily="monospace"
               fontWeight="700"
@@ -769,7 +769,7 @@ function AnimatedDomainSchematic({
               x="336"
               y="170"
               textAnchor="middle"
-              fill="#34D399"
+              fill="#5BB87A"
               fontSize="8"
               fontFamily="monospace"
             >
@@ -783,8 +783,8 @@ function AnimatedDomainSchematic({
               width="102"
               height="84"
               rx="6"
-              fill="#0F172A"
-              stroke="#34D399"
+              fill="#0A1F2E"
+              stroke="#5BB87A"
               strokeWidth="1.6"
             />
             <line
@@ -792,7 +792,7 @@ function AnimatedDomainSchematic({
               y1="168"
               x2="528"
               y2="168"
-              stroke="#34D399"
+              stroke="#5BB87A"
               strokeOpacity="0.85"
               strokeWidth="2"
               className="cad-optical-scan"
@@ -801,7 +801,7 @@ function AnimatedDomainSchematic({
               x="485"
               y="191"
               textAnchor="middle"
-              fill="#F8FAFC"
+              fill="#F4F7F9"
               fontSize="9.5"
               fontFamily="monospace"
               fontWeight="700"
@@ -812,7 +812,7 @@ function AnimatedDomainSchematic({
               x="485"
               y="206"
               textAnchor="middle"
-              fill="#34D399"
+              fill="#5BB87A"
               fontSize="9.5"
               fontFamily="monospace"
               fontWeight="700"
@@ -833,7 +833,7 @@ function AnimatedDomainSchematic({
             {/* Animated Inter-Stage Grain Flow Connectors */}
             <path
               d="M110 206 H134 M192 206 H216 M402 206 H434"
-              stroke="#34D399"
+              stroke="#5BB87A"
               strokeWidth="2.4"
               strokeDasharray="6 4"
               className="cad-flow-fast"
@@ -868,15 +868,15 @@ function AnimatedDomainSchematic({
               width="512"
               height="112"
               rx="8"
-              fill="#0F172A"
-              stroke="#38BDF8"
+              fill="#0A1F2E"
+              stroke="#5CB3AE"
               strokeOpacity="0.65"
               strokeWidth="1.4"
             />
             <text
               x="42"
               y="48"
-              fill="#38BDF8"
+              fill="#5CB3AE"
               fontSize="9"
               fontFamily="monospace"
               fontWeight="700"
@@ -899,7 +899,7 @@ function AnimatedDomainSchematic({
               y1="88"
               x2="302"
               y2="88"
-              stroke="#38BDF8"
+              stroke="#5CB3AE"
               strokeWidth="2.4"
               strokeDasharray="10 8"
               className="cad-flow-fast"
@@ -934,7 +934,7 @@ function AnimatedDomainSchematic({
               width="194"
               height="62"
               rx="6"
-              fill="#070D19"
+              fill="#071622"
               stroke="#F59E0B"
               strokeWidth="1.3"
             />
@@ -942,7 +942,7 @@ function AnimatedDomainSchematic({
               x="421"
               y="82"
               textAnchor="middle"
-              fill="#F8FAFC"
+              fill="#F4F7F9"
               fontSize="9.5"
               fontFamily="monospace"
               fontWeight="700"
@@ -953,7 +953,7 @@ function AnimatedDomainSchematic({
               x="421"
               y="100"
               textAnchor="middle"
-              fill="#38BDF8"
+              fill="#5CB3AE"
               fontSize="8"
               fontFamily="monospace"
             >
@@ -967,15 +967,15 @@ function AnimatedDomainSchematic({
               width="512"
               height="120"
               rx="8"
-              fill="#0B1324"
-              stroke="#34D399"
+              fill="#0D2537"
+              stroke="#5BB87A"
               strokeOpacity="0.6"
               strokeWidth="1.4"
             />
             <text
               x="42"
               y="180"
-              fill="#34D399"
+              fill="#5BB87A"
               fontSize="9"
               fontFamily="monospace"
               fontWeight="700"
@@ -990,18 +990,18 @@ function AnimatedDomainSchematic({
               y1="226"
               x2="404"
               y2="226"
-              stroke="#38BDF8"
+              stroke="#5CB3AE"
               strokeWidth="1.8"
               strokeDasharray="6 6"
               className="cad-flow-fast"
             />
             {/* Gliding optical data packets */}
-            <circle cx="176" cy="226" r="3.5" fill="#7DD3FC" className="cad-packet-glide" />
+            <circle cx="176" cy="226" r="3.5" fill="#8ED0CC" className="cad-packet-glide" />
             <circle
               cx="176"
               cy="226"
               r="3.5"
-              fill="#34D399"
+              fill="#5BB87A"
               className="cad-packet-glide"
               style={{ animationDelay: "1.3s" }}
             />
@@ -1013,15 +1013,15 @@ function AnimatedDomainSchematic({
               width="132"
               height="56"
               rx="5"
-              fill="#0F172A"
-              stroke="#38BDF8"
+              fill="#0A1F2E"
+              stroke="#5CB3AE"
               strokeWidth="1.4"
             />
             <text
               x="108"
               y="222"
               textAnchor="middle"
-              fill="#F8FAFC"
+              fill="#F4F7F9"
               fontSize="9.5"
               fontFamily="monospace"
               fontWeight="700"
@@ -1032,7 +1032,7 @@ function AnimatedDomainSchematic({
               x="108"
               y="239"
               textAnchor="middle"
-              fill="#38BDF8"
+              fill="#5CB3AE"
               fontSize="7.8"
               fontFamily="monospace"
             >
@@ -1046,7 +1046,7 @@ function AnimatedDomainSchematic({
               width="136"
               height="56"
               rx="5"
-              fill="#0F172A"
+              fill="#0A1F2E"
               stroke="#F59E0B"
               strokeWidth="1.4"
             />
@@ -1054,7 +1054,7 @@ function AnimatedDomainSchematic({
               x="280"
               y="222"
               textAnchor="middle"
-              fill="#F8FAFC"
+              fill="#F4F7F9"
               fontSize="9.5"
               fontFamily="monospace"
               fontWeight="700"
@@ -1079,15 +1079,15 @@ function AnimatedDomainSchematic({
               width="132"
               height="56"
               rx="5"
-              fill="#0F172A"
-              stroke="#34D399"
+              fill="#0A1F2E"
+              stroke="#5BB87A"
               strokeWidth="1.4"
             />
             <text
               x="452"
               y="222"
               textAnchor="middle"
-              fill="#F8FAFC"
+              fill="#F4F7F9"
               fontSize="9.5"
               fontFamily="monospace"
               fontWeight="700"
@@ -1098,18 +1098,18 @@ function AnimatedDomainSchematic({
               x="452"
               y="239"
               textAnchor="middle"
-              fill="#34D399"
+              fill="#5BB87A"
               fontSize="7.8"
               fontFamily="monospace"
             >
               GNSS · 1G–200G TEST
             </text>
-            <circle cx="506" cy="208" r="3" fill="#34D399" />
+            <circle cx="506" cy="208" r="3" fill="#5BB87A" />
             <circle
               cx="506"
               cy="208"
               r="7"
-              stroke="#34D399"
+              stroke="#5BB87A"
               strokeWidth="1.2"
               className="cad-radar-ping"
             />
@@ -1160,12 +1160,12 @@ function DomainSpecReadout({
   const TitleTag = decorative ? "div" : "h3";
 
   return (
-    <div className="flex flex-col justify-between rounded-xl border border-slate-800/90 bg-[#0B1222]/90 p-5 sm:p-6 lg:col-span-5">
+    <div className="flex flex-col justify-between rounded-xl border border-[#234863] bg-[#0D2537]/90 p-5 sm:p-6 lg:col-span-5">
       <div>
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3.5">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#234863] pb-3.5">
           <span
             className={`inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.14em] ${
-              isSky ? "text-[#38BDF8]" : "text-[#34D399]"
+              isSky ? "text-[#5CB3AE]" : "text-[#5BB87A]"
             }`}
           >
             <DomainIcon variant={card.variant} className="h-4 w-4" />
@@ -1191,14 +1191,14 @@ function DomainSpecReadout({
           {detail.metrics.map((metric) => (
             <div
               key={metric.label}
-              className="rounded-lg border border-slate-800 bg-[#070D19]/90 px-3.5 py-3"
+              className="rounded-lg border border-[#234863] bg-[#071622]/90 px-3.5 py-3"
             >
               <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-400">
                 {metric.label}
               </p>
               <p
                 className={`band-numeral mt-1.5 text-sm font-bold sm:text-base ${
-                  isSky ? "text-[#7DD3FC]" : "text-[#6EE7B7]"
+                  isSky ? "text-[#8ED0CC]" : "text-[#86D4A0]"
                 }`}
               >
                 {metric.value}
@@ -1212,7 +1212,7 @@ function DomainSpecReadout({
           {detail.standards.map((std) => (
             <span
               key={std}
-              className="rounded-md border border-slate-700/80 bg-slate-900/90 px-2.5 py-1 font-mono text-[11px] font-semibold text-slate-200"
+              className="rounded-md border border-[#234863] bg-slate-900/90 px-2.5 py-1 font-mono text-[11px] font-semibold text-slate-200"
             >
               {std}
             </span>
@@ -1220,7 +1220,7 @@ function DomainSpecReadout({
         </div>
       </div>
 
-      <div className="mt-6 border-t border-slate-800 pt-5">
+      <div className="mt-6 border-t border-[#234863] pt-5">
         {decorative ? (
           <span className="inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold">
             <span>{detail.ctaLabel}</span>
@@ -1231,8 +1231,8 @@ function DomainSpecReadout({
             href={`/${lang}${card.href}`}
             className={`group inline-flex min-h-[46px] w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white transition-all duration-150 ${
               isSky
-                ? "bg-[#0284C7] hover:bg-[#0369A1]"
-                : "bg-[#059669] hover:bg-[#047857]"
+                ? "bg-[#006B68] hover:bg-[#005552]"
+                : "bg-[#267042] hover:bg-[#1E5B35]"
             }`}
           >
             <span>{detail.ctaLabel}</span>
@@ -1366,8 +1366,8 @@ export function CoreEngineeringShowcase({
         className="pointer-events-none absolute inset-0 transition-opacity duration-500"
         style={{
           background: isIndustrialActive
-            ? "radial-gradient(circle at 22% 18%, rgba(2,132,199,0.16), transparent 46%), radial-gradient(circle at 82% 80%, rgba(56,189,248,0.1), transparent 44%)"
-            : "radial-gradient(circle at 22% 18%, rgba(5,150,105,0.16), transparent 46%), radial-gradient(circle at 82% 80%, rgba(52,211,153,0.1), transparent 44%)",
+            ? "radial-gradient(circle at 22% 18%, rgba(0,107,104,0.18), transparent 46%), radial-gradient(circle at 82% 80%, rgba(92,179,174,0.12), transparent 44%)"
+            : "radial-gradient(circle at 22% 18%, rgba(38,112,66,0.20), transparent 46%), radial-gradient(circle at 82% 80%, rgba(91,184,122,0.12), transparent 44%)",
         }}
       />
 
@@ -1376,11 +1376,11 @@ export function CoreEngineeringShowcase({
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <div className="inline-flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-slate-900/80 px-3.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#34D399]">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-slate-900/80 px-3.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#5BB87A]">
                 <span
                   aria-hidden="true"
                   className={`h-2 w-2 rounded-full ${
-                    isPaused ? "bg-amber-400" : "cad-beacon bg-[#34D399]"
+                    isPaused ? "bg-amber-400" : "cad-beacon bg-[#5BB87A]"
                   }`}
                 />
                 <span>{isPaused ? showcase.pausedLabel : showcase.liveLabel}</span>
@@ -1415,12 +1415,12 @@ export function CoreEngineeringShowcase({
               aria-label={
                 isPaused ? showcase.playButtonLabel : showcase.pauseButtonLabel
               }
-              className="inline-flex min-h-[40px] cursor-pointer items-center gap-2 rounded-lg border border-white/20 bg-slate-900/80 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-wider text-slate-100 transition-colors hover:border-[#34D399] hover:bg-slate-800/90"
+              className="inline-flex min-h-[40px] cursor-pointer items-center gap-2 rounded-lg border border-white/20 bg-slate-900/80 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-wider text-slate-100 transition-colors hover:border-[#5BB87A] hover:bg-slate-800/90"
             >
               {isPaused ? (
-                <Play aria-hidden="true" className="h-3.5 w-3.5 text-[#34D399]" />
+                <Play aria-hidden="true" className="h-3.5 w-3.5 text-[#5BB87A]" />
               ) : (
-                <Pause aria-hidden="true" className="h-3.5 w-3.5 text-[#34D399]" />
+                <Pause aria-hidden="true" className="h-3.5 w-3.5 text-[#5BB87A]" />
               )}
               <span>
                 {isPaused ? showcase.playButtonLabel : showcase.pauseButtonLabel}
@@ -1438,7 +1438,7 @@ export function CoreEngineeringShowcase({
           {cards.map((card, index) => {
             const isSelected = index === activeIndex;
             const isSky = card.variant === "industrial-dual";
-            const tabAccent = isSky ? "#38BDF8" : "#34D399";
+            const tabAccent = isSky ? "#5CB3AE" : "#5BB87A";
 
             return (
               <button
@@ -1485,8 +1485,8 @@ export function CoreEngineeringShowcase({
                     className={`inline-flex h-7 w-7 items-center justify-center rounded-lg border transition-colors ${
                       isSelected
                         ? isSky
-                          ? "border-sky-400/40 bg-sky-500/15 text-[#38BDF8]"
-                          : "border-emerald-400/40 bg-emerald-500/15 text-[#34D399]"
+                          ? "border-[#5CB3AE]/40 bg-[#5CB3AE]/15 text-[#5CB3AE]"
+                          : "border-[#5BB87A]/40 bg-[#5BB87A]/15 text-[#5BB87A]"
                         : "border-white/10 bg-white/5 text-slate-400 group-hover:text-slate-200"
                     }`}
                   >

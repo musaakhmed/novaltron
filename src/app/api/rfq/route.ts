@@ -123,35 +123,35 @@ export async function POST(request: Request) {
 
     const htmlBody = isGeneral
       ? `
-      <div style="font-family: Inter, -apple-system, sans-serif; color: #0F172A; max-width: 640px;">
+      <div style="font-family: 'IBM Plex Sans', 'Noto Sans Georgian', -apple-system, sans-serif; color: #0A1F2E; max-width: 640px;">
         <h2 style="margin: 0 0 8px;">General Inquiry — ${escapeHtml(referenceId)}</h2>
-        <p style="margin: 0 0 20px; color: #475569; font-size: 14px;">Routed via novaltron.com (${escapeHtml(payload.locale.toUpperCase())})</p>
+        <p style="margin: 0 0 20px; color: #455A69; font-size: 14px;">Routed via novaltron.com (${escapeHtml(payload.locale.toUpperCase())})</p>
         <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-          <tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Full Name</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.fullName)}</td></tr>
-          ${payload.company ? `<tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Company</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.company)}</td></tr>` : ""}
-          <tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Email</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.email)}</td></tr>
-          ${payload.phone ? `<tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Phone / WhatsApp</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.phone)}</td></tr>` : ""}
+          <tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Full Name</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.fullName)}</td></tr>
+          ${payload.company ? `<tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Company</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.company)}</td></tr>` : ""}
+          <tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Email</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.email)}</td></tr>
+          ${payload.phone ? `<tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Phone / WhatsApp</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.phone)}</td></tr>` : ""}
         </table>
         <h3 style="margin: 20px 0 8px;">Message</h3>
-        <p style="white-space: pre-wrap; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 14px; font-size: 14px;">${escapeHtml(payload.scope)}</p>
+        <p style="white-space: pre-wrap; background: #F4F7F9; border: 1px solid #D4DFE7; border-radius: 8px; padding: 14px; font-size: 14px;">${escapeHtml(payload.scope)}</p>
       </div>
     `
       : `
-      <div style="font-family: Inter, -apple-system, sans-serif; color: #0F172A; max-width: 640px;">
+      <div style="font-family: 'IBM Plex Sans', 'Noto Sans Georgian', -apple-system, sans-serif; color: #0A1F2E; max-width: 640px;">
         <h2 style="margin: 0 0 8px;">New Project RFQ — ${escapeHtml(referenceId)}</h2>
-        <p style="margin: 0 0 20px; color: #475569; font-size: 14px;">Routed via novaltron.com (${escapeHtml(payload.locale.toUpperCase())})</p>
+        <p style="margin: 0 0 20px; color: #455A69; font-size: 14px;">Routed via novaltron.com (${escapeHtml(payload.locale.toUpperCase())})</p>
         <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-          <tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Full Name</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.fullName)}</td></tr>
-          <tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Company</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.company)}</td></tr>
-          <tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Work Email</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.email)}</td></tr>
-          <tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Phone / WhatsApp</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.phone)}</td></tr>
-          <tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Country / Region</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.country)}</td></tr>
-          <tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Primary Division</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.division)}</td></tr>
-          <tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Estimated Timeline</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.timeline || "Not specified")}</td></tr>
-          <tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>BOQ Attachment</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(attachment ? attachment.filename : "None")}</td></tr>
+          <tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Full Name</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.fullName)}</td></tr>
+          <tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Company</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.company)}</td></tr>
+          <tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Work Email</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.email)}</td></tr>
+          <tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Phone / WhatsApp</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.phone)}</td></tr>
+          <tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Country / Region</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.country)}</td></tr>
+          <tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Primary Division</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.division)}</td></tr>
+          <tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Estimated Timeline</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.timeline || "Not specified")}</td></tr>
+          <tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>BOQ Attachment</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(attachment ? attachment.filename : "None")}</td></tr>
         </table>
         <h3 style="margin: 20px 0 8px;">Project Scope &amp; Technical Summary</h3>
-        <p style="white-space: pre-wrap; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 14px; font-size: 14px;">${escapeHtml(payload.scope)}</p>
+        <p style="white-space: pre-wrap; background: #F4F7F9; border: 1px solid #D4DFE7; border-radius: 8px; padding: 14px; font-size: 14px;">${escapeHtml(payload.scope)}</p>
       </div>
     `;
 

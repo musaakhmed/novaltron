@@ -25,9 +25,9 @@ export const PUBLIC_ROUTES: readonly PublicRouteConfig[] = [
 ] as const;
 
 const DEFAULT_OG_IMAGE = {
-  url: "/images/hero-agritech.jpg",
-  width: 1376,
-  height: 768,
+  url: "/og-image.png",
+  width: 1200,
+  height: 630,
 } as const;
 
 export function buildLocaleUrl(lang: Locale, path = ""): string {

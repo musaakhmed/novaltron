@@ -31,6 +31,13 @@ export async function generateMetadata({
     },
     description: dict.meta.defaultDescription,
     metadataBase: new URL(SITE_CONFIG.websiteUrl),
+    icons: {
+      icon: [
+        { url: "/icon.svg", type: "image/svg+xml" },
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      ],
+      apple: "/apple-touch-icon.png",
+    },
     robots: {
       index: true,
       follow: true,
@@ -57,7 +64,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={lang} data-scroll-behavior="smooth" className="h-full antialiased">
-      <body className="flex min-h-full flex-col bg-[#F8FAFC] text-[#334155] selection:bg-[#059669] selection:text-white">
+      <body className="flex min-h-full flex-col bg-[#F4F7F9] text-[#455A69] selection:bg-[#267042] selection:text-white">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -66,7 +73,7 @@ export default async function LocaleLayout({
         />
         <a
           href="#main-content"
-          className="visually-hidden focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-md focus:bg-[#059669] focus:px-4 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"
+          className="visually-hidden focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-md focus:bg-[#267042] focus:px-4 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"
         >
           {dict.meta.skipToContent}
         </a>

@@ -34,8 +34,8 @@ export function BioIpmMatrix({
   return (
     <div>
       {/* Interactive Farm-Scale Selector Bar */}
-      <div className="mb-10 flex flex-col gap-4 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-        <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#0F172A]">
+      <div className="mb-10 flex flex-col gap-4 rounded-2xl border border-[#D4DFE7] bg-[#F4F7F9] p-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#0A1F2E]">
           {selectorLabel}
         </span>
         <div
@@ -56,8 +56,8 @@ export function BioIpmMatrix({
                 }}
                 className={`min-h-[44px] cursor-pointer rounded-xl border px-4 py-2 text-xs font-semibold transition-all duration-150 sm:text-sm ${
                   active
-                    ? "border-[#065F46] bg-[#065F46] text-white shadow-xs"
-                    : "border-[#E2E8F0] bg-white text-[#334155] hover:border-slate-300 hover:bg-slate-50 hover:text-[#0F172A]"
+                    ? "border-[#1B5431] bg-[#1B5431] text-white shadow-xs"
+                    : "border-[#D4DFE7] bg-white text-[#455A69] hover:border-slate-300 hover:bg-slate-50 hover:text-[#0A1F2E]"
                 }`}
               >
                 {tier.scaleLabel}
@@ -79,21 +79,21 @@ export function BioIpmMatrix({
               key={tier.id}
               className={`flex flex-col rounded-2xl border p-6 transition-all duration-200 sm:p-7 ${
                 isHighlighted
-                  ? "border-[#059669] bg-[#ECFDF5] shadow-md ring-1 ring-[#059669]/25 lg:-translate-y-1"
-                  : "border-[#E2E8F0] bg-white hover:border-slate-300"
+                  ? "border-[#267042] bg-[#EEF6F1] shadow-md ring-1 ring-[#267042]/25 lg:-translate-y-1"
+                  : "border-[#D4DFE7] bg-white hover:border-slate-300"
               }`}
             >
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <span className="inline-block rounded-full bg-[#065F46]/10 px-3 py-1 font-mono text-[11px] font-semibold text-[#065F46]">
+                  <span className="inline-block rounded-full bg-[#1B5431]/10 px-3 py-1 font-mono text-[11px] font-semibold text-[#1B5431]">
                     {tier.scaleTag}
                   </span>
-                  <h3 className="mt-3.5 text-xl font-bold text-[#0F172A]">
+                  <h3 className="mt-3.5 text-xl font-bold text-[#0A1F2E]">
                     {tier.name}
                   </h3>
                 </div>
                 {isHighlighted && (
-                  <span className="shrink-0 rounded-full bg-[#059669] px-3 py-1 font-mono text-[11px] font-bold text-white">
+                  <span className="shrink-0 rounded-full bg-[#267042] px-3 py-1 font-mono text-[11px] font-bold text-white">
                     {recommendedLabel}
                   </span>
                 )}
@@ -105,7 +105,7 @@ export function BioIpmMatrix({
                 aria-expanded={isMobileOpen}
                 aria-controls={panelId}
                 onClick={() => toggleMobile(tier.id)}
-                className="mt-5 flex min-h-[44px] w-full cursor-pointer items-center justify-between rounded-xl border border-[#E2E8F0] bg-white/90 px-4 py-2.5 text-xs font-semibold text-[#0F172A] lg:hidden"
+                className="mt-5 flex min-h-[44px] w-full cursor-pointer items-center justify-between rounded-xl border border-[#D4DFE7] bg-white/90 px-4 py-2.5 text-xs font-semibold text-[#0A1F2E] lg:hidden"
               >
                 <span>
                   {tier.hardwareTitle} &amp; {tier.advisoryTitle}
@@ -127,15 +127,15 @@ export function BioIpmMatrix({
               >
                 <div className="space-y-5">
                   <div>
-                    <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-[#065F46]">
+                    <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-[#1B5431]">
                       {tier.hardwareTitle}
                     </h4>
-                    <ul className="mt-3 space-y-2.5 text-sm text-[#334155]">
+                    <ul className="mt-3 space-y-2.5 text-sm text-[#455A69]">
                       {tier.hardwareItems.map((item) => (
                         <li key={item} className="flex items-start gap-2.5">
                           <Check
                             aria-hidden="true"
-                            className="mt-0.5 h-4 w-4 shrink-0 text-[#16A34A]"
+                            className="mt-0.5 h-4 w-4 shrink-0 text-[#267042]"
                           />
                           <span>{item}</span>
                         </li>
@@ -144,15 +144,15 @@ export function BioIpmMatrix({
                   </div>
 
                   <div className="border-t border-slate-200/90 pt-5">
-                    <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-[#065F46]">
+                    <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-[#1B5431]">
                       {tier.advisoryTitle}
                     </h4>
-                    <ul className="mt-3 space-y-2.5 text-sm text-[#334155]">
+                    <ul className="mt-3 space-y-2.5 text-sm text-[#455A69]">
                       {tier.advisoryItems.map((item) => (
                         <li key={item} className="flex items-start gap-2.5">
                           <Check
                             aria-hidden="true"
-                            className="mt-0.5 h-4 w-4 shrink-0 text-[#16A34A]"
+                            className="mt-0.5 h-4 w-4 shrink-0 text-[#267042]"
                           />
                           <span>{item}</span>
                         </li>
@@ -167,8 +167,8 @@ export function BioIpmMatrix({
                   href={`/${lang}/contact?division=bio-ipm&tier=${tier.id}`}
                   className={`group inline-flex min-h-[46px] w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-150 ${
                     isHighlighted
-                      ? "bg-[#059669] text-white shadow-xs hover:bg-[#047857]"
-                      : "bg-[#0F172A] text-white hover:bg-slate-800"
+                      ? "bg-[#267042] text-white shadow-xs hover:bg-[#1E5B35]"
+                      : "bg-[#0A1F2E] text-white hover:bg-[#133045]"
                   }`}
                 >
                   <span>{tier.ctaLabel.replace(" →", "")}</span>
@@ -183,7 +183,7 @@ export function BioIpmMatrix({
         })}
       </div>
 
-      <p className="mt-6 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3 text-xs leading-relaxed text-[#334155]">
+      <p className="mt-6 rounded-xl border border-[#D4DFE7] bg-[#F4F7F9] px-4 py-3 text-xs leading-relaxed text-[#455A69]">
         {footnote}
       </p>
     </div>

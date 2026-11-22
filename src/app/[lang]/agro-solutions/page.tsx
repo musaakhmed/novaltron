@@ -53,11 +53,11 @@ export default async function AgroSolutionsPage({
         }}
       />
       {/* Editorial Hero */}
-      <section className="bg-blueprint-dark border-b border-slate-800 pt-28 pb-16 text-white lg:pt-32 lg:pb-20">
+      <section className="bg-blueprint-dark border-b border-[#234863] pt-28 pb-16 text-white lg:pt-32 lg:pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#059669]/40 bg-[#059669]/12 px-3.5 py-1">
-            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[#34D399]" />
-            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#34D399]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#5BB87A]/40 bg-[#267042]/20 px-3.5 py-1">
+            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[#5BB87A]" />
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-[#5BB87A]">
               {agroSolutions.eyebrow}
             </p>
           </div>
@@ -74,35 +74,35 @@ export default async function AgroSolutionsPage({
       <StickyAnchorBar anchors={agroSolutions.anchors} accent="emerald" />
 
       {/* 4 Numbered Engineering Pillar Sections */}
-      <div className="bg-[#F8FAFC] py-16 lg:py-20">
+      <div className="bg-[#F4F7F9] py-16 lg:py-20">
         <div className="mx-auto max-w-7xl space-y-14 px-4 sm:px-6 lg:px-8">
           {agroSolutions.pillars.map((pillar) => (
             <section
               key={pillar.id}
               id={pillar.id}
-              className="scroll-mt-32 rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-2xs sm:p-8 lg:p-10"
+              className="scroll-mt-32 rounded-2xl border border-[#D4DFE7] bg-white p-6 shadow-2xs sm:p-8 lg:p-10"
             >
               <RevealSection>
                 <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-10">
                   <div className="min-w-0 lg:col-span-7">
                     <div className="flex flex-wrap items-center gap-2.5">
-                      <span className="band-numeral text-3xl font-bold text-[#059669] sm:text-4xl">
+                      <span className="band-numeral text-3xl font-bold text-[#267042] sm:text-4xl">
                         {pillar.number}
                       </span>
                       {pillar.standards.map((std) => (
                         <span
                           key={std}
-                          className="rounded-md border border-[#E2E8F0] bg-[#F8FAFC] px-2.5 py-0.5 font-mono text-xs font-semibold text-[#334155]"
+                          className="rounded-md border border-[#D4DFE7] bg-[#F4F7F9] px-2.5 py-0.5 font-mono text-xs font-semibold text-[#455A69]"
                         >
                           {std}
                         </span>
                       ))}
                     </div>
 
-                    <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[#0F172A] sm:text-3xl">
+                    <h2 className="mt-4 text-2xl font-extrabold leading-tight text-[#0A1F2E] sm:text-3xl">
                       {pillar.title}
                     </h2>
-                    <p className="mt-3 text-base leading-relaxed text-[#334155]">
+                    <p className="mt-3 text-base leading-relaxed text-[#455A69]">
                       {pillar.subtitle}
                     </p>
 
@@ -110,17 +110,17 @@ export default async function AgroSolutionsPage({
                       {pillar.items.map((item, itemIdx) => (
                         <li
                           key={item.heading}
-                          className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3.5 transition-colors duration-150 hover:border-[#059669]/50"
+                          className="rounded-xl border border-[#D4DFE7] bg-[#F4F7F9] px-4 py-3.5 transition-colors duration-150 hover:border-[#267042]/50"
                         >
                           <div className="flex items-start gap-3">
-                            <span className="mt-0.5 shrink-0 rounded-md border border-[#059669]/20 bg-[#059669]/8 px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#059669]">
+                            <span className="mt-0.5 shrink-0 rounded-md border border-[#267042]/20 bg-[#267042]/8 px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#267042]">
                               {pillar.number}.{itemIdx + 1}
                             </span>
                             <div className="min-w-0">
-                              <h3 className="text-sm font-bold leading-snug text-[#0F172A] sm:text-[15px]">
+                              <h3 className="text-sm font-bold leading-snug text-[#0A1F2E] sm:text-[15px]">
                                 {item.heading}
                               </h3>
-                              <p className="mt-1 text-sm leading-relaxed text-[#334155]">
+                              <p className="mt-1 text-sm leading-relaxed text-[#455A69]">
                                 {item.detail}
                               </p>
                             </div>
@@ -132,7 +132,7 @@ export default async function AgroSolutionsPage({
 
                   <div className="flex min-w-0 flex-col gap-4 lg:col-span-5">
                     {pillar.imageSrc && (
-                      <div className="relative aspect-[16/9] w-full overflow-clip rounded-xl border border-[#E2E8F0] bg-slate-900">
+                      <div className="relative aspect-[16/9] w-full overflow-clip rounded-xl border border-[#D4DFE7] bg-slate-900">
                         <Image
                           src={pillar.imageSrc}
                           alt={pillar.imageAlt || pillar.title}
@@ -162,7 +162,7 @@ export default async function AgroSolutionsPage({
           ))}
 
           {/* Bottom Conversion Banner */}
-          <RevealSection className="bg-blueprint-dark rounded-2xl border border-slate-800 p-8 text-white shadow-lg sm:p-10">
+          <RevealSection className="bg-blueprint-dark rounded-2xl border border-[#234863] p-8 text-white shadow-lg sm:p-10">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
@@ -174,7 +174,7 @@ export default async function AgroSolutionsPage({
               </div>
               <Link
                 href={`/${lang}/contact?division=agro-irrigation`}
-                className="group inline-flex min-h-[48px] shrink-0 cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#059669] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#047857]"
+                className="group inline-flex min-h-[48px] shrink-0 cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#267042] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#1E5B35]"
               >
                 <span>{agroSolutions.bottomCtaButton.replace(" →", "")}</span>
                 <ArrowRight

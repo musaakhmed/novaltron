@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <section className="bg-blueprint-dark flex min-h-[70vh] items-center pt-28 pb-20 text-white">
       <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
-        <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#34D399]">
+        <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#5BB87A]">
           HTTP 404
         </p>
         <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
@@ -19,7 +19,7 @@ export default function NotFound() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
             href="/en"
-            className="inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-[#059669] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#047857]"
+            className="inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-[#267042] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#1E5B35]"
           >
             <ArrowLeft aria-hidden="true" className="h-4 w-4" />
             <span>Back to Novaltron</span>
@@ -30,7 +30,7 @@ export default function NotFound() {
             <Link
               key={loc}
               href={`/${loc}`}
-              className="rounded-md border border-slate-700 px-2.5 py-1 transition-colors hover:border-[#059669] hover:text-white"
+              className="rounded-md border border-slate-700 px-2.5 py-1 transition-colors hover:border-[#267042] hover:text-white"
             >
               {LOCALE_LABELS[loc]}
             </Link>

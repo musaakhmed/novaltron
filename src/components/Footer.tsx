@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import type { SiteDictionary } from "@/data/dictionaries/types";
 import { SITE_CONFIG } from "@/lib/site-config";
+import { PrecisionCorridorBadge, PrecisionCorridorWordmark } from "@/components/NovaltronLogo";
 
 interface FooterProps {
   lang: Locale;
@@ -50,21 +51,21 @@ export function Footer({ lang, dict }: FooterProps) {
   const hasConfiguredSocial = showLinkedIn || showInstagram;
 
   return (
-    <footer className="border-t border-slate-800 bg-[#0F172A] text-slate-300">
+    <footer className="border-t border-[#234863] bg-[#0A1F2E] text-slate-300">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand & Summary */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2.5">
-              <span
-                aria-hidden="true"
-                className="flex h-8 w-8 items-center justify-center rounded-md bg-[#059669] font-mono text-sm font-bold text-white"
-              >
-                N
-              </span>
-              <span className="font-heading text-base font-bold tracking-[0.16em] text-white">
-                NOVALTRON
-              </span>
+              <PrecisionCorridorBadge
+                variant="light-on-dark"
+                className="h-8 w-8 shrink-0"
+              />
+              <PrecisionCorridorWordmark
+                variant="light-on-dark"
+                className="h-[18px] w-auto shrink-0"
+              />
+              <span className="sr-only">NOVALTRON</span>
             </div>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-300">
               {dict.footer.summary}
@@ -92,7 +93,7 @@ export function Footer({ lang, dict }: FooterProps) {
                       href={SITE_CONFIG.social.linkedin.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[40px] cursor-pointer items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/80 px-3.5 py-2 text-xs font-semibold text-slate-200 transition-colors hover:border-[#059669] hover:text-white"
+                      className="inline-flex min-h-[40px] cursor-pointer items-center gap-2 rounded-lg border border-[#234863] bg-[#133045]/80 px-3.5 py-2 text-xs font-semibold text-slate-200 transition-colors hover:border-[#5BB87A] hover:text-white"
                     >
                       <LinkedInIcon />
                       <span>{SITE_CONFIG.social.linkedin.label}</span>
@@ -104,7 +105,7 @@ export function Footer({ lang, dict }: FooterProps) {
                       href={SITE_CONFIG.social.instagram.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[40px] cursor-pointer items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/80 px-3.5 py-2 text-xs font-semibold text-slate-200 transition-colors hover:border-[#059669] hover:text-white"
+                      className="inline-flex min-h-[40px] cursor-pointer items-center gap-2 rounded-lg border border-[#234863] bg-[#133045]/80 px-3.5 py-2 text-xs font-semibold text-slate-200 transition-colors hover:border-[#5BB87A] hover:text-white"
                     >
                       <InstagramIcon />
                       <span>{SITE_CONFIG.social.instagram.label}</span>
@@ -135,7 +136,7 @@ export function Footer({ lang, dict }: FooterProps) {
               <li>
                 <Link
                   href={`/${lang}/contact`}
-                  className="font-semibold text-[#34D399] transition-colors hover:text-white"
+                  className="font-semibold text-[#5BB87A] transition-colors hover:text-white"
                 >
                   {dict.nav.primaryCta}
                 </Link>
@@ -160,7 +161,7 @@ export function Footer({ lang, dict }: FooterProps) {
               <li>
                 <a
                   href={`mailto:${SITE_CONFIG.email}`}
-                  className="text-[#34D399] transition-colors hover:text-white"
+                  className="text-[#5BB87A] transition-colors hover:text-white"
                 >
                   {SITE_CONFIG.email}
                 </a>
@@ -174,7 +175,7 @@ export function Footer({ lang, dict }: FooterProps) {
               {STANDARDS.map((std) => (
                 <span
                   key={std}
-                  className="rounded border border-slate-700 bg-slate-800/80 px-2 py-0.5 font-mono text-[11px] text-slate-300"
+                  className="rounded border border-[#234863] bg-[#133045]/80 px-2 py-0.5 font-mono text-[11px] text-slate-300"
                 >
                   {std}
                 </span>
@@ -183,7 +184,7 @@ export function Footer({ lang, dict }: FooterProps) {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-slate-800 pt-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-3 border-t border-[#234863] pt-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <p>{dict.footer.copyright}</p>
             <span aria-hidden="true" className="hidden sm:inline text-slate-600">

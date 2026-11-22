@@ -49,13 +49,13 @@ export function StickyAnchorBar({
 
   const activeStyles =
     accent === "teal"
-      ? "bg-[#0284C7] text-white border-[#0284C7] shadow-xs"
+      ? "bg-[#006B68] text-white border-[#006B68] shadow-xs"
       : accent === "pine"
-        ? "bg-[#065F46] text-white border-[#065F46] shadow-xs"
-        : "bg-[#059669] text-white border-[#059669] shadow-xs";
+        ? "bg-[#1B5431] text-white border-[#1B5431] shadow-xs"
+        : "bg-[#267042] text-white border-[#267042] shadow-xs";
 
   return (
-    <div className="sticky top-[68px] z-30 border-b border-[#E2E8F0] bg-white/95 backdrop-blur-md">
+    <div className="sticky top-[68px] z-30 border-b border-[#D4DFE7] bg-white/95 backdrop-blur-md">
       <nav
         aria-label="In-page sections"
         className="mx-auto flex max-w-7xl items-center gap-2 overflow-x-auto px-4 py-3 sm:px-6 lg:px-8"
@@ -71,7 +71,7 @@ export function StickyAnchorBar({
               className={`inline-flex min-h-[38px] shrink-0 items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold transition-all duration-150 cursor-pointer sm:text-sm ${
                 isActive
                   ? activeStyles
-                  : "border-[#E2E8F0] bg-[#F8FAFC] text-[#334155] hover:border-slate-300 hover:bg-slate-100 hover:text-[#0F172A]"
+                  : "border-[#D4DFE7] bg-[#F4F7F9] text-[#455A69] hover:border-slate-300 hover:bg-slate-100 hover:text-[#0A1F2E]"
               }`}
             >
               <span

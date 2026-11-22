@@ -51,11 +51,13 @@ export function TurnkeyStepper({
       <div
         aria-hidden="true"
         className={`hidden lg:block absolute top-7 left-10 right-10 h-[2px] ${
-          dark ? "bg-slate-700" : "bg-[#E2E8F0]"
+          dark ? "bg-[#234863]" : "bg-[#D4DFE7]"
         }`}
       >
         <div
-          className={`h-full bg-[#059669] stepper-connector ${
+          className={`h-full stepper-connector ${
+            dark ? "bg-[#5BB87A]" : "bg-[#267042]"
+          } ${
             connectorVisible ? "is-visible" : ""
           }`}
         />
@@ -74,21 +76,21 @@ export function TurnkeyStepper({
                 className={`group flex w-full cursor-pointer flex-col items-start rounded-2xl border p-5 text-left transition-all duration-200 ${
                   dark
                     ? isActive
-                      ? "border-[#059669] bg-slate-800/95 shadow-lg -translate-y-0.5"
-                      : "border-slate-700/80 bg-slate-900/75 hover:border-slate-500"
+                      ? "border-[#5BB87A] bg-[#133045] shadow-lg -translate-y-0.5"
+                      : "border-[#234863] bg-[#0A1F2E]/85 hover:border-slate-500"
                     : isActive
-                      ? "border-[#059669] bg-[#ECFDF5]/70 shadow-sm -translate-y-0.5"
-                      : "border-[#E2E8F0] bg-white hover:border-slate-300"
+                      ? "border-[#267042] bg-[#EEF6F1]/80 shadow-sm -translate-y-0.5"
+                      : "border-[#D4DFE7] bg-white hover:border-slate-300"
                 }`}
               >
                 <div className="flex w-full items-center justify-between gap-2">
                   <span
                     className={`relative z-10 inline-flex h-11 w-11 items-center justify-center rounded-xl font-mono text-sm font-bold transition-colors duration-200 ${
                       isActive
-                        ? "bg-[#059669] text-white shadow-xs"
+                        ? "bg-[#267042] text-white shadow-xs"
                         : dark
-                          ? "bg-slate-800 text-slate-300 border border-slate-700"
-                          : "bg-[#F8FAFC] text-[#0F172A] border border-[#E2E8F0]"
+                          ? "bg-[#133045] text-slate-300 border border-[#234863]"
+                          : "bg-[#F4F7F9] text-[#0A1F2E] border border-[#D4DFE7]"
                     }`}
                   >
                     {item.step}
@@ -97,23 +99,25 @@ export function TurnkeyStepper({
                     aria-hidden="true"
                     className={`h-2 w-2 rounded-full transition-colors ${
                       isActive
-                        ? "bg-[#059669]"
+                        ? dark
+                          ? "bg-[#5BB87A]"
+                          : "bg-[#267042]"
                         : dark
-                          ? "bg-slate-700"
+                          ? "bg-[#234863]"
                           : "bg-slate-200"
                     }`}
                   />
                 </div>
                 <h3
                   className={`mt-5 text-[15px] font-bold leading-snug ${
-                    dark ? "text-white" : "text-[#0F172A]"
+                    dark ? "text-white" : "text-[#0A1F2E]"
                   }`}
                 >
                   {item.title}
                 </h3>
                 <p
                   className={`mt-2 text-sm leading-relaxed ${
-                    dark ? "text-slate-300" : "text-[#334155]"
+                    dark ? "text-slate-300" : "text-[#455A69]"
                   }`}
                 >
                   {item.description}
@@ -129,22 +133,29 @@ export function TurnkeyStepper({
         <div
           className={`mt-6 flex flex-col gap-3 rounded-xl border px-5 py-4 sm:flex-row sm:items-center sm:justify-between ${
             dark
-              ? "border-slate-700/90 bg-slate-900/90 text-slate-200"
-              : "border-[#E2E8F0] bg-white text-[#0F172A] shadow-2xs"
+              ? "border-[#234863] bg-[#0D2537] text-slate-200"
+              : "border-[#D4DFE7] bg-white text-[#0A1F2E] shadow-2xs"
           }`}
         >
           <div className="flex items-center gap-3">
-            <span className="inline-flex h-7 items-center rounded-md bg-[#059669] px-2.5 font-mono text-xs font-bold text-white">
+            <span className="inline-flex h-7 items-center rounded-md bg-[#267042] px-2.5 font-mono text-xs font-bold text-white">
               {activeStep.step}
             </span>
             <span className="text-sm font-bold">{activeStep.title}</span>
           </div>
           <div className="flex items-center gap-2">
-            <CheckCircle2 aria-hidden="true" className="h-4 w-4 shrink-0 text-[#059669]" />
+            <CheckCircle2
+              aria-hidden="true"
+              className={`h-4 w-4 shrink-0 ${dark ? "text-[#5BB87A]" : "text-[#267042]"}`}
+            />
             <span className="font-mono text-xs uppercase tracking-wider opacity-65">
               {deliverableLabel}:
             </span>
-            <span className="font-mono text-xs font-semibold text-[#059669]">
+            <span
+              className={`font-mono text-xs font-semibold ${
+                dark ? "text-[#5BB87A]" : "text-[#267042]"
+              }`}
+            >
               {activeStep.deliverable}
             </span>
           </div>
