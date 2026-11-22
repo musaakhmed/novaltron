@@ -35,6 +35,9 @@ export default async function ContactPage({
   if (!hasLocale(lang)) notFound();
   const dict = getDictionary(lang);
   const { contact } = dict;
+  const showLinkedIn = SITE_CONFIG.social.linkedin.configured;
+  const showInstagram = SITE_CONFIG.social.instagram.configured;
+  const hasConfiguredSocial = showLinkedIn || showInstagram;
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(lang, [
     { name: dict.meta.siteName, path: "" },
     { name: contact.metaTitle, path: "/contact" },
@@ -105,31 +108,37 @@ export default async function ContactPage({
               </div>
 
               {/* Official Social Channels */}
-              <div className="mt-6 border-t border-slate-100 pt-5">
-                <p className="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                  {contact.socialLabel}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <a
-                    href={SITE_CONFIG.social.linkedin.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-[40px] cursor-pointer items-center gap-1.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] px-3.5 py-2 text-xs font-semibold text-[#0F172A] transition-colors hover:border-[#059669] hover:text-[#059669]"
-                  >
-                    <span>{SITE_CONFIG.social.linkedin.label}</span>
-                    <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
-                  </a>
-                  <a
-                    href={SITE_CONFIG.social.instagram.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-[40px] cursor-pointer items-center gap-1.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] px-3.5 py-2 text-xs font-semibold text-[#0F172A] transition-colors hover:border-[#059669] hover:text-[#059669]"
-                  >
-                    <span>{SITE_CONFIG.social.instagram.label}</span>
-                    <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
-                  </a>
+              {hasConfiguredSocial && (
+                <div className="mt-6 border-t border-slate-100 pt-5">
+                  <p className="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                    {contact.socialLabel}
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {showLinkedIn && (
+                      <a
+                        href={SITE_CONFIG.social.linkedin.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-[40px] cursor-pointer items-center gap-1.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] px-3.5 py-2 text-xs font-semibold text-[#0F172A] transition-colors hover:border-[#059669] hover:text-[#059669]"
+                      >
+                        <span>{SITE_CONFIG.social.linkedin.label}</span>
+                        <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
+                      </a>
+                    )}
+                    {showInstagram && (
+                      <a
+                        href={SITE_CONFIG.social.instagram.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-[40px] cursor-pointer items-center gap-1.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] px-3.5 py-2 text-xs font-semibold text-[#0F172A] transition-colors hover:border-[#059669] hover:text-[#059669]"
+                      >
+                        <span>{SITE_CONFIG.social.instagram.label}</span>
+                        <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </aside>
 

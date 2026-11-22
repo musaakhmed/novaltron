@@ -21,6 +21,7 @@ export function RfqForm({
   legalLinkLabel,
 }: RfqFormProps) {
   const searchParams = useSearchParams();
+  const typeParam = searchParams.get("type") ?? "";
   const divisionParam = searchParams.get("division") ?? "";
   const tierParam = searchParams.get("tier") ?? "";
 
@@ -28,15 +29,22 @@ export function RfqForm({
   const announcerRef = useRef<HTMLDivElement>(null);
   const announceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  const [inquiryType, setInquiryType] = useState<"rfq" | "general">(() =>
+    typeParam === "general" && !divisionParam ? "general" : "rfq"
+  );
+  const isGeneral = inquiryType === "general";
+
   const [fullName, setFullName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [country, setCountry] = useState("");
+  const [countryOther, setCountryOther] = useState("");
   const [division, setDivision] = useState(() => {
     const valid = formDict.divisions.some((d) => d.value === divisionParam);
     return valid ? divisionParam : "";
   });
+  const [divisionOther, setDivisionOther] = useState("");
   const [timeline, setTimeline] = useState("");
   const [scope, setScope] = useState(() => {
     if (divisionParam === "bio-ipm" && ["1", "2", "3"].includes(tierParam)) {
@@ -170,7 +178,7 @@ export function RfqForm({
       form.removeEventListener("change", onChange, true);
       form.removeEventListener("invalid", onInvalid, true);
     };
-  }, [submitted]);
+  }, [submitted, inquiryType]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -200,18 +208,26 @@ export function RfqForm({
 
     setSubmitting(true);
     try {
+      const resolvedCountry =
+        country === "other" ? `Other: ${countryOther.trim()}` : country;
+      const resolvedDivision =
+        division === "other" ? `Other: ${divisionOther.trim()}` : division;
+
       const formData = new FormData();
+      formData.append("inquiryType", inquiryType);
       formData.append("fullName", fullName);
       formData.append("company", company);
       formData.append("email", email);
       formData.append("phone", phone);
-      formData.append("country", country);
-      formData.append("division", division);
-      formData.append("timeline", timeline);
       formData.append("scope", scope);
       formData.append("locale", lang);
-      if (boqFile) {
-        formData.append("boqFile", boqFile);
+      if (!isGeneral) {
+        formData.append("country", resolvedCountry);
+        formData.append("division", resolvedDivision);
+        formData.append("timeline", timeline);
+        if (boqFile) {
+          formData.append("boqFile", boqFile);
+        }
       }
 
       const res = await fetch("/api/rfq", {
@@ -250,7 +266,7 @@ export function RfqForm({
           <CheckCircle2 aria-hidden="true" className="h-8 w-8 shrink-0 text-[#059669]" />
           <div>
             <h2 className="text-xl font-bold text-[#0F172A]">
-              {formDict.confirmationTitle}
+              {isGeneral ? formDict.generalConfirmationTitle : formDict.confirmationTitle}
             </h2>
             {referenceId && (
               <p className="mt-1.5 font-mono text-xs font-semibold text-[#065F46]">
@@ -270,7 +286,9 @@ export function RfqForm({
                 setEmail("");
                 setPhone("");
                 setCountry("");
+                setCountryOther("");
                 setDivision("");
+                setDivisionOther("");
                 setTimeline("");
                 setScope("");
                 setBoqFile(null);
@@ -289,7 +307,7 @@ export function RfqForm({
     <>
       <div ref={announcerRef} aria-live="polite" className="visually-hidden" />
 
-      {divisionParam === "bio-ipm" && ["1", "2", "3"].includes(tierParam) && (
+      {!isGeneral && divisionParam === "bio-ipm" && ["1", "2", "3"].includes(tierParam) && (
         <div className="mb-6 rounded-xl border border-[#059669]/40 bg-[#ECFDF5] px-4 py-3 text-sm font-medium text-[#065F46]">
           {formDict.tierPreselectedNote} {tierParam}
         </div>
@@ -311,14 +329,52 @@ export function RfqForm({
         onSubmit={handleSubmit}
         className="rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm sm:p-8"
       >
+        {/* Inquiry Mode Switcher: Project RFQ vs General Inquiry */}
+        <div
+          role="tablist"
+          aria-label="Inquiry type"
+          className="mb-7 grid grid-cols-2 gap-1 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-1"
+        >
+          <button
+            type="button"
+            role="tab"
+            aria-selected={!isGeneral}
+            onClick={() => {
+              setInquiryType("rfq");
+              setServerError(null);
+            }}
+            className={`min-h-[42px] cursor-pointer rounded-lg px-3 py-2 text-xs font-semibold transition-all sm:text-sm ${
+              !isGeneral
+                ? "bg-white text-[#0F172A] shadow-xs ring-1 ring-[#E2E8F0]"
+                : "text-slate-600 hover:text-[#0F172A]"
+            }`}
+          >
+            {formDict.tabRfqLabel}
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={isGeneral}
+            onClick={() => {
+              setInquiryType("general");
+              setServerError(null);
+            }}
+            className={`min-h-[42px] cursor-pointer rounded-lg px-3 py-2 text-xs font-semibold transition-all sm:text-sm ${
+              isGeneral
+                ? "bg-white text-[#0F172A] shadow-xs ring-1 ring-[#E2E8F0]"
+                : "text-slate-600 hover:text-[#0F172A]"
+            }`}
+          >
+            {formDict.tabGeneralLabel}
+          </button>
+        </div>
+
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {/* Full Name */}
           <div>
             <label htmlFor="rfq-fullname" className="block text-sm font-semibold text-[#0F172A]">
               {formDict.fullNameLabel}{" "}
-              <span className="font-mono text-xs font-normal text-[#059669]">
-                ({formDict.requiredTag})
-              </span>
+              <span aria-hidden="true" className="text-[#059669]">*</span>
             </label>
             <input
               id="rfq-fullname"
@@ -339,17 +395,34 @@ export function RfqForm({
 
           {/* Company */}
           <div>
-            <label htmlFor="rfq-company" className="block text-sm font-semibold text-[#0F172A]">
-              {formDict.companyLabel}{" "}
-              <span className="font-mono text-xs font-normal text-[#059669]">
-                ({formDict.requiredTag})
+            <label
+              htmlFor="rfq-company"
+              className={
+                isGeneral
+                  ? "flex items-baseline justify-between gap-2 text-sm font-semibold text-[#0F172A]"
+                  : "block text-sm font-semibold text-[#0F172A]"
+              }
+            >
+              <span>
+                {formDict.companyLabel}
+                {!isGeneral && (
+                  <>
+                    {" "}
+                    <span aria-hidden="true" className="text-[#059669]">*</span>
+                  </>
+                )}
               </span>
+              {isGeneral && (
+                <span className="font-mono text-xs font-normal text-slate-500">
+                  {formDict.optionalTag}
+                </span>
+              )}
             </label>
             <input
               id="rfq-company"
               name="company"
               type="text"
-              required
+              required={!isGeneral}
               autoComplete="organization"
               value={company}
               onChange={(e) => setCompany(e.target.value)}
@@ -362,13 +435,11 @@ export function RfqForm({
             </span>
           </div>
 
-          {/* Work Email */}
+          {/* Email */}
           <div>
             <label htmlFor="rfq-email" className="block text-sm font-semibold text-[#0F172A]">
-              {formDict.emailLabel}{" "}
-              <span className="font-mono text-xs font-normal text-[#059669]">
-                ({formDict.requiredTag})
-              </span>
+              {isGeneral ? formDict.generalEmailLabel : formDict.emailLabel}{" "}
+              <span aria-hidden="true" className="text-[#059669]">*</span>
             </label>
             <input
               id="rfq-email"
@@ -387,19 +458,36 @@ export function RfqForm({
             </span>
           </div>
 
-          {/* Phone / WhatsApp */}
+          {/* Phone / WhatsApp (Required for RFQ, Optional for General Inquiry) */}
           <div>
-            <label htmlFor="rfq-phone" className="block text-sm font-semibold text-[#0F172A]">
-              {formDict.phoneLabel}{" "}
-              <span className="font-mono text-xs font-normal text-[#059669]">
-                ({formDict.requiredTag})
+            <label
+              htmlFor="rfq-phone"
+              className={
+                isGeneral
+                  ? "flex items-baseline justify-between gap-2 text-sm font-semibold text-[#0F172A]"
+                  : "block text-sm font-semibold text-[#0F172A]"
+              }
+            >
+              <span>
+                {formDict.phoneLabel}
+                {!isGeneral && (
+                  <>
+                    {" "}
+                    <span aria-hidden="true" className="text-[#059669]">*</span>
+                  </>
+                )}
               </span>
+              {isGeneral && (
+                <span className="font-mono text-xs font-normal text-slate-500">
+                  {formDict.optionalTag}
+                </span>
+              )}
             </label>
             <input
               id="rfq-phone"
               name="phone"
               type="tel"
-              required
+              required={!isGeneral}
               autoComplete="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
@@ -412,13 +500,13 @@ export function RfqForm({
             </span>
           </div>
 
+          {!isGeneral && (
+            <>
           {/* Project Country */}
           <div>
             <label htmlFor="rfq-country" className="block text-sm font-semibold text-[#0F172A]">
               {formDict.countryLabel}{" "}
-              <span className="font-mono text-xs font-normal text-[#059669]">
-                ({formDict.requiredTag})
-              </span>
+              <span aria-hidden="true" className="text-[#059669]">*</span>
             </label>
             <select
               id="rfq-country"
@@ -426,7 +514,11 @@ export function RfqForm({
               required
               autoComplete="country-name"
               value={country}
-              onChange={(e) => setCountry(e.target.value)}
+              onChange={(e) => {
+                const next = e.target.value;
+                setCountry(next);
+                if (next !== "other") setCountryOther("");
+              }}
               data-error="rfq-country-error"
               className="rfq-input mt-2 block min-h-[46px] w-full rounded-xl border border-[#CBD5E1] bg-white px-3.5 py-2.5 text-sm text-[#0F172A]"
             >
@@ -436,26 +528,54 @@ export function RfqForm({
                   {c}
                 </option>
               ))}
+              <option value="other">{formDict.otherOption}</option>
             </select>
             <span id="rfq-country-error" className="rfq-error-msg">
               {formDict.validationErrors.required}
             </span>
+            {country === "other" && (
+              <div className="mt-3">
+                <label
+                  htmlFor="rfq-country-other"
+                  className="block text-sm font-semibold text-[#0F172A]"
+                >
+                  {formDict.countryOtherLabel}{" "}
+                  <span aria-hidden="true" className="text-[#059669]">*</span>
+                </label>
+                <input
+                  id="rfq-country-other"
+                  name="countryOther"
+                  type="text"
+                  required
+                  value={countryOther}
+                  onChange={(e) => setCountryOther(e.target.value)}
+                  placeholder={formDict.countryOtherPlaceholder}
+                  data-error="rfq-country-other-error"
+                  className="rfq-input mt-2 block min-h-[46px] w-full rounded-xl border border-[#CBD5E1] bg-white px-3.5 py-2.5 text-sm text-[#0F172A] placeholder:text-slate-400"
+                />
+                <span id="rfq-country-other-error" className="rfq-error-msg">
+                  {formDict.validationErrors.required}
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Primary Division */}
           <div>
             <label htmlFor="rfq-division" className="block text-sm font-semibold text-[#0F172A]">
               {formDict.divisionLabel}{" "}
-              <span className="font-mono text-xs font-normal text-[#059669]">
-                ({formDict.requiredTag})
-              </span>
+              <span aria-hidden="true" className="text-[#059669]">*</span>
             </label>
             <select
               id="rfq-division"
               name="division"
               required
               value={division}
-              onChange={(e) => setDivision(e.target.value)}
+              onChange={(e) => {
+                const next = e.target.value;
+                setDivision(next);
+                if (next !== "other") setDivisionOther("");
+              }}
               data-error="rfq-division-error"
               className="rfq-input mt-2 block min-h-[46px] w-full rounded-xl border border-[#CBD5E1] bg-white px-3.5 py-2.5 text-sm text-[#0F172A]"
             >
@@ -469,14 +589,42 @@ export function RfqForm({
             <span id="rfq-division-error" className="rfq-error-msg">
               {formDict.validationErrors.required}
             </span>
+            {division === "other" && (
+              <div className="mt-3">
+                <label
+                  htmlFor="rfq-division-other"
+                  className="block text-sm font-semibold text-[#0F172A]"
+                >
+                  {formDict.divisionOtherLabel}{" "}
+                  <span aria-hidden="true" className="text-[#059669]">*</span>
+                </label>
+                <input
+                  id="rfq-division-other"
+                  name="divisionOther"
+                  type="text"
+                  required
+                  value={divisionOther}
+                  onChange={(e) => setDivisionOther(e.target.value)}
+                  placeholder={formDict.divisionOtherPlaceholder}
+                  data-error="rfq-division-other-error"
+                  className="rfq-input mt-2 block min-h-[46px] w-full rounded-xl border border-[#CBD5E1] bg-white px-3.5 py-2.5 text-sm text-[#0F172A] placeholder:text-slate-400"
+                />
+                <span id="rfq-division-other-error" className="rfq-error-msg">
+                  {formDict.validationErrors.required}
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Estimated Timeline (Optional) */}
           <div className="sm:col-span-2">
-            <label htmlFor="rfq-timeline" className="block text-sm font-semibold text-[#0F172A]">
-              {formDict.timelineLabel}{" "}
+            <label
+              htmlFor="rfq-timeline"
+              className="flex items-baseline justify-between gap-2 text-sm font-semibold text-[#0F172A]"
+            >
+              <span>{formDict.timelineLabel}</span>
               <span className="font-mono text-xs font-normal text-slate-500">
-                ({formDict.optionalTag})
+                {formDict.optionalTag}
               </span>
             </label>
             <input
@@ -489,23 +637,23 @@ export function RfqForm({
               className="mt-2 block min-h-[46px] w-full rounded-xl border border-[#CBD5E1] bg-white px-3.5 py-2.5 text-sm text-[#0F172A] placeholder:text-slate-400"
             />
           </div>
+            </>
+          )}
 
-          {/* Project Scope */}
+          {/* Project Scope / General Message */}
           <div className="sm:col-span-2">
             <label htmlFor="rfq-scope" className="block text-sm font-semibold text-[#0F172A]">
-              {formDict.scopeLabel}{" "}
-              <span className="font-mono text-xs font-normal text-[#059669]">
-                ({formDict.requiredTag})
-              </span>
+              {isGeneral ? formDict.generalMessageLabel : formDict.scopeLabel}{" "}
+              <span aria-hidden="true" className="text-[#059669]">*</span>
             </label>
             <textarea
               id="rfq-scope"
               name="scope"
               required
-              rows={5}
+              rows={isGeneral ? 4 : 5}
               value={scope}
               onChange={(e) => setScope(e.target.value)}
-              placeholder={formDict.scopePlaceholder}
+              placeholder={isGeneral ? formDict.generalMessagePlaceholder : formDict.scopePlaceholder}
               data-error="rfq-scope-error"
               className="rfq-input mt-2 block w-full rounded-xl border border-[#CBD5E1] bg-white px-3.5 py-2.5 text-sm text-[#0F172A] placeholder:text-slate-400"
             />
@@ -515,11 +663,15 @@ export function RfqForm({
           </div>
 
           {/* BOQ File Upload (Optional) */}
+          {!isGeneral && (
           <div className="sm:col-span-2">
-            <label htmlFor="rfq-boq" className="block text-sm font-semibold text-[#0F172A]">
-              {formDict.boqLabel}{" "}
+            <label
+              htmlFor="rfq-boq"
+              className="flex items-baseline justify-between gap-2 text-sm font-semibold text-[#0F172A]"
+            >
+              <span>{formDict.boqLabel}</span>
               <span className="font-mono text-xs font-normal text-slate-500">
-                ({formDict.optionalTag})
+                {formDict.optionalTag}
               </span>
             </label>
             <p id="rfq-boq-hint" className="mt-1 text-xs text-slate-500">
@@ -543,6 +695,7 @@ export function RfqForm({
               </p>
             )}
           </div>
+          )}
         </div>
 
         {/* Confidentiality Notice + Submit */}
@@ -566,7 +719,13 @@ export function RfqForm({
             disabled={submitting}
             className="inline-flex min-h-[48px] shrink-0 cursor-pointer items-center justify-center rounded-xl bg-[#059669] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-colors duration-150 hover:bg-[#047857] disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {submitting ? formDict.submittingButton : formDict.submitButton}
+            {submitting
+              ? isGeneral
+                ? formDict.generalSubmittingButton
+                : formDict.submittingButton
+              : isGeneral
+                ? formDict.generalSubmitButton
+                : formDict.submitButton}
           </button>
         </div>
       </form>

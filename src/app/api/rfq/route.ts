@@ -4,6 +4,7 @@ const ALLOWED_EXTENSIONS = [".pdf", ".xlsx", ".xls", ".docx", ".doc", ".zip"];
 const MAX_FILE_BYTES = 25 * 1024 * 1024; // 25 MB
 
 interface RfqPayload {
+  inquiryType: "rfq" | "general";
   fullName: string;
   company: string;
   email: string;
@@ -32,7 +33,9 @@ export async function POST(request: Request) {
 
     if (contentType.includes("multipart/form-data")) {
       const formData = await request.formData();
+      const rawType = String(formData.get("inquiryType") ?? "rfq").trim();
       payload = {
+        inquiryType: rawType === "general" ? "general" : "rfq",
         fullName: String(formData.get("fullName") ?? "").trim(),
         company: String(formData.get("company") ?? "").trim(),
         email: String(formData.get("email") ?? "").trim(),
@@ -71,7 +74,9 @@ export async function POST(request: Request) {
       }
     } else {
       const body = await request.json();
+      const rawType = String(body?.inquiryType ?? "rfq").trim();
       payload = {
+        inquiryType: rawType === "general" ? "general" : "rfq",
         fullName: String(body?.fullName ?? "").trim(),
         company: String(body?.company ?? "").trim(),
         email: String(body?.email ?? "").trim(),
@@ -84,27 +89,54 @@ export async function POST(request: Request) {
       };
     }
 
-    if (
-      !payload.fullName ||
-      !payload.company ||
-      !payload.email ||
-      !payload.phone ||
-      !payload.country ||
-      !payload.division ||
-      !payload.scope
-    ) {
+    const isGeneral = payload.inquiryType === "general";
+    const missingRequired = isGeneral
+      ? !payload.fullName || !payload.email || !payload.scope
+      : !payload.fullName ||
+        !payload.company ||
+        !payload.email ||
+        !payload.phone ||
+        !payload.country ||
+        !payload.division ||
+        !payload.scope;
+
+    if (missingRequired) {
       return NextResponse.json(
-        { ok: false, error: "Missing required RFQ fields." },
+        {
+          ok: false,
+          error: isGeneral
+            ? "Missing required contact fields."
+            : "Missing required RFQ fields.",
+        },
         { status: 400 }
       );
     }
 
-    const referenceId = `NVL-${Date.now().toString(36).toUpperCase()}`;
+    const referenceId = `${isGeneral ? "NVL-INQ" : "NVL"}-${Date.now().toString(36).toUpperCase()}`;
     const toEmail = process.env.RFQ_TO_EMAIL || "info@novaltron.com";
     const fromEmail = process.env.RFQ_FROM_EMAIL || "Novaltron RFQ Desk <rfq@novaltron.com>";
     const resendApiKey = process.env.RESEND_API_KEY;
 
-    const htmlBody = `
+    const emailSubject = isGeneral
+      ? `[Inquiry ${referenceId}] ${payload.fullName}${payload.company ? ` (${payload.company})` : ""}`
+      : `[RFQ ${referenceId}] ${payload.company} — ${payload.country} (${payload.division})`;
+
+    const htmlBody = isGeneral
+      ? `
+      <div style="font-family: Inter, -apple-system, sans-serif; color: #0F172A; max-width: 640px;">
+        <h2 style="margin: 0 0 8px;">General Inquiry — ${escapeHtml(referenceId)}</h2>
+        <p style="margin: 0 0 20px; color: #475569; font-size: 14px;">Routed via novaltron.com (${escapeHtml(payload.locale.toUpperCase())})</p>
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Full Name</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.fullName)}</td></tr>
+          ${payload.company ? `<tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Company</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.company)}</td></tr>` : ""}
+          <tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Email</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.email)}</td></tr>
+          ${payload.phone ? `<tr><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;"><strong>Phone / WhatsApp</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #E2E8F0;">${escapeHtml(payload.phone)}</td></tr>` : ""}
+        </table>
+        <h3 style="margin: 20px 0 8px;">Message</h3>
+        <p style="white-space: pre-wrap; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 14px; font-size: 14px;">${escapeHtml(payload.scope)}</p>
+      </div>
+    `
+      : `
       <div style="font-family: Inter, -apple-system, sans-serif; color: #0F172A; max-width: 640px;">
         <h2 style="margin: 0 0 8px;">New Project RFQ — ${escapeHtml(referenceId)}</h2>
         <p style="margin: 0 0 20px; color: #475569; font-size: 14px;">Routed via novaltron.com (${escapeHtml(payload.locale.toUpperCase())})</p>
@@ -134,7 +166,7 @@ export async function POST(request: Request) {
           from: fromEmail,
           to: [toEmail],
           reply_to: payload.email,
-          subject: `[RFQ ${referenceId}] ${payload.company} — ${payload.country} (${payload.division})`,
+          subject: emailSubject,
           html: htmlBody,
           ...(attachment ? { attachments: [attachment] } : {}),
         }),
