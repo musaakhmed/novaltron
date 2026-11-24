@@ -75,8 +75,9 @@ export function getErmApiBaseUrl(): string {
  */
 export async function fetchPublicCard(
   slug: string,
-  options?: { noStore?: boolean }
+  _options?: { noStore?: boolean }
 ): Promise<ErmCardApiResponse> {
+  void _options;
   if (typeof slug !== "string") return { found: false };
   const normalized = slug.trim().toLowerCase();
   if (
@@ -99,11 +100,11 @@ export async function fetchPublicCard(
   }
 
   try {
-    const fetchInit: RequestInit & { next?: { revalidate: number } } = {
+    const fetchInit: RequestInit = {
       method: "GET",
       headers,
+      cache: "no-store",
       signal: AbortSignal.timeout(8000),
-      ...(options?.noStore ? { cache: "no-store" } : { next: { revalidate: 60 } }),
     };
 
     const res = await fetch(url, fetchInit);

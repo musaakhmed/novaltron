@@ -1,13 +1,21 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  cacheComponents: true,
-  partialPrefetching: true,
   async headers() {
     const noIndexHeaders = [
       {
         key: "X-Robots-Tag",
         value: "noindex, nofollow",
+      },
+    ];
+    const noIndexNoStoreHeaders = [
+      {
+        key: "X-Robots-Tag",
+        value: "noindex, nofollow",
+      },
+      {
+        key: "Cache-Control",
+        value: "private, no-store, no-cache, max-age=0, must-revalidate",
       },
     ];
     return [
@@ -17,7 +25,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/card/:path*",
-        headers: noIndexHeaders,
+        headers: noIndexNoStoreHeaders,
       },
       {
         source: "/api/vcard",

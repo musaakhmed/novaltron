@@ -8,7 +8,7 @@ import {
 } from "@/lib/erm-cards";
 import { DigitalBusinessCard } from "@/components/DigitalBusinessCard";
 
-export const instant = false;
+export const dynamic = "force-dynamic";
 
 const getCard = cache((slug: string) => fetchPublicCard(slug));
 
