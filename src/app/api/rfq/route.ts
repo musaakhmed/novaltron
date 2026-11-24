@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { isValidCardSlug } from "@/lib/card-attribution";
+import { getErmApiBaseUrl } from "@/lib/erm-cards";
 
 const ALLOWED_EXTENSIONS = [".pdf", ".xlsx", ".xls", ".docx", ".doc", ".zip"];
 const MAX_FILE_BYTES = 25 * 1024 * 1024; // 25 MB
@@ -14,6 +16,7 @@ interface RfqPayload {
   timeline: string;
   scope: string;
   locale: string;
+  cardSlug: string | null;
 }
 
 function escapeHtml(value: string): string {
@@ -34,6 +37,9 @@ export async function POST(request: Request) {
     if (contentType.includes("multipart/form-data")) {
       const formData = await request.formData();
       const rawType = String(formData.get("inquiryType") ?? "rfq").trim();
+      const rawCardSlug = String(
+        formData.get("cardSlug") ?? formData.get("card_slug") ?? ""
+      ).trim();
       payload = {
         inquiryType: rawType === "general" ? "general" : "rfq",
         fullName: String(formData.get("fullName") ?? "").trim(),
@@ -45,6 +51,7 @@ export async function POST(request: Request) {
         timeline: String(formData.get("timeline") ?? "").trim(),
         scope: String(formData.get("scope") ?? "").trim(),
         locale: String(formData.get("locale") ?? "en").trim(),
+        cardSlug: isValidCardSlug(rawCardSlug) ? rawCardSlug : null,
       };
 
       const file = formData.get("boqFile");
@@ -75,6 +82,9 @@ export async function POST(request: Request) {
     } else {
       const body = await request.json();
       const rawType = String(body?.inquiryType ?? "rfq").trim();
+      const rawCardSlug = String(
+        body?.cardSlug ?? body?.card_slug ?? ""
+      ).trim();
       payload = {
         inquiryType: rawType === "general" ? "general" : "rfq",
         fullName: String(body?.fullName ?? "").trim(),
@@ -86,6 +96,7 @@ export async function POST(request: Request) {
         timeline: String(body?.timeline ?? "").trim(),
         scope: String(body?.scope ?? "").trim(),
         locale: String(body?.locale ?? "en").trim(),
+        cardSlug: isValidCardSlug(rawCardSlug) ? rawCardSlug : null,
       };
     }
 
@@ -116,6 +127,50 @@ export async function POST(request: Request) {
     const toEmail = process.env.RFQ_TO_EMAIL || "info@novaltron.com";
     const fromEmail = process.env.RFQ_FROM_EMAIL || "Novaltron RFQ Desk <rfq@novaltron.com>";
     const resendApiKey = process.env.RESEND_API_KEY;
+    const ermWebhookSecret = process.env.WEBSITE_RFQ_WEBHOOK_SECRET;
+
+    if (ermWebhookSecret) {
+      const ermPayload = {
+        referenceId,
+        inquiryType: payload.inquiryType,
+        fullName: payload.fullName,
+        company: payload.company,
+        email: payload.email,
+        phone: payload.phone,
+        country: payload.country,
+        division: payload.division,
+        timeline: payload.timeline,
+        scope: payload.scope,
+        locale: payload.locale,
+        attachmentFilename: attachment?.filename ?? null,
+        ...(payload.cardSlug ? { card_slug: payload.cardSlug } : {}),
+      };
+
+      try {
+        const ermRes = await fetch(
+          `${getErmApiBaseUrl()}/api/webhooks/website-rfq`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "x-novaltron-webhook-secret": ermWebhookSecret,
+            },
+            body: JSON.stringify(ermPayload),
+            signal: AbortSignal.timeout(6000),
+          }
+        );
+
+        if (!ermRes.ok) {
+          console.error(
+            "[Novaltron RFQ] ERM webhook returned",
+            ermRes.status,
+            await ermRes.text().catch(() => "")
+          );
+        }
+      } catch (ermErr) {
+        console.error("[Novaltron RFQ] ERM webhook dispatch error:", ermErr);
+      }
+    }
 
     const emailSubject = isGeneral
       ? `[Inquiry ${referenceId}] ${payload.fullName}${payload.company ? ` (${payload.company})` : ""}`
@@ -131,6 +186,7 @@ export async function POST(request: Request) {
           ${payload.company ? `<tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Company</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.company)}</td></tr>` : ""}
           <tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Email</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.email)}</td></tr>
           ${payload.phone ? `<tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Phone / WhatsApp</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.phone)}</td></tr>` : ""}
+          ${payload.cardSlug ? `<tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Card Attribution</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.cardSlug)}</td></tr>` : ""}
         </table>
         <h3 style="margin: 20px 0 8px;">Message</h3>
         <p style="white-space: pre-wrap; background: #F4F7F9; border: 1px solid #D4DFE7; border-radius: 8px; padding: 14px; font-size: 14px;">${escapeHtml(payload.scope)}</p>
@@ -149,6 +205,7 @@ export async function POST(request: Request) {
           <tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Primary Division</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.division)}</td></tr>
           <tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Estimated Timeline</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.timeline || "Not specified")}</td></tr>
           <tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>BOQ Attachment</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(attachment ? attachment.filename : "None")}</td></tr>
+          ${payload.cardSlug ? `<tr><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;"><strong>Card Attribution</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #D4DFE7;">${escapeHtml(payload.cardSlug)}</td></tr>` : ""}
         </table>
         <h3 style="margin: 20px 0 8px;">Project Scope &amp; Technical Summary</h3>
         <p style="white-space: pre-wrap; background: #F4F7F9; border: 1px solid #D4DFE7; border-radius: 8px; padding: 14px; font-size: 14px;">${escapeHtml(payload.scope)}</p>

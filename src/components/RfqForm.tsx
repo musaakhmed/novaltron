@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { AlertCircle, CheckCircle2, Paperclip, ShieldCheck } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
+import { parseCardRefParam } from "@/lib/card-attribution";
 import type { SiteDictionary } from "@/data/dictionaries/types";
 
 interface RfqFormProps {
@@ -24,6 +25,7 @@ export function RfqForm({
   const typeParam = searchParams.get("type") ?? "";
   const divisionParam = searchParams.get("division") ?? "";
   const tierParam = searchParams.get("tier") ?? "";
+  const refParam = searchParams.get("ref");
 
   const formRef = useRef<HTMLFormElement>(null);
   const announcerRef = useRef<HTMLDivElement>(null);
@@ -53,6 +55,9 @@ export function RfqForm({
     return "";
   });
   const [boqFile, setBoqFile] = useState<File | null>(null);
+  const parsedRefSlug = parseCardRefParam(refParam);
+  const [initialCardSlug] = useState<string | null>(() => parsedRefSlug);
+  const cardSlug = parsedRefSlug ?? initialCardSlug;
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [referenceId, setReferenceId] = useState<string | null>(null);
@@ -221,6 +226,9 @@ export function RfqForm({
       formData.append("phone", phone);
       formData.append("scope", scope);
       formData.append("locale", lang);
+      if (cardSlug) {
+        formData.append("cardSlug", cardSlug);
+      }
       if (!isGeneral) {
         formData.append("country", resolvedCountry);
         formData.append("division", resolvedDivision);
@@ -329,6 +337,7 @@ export function RfqForm({
         onSubmit={handleSubmit}
         className="rounded-2xl border border-[#D4DFE7] bg-white p-6 shadow-sm sm:p-8"
       >
+        {cardSlug && <input type="hidden" name="cardSlug" value={cardSlug} />}
         {/* Inquiry Mode Switcher: Project RFQ vs General Inquiry */}
         <div
           role="tablist"
