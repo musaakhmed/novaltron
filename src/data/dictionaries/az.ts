@@ -5,7 +5,7 @@ export const az: SiteDictionary = {
     siteName: "Novaltron",
     defaultTitle: "Novaltron | Aqrosənaye sistemləri və kritik infrastruktur",
     defaultDescription:
-      "Qafqaz və Mərkəzi Asiyada sərhədlərarası aqrosənaye mühəndisliyi, bioloji bitki mühafizəsi və kritik infrastruktur inteqrasiyası — Novaltron LLC (Tbilisi, Gürcüstan).",
+      "Azərbaycanda və Mərkəzi Asiyada açar təhvil aqrosənaye mühəndisliyi, bioloji bitki mühafizəsi və kritik infrastruktur inteqrasiyası — Avropa mühəndisliyi və Türkiyə istehsalı ilə Novaltron LLC.",
     skipToContent: "Əsas texniki məzmuna keç",
   },
   nav: {
@@ -23,11 +23,11 @@ export const az: SiteDictionary = {
   },
   footer: {
     summary:
-      "NOVALTRON — Qafqaz və Mərkəzi Asiyada sərhədlərarası aqrosənaye mühəndisliyi, bioloji bitki mühafizəsi və kritik infrastruktur inteqrasiyası.",
-    hubLabel: "Əməliyyat mərkəzi",
-    hubValue: "Novaltron LLC (შპს ნოვალტრონი) — Tbilisi, Gürcüstan",
-    corridorLabel: "Regional dəhliz",
-    corridorValue: "Azərbaycan · Gürcüstan · Özbəkistan · Qazaxıstan · Türkiyə",
+      "NOVALTRON — Azərbaycanda və Mərkəzi Asiyada açar təhvil aqrosənaye mühəndisliyi, bioloji bitki mühafizəsi və kritik infrastruktur inteqrasiyası.",
+    hubLabel: "Fəaliyyət modeli",
+    hubValue: "Novaltron LLC — Azərbaycanda icra və çoxmərkəzli əməliyyat körpüsü",
+    corridorLabel: "Coğrafi arxitektura",
+    corridorValue: "Azərbaycan · Belçika · Türkiyə · Gürcüstan · Mərkəzi Asiya",
     contactsLabel: "Əlaqə",
     socialLabel: "Sosial şəbəkələr",
     navigationLabel: "Bölmələr və səhifələr",
@@ -36,16 +36,16 @@ export const az: SiteDictionary = {
     copyright: "© 2026 Novaltron LLC. Bütün hüquqlar qorunur.",
   },
   home: {
-    eyebrow: "AQROSƏNAYE VƏ İNFRASTRUKTUR MÜHƏNDİSLİYİ • QAFQAZ VƏ MƏRKƏZİ ASİYA",
-    h1: "Qafqaz və Mərkəzi Asiyada açar təhvil aqrosənaye sistemləri və kritik infrastruktur",
+    eyebrow: "AQROSƏNAYE VƏ İNFRASTRUKTUR MÜHƏNDİSLİYİ • AZƏRBAYCAN VƏ MƏRKƏZİ ASİYA",
+    h1: "Azərbaycan, Qafqaz və Mərkəzi Asiyada açar təhvil aqrosənaye sistemləri və kritik infrastruktur",
     subHeadline:
-      "Novaltron Avropa və Türkiyənin qabaqcıl mühəndislik texnologiyalarını regional layihə icrası ilə birləşdirir və Tbilisidəki mərkəzi vasitəsilə dəqiq suvarma sistemləri, sənaye tipli istixana kompleksləri, taxılın qəbulu, qurudulması və saxlanması terminalları, bioloji bitki mühafizəsi və sənaye infrastrukturu həlləri təqdim edir.",
+      "Novaltron Belçika və Qərbi Avropa mühəndisliyini və Türkiyənin sənaye istehsalını Azərbaycanda birbaşa layihə icrası və Mərkəzi Asiya üzrə genişlənmə ilə birləşdirərək dəqiq suvarma sistemləri, sənaye tipli istixanalar, taxıl terminalları, bioloji bitki mühafizəsi və sənaye infrastrukturu həlləri təqdim edir.",
     primaryCta: "Layihə sorğusu göndər →",
     secondaryCta: "Aqrar həllərə bax",
     heroImageAlt:
       "Həndəsi formalı yaşıl tarlalar üzərində pivot tipli dairəvi suvarma sistemi və arxa planda sənaye tipli şüşə istixanaların havadan görünüşü",
     heroTrustBar: [
-      "REGİONAL İCRA MƏRKƏZİ (TBİLİSİ, GÜRCÜSTAN)",
+      "AZƏRBAYCANDA YERLİ İCRA · AVROPA VƏ TÜRKİYƏ OEM",
       "4 ƏSAS MÜHƏNDİSLİK BÖLMƏSİ",
       "FAT/SAT SERTİFİKATLI İŞƏSALMA",
     ],
@@ -141,7 +141,7 @@ export const az: SiteDictionary = {
       bandMarker: "AQROSƏNAYE MÜHƏNDİSLİYİ",
       h2: "Tarlaların suvarılmasından ixrac keyfiyyətli saxlanmaya qədər tam aqrar infrastruktur",
       intro:
-        "Azərbaycan, Gürcüstan, Özbəkistan və Qazaxıstanda aqroparklar, iri fermer təsərrüfatları, istixanalar və taxıl terminalları üçün kompleks aqrar modernləşdirmə layihələri hazırlayır, avadanlıqla təchiz edir və istismara veririk.",
+        "Azərbaycanda, Qafqazda və Mərkəzi Asiyada aqroparklar, kommersiya təsərrüfatları, istixanalar və taxıl operatorları üçün kompleks aqrar modernləşdirmə layihələri layihələndirir, təchiz edir və istismara veririk.",
       viewAllCta: "Bütün aqrosənaye həlləri →",
       cards: [
         {
@@ -248,14 +248,14 @@ export const az: SiteDictionary = {
     },
     referenceSection: {
       eyebrow: "REGİONAL İCRA MODELİ VƏ NÜMUNƏVİ LAYİHƏ MİQYASLARI",
-      h2: "Avropa və Türkiyə mühəndislik tərəfdaşları ilə vahid regional inteqrasiya",
+      h2: "Avropa və Türkiyə mühəndislik tərəfdaşları ilə Azərbaycanda yerli layihə icrası",
       subtitle:
-        "Novaltron seçilmiş Avropa və Türkiyə istehsalçılarını, konsolidasiya olunmuş logistikanı və ixtisaslaşmış işəsalma mühəndislərini vahid müqavilə altında birləşdirən Tbilisi mərkəzli sistem inteqratorudur.",
+        "Novaltron Azərbaycan və regiondakı sifarişçilər üçün birbaşa yerli icranı Belçikada Qərbi Avropa mühəndislik tərəfdaşlıqları və Türkiyədə sənaye istehsalı müttəfiqliyi ilə vahid müqavilə altında birləşdirir.",
       operatingModelBadge: "NİYƏ VAHİD İNTEQRATOR",
       operatingModelBody:
-        "6–10 ayrı xarici ixracatçı, gömrük brokeri və podratçı ilə ayrı-ayrılıqda işləmək əvəzinə, aqroholdinqlər və kommunal qurumlar bütün məsuliyyəti daşıyan vahid tərəfdaşla — Tbilisidəki mərkəzimizlə işləyir.",
+        "6–10 ayrı xarici ixracatçı, gömrük brokeri və podratçı ilə ayrı-ayrılıqda işləmək əvəzinə, aqroholdinqlər və kommunal qurumlar Avropa və Türkiyə OEM tərəfdaşları ilə dəstəklənən, yerində əlçatan vahid Novaltron mühəndislik mərkəzi ilə çalışır.",
       disclaimer:
-        "Qafqaz və Mərkəzi Asiya tenderləri üçün tipik açar təhvil mühəndislik layihələri nümunələri; konkret müştəri layihələrinə dair referenslər texniki prekvalifikasiya zamanı məxfilik müqaviləsi (NDA) əsasında təqdim olunur.",
+        "Azərbaycan və Mərkəzi Asiya tenderləri üçün tipik açar təhvil mühəndislik layihələri nümunələri; konkret müştəri layihələrinə dair referenslər texniki prekvalifikasiya zamanı məxfilik müqaviləsi (NDA) əsasında təqdim olunur.",
       scopes: [
         {
           code: "SCOPE-01",
@@ -308,7 +308,7 @@ export const az: SiteDictionary = {
         {
           step: "03",
           title: "Sərhədlərarası təchizat və logistika",
-          description: "Tbilisi vasitəsilə çoxvalyutalı Avropa/Türkiyə təchizatı, ixrac sənədləşməsi və gömrük rəsmiləşdirilməsi.",
+          description: "Belçika, geniş Avropa və Türkiyədən çoxvalyutalı təchizat, vahid ixrac sənədləşməsi və layihə sahəsinə açar təhvil gömrük çatdırılması.",
           deliverable: "Konsolidasiya olunmuş yük və mənşə sənədləri",
         },
         {
@@ -327,7 +327,7 @@ export const az: SiteDictionary = {
     },
     trustSection: {
       eyebrow: "KORPORATİV İDARƏETMƏ VƏ ETİBAR",
-      h2: "Tbilisidəki mərkəz vasitəsilə strukturlaşdırılmış regional icra",
+      h2: "Şəffaf idarəetmə ilə dəstəklənən çoxmərkəzli icra modeli",
       subtitle:
         "EPC tender komissiyaları, aqroholdinqlər və bank uyğunluq yoxlamaları üçün şəffaf institusional struktur.",
       governancePillars: [
@@ -342,14 +342,14 @@ export const az: SiteDictionary = {
           number: "02",
           title: "Regional uyğunluq və yerli AVL",
           detail:
-            "Azərbaycan, Gürcüstan, Özbəkistan, Qazaxıstan və Türkiyə üzrə EPC təchizatçı kvalifikasiyasına uyğun regional icra.",
-          tags: ["AZ", "GE", "UZ", "KZ", "TR", "EPC-yə hazır"],
+            "Azərbaycan, Türkiyə, Gürcüstan, Avropa və Mərkəzi Asiya üzrə EPC təchizatçı kvalifikasiyasına uyğun regional icra.",
+          tags: ["AZ", "BE", "TR", "GE", "Mərkəzi Asiya", "EPC-yə hazır"],
         },
         {
           number: "03",
           title: "Şəffaf təchizat sənədləşməsi",
           detail:
-            "Novaltron LLC (Tbilisi, Gürcüstan) vasitəsilə kommersiya invoysları, qablaşdırma siyahıları, mənşə sertifikatları və FAT/SAT aktları.",
+            "Novaltron LLC vasitəsilə audit olunan kommersiya invoysları, qablaşdırma siyahıları, mənşə sertifikatları və FAT/SAT aktları.",
           tags: ["Novaltron LLC", "Mənşə sənədləri", "FAT/SAT"],
         },
       ],
@@ -364,7 +364,7 @@ export const az: SiteDictionary = {
     eyebrow: "ƏSAS BÖLMƏ • AQROSƏNAYE VƏ YIĞIMDAN SONRAKI EMAL MÜHƏNDİSLİYİ",
     h1: "Açar təhvil aqrar infrastruktur — tarlaların suvarılmasından ixrac keyfiyyətli saxlanmaya qədər",
     subHeadline:
-      "Novaltron Azərbaycan, Gürcüstan, Özbəkistan və Qazaxıstanda Avropa və Türkiyə mühəndislik standartlarını vahid regional icra ilə birləşdirərək inteqrasiya olunmuş aqrosənaye sistemləri layihələndirir, təchiz edir və işə salır.",
+      "Novaltron Azərbaycan, Qafqaz və Mərkəzi Asiyada Belçika və Avropa mühəndislik standartlarını, Türkiyə istehsal gücünü və vahid regional icranı birləşdirərək inteqrasiya olunmuş aqrosənaye sistemləri layihələndirir, təchiz edir və işə salır.",
     anchors: [
       { id: "irrigation", label: "Suvarma və su" },
       { id: "greenhouses", label: "Sənaye istixanaları" },
@@ -706,7 +706,7 @@ export const az: SiteDictionary = {
   turnkeyDelivery: {
     metaTitle: "Açar təhvil layihə icrası və EPC həlləri",
     eyebrow: "VAHİD MƏSULİYYƏT • EPC VƏ AÇAR TƏHVİL İCRA",
-    h1: "Qafqaz və Mərkəzi Asiya üzrə tam açar təhvil layihə icrası",
+    h1: "Azərbaycan və Mərkəzi Asiya üzrə tam açar təhvil layihə icrası",
     subHeadline:
       "Novaltron Avropa və Türkiyə mühəndislik təchizatını, konsolidasiya olunmuş tranzit logistikasını, ölçməyə əsaslanan FAT/SAT işəsalma prosesini və istismar dövrü RMA dəstəyini vahid müqavilə altında birləşdirərək çoxtəchizatçılı dağınıqlığı aradan qaldırır.",
     anchors: [
@@ -733,7 +733,7 @@ export const az: SiteDictionary = {
       {
         step: "03",
         title: "Sərhədlərarası təchizat və tranzit",
-        description: "Tbilisi vasitəsilə çoxvalyutalı Avropa/Türkiyə təchizatı, ixrac sənədləşməsi və gömrük.",
+        description: "Belçika, geniş Avropa və Türkiyədən çoxvalyutalı təchizat, ixrac sənədləşməsi və gömrük rəsmiləşdirilməsi.",
         deliverable: "Yük konsolidasiyası və gömrük dosyesi",
       },
       {
@@ -756,7 +756,7 @@ export const az: SiteDictionary = {
       {
         badge: "Mərhələ 01 • Təchizat və tranzit",
         title: "Konsolidasiya olunmuş sərhədlərarası təchizat və logistika",
-        body: "Tbilisidəki mərkəzimiz vasitəsilə, vahid kommersiya qrafiki əsasında seçilmiş Avropa və Türkiyə istehsalçıları ilə birbaşa müqavilələr.",
+        body: "Vahid kommersiya qrafiki əsasında yerli layihə icrası üçün seçilmiş Belçika/Avropa və Türkiyə istehsalçıları ilə birbaşa müqavilələr.",
         bullets: [
           "Çoxvalyutalı OEM təchizatı və vahid kommersiya hesablaşmaları.",
           "Zavoddan göndərişin sinxronlaşdırılması, yük konsolidasiyası və regional gömrük tranziti.",
@@ -789,42 +789,42 @@ export const az: SiteDictionary = {
     ],
     scopesTitle: "Nümunəvi açar təhvil layihə həcmləri",
     scopesSubtitle:
-      "Regional dəhlizimiz üzrə aqrosənaye holdinqləri, taxıl terminalları və infrastruktur tenderləri üçün strukturlaşdırılmış çoxprofilli mühəndislik paketləri.",
+      "Azərbaycan və Mərkəzi Asiyada aqrosənaye holdinqləri, taxıl terminalları və infrastruktur tenderləri üçün strukturlaşdırılmış çoxprofilli mühəndislik paketləri.",
     bottomCtaTitle: "Çoxprofilli açar təhvil layihəsi və ya tender planlaşdırırsınız?",
     bottomCtaBody:
-      "Konsolidasiya olunmuş icra planı və kommersiya təklifi üçün sahə parametrlərini, texniki şərtləri və ya BOQ cədvəlini Tbilisidəki mühəndislik ofisimizlə paylaşın.",
+      "Konsolidasiya olunmuş icra planı və kommersiya təklifi üçün sahə parametrlərini, texniki şərtləri və ya BOQ cədvəlini Azərbaycan və regional mühəndislik şöbəmizlə paylaşın.",
     bottomCtaButton: "Açar təhvil təklif istə →",
     aboutCrossLinkLabel: "Haqqımızda və korporativ uyğunluq",
   },
   aboutCompliance: {
     metaTitle: "Haqqımızda və korporativ uyğunluq",
-    eyebrow: "KORPORATİV ARXİTEKTURA • İDARƏETMƏ VƏ UYĞUNLUQ",
-    h1: "Regional korporativ mərkəz və sərhədlərarası institusional uyğunluq",
+    eyebrow: "ÇOXMƏRKƏZLİ ARXİTEKTURA • İDARƏETMƏ VƏ UYĞUNLUQ",
+    h1: "Çoxmərkəzli icra modeli və sərhədlərarası institusional uyğunluq",
     subHeadline:
-      "Gürcüstanın Tbilisi şəhərindəki Novaltron LLC vasitəsilə fəaliyyət göstərərək Qərbi Avropa korporativ idarəetməsini şəffaf ticarət sənədləşməsi və Qafqaz/Mərkəzi Asiya üzrə EPC təchizatçı hazırlığı ilə birləşdiririk.",
+      "Azərbaycanda birbaşa bazar icrası və Bakıda açılacaq ofisimiz üzərində qurulan Novaltron LLC, Belçika və Qərbi Avropa mühəndisliyini, Türkiyə sənaye istehsalını və Gürcüstan korporativ strukturunu birləşdirərək Azərbaycan və Mərkəzi Asiyada açar təhvil layihələr həyata keçirir.",
     anchors: [
-      { id: "corporate-structure", label: "Korporativ struktur" },
+      { id: "corporate-structure", label: "Çoxmərkəzli struktur" },
       { id: "governance", label: "İdarəetmə və standartlar" },
       { id: "compliance-readiness", label: "İnstitusional hazırlıq" },
     ],
-    corporateTitle: "Regional korporativ mərkəz",
+    corporateTitle: "Çoxmərkəzli əməliyyat arxitekturası",
     corporateSubtitle:
-      "Avropa və Türkiyə istehsalını Qafqaz və Mərkəzi Asiyadakı layihə sahələri ilə birləşdirən logistika qovşağında yerləşən vahid hüquqi və əməliyyat qurumu.",
-    corporateHubName: "Novaltron LLC (Tbilisi, Gürcüstan — შპს ნოვალტრონი)",
-    corporateHubRole: "Beynəlxalq təchizat, ticarət maliyyələşdirməsi və regional tranzit mərkəzi",
+      "Azərbaycandakı sifarişçilər üçün yerli yaxınlığı Avropa texnologiya təchizatı, Türkiyə istehsal gücü və vahid sərhədlərarası müqavilə strukturu ilə birləşdirən məsuliyyətli mühəndislik körpüsü.",
+    corporateHubName: "Novaltron LLC",
+    corporateHubRole: "Çoxmərkəzli mühəndislik, OEM təchizatı və regional layihə icra körpüsü",
     corporateHubPoints: [
-      "Avropa və Türkiyə istehsalçıları ilə birbaşa müqavilələr və çoxvalyutalı hesablaşmalar.",
-      "Qafqaz və Mərkəzi Asiya üzrə strukturlaşdırılmış yükdaşıma, gömrük tranziti və logistika.",
-      "Açar təhvil aqrosənaye və kritik infrastruktur layihələrində vahid kommersiya məsuliyyəti.",
+      "Azərbaycan (Əsas bazar və Bakı ofisi planı): Yerində aqrar modernləşdirmə layihələri, AKİA subsidiya uyğunluğu, dövlət proqramları və regional infrastruktur icrası.",
+      "Belçika və Türkiyə (Mühəndislik və istehsal): Belçikada Qərbi Avropa mühəndislik və texnologiya tərəfdaşlıqları ilə Türkiyədə boru kəmərləri, qaynaq, rabitə və sənaye avadanlıqları istehsalı.",
+      "Gürcüstan (Korporativ struktur) və Mərkəzi Asiya genişlənməsi: Regional əməliyyatları birləşdirən vahid korporativ hüquqi platforma (Novaltron LLC) və Mərkəzi Asiya bazarlarına genişlənmə.",
     ],
-    corridorCountries: ["Azərbaycan", "Gürcüstan", "Özbəkistan", "Qazaxıstan", "Türkiyə"],
-    corridorDiagramLabel: "REGİONAL TRANZİT VƏ TƏCHİZAT DƏHLİZİ",
+    corridorCountries: ["Azərbaycan", "Belçika", "Türkiyə", "Gürcüstan", "Mərkəzi Asiya"],
+    corridorDiagramLabel: "ÇOXMƏRKƏZLİ MÜHƏNDİSLİK, TƏCHİZAT VƏ İCRA KÖRPÜSÜ",
     governanceTitle: "İcra modeli, idarəetmə və standartlar",
     governanceSubtitle:
       "Bank və EPC audit tələblərinə uyğun qurulmuş intizamlı texniki standartlar, şəffaf kommersiya sənədləşməsi və etibarlı mühəndislik tərəfdaşlıqları.",
-    operatingModelHeading: "Regional inteqrator icra modeli",
+    operatingModelHeading: "Çoxmərkəzli inteqrator icra modeli",
     operatingModelBody:
-      "Novaltron Qərbi Avropa korporativ idarəetməsini intizamlı regional layihə icrası ilə birləşdirir — seçilmiş Avropa və Türkiyə istehsalçıları və sertifikatlı işəsalma komandaları ilə dəstəklənən vahid Tbilisi mühəndislik inteqrasiya mərkəzi kimi fəaliyyət göstərir.",
+      "Novaltron Avropa mühəndisliyini və Türkiyə istehsalını sifarişçilərimizə yaxın gətirir — Azərbaycanda yerli layihə icrasını Belçikada texnologiya təchizatı, Türkiyədə sənaye tərəfdaşlıqları, Gürcüstan korporativ strukturumuz və Mərkəzi Asiyada genişlənmə ilə birləşdirir.",
     standardsHeading: "Beynəlxalq standartlara uyğunluq",
     standardsBody:
       "Bütün mühəndislik sistemləri və təchizat prosesləri tanınmış beynəlxalq mühəndislik, qida təhlükəsizliyi və sənaye standartlarına uyğunlaşdırılıb:",
@@ -848,8 +848,8 @@ export const az: SiteDictionary = {
       "Beynəlxalq ticarət banklarının, EPC satınalma auditorlarının və aqrar ixrac sertifikatlaşdırma qurumlarının tələblərinə cavab vermək üçün strukturlaşdırılmışdır.",
     bottomCtaTitle: "Korporativ prekvalifikasiya və ya uyğunluq sənədləri lazımdır?",
     bottomCtaBody:
-      "AVL qeydiyyat paketləri, NDA altında referans layihə həcmləri və ya rəsmi tender sorğuları üçün Tbilisidəki korporativ və mühəndislik ofisimizlə əlaqə saxlayın.",
-    bottomCtaButton: "Korporativ ofislə əlaqə →",
+      "AVL qeydiyyat paketləri, NDA altında referans layihə həcmləri və ya rəsmi tender sorğuları üçün Azərbaycan və regional mühəndislik şöbəmizlə əlaqə saxlayın.",
+    bottomCtaButton: "Mühəndislik şöbəsi ilə əlaqə →",
     turnkeyCrossLinkLabel: "Açar təhvil icra modelinə bax",
   },
   contact: {
@@ -857,10 +857,11 @@ export const az: SiteDictionary = {
     eyebrow: "TEXNİKİ MƏSLƏHƏT VƏ SORĞU (RFQ) ŞÖBƏSİ",
     h1: "Layihə sorğusu (RFQ) və ya texniki məsləhət müraciəti göndərin",
     subHeadline:
-      "Layihə parametrlərini, təsərrüfat sahəsini, texniki şərtləri və ya BOQ cədvəlini paylaşın. Regional mühəndis və aqronom mütəxəssislərimiz 24–48 iş saatı ərzində cavab verəcəklər.",
+      "Layihə parametrlərini, təsərrüfat sahəsini, texniki şərtləri və ya BOQ cədvəlini paylaşın. Azərbaycan və regional mühəndis və aqronom mütəxəssislərimiz 24–48 iş saatı ərzində cavab verəcəklər.",
+    directDeskBadge: "AZƏRBAYCAN VƏ REGİONAL OFİS",
     directDeskTitle: "Mühəndislik şöbəsi ilə birbaşa əlaqə",
     directDeskBody:
-      "Bütün RFQ müraciətləri texniki qiymətləndirmə və kommersiya təklifinin hazırlanması üçün birbaşa Tbilisidəki əməliyyat ofisimizə göndərilir.",
+      "Bütün RFQ müraciətləri operativ texniki qiymətləndirmə və kommersiya təklifinin hazırlanması üçün birbaşa Azərbaycan və regional mühəndislik şöbəmizə göndərilir.",
     responseSla: "Cavab müddəti: 24–48 iş saatı",
     socialLabel: "Rəsmi kanallar",
     privacyNotice: "BOQ faylları və layihə məlumatları ciddi B2B məxfiliyi ilə qorunur:",
@@ -876,17 +877,15 @@ export const az: SiteDictionary = {
       generalEmailLabel: "E-poçt",
       emailPlaceholder: "ad@sirket.az",
       phoneLabel: "Telefon / WhatsApp",
-      phonePlaceholder: "+994 / +995 / +998 ...",
+      phonePlaceholder: "+994 / +90 / +32 ...",
       countryLabel: "Layihə ölkəsi / regionu",
       countryPlaceholder: "Ölkə və ya regionu seçin",
       countries: [
         "Azərbaycan",
-        "Gürcüstan",
-        "Özbəkistan",
-        "Qazaxıstan",
         "Türkiyə",
-        "Avropa",
-        "Mərkəzi Asiya / Qafqazın digər ölkələri",
+        "Gürcüstan",
+        "Mərkəzi Asiya",
+        "Belçika / Avropa",
       ],
       countryOtherLabel: "Ölkə və ya regionu qeyd edin",
       countryOtherPlaceholder: "Layihə ölkəsini və ya regionunu daxil edin",
@@ -939,13 +938,13 @@ export const az: SiteDictionary = {
     eyebrow: "KORPORATİV UYĞUNLUQ VƏ MƏLUMATLARIN QORUNMASI",
     h1: "Məxfilik siyasəti, BOQ məxfiliyi və hüquqi bildiriş",
     subHeadline:
-      "Novaltron LLC (Tbilisi, Gürcüstan) üzrə məlumatların idarə edilməsi, tender məxfiliyi və hüquqi bildiriş.",
+      "Novaltron LLC üzrə məlumatların idarə edilməsi, tender məxfiliyi və hüquqi bildiriş.",
     updatedLabel: "Qüvvədədir: 2026 · Versiya 1.0",
     sections: [
       {
         heading: "1. Hüquqi şəxs və fəaliyyət sahəsi",
         body: [
-          "Bu veb-sayt (novaltron.com) Qafqaz və Mərkəzi Asiya üzrə mühəndislik inteqrasiyası, təchizat və regional tranzit mərkəzi kimi fəaliyyət göstərən Novaltron LLC (შპს ნოვალტრონი, Tbilisi, Gürcüstan) tərəfindən idarə olunur.",
+          "Bu veb-sayt (novaltron.com) Azərbaycan, Belçika, Türkiyə, Gürcüstan və Mərkəzi Asiya üzrə sərhədlərarası mühəndislik inteqrasiyası, OEM təchizatı və açar təhvil layihə icrasını həyata keçirən, Gürcüstanda qeydiyyatdan keçmiş Novaltron LLC hüquqi şəxsi tərəfindən idarə olunur.",
           "Rəsmi korporativ yazışmalar və uyğunluq sorğuları üçün info@novaltron.com ünvanı ilə əlaqə saxlayın.",
         ],
       },

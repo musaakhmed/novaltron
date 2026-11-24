@@ -198,7 +198,7 @@ export function Footer({ lang, dict }: FooterProps) {
             </Link>
           </div>
           <p className="font-mono">
-            {SITE_CONFIG.companyName} ({SITE_CONFIG.companyGeorgianName}) · {SITE_CONFIG.hubLocation}
+            {SITE_CONFIG.companyName} · {dict.footer.corridorValue}
           </p>
         </div>
       </div>

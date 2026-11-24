@@ -41,7 +41,7 @@
 
 ## 3. Multi-Script Typography (`EN · AZ · TR · RU · KA`)
 
-- **Headings & UI (`--font-heading` / `--font-sans`):** `IBM Plex Sans` + `Noto Sans Georgian` (full coverage of `Ə/ə`, `Ğ/ğ`, `Ş/ş`, `İ/ı`, Cyrillic, and Georgian `Mkhedruli`).
+- **Headings & UI (`--font-heading` / `--font-sans`):** `IBM Plex Sans` + `Noto Sans Georgian` (full coverage of `Ə/ə`, `Ğ/ğ`, `Ş/ş`, `İ/ı`, Cyrillic, and Georgian `Mkhedruli`; use Latin **`Novaltron LLC`** across all UI and brand surfaces, reserving Georgian script strictly for statutory corporate seals and legal filings).
 - **Monospace Telemetry & Codes (`--font-mono`):** `IBM Plex Mono` (`font-variant-numeric: tabular-nums` for BOQs, HS codes, `EN 1993-4-1`, `RFC 2544`, `IEC 61850`, `-48V DC`, and ERM filenames).
 
 ---

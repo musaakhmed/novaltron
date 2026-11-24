@@ -5,7 +5,7 @@ export const tr: SiteDictionary = {
     siteName: "Novaltron",
     defaultTitle: "Novaltron | Agro-Endüstriyel Sistemler ve Kritik Altyapı",
     defaultDescription:
-      "Kafkasya ve Orta Asya genelinde sınır ötesi agro-endüstriyel mühendislik, biyolojik bitki koruma ve kritik altyapı entegrasyonu — Novaltron LLC (Tiflis, Gürcistan).",
+      "Azerbaycan ve Orta Asya genelinde anahtar teslim agro-endüstriyel mühendislik, biyolojik bitki koruma ve kritik altyapı entegrasyonu — Avrupa mühendisliği ve Türkiye üretimiyle Novaltron LLC.",
     skipToContent: "Ana teknik içeriğe geç",
   },
   nav: {
@@ -23,11 +23,11 @@ export const tr: SiteDictionary = {
   },
   footer: {
     summary:
-      "NOVALTRON — Kafkasya ve Orta Asya genelinde sınır ötesi agro-endüstriyel mühendislik, biyolojik bitki koruma ve kritik altyapı entegrasyonu.",
-    hubLabel: "Operasyon Merkezi",
-    hubValue: "Novaltron LLC (შპს ნოვალტრონი) — Tiflis, Gürcistan",
-    corridorLabel: "Bölgesel Koridor",
-    corridorValue: "Azerbaycan · Gürcistan · Özbekistan · Kazakistan · Türkiye",
+      "NOVALTRON — Azerbaycan ve Orta Asya genelinde anahtar teslim agro-endüstriyel mühendislik, biyolojik bitki koruma ve kritik altyapı entegrasyonu.",
+    hubLabel: "Operasyon Modeli",
+    hubValue: "Novaltron LLC — Azerbaycan Saha Uygulaması ve Çok Merkezli Köprü",
+    corridorLabel: "Coğrafi Yapı",
+    corridorValue: "Azerbaycan · Belçika · Türkiye · Gürcistan · Orta Asya",
     contactsLabel: "İletişim",
     socialLabel: "Sosyal Kanallar",
     navigationLabel: "Bölümler ve Sayfalar",
@@ -36,16 +36,16 @@ export const tr: SiteDictionary = {
     copyright: "© 2026 Novaltron LLC. Tüm Hakları Saklıdır.",
   },
   home: {
-    eyebrow: "AGRO-ENDÜSTRİYEL VE ALTYAPI MÜHENDİSLİĞİ • KAFKASYA VE ORTA ASYA",
-    h1: "Kafkasya ve Orta Asya Genelinde Anahtar Teslim Agro-Endüstriyel Sistemler ve Kritik Altyapı",
+    eyebrow: "AGRO-ENDÜSTRİYEL VE ALTYAPI MÜHENDİSLİĞİ • AZERBAYCAN VE ORTA ASYA",
+    h1: "Azerbaycan, Kafkasya ve Orta Asya Genelinde Anahtar Teslim Agro-Endüstriyel Sistemler ve Kritik Altyapı",
     subHeadline:
-      "Novaltron; Avrupa ve Türkiye’nin mühendislik teknolojilerini bölgesel proje uygulamalarıyla buluşturarak Tiflis merkezimiz üzerinden hassas sulama sistemleri, ticari seralar, hasat sonrası tahıl terminalleri, biyolojik bitki koruma ve endüstriyel altyapı çözümleri sunar.",
+      "Novaltron; Belçika ve Batı Avrupa mühendisliği ile Türkiye’nin endüstriyel üretim gücünü Azerbaycan’da yerel proje uygulamasıyla ve Orta Asya’ya açılımla birleştirerek hassas sulama sistemleri, ticari seralar, tahıl terminalleri, biyolojik bitki koruma ve endüstriyel altyapı çözümleri sunar.",
     primaryCta: "Proje Teklifi Gönder →",
     secondaryCta: "Agro-Çözümleri İncele",
     heroImageAlt:
       "Geometrik yeşil tarım arazileri üzerinde merkez pivot sulama sistemi ve ufukta ticari cam seraların havadan görünümü",
     heroTrustBar: [
-      "BÖLGESEL UYGULAMA MERKEZİ (TİFLİS, GÜRCİSTAN)",
+      "AZERBAYCAN’DA YEREL UYGULAMA · AVRUPA VE TÜRKİYE OEM",
       "4 ANA MÜHENDİSLİK BÖLÜMÜ",
       "FAT/SAT SERTİFİKALI DEVREYE ALMA",
     ],
@@ -141,7 +141,7 @@ export const tr: SiteDictionary = {
       bandMarker: "AGRO-ENDÜSTRİYEL MÜHENDİSLİK",
       h2: "Tarla Sulamasından İhracat Kalitesinde Depolamaya Uçtan Uca Tarımsal Altyapı",
       intro:
-        "Azerbaycan, Gürcistan, Özbekistan ve Kazakistan genelindeki tarım organize bölgeleri, ticari çiftlikler, seralar ve tahıl işletmecileri için anahtar teslim tarımsal modernizasyon projeleri tasarlıyor, tedarik ediyor ve devreye alıyoruz.",
+        "Azerbaycan, Kafkasya ve Orta Asya genelindeki tarım organize bölgeleri, ticari çiftlikler, seralar ve tahıl işletmecileri için anahtar teslim tarımsal modernizasyon projeleri tasarlıyor, tedarik ediyor ve devreye alıyoruz.",
       viewAllCta: "Tüm Agro-Endüstriyel Portföy →",
       cards: [
         {
@@ -248,14 +248,14 @@ export const tr: SiteDictionary = {
     },
     referenceSection: {
       eyebrow: "BÖLGESEL UYGULAMA MODELİ VE ÖRNEK PROJE KAPSAMI",
-      h2: "Avrupa ve Türkiye Mühendislik Uzmanlarıyla Tek Noktadan Bölgesel Entegrasyon",
+      h2: "Avrupa ve Türkiye Mühendislik Uzmanlarıyla Azerbaycan’da Yerel Proje Uygulaması",
       subtitle:
-        "Novaltron; seçkin Avrupa ve Türkiye üreticilerini, konsolide lojistiği ve uzman devreye alma mühendislerini tek sözleşme altında koordine eden Tiflis merkezli sistem entegratörüdür.",
+        "Novaltron; Azerbaycan ve bölgesel alıcılar için yerel saha uygulamasını, Belçika’daki Avrupa mühendislik ortaklıkları ve Türkiye’deki endüstriyel üretim iş birlikleriyle tek sözleşme altında buluşturur.",
       operatingModelBadge: "NEDEN TEK ENTEGRATÖR",
       operatingModelBody:
-        "6–10 ayrı yabancı ihracatçı, gümrük müşaviri ve saha taşeronunu yönetmek yerine tarım holdingleri ve altyapı idareleri tek sorumlu Tiflis merkeziyle çalışır.",
+        "6–10 ayrı yabancı ihracatçı, gümrük müşaviri ve saha taşeronunu yönetmek yerine tarım holdingleri ve altyapı idareleri Avrupa ve Türkiye OEM ortaklarıyla desteklenen, yerelde doğrudan ulaşılabilir tek sorumlu Novaltron ekibiyle çalışır.",
       disclaimer:
-        "Kafkasya ve Orta Asya ihaleleri için örnek anahtar teslim mühendislik kapsamları; müşteri bazlı referans kayıtları teknik ön yeterlilik sürecinde NDA kapsamında paylaşılır.",
+        "Azerbaycan ve Orta Asya ihaleleri için örnek anahtar teslim mühendislik kapsamları; müşteri bazlı referans kayıtları teknik ön yeterlilik sürecinde NDA kapsamında paylaşılır.",
       scopes: [
         {
           code: "SCOPE-01",
@@ -308,7 +308,7 @@ export const tr: SiteDictionary = {
         {
           step: "03",
           title: "Sınır Ötesi Tedarik ve Lojistik",
-          description: "Tiflis üzerinden çoklu para birimli Avrupa/Türkiye tedariki, ihracat belgeleri ve gümrükleme.",
+          description: "Belçika, geniş Avrupa ve Türkiye’den çoklu para birimli tedarik, ihracat belgeleri ve saha teslim gümrükleme.",
           deliverable: "Konsolide Navlun ve Menşe Belgeleri",
         },
         {
@@ -327,7 +327,7 @@ export const tr: SiteDictionary = {
     },
     trustSection: {
       eyebrow: "KURUMSAL YÖNETİŞİM VE İCRA GÜVENCESİ",
-      h2: "Tiflis Merkezi Üzerinden Yapılandırılmış Uygulama",
+      h2: "Şeffaf Yönetişimle Desteklenen Çok Merkezli Uygulama",
       subtitle:
         "EPC ihale denetçileri, tarım holdingleri ve kurumsal finans incelemeleri için şeffaf yapı.",
       governancePillars: [
@@ -342,14 +342,14 @@ export const tr: SiteDictionary = {
           number: "02",
           title: "Bölgesel Uyumluluk ve Yerel AVL",
           detail:
-            "Azerbaycan, Gürcistan, Özbekistan, Kazakistan ve Türkiye genelinde EPC tedarikçi ön yeterliliği için yapılandırılmış uygulama.",
-          tags: ["AZ", "GE", "UZ", "KZ", "TR", "EPC Hazır"],
+            "Azerbaycan, Türkiye, Gürcistan, Avrupa ve Orta Asya genelinde EPC tedarikçi ön yeterliliği için yapılandırılmış uygulama.",
+          tags: ["AZ", "BE", "TR", "GE", "Orta Asya", "EPC Hazır"],
         },
         {
           number: "03",
           title: "Şeffaf Tedarik Zinciri Dokümantasyonu",
           detail:
-            "Novaltron LLC (Tiflis, Gürcistan) üzerinden denetlenebilir ticari faturalar, çeki listeleri, menşe belgeleri ve FAT/SAT kayıtları.",
+            "Novaltron LLC üzerinden denetlenebilir ticari faturalar, çeki listeleri, menşe belgeleri ve FAT/SAT kayıtları.",
           tags: ["Novaltron LLC", "Menşe Belgeleri", "FAT/SAT"],
         },
       ],
@@ -364,7 +364,7 @@ export const tr: SiteDictionary = {
     eyebrow: "ANA BÖLÜM • AGRO-ENDÜSTRİYEL VE HASAT SONRASI MÜHENDİSLİK",
     h1: "Tarla Sulamasından İhracat Kalitesinde Depolamaya Anahtar Teslim Tarımsal Altyapı",
     subHeadline:
-      "Novaltron; Azerbaycan, Gürcistan, Özbekistan ve Kazakistan genelinde Avrupa ve Türkiye mühendislik standartlarını tek noktadan bölgesel uygulama ile birleştirerek entegre agro-endüstriyel sistemler tasarlar, tedarik eder ve devreye alır.",
+      "Novaltron; Azerbaycan, Kafkasya ve Orta Asya genelinde Belçika ve Avrupa mühendislik standartlarını, Türkiye üretim derinliğini ve tek noktadan bölgesel uygulamayı birleştirerek entegre agro-endüstriyel sistemler tasarlar, tedarik eder ve devreye alır.",
     anchors: [
       { id: "irrigation", label: "Sulama ve Su" },
       { id: "greenhouses", label: "Ticari Seralar" },
@@ -705,7 +705,7 @@ export const tr: SiteDictionary = {
   turnkeyDelivery: {
     metaTitle: "Anahtar Teslim Proje Uygulaması ve EPC Yönetimi",
     eyebrow: "TEK NOKTADAN SORUMLULUK • EPC VE ANAHTAR TESLİM UYGULAMA",
-    h1: "Kafkasya ve Orta Asya Genelinde Uçtan Uca Anahtar Teslim Proje Uygulaması",
+    h1: "Azerbaycan ve Orta Asya Genelinde Uçtan Uca Anahtar Teslim Proje Uygulaması",
     subHeadline:
       "Novaltron; Avrupa ve Türkiye mühendislik tedarikini, konsolide transit lojistiğini, ölçüme dayalı FAT/SAT devreye almayı ve yaşam döngüsü RMA desteğini tek sözleşme altında koordine ederek çoklu tedarikçi dağınıklığını ortadan kaldırır.",
     anchors: [
@@ -732,7 +732,7 @@ export const tr: SiteDictionary = {
       {
         step: "03",
         title: "Sınır Ötesi Tedarik ve Transit",
-        description: "Tiflis üzerinden çoklu para birimli Avrupa/Türkiye tedariki ve gümrükleme.",
+        description: "Belçika, Avrupa ve Türkiye’den çoklu para birimli tedarik ve saha teslim gümrükleme.",
         deliverable: "Navlun Konsolidasyonu ve Gümrük Dosyası",
       },
       {
@@ -755,7 +755,7 @@ export const tr: SiteDictionary = {
       {
         badge: "Kapı 01 • Tedarik ve Transit",
         title: "Konsolide Sınır Ötesi Tedarik ve Lojistik",
-        body: "Birleşik ticari takvimler altında Tiflis merkezimiz üzerinden seçkin Avrupa ve Türkiye uzman üreticileriyle doğrudan sözleşme yönetimi.",
+        body: "Birleşik ticari takvimler altında yerel proje teslimatı için seçkin Belçika/Avrupa ve Türkiye uzman üreticileriyle doğrudan sözleşme yönetimi.",
         bullets: [
           "Çoklu para birimli OEM tedariki ve konsolide ticari ödemeler.",
           "Senkronize fabrika çıkışı, yük konsolidasyonu ve gümrüklü bölgesel transit.",
@@ -788,42 +788,42 @@ export const tr: SiteDictionary = {
     ],
     scopesTitle: "Örnek Anahtar Teslim Proje Kapsamları",
     scopesSubtitle:
-      "Bölgesel koridorumuzdaki agro-endüstriyel işletmeler, tahıl terminalleri ve altyapı ihaleleri için yapılandırılmış örnek çok disiplinli mühendislik paketleri.",
+      "Azerbaycan ve Orta Asya genelindeki agro-endüstriyel işletmeler, tahıl terminalleri ve altyapı ihaleleri için yapılandırılmış örnek çok disiplinli mühendislik paketleri.",
     bottomCtaTitle: "Çok Disiplinli Bir Anahtar Teslim Proje veya İhale mi Planlıyorsunuz?",
     bottomCtaBody:
-      "Birleşik bir teslimat planı ve ticari teklif için saha parametrelerinizi, teknik şartnamenizi veya BOQ dosyanızı Tiflis’teki mühendislik ekibimizle paylaşın.",
+      "Birleşik bir teslimat planı ve ticari teklif için saha parametrelerinizi, teknik şartnamenizi veya BOQ dosyanızı Azerbaycan ve bölgesel mühendislik ekibimizle paylaşın.",
     bottomCtaButton: "Anahtar Teslim Teklif İste →",
     aboutCrossLinkLabel: "Hakkımızda ve Kurumsal Uyumluluk",
   },
   aboutCompliance: {
     metaTitle: "Hakkımızda ve Kurumsal Uyumluluk",
-    eyebrow: "KURUMSAL MİMARİ • YÖNETİŞİM VE UYUMLULUK",
-    h1: "Bölgesel Kurumsal Merkez ve Sınır Ötesi Kurumsal Uyumluluk",
+    eyebrow: "ÇOK MERKEZLİ MİMARİ • YÖNETİŞİM VE UYUMLULUK",
+    h1: "Çok Merkezli İşletim Modeli ve Sınır Ötesi Kurumsal Uyumluluk",
     subHeadline:
-      "Tiflis, Gürcistan’daki Novaltron LLC üzerinden faaliyet göstererek Batı Avrupa kurumsal yönetişimini şeffaf fiziksel ticaret evrakları ve Kafkasya ile Orta Asya genelinde EPC tedarikçi hazırlığıyla birleştiriyoruz.",
+      "Azerbaycan’da doğrudan saha uygulaması ve planlanan Bakü ofisimiz üzerine inşa edilen Novaltron LLC; Belçika ve Batı Avrupa mühendisliğini, Türkiye endüstriyel üretimini ve Gürcistan kurumsal yapısını birleştirerek Azerbaycan ve Orta Asya genelinde anahtar teslim projeler teslim eder.",
     anchors: [
-      { id: "corporate-structure", label: "Kurumsal Yapı" },
+      { id: "corporate-structure", label: "Çok Merkezli Yapı" },
       { id: "governance", label: "Yönetişim ve Standartlar" },
       { id: "compliance-readiness", label: "Kurumsal Hazırlık" },
     ],
-    corporateTitle: "Bölgesel Kurumsal Merkez",
+    corporateTitle: "Çok Merkezli Operasyon Mimarisi",
     corporateSubtitle:
-      "Avrupa ve Türkiye üretimini Kafkasya ve Orta Asya’daki proje sahalarına bağlayan lojistik kavşakta konumlanmış tek sorumlu tüzel ve operasyonel yapı.",
-    corporateHubName: "Novaltron LLC (Tiflis, Gürcistan — შპს ნოვალტრონი)",
-    corporateHubRole: "Uluslararası Tedarik, Ticaret Finansmanı ve Bölgesel Transit Merkezi",
+      "Azerbaycan’daki alıcılar için yerel yakınlığı Avrupa teknoloji tedariki, Türkiye üretim gücü ve tek çatı altında sınır ötesi sözleşme yapısıyla birleştiren sorumlu mühendislik köprüsü.",
+    corporateHubName: "Novaltron LLC",
+    corporateHubRole: "Çok Merkezli Mühendislik, OEM Tedariki ve Bölgesel Proje Uygulama Köprüsü",
     corporateHubPoints: [
-      "Avrupa ve Türkiye üreticileriyle doğrudan sözleşmeler ve çoklu para birimli ödemeler.",
-      "Kafkasya ve Orta Asya genelinde yapılandırılmış yük taşımacılığı ve gümrük transiti.",
-      "Anahtar teslim agro-endüstriyel ve kritik altyapı ihalelerinde tek noktadan ticari sorumluluk.",
+      "Azerbaycan (Ana Pazar ve Bakü Ofis Planı): Yerinde tarımsal modernizasyon, AKİA teşvik programlarıyla uyum, devlet projeleri ve bölgesel altyapı teslimatı.",
+      "Belçika ve Türkiye (Mühendislik ve Üretim): Belçika’da Batı Avrupa mühendislik ortaklıklarıyla Türkiye’de boru hattı, kaynak, haberleşme ve endüstriyel makine üretimi.",
+      "Gürcistan (Kurumsal Yapı) ve Orta Asya Açılımı: Bölgesel operasyonları birleştiren kurumsal tüzel yapı (Novaltron LLC) ve Orta Asya pazarlarına ölçeklenen saha teslimatı.",
     ],
-    corridorCountries: ["Azerbaycan", "Gürcistan", "Özbekistan", "Kazakistan", "Türkiye"],
-    corridorDiagramLabel: "BÖLGESEL TRANSİT VE TEDARİK KORİDORU",
+    corridorCountries: ["Azerbaycan", "Belçika", "Türkiye", "Gürcistan", "Orta Asya"],
+    corridorDiagramLabel: "ÇOK MERKEZLİ MÜHENDİSLİK, TEDARİK VE UYGULAMA KÖPRÜSÜ",
     governanceTitle: "İşletim Modeli, Yönetişim ve Standartlar",
     governanceSubtitle:
       "Banka ve EPC denetim beklentileri için yapılandırılmış disiplinli teknik standartlar, denetlenebilir ticari evraklar ve seçkin mühendislik ortaklıkları.",
-    operatingModelHeading: "Bölgesel Entegratör İşletim Modeli",
+    operatingModelHeading: "Çok Merkezli Entegratör İşletim Modeli",
     operatingModelBody:
-      "Novaltron; Batı Avrupa kurumsal yönetişim standartlarını disiplinli bölgesel proje uygulamasıyla birleştirerek seçkin Avrupa ve Türkiye uzman üreticileri ile sertifikalı devreye alma ekipleri tarafından desteklenen tek noktadan Tiflis entegrasyon merkezi olarak faaliyet gösterir.",
+      "Novaltron, Avrupa mühendisliğini ve Türkiye üretim gücünü alıcılarımızın ayağına getirir — Azerbaycan’daki yerel saha uygulamasını Belçika teknoloji tedariki, Türkiye sanayi iş birlikleri, Gürcistan kurumsal yapımız ve Orta Asya genişlemesiyle birleştirir.",
     standardsHeading: "Uluslararası Standartlara Uyum",
     standardsBody:
       "Tüm mühendislik sistemleri ve teslimat süreçleri uluslararası standartlarla uyumludur:",
@@ -844,11 +844,11 @@ export const tr: SiteDictionary = {
     ],
     complianceTitle: "Kurumsal Hazırlık ve Tedarikçi Ön Yeterliliği",
     complianceSubtitle:
-      "Uluslararası ticaret bankalarının, EPC satın alma denetçilerinin ve tarımsal ihracat sertifikasyon kurumlarının inceleme beklentilerini karşılayacak şekilde yapılandırılmıştır.",
+      "Uluslararası ticaret bankalarının, EPC satınalma denetçilerinin ve tarımsal ihracat sertifikasyon kurumlarının inceleme beklentilerini karşılayacak şekilde yapılandırılmıştır.",
     bottomCtaTitle: "Kurumsal Ön Yeterlilik veya Ticari Uyumluluk Evraklarına mı İhtiyacınız Var?",
     bottomCtaBody:
-      "AVL tedarikçi kayıt paketleri, NDA kapsamlı referans proje özetleri veya resmi ihale talepleri için Tiflis’teki kurumsal ve mühendislik ekibimizle iletişime geçin.",
-    bottomCtaButton: "Kurumsal Ekibimizle İletişime Geçin →",
+      "AVL tedarikçi kayıt paketleri, NDA kapsamlı referans proje özetleri veya resmi ihale talepleri için Azerbaycan ve bölgesel mühendislik ekibimizle iletişime geçin.",
+    bottomCtaButton: "Mühendislik Ekibimizle İletişime Geçin →",
     turnkeyCrossLinkLabel: "Anahtar Teslim Uygulama Sürecini İncele",
   },
   contact: {
@@ -856,10 +856,11 @@ export const tr: SiteDictionary = {
     eyebrow: "TEKNİK DANIŞMANLIK VE TEKLİF (RFQ) BİRİMİ",
     h1: "Proje Teklifi (RFQ) veya Teknik Danışmanlık Talebi Gönderin",
     subHeadline:
-      "Proje parametrelerinizi, arazi büyüklüğünüzü, teknik şartnamenizi veya metraj cetvelinizi (BOQ) paylaşın. Bölgesel mühendislik ve agronomi uzmanlarımız 24–48 iş saati içinde yanıt verecektir.",
+      "Proje parametrelerinizi, arazi büyüklüğünüzü, teknik şartnamenizi veya metraj cetvelinizi (BOQ) paylaşın. Azerbaycan ve bölgesel mühendislik uzmanlarımız 24–48 iş saati içinde yanıt verecektir.",
+    directDeskBadge: "AZERBAYCAN VE BÖLGESEL OFİS",
     directDeskTitle: "Mühendislik Ekibiyle Doğrudan İletişim",
     directDeskBody:
-      "Tüm RFQ talepleri teknik inceleme ve ticari tekliflendirme için doğrudan Tiflis operasyon merkezimize yönlendirilir.",
+      "Tüm RFQ talepleri hızlı teknik inceleme ve ticari tekliflendirme için doğrudan Azerbaycan ve bölgesel mühendislik ekibimize yönlendirilir.",
     responseSla: "Yanıt süresi: 24–48 iş saati",
     socialLabel: "Resmi Kanallar",
     privacyNotice: "BOQ dosyaları ve proje bilgileri B2B gizliliği kapsamında işlenir:",
@@ -875,17 +876,15 @@ export const tr: SiteDictionary = {
       generalEmailLabel: "E-posta",
       emailPlaceholder: "ad@sirket.com",
       phoneLabel: "Telefon / WhatsApp",
-      phonePlaceholder: "+90 / +995 / +994 ...",
+      phonePlaceholder: "+994 / +90 / +32 ...",
       countryLabel: "Proje Ülkesi / Bölgesi",
       countryPlaceholder: "Hedef ülke veya bölge seçin",
       countries: [
         "Azerbaycan",
-        "Gürcistan",
-        "Özbekistan",
-        "Kazakistan",
         "Türkiye",
-        "Avrupa",
-        "Diğer Orta Asya / Kafkasya",
+        "Gürcistan",
+        "Orta Asya",
+        "Belçika / Avrupa",
       ],
       countryOtherLabel: "Ülke veya bölgeyi belirtin",
       countryOtherPlaceholder: "Proje ülkesini veya bölgesini girin",
@@ -938,13 +937,13 @@ export const tr: SiteDictionary = {
     eyebrow: "KURUMSAL UYUMLULUK VE VERİ KORUMA",
     h1: "Gizlilik Politikası, BOQ Gizliliği ve Yasal Bildirim",
     subHeadline:
-      "Novaltron LLC (Tiflis, Gürcistan) kurumsal veri yönetişimi, ihale gizliliği ve yasal bildirim metni.",
+      "Novaltron LLC kurumsal veri yönetişimi, ihale gizliliği ve yasal bildirim metni.",
     updatedLabel: "Yürürlük: 2026 · Sürüm 1.0",
     sections: [
       {
         heading: "1. Kurumsal Yapı ve Faaliyet Kapsamı",
         body: [
-          "Bu web sitesi (novaltron.com), Kafkasya ve Orta Asya genelinde sınır ötesi mühendislik entegrasyonu, tedarik ve bölgesel transit merkezi olarak faaliyet gösteren Novaltron LLC (შპს ნოვალტრონი, Tiflis, Gürcistan) tarafından işletilmektedir.",
+          "Bu web sitesi (novaltron.com); Azerbaycan, Belçika, Türkiye, Gürcistan ve Orta Asya genelinde sınır ötesi mühendislik entegrasyonu, OEM tedariki ve anahtar teslim proje uygulaması yürüten, Gürcistan’da kayıtlı Novaltron LLC tarafından işletilmektedir.",
           "Resmi kurumsal yazışmalar ve uyumluluk talepleri için info@novaltron.com adresiyle iletişime geçebilirsiniz.",
         ],
       },

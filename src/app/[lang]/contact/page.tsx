@@ -75,7 +75,7 @@ export default async function ContactPage({
             <div className="rounded-2xl border border-[#D4DFE7] bg-white p-6 shadow-2xs sm:p-7">
               <div className="flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-[#267042]">
                 <ShieldCheck aria-hidden="true" className="h-4 w-4" />
-                <span>TBILISI DESK</span>
+                <span>{contact.directDeskBadge}</span>
               </div>
               <h2 className="mt-3 text-lg font-bold text-[#0A1F2E]">
                 {contact.directDeskTitle}
@@ -101,8 +101,7 @@ export default async function ContactPage({
                 <div className="flex items-start gap-2.5 text-[#455A69]">
                   <Building2 aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-[#267042]" />
                   <span>
-                    {SITE_CONFIG.companyName} ({SITE_CONFIG.companyGeorgianName}) —{" "}
-                    {SITE_CONFIG.hubLocation}
+                    {SITE_CONFIG.companyName} — {dict.footer.corridorValue}
                   </span>
                 </div>
               </div>

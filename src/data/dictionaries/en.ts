@@ -5,7 +5,7 @@ export const en: SiteDictionary = {
     siteName: "Novaltron",
     defaultTitle: "Novaltron | Agro-Industrial Systems & Critical Infrastructure",
     defaultDescription:
-      "Cross-border agro-industrial engineering, biological crop protection, and critical infrastructure integration across the Caucasus and Central Asia via Novaltron LLC (Tbilisi, Georgia).",
+      "Turnkey agro-industrial engineering, biological crop protection, and critical infrastructure integration in Azerbaijan and across Central Asia—backed by European engineering and Turkish manufacturing via Novaltron LLC.",
     skipToContent: "Skip to main technical content",
   },
   nav: {
@@ -23,11 +23,11 @@ export const en: SiteDictionary = {
   },
   footer: {
     summary:
-      "NOVALTRON — Cross-border agro-industrial engineering, biological crop protection, and critical infrastructure integration across the Caucasus and Central Asia.",
-    hubLabel: "Operational Hub",
-    hubValue: "Novaltron LLC (შპს ნოვალტრონი) — Tbilisi, Georgia",
-    corridorLabel: "Regional Corridor",
-    corridorValue: "Azerbaijan · Georgia · Uzbekistan · Kazakhstan · Türkiye",
+      "NOVALTRON — Turnkey agro-industrial engineering, biological crop protection, and critical infrastructure integration in Azerbaijan and across Central Asia.",
+    hubLabel: "Operating Model",
+    hubValue: "Novaltron LLC — Azerbaijan Market Execution & Multi-Hub Bridge",
+    corridorLabel: "Geographic Architecture",
+    corridorValue: "Azerbaijan · Belgium · Türkiye · Georgia · Central Asia",
     contactsLabel: "Engineering Desk",
     socialLabel: "Connect",
     navigationLabel: "Divisions & Pages",
@@ -36,16 +36,16 @@ export const en: SiteDictionary = {
     copyright: "© 2026 Novaltron LLC. All Rights Reserved.",
   },
   home: {
-    eyebrow: "AGRO-INDUSTRIAL & INFRASTRUCTURE ENGINEERING • CAUCASUS & CENTRAL ASIA",
-    h1: "Turnkey Agro-Industrial Systems & Critical Infrastructure Across the Caucasus and Central Asia",
+    eyebrow: "AGRO-INDUSTRIAL & INFRASTRUCTURE ENGINEERING • AZERBAIJAN & CENTRAL ASIA",
+    h1: "Turnkey Agro-Industrial Systems & Critical Infrastructure Across Azerbaijan, the Caucasus and Central Asia",
     subHeadline:
-      "Novaltron connects European and Turkish engineering technologies with regional project execution—delivering precision irrigation, commercial greenhouses, post-harvest grain terminals, biological crop protection, and industrial infrastructure through our Tbilisi hub.",
+      "Novaltron connects Belgian and Western European engineering and Turkish industrial manufacturing with direct on-the-ground project execution in Azerbaijan and expansion across Central Asia—delivering precision irrigation, commercial greenhouses, grain terminals, biological crop protection, and industrial infrastructure.",
     primaryCta: "Submit Project RFQ →",
     secondaryCta: "Explore Agro-Solutions",
     heroImageAlt:
       "Aerial golden-hour view of precision center-pivot irrigation spanning geometric emerald agricultural fields with commercial glasshouses on the horizon",
     heroTrustBar: [
-      "REGIONAL HUB EXECUTION (TBILISI, GEORGIA)",
+      "LOCAL EXECUTION IN AZERBAIJAN · EU & TURKISH OEMS",
       "4 CORE ENGINEERING DIVISIONS",
       "FAT/SAT CERTIFIED COMMISSIONING",
     ],
@@ -141,7 +141,7 @@ export const en: SiteDictionary = {
       bandMarker: "AGRO-INDUSTRIAL ENGINEERING",
       h2: "End-to-End Agricultural Infrastructure—From Field Water to Export Storage",
       intro:
-        "We design, supply, and commission complete agricultural modernization projects for agro-parks, commercial farms, greenhouses, and grain operators across Azerbaijan, Georgia, Uzbekistan, and Kazakhstan.",
+        "We design, supply, and commission complete agricultural modernization projects—built for agro-parks, commercial farms, greenhouses, and grain operators in Azerbaijan, across the Caucasus, and in Central Asia.",
       viewAllCta: "Full Agro-Industrial Portfolio →",
       cards: [
         {
@@ -248,14 +248,14 @@ export const en: SiteDictionary = {
     },
     referenceSection: {
       eyebrow: "REGIONAL OPERATING MODEL & REPRESENTATIVE SCOPES",
-      h2: "Single-Point Regional Integration Backed by European & Turkish Engineering Specialists",
+      h2: "Local Project Execution Backed by European & Turkish Engineering Specialists",
       subtitle:
-        "Novaltron operates as a lean Tbilisi procurement and systems-integration desk coordinating vetted European and Turkish manufacturers, freight consolidation, and specialized commissioning engineers under one contract.",
+        "Novaltron combines direct on-the-ground execution for Azerbaijan and regional buyers with Western European engineering partnerships in Belgium and industrial manufacturing alliances in Türkiye—all under one accountable contract.",
       operatingModelBadge: "WHY ONE INTEGRATOR",
       operatingModelBody:
-        "Instead of managing 6–10 separate foreign exporters, customs brokers, and site contractors, agro-holdings and utilities contract one accountable Tbilisi hub with aligned European/Turkish engineering partners.",
+        "Instead of managing 6–10 separate foreign exporters, customs brokers, and site contractors, agro-holdings and utilities partner with one locally accessible Novaltron engineering desk backed by aligned European and Turkish OEMs.",
       disclaimer:
-        "Representative turnkey engineering scope benchmarks structured for Caucasus & Central Asia tenders; client-specific project references are shared under NDA during technical pre-qualification.",
+        "Representative turnkey engineering scope benchmarks structured for tenders in Azerbaijan and across Central Asia; client-specific project references are shared under NDA during technical pre-qualification.",
       scopes: [
         {
           code: "SCOPE-01",
@@ -311,7 +311,7 @@ export const en: SiteDictionary = {
           step: "03",
           title: "Cross-Border Procurement & Transit",
           description:
-            "Multi-currency European/Turkish sourcing via Tbilisi, export documentation, and customs clearance.",
+            "Multi-currency sourcing from Belgium, wider Europe, and Türkiye, consolidated export documentation, and turnkey site customs clearance.",
           deliverable: "Consolidated Freight & Origin Docs",
         },
         {
@@ -332,7 +332,7 @@ export const en: SiteDictionary = {
     },
     trustSection: {
       eyebrow: "INSTITUTIONAL GOVERNANCE & EXECUTION PROOF",
-      h2: "Structured Regional Execution Through Tbilisi",
+      h2: "Multi-Hub Execution Backed by Transparent Governance",
       subtitle:
         "Built for EPC procurement auditors, commercial agro-holdings, and institutional finance review.",
       governancePillars: [
@@ -347,14 +347,14 @@ export const en: SiteDictionary = {
           number: "02",
           title: "Regional Compliance & Local AVL",
           detail:
-            "Structured for EPC vendor pre-qualification and multi-sector delivery across Azerbaijan, Georgia, Uzbekistan, Kazakhstan, and Türkiye.",
-          tags: ["AZ", "GE", "UZ", "KZ", "TR", "EPC Ready"],
+            "Structured for EPC vendor pre-qualification and multi-sector delivery in Azerbaijan and across Türkiye, Georgia, Europe, and Central Asia.",
+          tags: ["AZ", "BE", "TR", "GE", "Central Asia", "EPC Ready"],
         },
         {
           number: "03",
           title: "Transparent Supply Chain Documentation",
           detail:
-            "Operated through Novaltron LLC (Tbilisi, Georgia) with auditable commercial invoices, packing lists, certificates of origin, and FAT/SAT handover records.",
+            "Operated via Novaltron LLC with auditable commercial invoices, packing lists, certificates of origin, and FAT/SAT handover records.",
           tags: ["Novaltron LLC", "Origin Docs", "FAT/SAT"],
         },
       ],
@@ -369,7 +369,7 @@ export const en: SiteDictionary = {
     eyebrow: "FLAGSHIP DIVISION • AGRO-INDUSTRIAL & POST-HARVEST ENGINEERING",
     h1: "Turnkey Agricultural Infrastructure—From Field Water Management to Export-Grade Storage",
     subHeadline:
-      "Novaltron designs, supplies, and commissions integrated agro-industrial systems across Azerbaijan, Georgia, Uzbekistan, and Kazakhstan—combining European and Turkish engineering standards with single-point regional execution.",
+      "Novaltron designs, supplies, and commissions integrated agro-industrial systems across Azerbaijan, the Caucasus, and Central Asia—combining Belgian and European engineering standards, Turkish manufacturing depth, and single-point regional execution.",
     anchors: [
       { id: "irrigation", label: "Irrigation & Water" },
       { id: "greenhouses", label: "Commercial Greenhouses" },
@@ -718,7 +718,7 @@ export const en: SiteDictionary = {
   turnkeyDelivery: {
     metaTitle: "Turnkey Project Delivery & EPC Execution",
     eyebrow: "SINGLE POINT OF ACCOUNTABILITY • EPC & TURNKEY EXECUTION",
-    h1: "End-to-End Turnkey Project Delivery Across the Caucasus & Central Asia",
+    h1: "End-to-End Turnkey Project Delivery Across Azerbaijan & Central Asia",
     subHeadline:
       "Novaltron eliminates multi-vendor fragmentation by coordinating European and Turkish engineering procurement, consolidated transit logistics, measurement-backed FAT/SAT commissioning, and lifecycle RMA under one accountable contract.",
     anchors: [
@@ -748,7 +748,7 @@ export const en: SiteDictionary = {
         step: "03",
         title: "Cross-Border Procurement & Transit Logistics",
         description:
-          "Multi-currency European/Turkish sourcing via Tbilisi, export documentation, and customs clearance.",
+          "Multi-currency Belgian, wider European, and Turkish sourcing, export documentation, and turnkey site customs clearance.",
         deliverable: "Freight Consolidation & Customs Dossier",
       },
       {
@@ -773,7 +773,7 @@ export const en: SiteDictionary = {
       {
         badge: "Gate 01 • Supply & Transit",
         title: "Consolidated Cross-Border Procurement & Logistics",
-        body: "Direct contracting with vetted European and Turkish specialist manufacturers coordinated through our Tbilisi hub under unified commercial schedules.",
+        body: "Direct contracting with vetted Belgian/European and Turkish specialist manufacturers coordinated for local project delivery under unified commercial schedules.",
         bullets: [
           "Multi-currency OEM sourcing and consolidated commercial settlements.",
           "Synchronized factory release, freight consolidation, and bonded regional transit.",
@@ -806,42 +806,42 @@ export const en: SiteDictionary = {
     ],
     scopesTitle: "Representative Turnkey Scope Benchmarks",
     scopesSubtitle:
-      "Illustrative multi-discipline engineering packages structured for agro-industrial holdings, grain terminals, and infrastructure tenders across our regional corridor.",
+      "Illustrative multi-discipline engineering packages structured for agro-industrial holdings, grain terminals, and infrastructure tenders across Azerbaijan and Central Asia.",
     bottomCtaTitle: "Scoping a Multi-Discipline Turnkey Project or Tender?",
     bottomCtaBody:
-      "Share your site parameters, technical specifications, or BOQ with our Tbilisi engineering desk for a consolidated delivery plan and commercial proposal.",
+      "Share your site parameters, technical specifications, or BOQ with our Azerbaijan and regional engineering desk for a consolidated delivery plan and commercial proposal.",
     bottomCtaButton: "Request a Turnkey Proposal →",
     aboutCrossLinkLabel: "About & Corporate Compliance",
   },
   aboutCompliance: {
     metaTitle: "About Novaltron & Corporate Compliance",
-    eyebrow: "CORPORATE ARCHITECTURE • GOVERNANCE & COMPLIANCE",
-    h1: "Regional Corporate Hub & Cross-Border Institutional Compliance",
+    eyebrow: "MULTI-HUB ARCHITECTURE • GOVERNANCE & COMPLIANCE",
+    h1: "Multi-Hub Operating Model & Cross-Border Institutional Compliance",
     subHeadline:
-      "Operated through Novaltron LLC in Tbilisi, Georgia, we bridge Western European corporate governance with transparent physical trade documentation and EPC vendor readiness across the Caucasus and Central Asia.",
+      "Built around direct market execution in Azerbaijan—with an upcoming Baku commercial office—Novaltron LLC unites Belgian and Western European engineering, Turkish industrial manufacturing, and a Georgian corporate entity to deliver turnkey projects across Azerbaijan and Central Asia.",
     anchors: [
-      { id: "corporate-structure", label: "Corporate Structure" },
+      { id: "corporate-structure", label: "Multi-Hub Structure" },
       { id: "governance", label: "Governance & Standards" },
       { id: "compliance-readiness", label: "Institutional Readiness" },
     ],
-    corporateTitle: "Regional Corporate Hub",
+    corporateTitle: "Multi-Hub Operating Architecture",
     corporateSubtitle:
-      "One accountable legal and operational entity positioned at the logistics crossroads linking European and Turkish manufacturing with Caucasus and Central Asian project sites.",
-    corporateHubName: "Novaltron LLC (Tbilisi, Georgia — შპს ნოვალტრონი)",
-    corporateHubRole: "International Procurement, Trade Finance & Regional Transit Hub",
+      "An accountable international engineering and execution bridge uniting local proximity for Azerbaijani buyers with European technology sourcing, Turkish manufacturing capacity, and unified cross-border contracting.",
+    corporateHubName: "Novaltron LLC",
+    corporateHubRole: "Multi-Hub Engineering, OEM Sourcing & Regional Project Execution Bridge",
     corporateHubPoints: [
-      "Direct European and Turkish manufacturer contracting with consolidated multi-currency settlements.",
-      "Structured freight forwarding, customs transit, and bonded logistics across the Caucasus and Central Asia.",
-      "Single-point commercial accountability for turnkey agro-industrial and critical infrastructure tenders.",
+      "Azerbaijan (Primary Market & Baku Office Roadmap): On-the-ground agri-modernization, AKİA subsidy-aligned projects, state program coordination, and regional infrastructure delivery.",
+      "Belgium & Türkiye (Engineering & Manufacturing): Western European technology partnerships in Belgium combined with Turkish manufacturing capacity across pipelines, welding, communications, and industrial equipment.",
+      "Georgia (Corporate Entity) & Central Asia Expansion: Cross-border corporate structure tying regional operations together while scaling into broader Central Asian markets.",
     ],
-    corridorCountries: ["Azerbaijan", "Georgia", "Uzbekistan", "Kazakhstan", "Türkiye"],
-    corridorDiagramLabel: "REGIONAL TRANSIT & PROCUREMENT CORRIDOR",
+    corridorCountries: ["Azerbaijan", "Belgium", "Türkiye", "Georgia", "Central Asia"],
+    corridorDiagramLabel: "MULTI-HUB ENGINEERING, SOURCING & DELIVERY BRIDGE",
     governanceTitle: "Operating Model, Governance & Standards",
     governanceSubtitle:
       "Disciplined technical standards, auditable commercial paperwork, and vetted specialist engineering partnerships built for bank and EPC scrutiny.",
-    operatingModelHeading: "Regional Integrator Operating Model",
+    operatingModelHeading: "Multi-Hub Integrator Operating Model",
     operatingModelBody:
-      "Novaltron bridges Western European corporate governance with disciplined regional execution—operating as a dedicated Tbilisi engineering integration and procurement hub backed by vetted European and Turkish specialist manufacturers and certified commissioning teams.",
+      "Novaltron brings European engineering and Turkish manufacturing directly to our buyers—pairing local execution in Azerbaijan with Belgian technology sourcing, Turkish industrial alliances, our Georgian corporate structure, and expansion across Central Asia.",
     standardsHeading: "International Standards Alignment",
     standardsBody:
       "All engineered systems and project deliveries are aligned with recognized international engineering, food-safety, and industrial standards:",
@@ -865,8 +865,8 @@ export const en: SiteDictionary = {
       "Structured to meet the due-diligence expectations of international trade banks, EPC procurement auditors, and agricultural export certifiers.",
     bottomCtaTitle: "Need Corporate Pre-Qualification or Trade Compliance Documentation?",
     bottomCtaBody:
-      "Contact our Tbilisi corporate and engineering desk for AVL onboarding packets, NDA-protected reference scopes, or formal tender inquiries.",
-    bottomCtaButton: "Contact Our Corporate Desk →",
+      "Contact our Azerbaijan and regional engineering desk for AVL onboarding packets, NDA-protected reference scopes, or formal tender inquiries.",
+    bottomCtaButton: "Contact Our Engineering Desk →",
     turnkeyCrossLinkLabel: "Explore Turnkey Delivery Workflow",
   },
   contact: {
@@ -874,10 +874,11 @@ export const en: SiteDictionary = {
     eyebrow: "TECHNICAL CONSULTATION & RFQ DESK",
     h1: "Submit a Project RFQ or Technical Consultation Request",
     subHeadline:
-      "Share your project parameters, farm acreage, technical specifications, or Bill of Quantities (BOQ). Our regional engineering and agronomic specialists respond within 24–48 business hours.",
+      "Share your project parameters, farm acreage, technical specifications, or Bill of Quantities (BOQ). Our Azerbaijan and regional engineering specialists respond within 24–48 business hours.",
+    directDeskBadge: "AZERBAIJAN & REGIONAL DESK",
     directDeskTitle: "Direct Engineering Desk",
     directDeskBody:
-      "All RFQ submissions are routed directly to our Tbilisi operational desk for technical review and commercial scoping.",
+      "All RFQ submissions are routed directly to our Azerbaijan and regional engineering desk for prompt technical review and commercial scoping.",
     responseSla: "Response SLA: 24–48 business hours",
     socialLabel: "Official Channels",
     privacyNotice: "BOQ attachments and project details are handled strictly under B2B confidentiality per our",
@@ -893,17 +894,15 @@ export const en: SiteDictionary = {
       generalEmailLabel: "Email",
       emailPlaceholder: "name@company.com",
       phoneLabel: "Phone / WhatsApp Number",
-      phonePlaceholder: "+995 / +994 / +998 ...",
+      phonePlaceholder: "+994 / +90 / +32 ...",
       countryLabel: "Project Country / Region",
       countryPlaceholder: "Select target country or region",
       countries: [
         "Azerbaijan",
-        "Georgia",
-        "Uzbekistan",
-        "Kazakhstan",
         "Türkiye",
-        "Europe",
-        "Other Central Asia / Caucasus",
+        "Georgia",
+        "Central Asia",
+        "Belgium / Europe",
       ],
       countryOtherLabel: "Specify Country / Region",
       countryOtherPlaceholder: "Enter project country or region",
@@ -983,13 +982,13 @@ export const en: SiteDictionary = {
     eyebrow: "CORPORATE COMPLIANCE & DATA PROTECTION",
     h1: "Privacy Policy, BOQ Confidentiality & Legal Notice",
     subHeadline:
-      "Institutional data governance, tender confidentiality, and legal operating notice for Novaltron LLC (Tbilisi, Georgia).",
+      "Institutional data governance, tender confidentiality, and legal operating notice for Novaltron LLC.",
     updatedLabel: "Effective: 2026 · Version 1.0",
     sections: [
       {
         heading: "1. Corporate Entity & Operational Scope",
         body: [
-          "This website (novaltron.com) is operated by Novaltron LLC (შპს ნოვალტრონი), Tbilisi, Georgia, acting as a cross-border engineering integration, procurement, and regional transit hub across the Caucasus and Central Asia.",
+          "This website (novaltron.com) is operated by Novaltron LLC, a corporate entity registered in Georgia anchoring cross-border engineering integration, OEM procurement, and turnkey project execution across Azerbaijan, Belgium, Türkiye, Georgia, and Central Asia.",
           "For official corporate correspondence, compliance inquiries, or pre-qualification dossiers, contact info@novaltron.com.",
         ],
       },

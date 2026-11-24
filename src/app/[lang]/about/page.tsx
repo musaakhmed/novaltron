@@ -142,7 +142,7 @@ export default async function AboutCompliancePage({
                 <TechnicalSchematic
                   variant="corridor-map"
                   label={aboutCompliance.corridorDiagramLabel}
-                  code="HUB-TBILISI"
+                  code="MULTI-HUB"
                   className="bg-[#F4F7F9]"
                 />
               </div>

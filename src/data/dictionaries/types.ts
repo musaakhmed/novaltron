@@ -321,6 +321,7 @@ export interface SiteDictionary {
     eyebrow: string;
     h1: string;
     subHeadline: string;
+    directDeskBadge: string;
     directDeskTitle: string;
     directDeskBody: string;
     responseSla: string;

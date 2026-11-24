@@ -524,44 +524,60 @@ export function TechnicalSchematic({
 
         {variant === "corridor-map" && (
           <svg aria-hidden="true" viewBox="0 0 420 236" className="h-full w-full" fill="none">
-            {/* Origin: EU & Türkiye Engineering */}
-            <rect x="18" y="84" width="104" height="68" rx="6" fill="#FFFFFF" stroke="#0A1F2E" strokeWidth="1.5" />
-            <text x="70" y="114" textAnchor="middle" fill="#0A1F2E" fontSize="8.5" fontFamily="monospace" fontWeight="700">
-              EU &amp; TÜRKIYE
+            {/* Sourcing Hubs: Belgium (EU) & Türkiye */}
+            <rect x="14" y="34" width="110" height="74" rx="6" fill="#FFFFFF" stroke="#0A1F2E" strokeWidth="1.5" />
+            <text x="69" y="66" textAnchor="middle" fill="#0A1F2E" fontSize="8.2" fontFamily="monospace" fontWeight="700">
+              BE · BELGIUM (EU)
             </text>
-            <text x="70" y="130" textAnchor="middle" fill="#64748B" fontSize="7.2" fontFamily="monospace">
-              ENGINEERING SUPPLY
+            <text x="69" y="83" textAnchor="middle" fill="#64748B" fontSize="6.8" fontFamily="monospace">
+              ENGINEERING &amp; TECH
             </text>
 
-            {/* Central Hub: Tbilisi */}
-            <rect x="156" y="72" width="118" height="92" rx="8" fill="#0A1F2E" stroke="#5BB87A" strokeWidth="2" />
-            <text x="215" y="106" textAnchor="middle" fill="#FFFFFF" fontSize="9.5" fontFamily="monospace" fontWeight="700">
+            <rect x="14" y="128" width="110" height="74" rx="6" fill="#FFFFFF" stroke="#0A1F2E" strokeWidth="1.5" />
+            <text x="69" y="160" textAnchor="middle" fill="#0A1F2E" fontSize="8.2" fontFamily="monospace" fontWeight="700">
+              TR · TÜRKIYE
+            </text>
+            <text x="69" y="177" textAnchor="middle" fill="#64748B" fontSize="6.8" fontFamily="monospace">
+              MANUFACTURING
+            </text>
+
+            {/* Central Platform: Multi-Hub Corporate Bridge */}
+            <rect x="150" y="68" width="118" height="100" rx="8" fill="#0A1F2E" stroke="#5BB87A" strokeWidth="2" />
+            <text x="209" y="106" textAnchor="middle" fill="#FFFFFF" fontSize="9.2" fontFamily="monospace" fontWeight="700">
               NOVALTRON LLC
             </text>
-            <text x="215" y="122" textAnchor="middle" fill="#5BB87A" fontSize="7.8" fontFamily="monospace">
-              TBILISI HUB
+            <text x="209" y="123" textAnchor="middle" fill="#5BB87A" fontSize="7.4" fontFamily="monospace" fontWeight="600">
+              MULTI-HUB BRIDGE
             </text>
-            <text x="215" y="140" textAnchor="middle" fill="#94A3B8" fontSize="7" fontFamily="monospace">
-              TRANSIT · FINANCE
+            <text x="209" y="140" textAnchor="middle" fill="#94A3B8" fontSize="6.8" fontFamily="monospace">
+              GE ENTITY · FINANCE
             </text>
 
-            {/* Regional Delivery Destinations */}
-            {[
-              { y: 28, code: "AZ · AZERBAIJAN" },
-              { y: 78, code: "GE · GEORGIA" },
-              { y: 128, code: "UZ · UZBEKISTAN" },
-              { y: 178, code: "KZ · KAZAKHSTAN" },
-            ].map((dest) => (
-              <g key={dest.code}>
-                <rect x="306" y={dest.y} width="98" height="32" rx="4" fill="#EEF6F1" stroke="#267042" strokeWidth="1.2" />
-                <text x="355" y={dest.y + 19} textAnchor="middle" fill="#1B5431" fontSize="7.5" fontFamily="monospace" fontWeight="700">
-                  {dest.code}
-                </text>
-                <path d={`M274 118 H290 V${dest.y + 16} H306`} stroke="#267042" strokeWidth="1.3" />
-              </g>
-            ))}
+            {/* Primary Market & Expansion Horizon */}
+            <rect x="292" y="32" width="114" height="82" rx="6" fill="#EEF6F1" stroke="#267042" strokeWidth="1.8" />
+            <text x="349" y="59" textAnchor="middle" fill="#1B5431" fontSize="8.2" fontFamily="monospace" fontWeight="700">
+              AZ · AZERBAIJAN
+            </text>
+            <text x="349" y="76" textAnchor="middle" fill="#267042" fontSize="6.8" fontFamily="monospace" fontWeight="700">
+              PRIMARY MARKET
+            </text>
+            <text x="349" y="92" textAnchor="middle" fill="#455A69" fontSize="6.5" fontFamily="monospace">
+              BAKU EXECUTION
+            </text>
 
-            <path d="M122 118 H156" stroke="#267042" strokeWidth="2" strokeDasharray="4 2" />
+            <rect x="292" y="130" width="114" height="74" rx="6" fill="#FFFFFF" stroke="#267042" strokeWidth="1.2" />
+            <text x="349" y="162" textAnchor="middle" fill="#0A1F2E" fontSize="8" fontFamily="monospace" fontWeight="700">
+              CENTRAL ASIA
+            </text>
+            <text x="349" y="179" textAnchor="middle" fill="#455A69" fontSize="6.5" fontFamily="monospace">
+              REGIONAL EXPANSION
+            </text>
+
+            {/* Connecting Flow Conduits */}
+            <path d="M124 71 H137 V104 H150" stroke="#267042" strokeWidth="1.8" strokeDasharray="4 2" />
+            <path d="M124 165 H137 V132 H150" stroke="#267042" strokeWidth="1.8" strokeDasharray="4 2" />
+            <path d="M268 104 H280 V73 H292" stroke="#267042" strokeWidth="1.6" />
+            <path d="M268 132 H280 V167 H292" stroke="#267042" strokeWidth="1.3" />
           </svg>
         )}
       </div>

@@ -4,8 +4,7 @@
  */
 export const SITE_CONFIG = {
   companyName: "Novaltron LLC",
-  companyGeorgianName: "შპს ნოვალტრონი",
-  hubLocation: "Tbilisi, Georgia",
+  hubLocation: "Azerbaijan · Belgium · Türkiye · Georgia · Central Asia",
   websiteUrl: "https://novaltron.com",
   websiteDisplay: "novaltron.com",
   email: "info@novaltron.com",
