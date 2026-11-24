@@ -23,16 +23,18 @@ test("renderVcard30 formats RFC 2426 vCard with escaping, diacritics, multi-phon
       "Açar təslimi layihələr; suvarma, istixana və taxıl saxlama sistemləri\\logistika",
     email: "elshan@novaltron.com",
     phones: [
-      { label: "AZ Mobile", number: "+994 50 123 45 67" },
-      { label: "BE Office", number: "+32 2 555 01 99" },
+      { label: "AZ Mobile", number: "+994 50 123 45 67", whatsapp: true },
+      { label: "BE Office", number: "+32 2 555 01 99", whatsapp: false },
     ],
     whatsappNumber: "+994501234567", // same digits as AZ Mobile -> should NOT duplicate
+    whatsappNumbers: ["+994 50 123 45 67"],
     linkedinUrl: "https://www.linkedin.com/in/elshan-mammadov",
     spokenLanguages: ["EN", "AZ", "TR", "RU"],
     legalEntity: "შპს ნოვალტრონი", // must be forced strictly to Latin Novaltron LLC
     corridorLine: "Azerbaijan · Belgium · Türkiye · Georgia · Central Asia",
     corridorCompact: "AZ · BE · TR · GE · CENTRAL ASIA",
     cardUrl: "https://novaltron.com/card/elshan-mammadov",
+    websiteUrl: "https://novaltron.com",
     rfqUrl: "https://novaltron.com/contact?ref=card-elshan-mammadov",
   };
 
@@ -68,8 +70,10 @@ test("renderVcard30 formats RFC 2426 vCard with escaping, diacritics, multi-phon
     unfoldedLines.includes("TITLE:Direktor\\; Layihə\\, Təchizat & Mühəndislik")
   );
   assert.ok(unfoldedLines.includes("EMAIL;TYPE=PREF,INTERNET:elshan@novaltron.com"));
-  assert.ok(
-    unfoldedLines.includes("URL:https://novaltron.com/card/elshan-mammadov")
+  assert.ok(unfoldedLines.includes("URL:https://novaltron.com"));
+  assert.equal(
+    unfoldedLines.includes("URL:https://novaltron.com/card/elshan-mammadov"),
+    false
   );
   assert.ok(
     unfoldedLines.includes(
@@ -100,20 +104,24 @@ test("renderVcard30 formats RFC 2426 vCard with escaping, diacritics, multi-phon
   assert.equal(unfolded.includes("Tbilisi"), false);
 });
 
-test("renderVcard30 adds distinct whatsappNumber when digits differ from phones", () => {
+test("renderVcard30 falls back URL to https://novaltron.com and adds distinct whatsappNumbers", () => {
   const card = {
     ...CORPORATE_FALLBACK_CARD,
     slug: "aydin-aliyev",
     fullName: "Aydın Əliyev",
-    phones: [{ label: "Office", number: "+994 12 400 00 01" }],
+    phones: [{ label: "Office", number: "+994 12 400 00 01", whatsapp: false }],
     whatsappNumber: "+994 55 777 88 99",
+    whatsappNumbers: ["+994 55 777 88 99"],
+    websiteUrl: undefined,
   };
 
   const unfolded = renderVcard30(card).replaceAll("\r\n ", "");
-  const telLines = unfolded.split("\r\n").filter((l) => l.startsWith("TEL;"));
+  const lines = unfolded.split("\r\n");
+  const telLines = lines.filter((l) => l.startsWith("TEL;"));
   assert.equal(telLines.length, 2);
   assert.equal(telLines[0], "TEL;TYPE=CELL,VOICE:+994 12 400 00 01");
   assert.equal(telLines[1], "TEL;TYPE=CELL,VOICE:+994 55 777 88 99");
+  assert.ok(lines.includes("URL:https://novaltron.com"));
 });
 
 test("foldVcardLine preserves multi-byte UTF-8 characters (ə, ğ, ş, ı) across fold boundaries", () => {

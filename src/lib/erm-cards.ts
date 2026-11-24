@@ -1,6 +1,7 @@
 export interface PublicCardPhone {
   label: string;
   number: string;
+  whatsapp?: boolean;
 }
 
 export interface PublicCardProfile {
@@ -13,12 +14,14 @@ export interface PublicCardProfile {
   email: string;
   phones: PublicCardPhone[];
   whatsappNumber: string | null;
+  whatsappNumbers?: string[];
   linkedinUrl: string | null;
   spokenLanguages: string[];
   legalEntity: string;
   corridorLine: string;
   corridorCompact: string;
   cardUrl: string;
+  websiteUrl?: string;
   rfqUrl: string;
 }
 
@@ -46,12 +49,14 @@ export const CORPORATE_FALLBACK_CARD: PublicCardProfile = {
   email: "info@novaltron.com",
   phones: [],
   whatsappNumber: null,
+  whatsappNumbers: [],
   linkedinUrl: null,
   spokenLanguages: ["EN", "AZ", "TR", "RU"],
   legalEntity: CANONICAL_LEGAL_ENTITY,
   corridorLine: CANONICAL_CORRIDOR_LINE,
   corridorCompact: CANONICAL_CORRIDOR_COMPACT,
   cardUrl: "https://novaltron.com/card",
+  websiteUrl: "https://novaltron.com",
   rfqUrl: "https://novaltron.com/contact",
 };
 
@@ -297,12 +302,17 @@ export function renderVcard30(card: PublicCardProfile): string {
     lines.push(`TEL;TYPE=CELL,VOICE:${rawNum}`);
   }
 
-  const whatsappRaw = card.whatsappNumber?.replace(/[\r\n\0]/g, "").trim();
-  if (whatsappRaw) {
-    const waDigits = digitsOnly(whatsappRaw);
+  const extraWhatsappNumbers = [
+    ...(card.whatsappNumbers ?? []),
+    ...(card.whatsappNumber ? [card.whatsappNumber] : []),
+  ];
+  for (const rawWa of extraWhatsappNumbers) {
+    const cleanedWa = rawWa?.replace(/[\r\n\0]/g, "").trim();
+    if (!cleanedWa) continue;
+    const waDigits = digitsOnly(cleanedWa);
     if (waDigits && !seenPhoneDigits.has(waDigits)) {
       seenPhoneDigits.add(waDigits);
-      lines.push(`TEL;TYPE=CELL,VOICE:${whatsappRaw}`);
+      lines.push(`TEL;TYPE=CELL,VOICE:${cleanedWa}`);
     }
   }
 
@@ -311,8 +321,8 @@ export function renderVcard30(card: PublicCardProfile): string {
     lines.push(`EMAIL;TYPE=PREF,INTERNET:${escapeVcardValue(email)}`);
   }
 
-  const cardUrl = sanitizeUri(card.cardUrl) || "https://novaltron.com/card";
-  lines.push(`URL:${cardUrl}`);
+  const websiteUrl = sanitizeUri(card.websiteUrl) || "https://novaltron.com";
+  lines.push(`URL:${websiteUrl}`);
 
   const linkedinUrl = sanitizeUri(card.linkedinUrl);
   if (linkedinUrl) {

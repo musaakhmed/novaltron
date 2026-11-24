@@ -56,20 +56,7 @@ export function DigitalBusinessCard({ mode, card }: DigitalBusinessCardProps) {
     ? ui.corporateDivisionLabel
     : card.divisionLabel;
   const displayScope = isCorporate ? ui.corporateScopeSummary : card.scopeSummary;
-
-  const whatsappDigits = card.whatsappNumber
-    ? digitsOnly(card.whatsappNumber)
-    : card.phones[0]
-      ? digitsOnly(card.phones[0].number)
-      : "";
-
-  const phoneDigitsSet = new Set(
-    (card.phones ?? []).map((p) => digitsOnly(p.number)).filter(Boolean)
-  );
-  const hasSeparateWhatsappRow =
-    Boolean(card.whatsappNumber) &&
-    Boolean(whatsappDigits) &&
-    !phoneDigitsSet.has(whatsappDigits);
+  const websiteHref = card.websiteUrl || "https://novaltron.com";
 
   return (
     <div className="flex min-h-dvh flex-col bg-[#F4F7F9] text-[#455A69]">
@@ -235,14 +222,10 @@ export function DigitalBusinessCard({ mode, card }: DigitalBusinessCardProps) {
                 </li>
               )}
 
-              {(card.phones ?? []).map((phone, idx) => {
+              {(card.phones ?? []).map((phone) => {
                 const telHref = normalizeTelHref(phone.number);
                 const phoneDigits = digitsOnly(phone.number);
-                const showWaButton =
-                  Boolean(phoneDigits) &&
-                  (card.whatsappNumber
-                    ? phoneDigits === whatsappDigits
-                    : idx === 0);
+                const showWaButton = phone.whatsapp === true && Boolean(phoneDigits);
 
                 return (
                   <li
@@ -285,36 +268,6 @@ export function DigitalBusinessCard({ mode, card }: DigitalBusinessCardProps) {
                 );
               })}
 
-              {hasSeparateWhatsappRow && card.whatsappNumber && (
-                <li>
-                  <a
-                    href={`https://wa.me/${whatsappDigits}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex min-h-[48px] items-center justify-between gap-3 py-2 text-sm text-[#0A1F2E] transition-colors hover:text-[#267042]"
-                  >
-                    <span className="flex min-w-0 items-center gap-3">
-                      <MessageCircle
-                        aria-hidden="true"
-                        className="h-4 w-4 shrink-0 text-[#267042]"
-                      />
-                      <span className="min-w-0">
-                        <span className="block text-[11px] font-medium text-[#455A69]">
-                          {ui.whatsappLabel}
-                        </span>
-                        <span className="block truncate font-mono text-[13px] font-semibold">
-                          {card.whatsappNumber}
-                        </span>
-                      </span>
-                    </span>
-                    <ArrowUpRight
-                      aria-hidden="true"
-                      className="h-4 w-4 shrink-0 text-slate-400"
-                    />
-                  </a>
-                </li>
-              )}
-
               {card.linkedinUrl && (
                 <li>
                   <a
@@ -344,7 +297,7 @@ export function DigitalBusinessCard({ mode, card }: DigitalBusinessCardProps) {
 
               <li>
                 <a
-                  href="https://novaltron.com"
+                  href={websiteHref}
                   className="flex min-h-[48px] items-center justify-between gap-3 py-2 text-sm text-[#0A1F2E] transition-colors hover:text-[#267042]"
                 >
                   <span className="flex min-w-0 items-center gap-3">
