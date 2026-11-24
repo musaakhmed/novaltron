@@ -33,8 +33,9 @@
 
 ## 2. Logo System (Concept 1 — Precision Corridor)
 
-- **Wordmark (`NOVALTRON`):** Pure-vector uppercase geometric display mark with a two-tone 180°-symmetric diagonal-corridor split `N` (`#0A1F2E` + `#267042` on light, `#FFFFFF` + `#5BB87A` on dark).
-- **Companion Icon Badge:** `64×64` top-right 45°-chamfered tile containing the interlocking split `N` (`#FFFFFF` + `#5BB87A` on `#0A1F2E`/`#133045`).
+- **Primary Wordmark (`NOVALTRON`):** Standalone pure-vector geometric display mark with integrated two-tone 180°-symmetric split-diagonal corridor `N` (`#0A1F2E` + `#267042` on light surfaces; `#FFFFFF` + `#5BB87A` on dark hero/header/footer surfaces). Enforce `min-width: 110px` with proportional `height: auto`—never pair beside the square `N` badge on `novaltron.com` (`"N NOVALTRON"` double-mark misuse) and never stretch, squash, add drop shadows/glows, or recreate in inline text.
+- **Companion Chamfered `N` Icon Badge:** `64×64` top-right 45°-chamfered tile (`#FFFFFF` + `#5BB87A` on `#0A1F2E`/`#133045`). Used standalone for favicons/avatars and automatically in the mobile header (`24px–32px`, `28px` default) **only** when available logo width drops below `110px`.
+- **Clear Space:** Maintain `0.5x–1x` cap-height unobstructed padding around the mark on all sides.
 - **ERM Lockup:** Companion badge + reversed wordmark + `#5BB87A` `ERM` pill tag.
 
 ---

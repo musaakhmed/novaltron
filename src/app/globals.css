@@ -753,14 +753,6 @@
     height: 2px;
   }
 
-  .h-\[14px\] {
-    height: 14px;
-  }
-
-  .h-\[18px\] {
-    height: 18px;
-  }
-
   .h-\[68px\] {
     height: 68px;
   }
@@ -877,8 +869,8 @@
     width: calc(var(--spacing) * 24);
   }
 
-  .w-auto {
-    width: auto;
+  .w-\[148px\] {
+    width: 148px;
   }
 
   .w-full {
@@ -927,6 +919,10 @@
 
   .min-w-\[44px\] {
     min-width: 44px;
+  }
+
+  .min-w-\[110px\] {
+    min-width: 110px;
   }
 
   .min-w-\[230px\] {
@@ -1874,6 +1870,10 @@
     padding-top: calc(var(--spacing) * 28);
   }
 
+  .pr-3 {
+    padding-right: calc(var(--spacing) * 3);
+  }
+
   .pr-16 {
     padding-right: calc(var(--spacing) * 16);
   }
@@ -1966,10 +1966,6 @@
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
 
-  .text-\[8\.5px\] {
-    font-size: 8.5px;
-  }
-
   .text-\[9px\] {
     font-size: 9px;
   }
@@ -2058,11 +2054,6 @@
   .tracking-\[0\.08em\] {
     --tw-tracking: .08em;
     letter-spacing: .08em;
-  }
-
-  .tracking-\[0\.11em\] {
-    --tw-tracking: .11em;
-    letter-spacing: .11em;
   }
 
   .tracking-\[0\.12em\] {
@@ -2794,16 +2785,8 @@
       display: inline-flex;
     }
 
-    .sm\:h-9 {
-      height: calc(var(--spacing) * 9);
-    }
-
-    .sm\:h-\[17px\] {
-      height: 17px;
-    }
-
-    .sm\:w-9 {
-      width: calc(var(--spacing) * 9);
+    .sm\:w-\[156px\] {
+      width: 156px;
     }
 
     .sm\:min-w-\[26px\] {
@@ -3125,12 +3108,6 @@
       opacity: 1 !important;
     }
   }
-
-  @media (min-width: 80rem) {
-    .xl\:block {
-      display: block;
-    }
-  }
 }
 
 :root {
@@ -3199,6 +3176,84 @@ code, pre, .font-mono {
 .site-header .header-inner > * {
   white-space: nowrap;
   flex-shrink: 0;
+}
+
+.site-header .brand-link {
+  padding-block: 10px;
+  padding-inline: 0 10px;
+}
+
+.site-header .brand-wordmark {
+  width: 148px;
+  min-width: 110px;
+  height: auto;
+  display: block;
+}
+
+.site-header .brand-badge {
+  width: 28px;
+  height: 28px;
+  display: none;
+}
+
+.site-header:not(.is-wide) .brand-slot {
+  flex: 1;
+  align-items: center;
+  min-inline-size: 44px;
+  display: flex;
+}
+
+.site-header:not(.is-wide) .brand-link {
+  padding-block: 10px;
+  padding-inline: 0 8px;
+}
+
+.site-header:not(.is-wide) .brand-wordmark {
+  display: none;
+}
+
+.site-header:not(.is-wide) .brand-badge {
+  display: block;
+}
+
+@media (min-width: 320px) {
+  .site-header:not(.is-wide) .brand-wordmark {
+    width: 124px;
+    min-width: 110px;
+    height: auto;
+    display: block;
+  }
+
+  .site-header:not(.is-wide) .brand-badge {
+    display: none;
+  }
+}
+
+@supports (container-type: inline-size) {
+  .site-header:not(.is-wide) .brand-slot {
+    container: brand-slot / inline-size;
+  }
+
+  .site-header:not(.is-wide) .brand-wordmark {
+    display: none;
+  }
+
+  .site-header:not(.is-wide) .brand-badge {
+    display: block;
+  }
+
+  @container brand-slot (min-width: 118px) {
+    .site-header:not(.is-wide) .brand-wordmark {
+      width: clamp(110px, 100cqi - 8px, 144px);
+      min-width: 110px;
+      height: auto;
+      display: block;
+    }
+
+    .site-header:not(.is-wide) .brand-badge {
+      display: none;
+    }
+  }
 }
 
 .site-header .site-nav {

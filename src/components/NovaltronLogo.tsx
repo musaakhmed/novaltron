@@ -20,6 +20,9 @@ export function PrecisionCorridorBadge({
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
+      width={64}
+      height={64}
+      preserveAspectRatio="xMidYMid meet"
       className={className}
       aria-hidden={decorative ? "true" : undefined}
       role={decorative ? undefined : "img"}
@@ -36,7 +39,7 @@ export function PrecisionCorridorBadge({
  * Pure-vector Concept 1 — Precision Corridor NOVALTRON wordmark (-4 4 393 52 viewBox).
  */
 export function PrecisionCorridorWordmark({
-  className = "h-4 w-auto shrink-0",
+  className = "w-[148px] min-w-[110px] h-auto shrink-0",
   variant = "light-on-dark",
   decorative = true,
 }: LogoMarkProps) {
@@ -47,6 +50,9 @@ export function PrecisionCorridorWordmark({
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-4 4 393 52"
+      width={393}
+      height={52}
+      preserveAspectRatio="xMidYMid meet"
       className={className}
       aria-hidden={decorative ? "true" : undefined}
       role={decorative ? undefined : "img"}

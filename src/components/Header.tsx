@@ -111,6 +111,7 @@ export function Header({ lang, dict }: HeaderProps) {
 
   const isOpaque = scrolled || mobileOpen;
   const isLightSurface = !isOpaque && baseSubPath === "/bio-ipm";
+  const logoVariant = isLightSurface ? "dark-on-light" : "light-on-dark";
 
   return (
     <header
@@ -123,33 +124,26 @@ export function Header({ lang, dict }: HeaderProps) {
     >
       <div
         ref={innerRef}
-        className="header-inner mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-2 px-3 sm:gap-3 sm:px-6 lg:px-8"
+        className="header-inner mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-2 px-4 sm:gap-3 sm:px-6 lg:px-8"
       >
-        {/* Brand Wordmark */}
-        <Link
-          href={`/${lang}`}
-          className="group flex min-h-[44px] items-center gap-2 no-underline shrink-0 cursor-pointer sm:gap-2.5"
-          onClick={() => setMobileOpen(false)}
-        >
-          <PrecisionCorridorBadge
-            variant={isLightSurface ? "dark-on-light" : "light-on-dark"}
-            className="h-8 w-8 shrink-0 transition-transform duration-200 group-hover:scale-[1.03] sm:h-9 sm:w-9"
-          />
-          <span className="flex flex-col leading-none">
+        {/* Brand Identity: Standalone Primary Wordmark (>=110px) or Chamfered N Badge (<110px on mobile) */}
+        <div className="brand-slot">
+          <Link
+            href={`/${lang}`}
+            className="brand-link inline-flex min-h-[44px] min-w-[44px] items-center no-underline cursor-pointer"
+            onClick={() => setMobileOpen(false)}
+          >
             <PrecisionCorridorWordmark
-              variant={isLightSurface ? "dark-on-light" : "light-on-dark"}
-              className="h-[14px] w-auto shrink-0 sm:h-[17px]"
+              variant={logoVariant}
+              className="brand-wordmark shrink-0"
+            />
+            <PrecisionCorridorBadge
+              variant={logoVariant}
+              className="brand-badge shrink-0"
             />
             <span className="sr-only">NOVALTRON</span>
-            <span
-              className={`mt-1 hidden font-mono text-[8.5px] uppercase tracking-[0.11em] whitespace-nowrap transition-colors duration-200 xl:block ${
-                isLightSurface ? "text-[#1B5431]" : "text-slate-300"
-              }`}
-            >
-              CAUCASUS · CENTRAL ASIA
-            </span>
-          </span>
-        </Link>
+          </Link>
+        </div>
 
         {/* Desktop Navigation */}
         <nav ref={navRef} aria-label="Primary" className="site-nav">

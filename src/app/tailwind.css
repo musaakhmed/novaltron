@@ -95,6 +95,86 @@ code, pre, .font-mono {
   white-space: nowrap;
 }
 
+.site-header .brand-link {
+  padding-block: 10px;
+  padding-inline: 0 10px;
+}
+
+.site-header .brand-wordmark {
+  display: block;
+  width: 148px;
+  min-width: 110px;
+  height: auto;
+}
+
+.site-header .brand-badge {
+  display: none;
+  width: 28px;
+  height: 28px;
+}
+
+.site-header:not(.is-wide) .brand-slot {
+  flex: 1 1 0%;
+  min-inline-size: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.site-header:not(.is-wide) .brand-link {
+  padding-block: 10px;
+  padding-inline: 0 8px;
+}
+
+/* Fallback for pre-container-query browsers */
+.site-header:not(.is-wide) .brand-wordmark {
+  display: none;
+}
+
+.site-header:not(.is-wide) .brand-badge {
+  display: block;
+}
+
+@media (min-width: 320px) {
+  .site-header:not(.is-wide) .brand-wordmark {
+    display: block;
+    width: 124px;
+    min-width: 110px;
+    height: auto;
+  }
+
+  .site-header:not(.is-wide) .brand-badge {
+    display: none;
+  }
+}
+
+/* Exact container-driven switch at 110px net logo width (+ 8px right clear space = 118px) */
+@supports (container-type: inline-size) {
+  .site-header:not(.is-wide) .brand-slot {
+    container: brand-slot / inline-size;
+  }
+
+  .site-header:not(.is-wide) .brand-wordmark {
+    display: none;
+  }
+
+  .site-header:not(.is-wide) .brand-badge {
+    display: block;
+  }
+
+  @container brand-slot (min-width: 118px) {
+    .site-header:not(.is-wide) .brand-wordmark {
+      display: block;
+      width: clamp(110px, calc(100cqi - 8px), 144px);
+      min-width: 110px;
+      height: auto;
+    }
+
+    .site-header:not(.is-wide) .brand-badge {
+      display: none;
+    }
+  }
+}
+
 .site-header .site-nav {
   display: none;
   align-items: center;

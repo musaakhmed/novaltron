@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import type { SiteDictionary } from "@/data/dictionaries/types";
 import { SITE_CONFIG } from "@/lib/site-config";
-import { PrecisionCorridorBadge, PrecisionCorridorWordmark } from "@/components/NovaltronLogo";
+import { PrecisionCorridorWordmark } from "@/components/NovaltronLogo";
 
 interface FooterProps {
   lang: Locale;
@@ -56,14 +56,10 @@ export function Footer({ lang, dict }: FooterProps) {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand & Summary */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2.5">
-              <PrecisionCorridorBadge
-                variant="light-on-dark"
-                className="h-8 w-8 shrink-0"
-              />
+            <div className="inline-flex items-center py-2 pr-3">
               <PrecisionCorridorWordmark
                 variant="light-on-dark"
-                className="h-[18px] w-auto shrink-0"
+                className="w-[148px] max-w-full min-w-[110px] h-auto shrink-0 sm:w-[156px]"
               />
               <span className="sr-only">NOVALTRON</span>
             </div>
